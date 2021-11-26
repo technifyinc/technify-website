@@ -5,7 +5,10 @@
         <div class="flex flex-between align-end">
           <div class="subscribe">
             <h3>new to technify?</h3>
-            <p>Subscribe to our newsletter and get update on our latest product and discount.</p>
+            <p>
+              Subscribe to our newsletter and get update on our latest product
+              and discount.
+            </p>
           </div>
           <form class="flex">
             <input type="text" id="search" placeholder="Enter Email Address" />
@@ -49,7 +52,7 @@ export default {
   background: $sec-bg;
   padding: 2rem 0;
   border-top: solid 3px $bg;
-  &-content { 
+  &-content {
     & h3 {
       color: $sec-color;
       text-transform: uppercase;

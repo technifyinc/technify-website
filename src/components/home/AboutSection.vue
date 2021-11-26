@@ -7,7 +7,12 @@
         </div>
         <div class="about-text" data-aos="fade">
           <h3>About Us</h3>
-          <p>More Than Just a Technology Company. We promote a work environment based on respect, effectiveness, timeliness, objectivity, merit, effective communication, compliance with policies and processes, corporate loyalty and swift execution.</p>
+          <p>
+            More Than Just a Technology Company. We promote a work environment
+            based on respect, effectiveness, timeliness, objectivity, merit,
+            effective communication, compliance with policies and processes,
+            corporate loyalty and swift execution.
+          </p>
         </div>
       </div>
     </div>
@@ -16,8 +21,8 @@
 
 <script>
 export default {
-  name: 'AboutSection',
-}
+  name: "AboutSection",
+};
 </script>
 <style lang="scss" scoped>
 @import "@/scss/global.scss";

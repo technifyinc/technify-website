@@ -1,7 +1,7 @@
 <template>
-<div class="routes">
-  <router-view/>
-</div>
+  <div class="routes">
+    <router-view />
+  </div>
 </template>
 
 <script>
@@ -12,7 +12,7 @@ export default {
   components: {},
   mounted() {
     AOS.init({
-      duration: 800, // values from 0 to 3000, with step 50ms
+      duration: 800,
     });
   },
 };

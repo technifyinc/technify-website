@@ -7,12 +7,17 @@
         </div>
         <div class="section-text" data-aos="fade">
           <h3>Software Integration</h3>
-          <p>We help Improve software infrastructure with well-built microservices, reliable API, and data integration. Launch your mobile strategy with our comprehensive enterprise application development, or use our enterprise app integration solutions.</p>
+          <p>
+            We help Improve software infrastructure with well-built
+            microservices, reliable API, and data integration. Launch your
+            mobile strategy with our comprehensive enterprise application
+            development, or use our enterprise app integration solutions.
+          </p>
         </div>
       </div>
     </div>
   </section>
-    <section class="section">
+  <section class="section">
     <div class="container">
       <div class="section-content flex align-center flex-between">
         <div class="illus" data-aos="zoom-in">
@@ -20,7 +25,12 @@
         </div>
         <div class="section-text" data-aos="fade">
           <h3>I.T Consulting Services</h3>
-          <p>With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy for a digital and technological transformation of your organization that goes in line with your business objectives.</p>
+          <p>
+            With the expertise and deep tech background of the best minds at
+            Technify Inc to create a comprehensive IT strategy for a digital and
+            technological transformation of your organization that goes in line
+            with your business objectives.
+          </p>
         </div>
       </div>
     </div>
@@ -33,7 +43,12 @@
         </div>
         <div class="section-text" data-aos="fade">
           <h3>Tools To Keep Your Network Working</h3>
-          <p>We provide standardized tools for monitoring, managing and reporting. Our services include operations and system management, with availability monitoring and reporting, together with performance optimization and management.</p>
+          <p>
+            We provide standardized tools for monitoring, managing and
+            reporting. Our services include operations and system management,
+            with availability monitoring and reporting, together with
+            performance optimization and management.
+          </p>
         </div>
       </div>
     </div>
@@ -42,8 +57,8 @@
 
 <script>
 export default {
-  name: 'ServicesSection',
-}
+  name: "ServicesSection",
+};
 </script>
 <style lang="scss" scoped>
 @import "@/scss/global.scss";

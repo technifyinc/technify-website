@@ -4,10 +4,17 @@
       <div class="main-content flex align-center flex-between">
         <div class="main-text" data-aos="fade">
           <h3>Innovate with our Solutions</h3>
-          <p>We build out technologies to improve business processes end to end and optimize workflow.</p>
+          <p>
+            We build out technologies to improve business processes end to end
+            and optimize workflow.
+          </p>
         </div>
         <div class="illus">
-          <img src="@/assets/img/illus-01.svg" alt="illus_one" data-aos="zoom-in" />
+          <img
+            src="@/assets/img/illus-01.svg"
+            alt="illus_one"
+            data-aos="zoom-in"
+          />
         </div>
       </div>
     </div>
@@ -16,8 +23,8 @@
 
 <script>
 export default {
-  name: 'MainSection',
-}
+  name: "MainSection",
+};
 </script>
 <style lang="scss" scoped>
 @import "@/scss/global.scss";

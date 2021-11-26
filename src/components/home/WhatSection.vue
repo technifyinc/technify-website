@@ -2,15 +2,20 @@
   <section class="what">
     <div class="container">
       <div class="what-content">
-          <h3>What We Do</h3>
-          <p>Providing I.T. solutions for your business(s).</p>
+        <h3>What We Do</h3>
+        <p>Providing I.T. solutions for your business(s).</p>
         <div class="what-inner flex align-center flex-between">
           <div class="illus" data-aos="zoom-in">
             <img src="@/assets/img/illus-02.svg" alt="illus_two" />
           </div>
           <div class="what-text" data-aos="fade">
             <h3>Enterprise Software Development</h3>
-            <p>We help you Leverage our expertise in enterprise software development, API integration, modernising legacy systems, andconsolidating app portfolios to improve processes and minimize cost in your organization.</p>
+            <p>
+              We help you Leverage our expertise in enterprise software
+              development, API integration, modernising legacy systems,
+              andconsolidating app portfolios to improve processes and minimize
+              cost in your organization.
+            </p>
           </div>
         </div>
       </div>
@@ -20,8 +25,8 @@
 
 <script>
 export default {
-  name: 'WhatSection',
-}
+  name: "WhatSection",
+};
 </script>
 <style lang="scss" scoped>
 @import "@/scss/global.scss";

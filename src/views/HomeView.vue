@@ -11,16 +11,16 @@
 </template>
 
 <script>
-import Header from '@/components/navbar/Header.vue'
-import Footer from '@/components/reuseables/Footer.vue'
-import MainSection from '@/components/home/MainSection.vue'
-import WhatSection from '@/components/home/WhatSection.vue'
-import ServicesSection from '@/components/home/ServicesSection.vue'
-import AboutSection from '@/components/home/AboutSection.vue'
-import TrusteesSection from '@/components/home/TrusteesSection.vue'
+import Header from "@/components/navbar/Header.vue";
+import Footer from "@/components/reuseables/Footer.vue";
+import MainSection from "@/components/home/MainSection.vue";
+import WhatSection from "@/components/home/WhatSection.vue";
+import ServicesSection from "@/components/home/ServicesSection.vue";
+import AboutSection from "@/components/home/AboutSection.vue";
+import TrusteesSection from "@/components/home/TrusteesSection.vue";
 
 export default {
-  name: 'HomeView',
+  name: "HomeView",
   components: {
     Header,
     MainSection,
@@ -28,7 +28,7 @@ export default {
     ServicesSection,
     TrusteesSection,
     AboutSection,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
