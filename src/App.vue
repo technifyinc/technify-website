@@ -1,7 +1,5 @@
 <template>
-  <div class="routes">
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <script>
@@ -106,8 +104,22 @@ input:focus {
   flex-direction: column;
 }
 .flex-between {
-  display: flex;
   justify-content: space-between;
+}
+.flex-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-end {
+  align-items: flex-end;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: $title-font;
 }
 @media screen and (min-width: 700px) {
   .hide-on-lg {
@@ -119,15 +131,6 @@ input:focus {
   .flex {
     display: flex;
     flex-direction: row;
-  }
-  .align-center {
-    align-items: center;
-  }
-  .align-start {
-    align-items: flex-start;
-  }
-  .align-end {
-    align-items: flex-end;
   }
 }
 @media screen and (min-width: 1000px) {

@@ -8,10 +8,12 @@
         <nav class="nav" :class="{ open: open }">
           <ul>
             <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/solution">Blog</router-link></li>
+            <li><router-link to="/solution">Events</router-link></li>
             <li><router-link to="/solution">Our Solution</router-link></li>
             <li><router-link to="/about">About Us</router-link></li>
             <li><router-link to="/contact">Contact Us</router-link></li>
-            <li>get started</li>
+            <li><router-link to="/contact">get started</router-link></li>
           </ul>
         </nav>
         <div
@@ -57,21 +59,15 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 78px;
   padding: 1rem 0;
-  background: $sec-bg;
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   z-index: 100;
   &-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  &-content h1 {
-    color: rgb(0, 45, 95);
-  }
-  &-content img {
-    width: 100px;
   }
 }
 
@@ -85,28 +81,35 @@ li {
   font-weight: bold;
   cursor: pointer;
 }
+img {
+  width: 103px;
+  height: 45px;
+  position: relative;
+  z-index: 10;
+}
 .hamburger {
   display: flex;
   flex-direction: column;
   align-items: end;
   position: relative;
   z-index: 10;
+  width: 30px;
+  height: 20px;
   & > div {
     height: 2px;
-    width: 20px;
-    background: #000000;
+    width: 30px;
+    background: $pri-color;
     margin: 0.1rem 0;
     transition: transform ease-in-out 0.4s;
     cursor: pointer;
   }
   & > div:nth-child(1) {
-    width: 7px;
+    width: 16px;
   }
   & > div:nth-child(3) {
-    width: 10px;
+    width: 20px;
   }
 }
-
 .change.hamburger > div:nth-child(1) {
   transform: translate(1px, 5px) rotate(45deg);
   width: 20px;
@@ -133,41 +136,50 @@ li {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: $sec-bg;
+  height: 100vh;
+  background: $white;
   transition: ease-in-out 0.4s top;
   display: none;
   opacity: 0;
-  text-align: right;
   & ul {
-    margin-top: 3rem;
+    margin-top: 5rem;
     padding: 1rem;
   }
   & ul li {
     display: block;
     padding: 1rem 0;
     text-transform: capitalize;
+    border-bottom: solid 1px rgba(99, 15, 150, 0.25);
   }
   & ul li:last-child {
-    padding: 0.7rem 1.5rem;
-    background: $sec-color;
-    border-radius: 5px;
-    margin-top: 2rem;
-    color: $white;
-    display: inline-block;
+    border: none;
+    a {
+      padding: 12px 20px;
+      background: $sec-color;
+      border-radius: 5px;
+      margin-top: 2rem;
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      display: inline-block;
+      color: $white;
+      text-align: center;
+    }
+    a.router-link-active {
+      border: none;
+    }
   }
   & a {
-    font-weight: bold;
+    font-weight: normal;
     color: $pri-color;
     text-decoration: none;
   }
   & a.router-link-exact-active {
     padding-bottom: 0.5rem;
-    border-bottom: solid 2px $sec-color;
+    font-weight: bold;
   }
 }
-
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 1000px) {
   .hamburger {
     display: none;
   }
@@ -180,27 +192,65 @@ li {
     top: 0;
     display: block;
     opacity: 1;
+    margin: 0;
     & ul {
       padding: 0;
       margin: 0;
     }
-    & ul li {
-      display: inline;
-      padding: 0;
-      font-size: small;
-    }
     & ul li:last-child {
-      margin: 0 0 0 2rem;
-      background: $sec-color;
       a {
-        color: $white;
+        margin: 0 0 0 2rem;
+        width: auto;
       }
     }
-    & a {
-      font-weight: bold;
-      color: $sec-color;
-      text-decoration: none;
+    & ul li {
+      padding: 0 1rem 0 0;
+      display: inline;
+      border: none;
     }
+    & a {
+      text-decoration: none;
+      text-align: center;
+      width: auto;
+      height: auto;
+      font-size: 17px;
+    }
+    & a.router-link-exact-active {
+      border-bottom: solid 2px $sec-color;
+    }
+  }
+  img {
+    height: 48px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  a {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .header {
+    height: 93px;
+    &-content img {
+      width: 191px;
+      height: 53.6px;
+    }
+  }
+  .nav ul li {
+    padding: 0 1rem 0 0;
+  }
+  .nav ul li:last-child {
+    a {
+      width: 183px;
+      padding: 1rem;
+      margin-left: 5rem;
+    }
+  }
+  .nav a {
+    font-size: 18px;
+  }
+  img {
+    width: 162px;
+    height: 71px;
   }
 }
 </style>

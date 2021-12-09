@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <Header />
     <main-section />
     <what-section />
     <services-section />
@@ -11,7 +10,6 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue";
 import Footer from "@/components/reuseables/Footer.vue";
 import MainSection from "@/components/home/MainSection.vue";
 import WhatSection from "@/components/home/WhatSection.vue";
@@ -22,7 +20,6 @@ import TrusteesSection from "@/components/home/TrusteesSection.vue";
 export default {
   name: "HomeView",
   components: {
-    Header,
     MainSection,
     WhatSection,
     ServicesSection,
