@@ -4,15 +4,12 @@
       <div class="what-content">
         <h3>What We Do</h3>
         <p>Providing I.T. solutions for your business(s).</p>
-        <div class="what-inner flex align-center flex-between">
-          <div class="what-text">
-            <h3>Enterprise Software Development</h3>
-            <p>
-              We help you Leverage our expertise in enterprise software
-              development, API integration, modernising legacy systems,
-              andconsolidating app portfolios to improve processes and minimize
-              cost in your organization.
-            </p>
+        <div class="what-inner">
+          <div class="what-cards">
+            <div class="what-text" :class="{active: list.active}" v-for="list in lists" :key="list.index" @click="toggleActive">
+              <h4>{{ list.title }}</h4>
+              <p>{{ list.body }}</p>
+            </div>
           </div>
           <div class="illus">
             <image-slider />
@@ -28,33 +25,100 @@ import ImageSlider from './ImageSlider.vue';
 export default {
   components: { ImageSlider },
   name: "WhatSection",
+  data() {
+    return {
+      lists: [
+        {
+          title: "Enterprise Software Development",
+          body: "We help you Leverage our expertise in enterprise software development, API integration,modernising legacy systems, consolidating app portfolios to improve processes",
+          active: true,
+        },
+        {
+          title: "I.T Consulting Service",
+          body: "With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy for a digital and technological transformation of your organization.",
+          active: false,
+        },
+        {
+          title: "Tools To Keep Your Network Working",
+          body: "We provide standardized tools for monitoring, managing and reporting. Our services include operations and system management, with availability monitoring and reporting.",
+          active: false,
+        }
+      ]
+    }
+  },
+  methods: {
+    toggleActive() {
+      this.lists.forEach((list) => {
+        if(list.classList == "active") {
+          console.log(list)
+        }
+      })
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
 .what {
-  background: $bg;
-  padding: 2rem 0;
+  background: $sec-bg;
+  padding: 3rem 0;
   &-content {
     text-align: center;
-  }
-  &-content h3 {
-    margin-bottom: 1rem;
-    font-size: 30px;
+    & h3 {
+      margin-bottom: 1rem;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 32.24px;
+    }
+    & p {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14.88px;
+    }
   }
   &-text {
     text-align: left;
+    padding: 1rem;
+    margin-bottom: 0.6rem;
+    & h4 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 23.13px;
+      margin-bottom: 1rem;
+    }
+    & p {
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 18.78px;
+    }
   }
   &-inner {
-    margin-top: 2rem;
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
+}
+
+.active {
+  background: #BD8ADD;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  color: $white;
+  margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 700px) {
   .what {
-    &-text {
+    &-cards {
+      display: flex;
+      flex-direction: column;
       flex-basis: 50%;
-      margin: 0;
+    }
+    &-inner {
+      flex-direction: row;
     }
     & .illus {
       flex-basis: 50%;
@@ -64,30 +128,60 @@ export default {
 @media screen and (min-width: 1000px) {
   .what {
     &-text {
+      width: 500px;
       & h3 {
-        font-size: 40px;
+        font-size: 22px;
+        line-height: 29.92px;
+        font-weight: 700;
       }
       & p {
-        font-size: 20px;
+        font-size: 15px;
+        line-height: 23.48px;
+        font-weight: 500;
       }
     }
-    & .illus img {
-      height: 500px;
+    &-inner {
+      margin-top: 7rem;
     }
   }
 }
 @media screen and (min-width: 1200px) {
   .what {
-    &-text {
+    &-content {
       & h3 {
-        font-size: 45px;
+        font-size: 38px;
+        font-weight: 600;
+        line-height: 59.52px;
+      }
+      & p {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.8px;
+      }
+    }
+    &-text {
+      & h4 {
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 29.92px;
+      }
+      & p {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 23.48px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1400px) {
+  .what {
+    &-content {
+      & h3 {
+        font-size: 48px;
       }
       & p {
         font-size: 20px;
       }
-    }
-    & .illus img {
-      height: 500px;
     }
   }
 }

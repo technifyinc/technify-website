@@ -11,41 +11,13 @@
           </p>
         </div>
         <div class="illus">
-          <img
-            src="@/assets/img/illus-01.svg"
-            alt="illus_one"
-            data-aos="zoom-in"
-          />
+          <landing-image />
         </div>
       </div>
       <div class="trustees">
         <p>Trusted by <b>10,000+</b> businesses</p>
-        <div class="trustees-list" data-aos="zoom-in">
-          <a
-            href="https://tradelenda.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><img
-              src="https://res.cloudinary.com/trade-lenda/image/upload/v1628132872/landing_page_pic/Group_11434_2_umfio2.png"
-              alt="tradelenda"
-          /></a>
-          <a
-            href="https://www.onekioskafrica.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><p>onekiosk</p></a
-          >
-          <a
-            href="https://upbase.com.ng/"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><img
-              src="https://upbase.com.ng/assets/img/upbase.png"
-              alt="upbase"
-          /></a>
-          <a href="#" target="_blank" rel="noopener noreferrer"
-            ><img src="@/assets/img/easyflip.svg" alt="easyflip"
-          /></a>
+        <div class="trustees-list">
+          <companies-slider />
         </div>
       </div>
     </div>
@@ -54,18 +26,21 @@
 
 <script>
 import Header from "@/components/navbar/Header.vue";
+import LandingImage from "@/components/home/LandingImage.vue"
+import CompaniesSlider from "@/components/home/CompaniesSlider.vue"
 export default {
   name: "MainSection",
   components: {
     Header,
+    LandingImage,
+    CompaniesSlider
   }
 };
 </script>
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
 .main {
-  padding: 2rem 0;
-  height: 100vh;
+  height: 838px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,41 +51,32 @@ export default {
     align-items: center;
     flex-direction: column;
   }
-  &-text h1 {
-    color: $pri-color;
-    margin-bottom: 1rem;
-    font-size: 30px;
-    font-weight: bolder;
-  }
   &-text {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-bottom: 4rem;
+    & h1 {
+      color: $pri-color;
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 39.68px;
+    }
+    & p {
+      font-size: 15px;
+      line-height: 22px;
+    }
   }
 }
 
 .trustees {
-  background: $bg;
-  padding: 2rem 0;
-  margin-top: 2rem;
-  &-content {
-    text-align: center;
-    & h3 {
-      font-size: 30px;
-    }
+  padding: 3rem 0 0;
+  & p {
+    font-size: 14px;
   }
   &-list {
-    display: flex;
-    align-items: center;
-    margin-top: 0.5rem;
-    & img,
-    p {
-      width: 100px;
-      padding: 1rem;
-      margin: 1rem 0;
-      object-fit: cover;
-    }
+    margin-top: 1.5rem;
   }
 }
 
@@ -124,6 +90,7 @@ export default {
     }
     & p {
       font-size: 18px;
+      line-height: 32px;
     }
   }
 }
@@ -142,6 +109,7 @@ export default {
       margin: 0;
       & h1 {
         font-size: 40px;
+        line-height: 60px;
         width: 400px;
         font-weight: 600;
       }
@@ -153,40 +121,35 @@ export default {
     & .illus {
       flex-basis: 50%;
     }
-    & .illus img {
-      height: 500px;
-    }
+  }
+  .trustees p {
+    font-size: 18px;
   }
 }
 @media screen and (min-width: 1200px) {
   .main {
     &-text {
       & h1 {
-        font-size: 45px;
-        width: 450px;
+        font-size: 52px;
+        line-height: 70.88px;
+        width: 100%;
       }
       & p {
-        font-size: 20px;
-        width: 400px;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 34px;
+        width: 450px;
       }
-    }
-    & .illus img {
-      height: 500px;
     }
   }
 }
 @media screen and (min-width: 1400px) {
-  .container {
-    width: 1200px;
-  }
   .main-content {
     & h1 {
       font-size: 62px;
       line-height: 76.88px;
-      width: 100%;
     }
     & p {
-      font-weight: normal;
       font-size: 25px;
       line-height: 44px;
       width: 100%;

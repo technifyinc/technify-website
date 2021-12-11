@@ -19,7 +19,8 @@ export default {
 <style lang="scss">
 @import "@/scss/global.scss";
 body {
-  font-family: $font;
+  font-family: $title-font;
+  // font-family: $font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $pri-color;

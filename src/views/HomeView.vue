@@ -2,9 +2,8 @@
   <div class="home">
     <main-section />
     <what-section />
-    <services-section />
-    <trustees-section />
-    <about-section />
+    <ways-section />
+    <trust-section />
     <Footer />
   </div>
 </template>
@@ -13,18 +12,16 @@
 import Footer from "@/components/reuseables/Footer.vue";
 import MainSection from "@/components/home/MainSection.vue";
 import WhatSection from "@/components/home/WhatSection.vue";
-import ServicesSection from "@/components/home/ServicesSection.vue";
-import AboutSection from "@/components/home/AboutSection.vue";
-import TrusteesSection from "@/components/home/TrusteesSection.vue";
+import WaysSection from "@/components/home/WaysSection.vue";
+import TrustSection from "@/components/home/TrustSection.vue";
 
 export default {
   name: "HomeView",
   components: {
     MainSection,
     WhatSection,
-    ServicesSection,
-    TrusteesSection,
-    AboutSection,
+    WaysSection,
+    TrustSection,
     Footer,
   },
 };

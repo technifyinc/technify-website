@@ -59,7 +59,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -199,7 +199,7 @@ img {
     }
     & ul li:last-child {
       a {
-        margin: 0 0 0 2rem;
+        margin: 0;
         width: auto;
       }
     }
@@ -242,7 +242,6 @@ img {
     a {
       width: 183px;
       padding: 1rem;
-      margin-left: 5rem;
     }
   }
   .nav a {
