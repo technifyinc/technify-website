@@ -164,6 +164,7 @@ img {
       display: inline-block;
       color: $white;
       text-align: center;
+      font-weight: 600;
     }
     a.router-link-active {
       border: none;
@@ -171,7 +172,7 @@ img {
   }
   & a {
     font-weight: normal;
-    color: $pri-color;
+    color: #464646;
     text-decoration: none;
   }
   & a.router-link-exact-active {
@@ -198,6 +199,8 @@ img {
       margin: 0;
     }
     & ul li:last-child {
+      padding: 0;
+      margin: 0;
       a {
         margin: 0;
         width: auto;
@@ -216,7 +219,7 @@ img {
       font-size: 17px;
     }
     & a.router-link-exact-active {
-      border-bottom: solid 2px $sec-color;
+      border-bottom: solid 4px $sec-color;
     }
   }
   img {

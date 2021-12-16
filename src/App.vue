@@ -61,7 +61,7 @@ select {
   transition: 0.5s ease border;
 }
 input:focus {
-  border: solid 2px rgb(179, 178, 178);
+  border: solid 1px $sec-color !important;
 }
 .input-field {
   margin: 1rem 0;
@@ -73,11 +73,11 @@ input:focus {
   margin: 0.5rem 0;
   outline: none;
   border: none;
-  color: $white;
+  color: #fafafa;
   background: $sec-color;
   font-weight: bold;
   border-radius: 5px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 *,
 *::before,

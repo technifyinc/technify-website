@@ -8,7 +8,7 @@
           <router-link to="/" class="btn">Get Started</router-link>
         </div>
         <div class="ways-text" data-aos="zoom-in">
-          <img src="@/assets/img/ways-user.svg" alt="ways_user">
+          <img src="@/assets/img/ways-user.svg" alt="ways_user" />
           <h4>Technify for Individuals</h4>
           <p>
             We help Improve software infrastructure with well-built
@@ -19,7 +19,7 @@
           <router-link to="/">Learn more</router-link>
         </div>
         <div class="ways-text" data-aos="zoom-in">
-          <img src="@/assets/img/ways-building.svg" alt="ways_building">
+          <img src="@/assets/img/ways-building.svg" alt="ways_building" />
           <h4>Technify for Companies</h4>
           <p>
             We help Improve software infrastructure with well-built
@@ -31,19 +31,28 @@
         </div>
       </div>
     </div>
+    <trust-section />
   </section>
 </template>
 
 <script>
+import TrustSection from "@/components/home/TrustSection.vue";
+
 export default {
-  name: "ServicesWays",
+  name: "HomeView",
+  components: {
+    TrustSection,
+  },
 };
 </script>
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
 .ways {
   background: $bg;
-  padding: 3rem 0;
+  background: url("@/assets/img/bg-01.png") no-repeat top 50% left 0px,
+    url("@/assets/img/bg-02.png") no-repeat right 0px bottom 0px,
+    url("@/assets/img/bg-02.png") no-repeat right 0px top 0px;
+  padding: 5rem 0 3rem;
   text-align: center;
   &-head {
     margin-bottom: 3rem;
@@ -52,11 +61,14 @@ export default {
       font-weight: 600;
       line-height: 32.24px;
       margin-bottom: 1rem;
+      color: $header;
     }
     & p {
-      font-size: 17px;
-      font-weight: 400;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 14.88px;
       margin: 1rem 0;
+      color: $sub;
     }
     & .btn {
       color: $white;
@@ -69,19 +81,21 @@ export default {
     margin: 2rem 0;
     background: #fdfdfd;
     border: solid 2px #edcfff;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
-    border-radius: 11px;
+    box-shadow: 0px 10px 22px 1px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
     padding: 1rem;
     & h4 {
       font-size: 18px;
       font-weight: 500;
       line-height: 25.38px;
+      color: $header;
     }
     & p {
       font-size: 13px;
       font-weight: 400;
       line-height: 19.24px;
       margin: 1rem 0;
+      color: $sub;
     }
     & img {
       width: 35px;
@@ -129,6 +143,7 @@ export default {
       & p {
         font-size: 17px;
         font-weight: 400;
+        line-height: 19.24px;
         margin: 1rem 0;
       }
       & .btn {
@@ -138,24 +153,25 @@ export default {
     }
     &-text {
       flex-basis: 32%;
-      margin: 0;
+      margin: 0 0.2rem 3rem;
       & h4 {
         font-size: 20px;
         line-height: 22.3px;
       }
-    } 
+    }
   }
 }
 
 @media screen and (min-width: 1200px) {
   .ways {
+    padding: 8rem 0 3rem;
+    &-head {
+      & p {
+        line-height: 30px;
+      }
+    }
     &-text {
       flex-basis: 32%;
-      margin: 0;
-      & h4 {
-        font-size: 20px;
-        line-height: 22.3px;
-      }
       & h4 {
         font-size: 22px;
         font-weight: 700;
@@ -164,9 +180,9 @@ export default {
       & p {
         font-size: 15px;
         font-weight: 500;
-        line-height: 23.48px;
+        line-height: 27.48px;
       }
-    } 
+    }
   }
 }
 @media screen and (min-width: 1400px) {
@@ -194,7 +210,7 @@ export default {
       & p,
       & a {
         font-size: 17px;
-        line-height: 26.18px;
+        line-height: 33.18px;
       }
       & img {
         width: 61px;

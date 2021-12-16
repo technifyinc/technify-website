@@ -2,11 +2,23 @@
   <section class="what">
     <div class="container">
       <div class="what-content">
-        <h3>What We Do</h3>
+        <h3>What we do</h3>
         <p>Providing I.T. solutions for your business(s).</p>
         <div class="what-inner">
+          <div class="lines hide-on-sm">
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+            <div class="line-3"></div>
+          </div>
           <div class="what-cards">
-            <div class="what-text" :class="{active: list.active}" v-for="list in lists" :key="list.index" @click="toggleActive">
+            <div
+              class="what-text"
+              :class="{ active: list.active }"
+              :id="list.id"
+              v-for="list in lists"
+              :key="list.index"
+              @click="toggleActive"
+            >
               <h4>{{ list.title }}</h4>
               <p>{{ list.body }}</p>
             </div>
@@ -21,7 +33,7 @@
 </template>
 
 <script>
-import ImageSlider from './ImageSlider.vue';
+import ImageSlider from "./ImageSlider.vue";
 export default {
   components: { ImageSlider },
   name: "WhatSection",
@@ -29,31 +41,35 @@ export default {
     return {
       lists: [
         {
+          id: 1,
           title: "Enterprise Software Development",
-          body: "We help you Leverage our expertise in enterprise software development, API integration,modernising legacy systems, consolidating app portfolios to improve processes",
+          body: "We help you Leverage our expertise in enterprise software development, API integration, modernising legacy systems, consolidating app portfolios to improve processes",
           active: true,
         },
         {
+          id: 2,
           title: "I.T Consulting Service",
           body: "With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy for a digital and technological transformation of your organization.",
           active: false,
         },
         {
+          id: 3,
           title: "Tools To Keep Your Network Working",
           body: "We provide standardized tools for monitoring, managing and reporting. Our services include operations and system management, with availability monitoring and reporting.",
           active: false,
-        }
-      ]
-    }
+        },
+      ],
+    };
   },
   methods: {
-    toggleActive() {
-      this.lists.forEach((list) => {
-        if(list.classList == "active") {
-          console.log(list)
-        }
+  },
+  mounted() {
+    const lists = document.querySelectorAll(".what-text");
+    lists.forEach((list) => {
+      list.addEventListener("click", () => {
+        list.classList.toggle("active");
       })
-    }
+    })
   }
 };
 </script>
@@ -70,11 +86,14 @@ export default {
       font-weight: 600;
       font-size: 26px;
       line-height: 32.24px;
+      letter-spacing: 1px;
+      color: $header;
     }
     & p {
       font-weight: normal;
       font-size: 12px;
-      line-height: 14.88px;
+      line-height: 15px;
+      color: $sub;
     }
   }
   &-text {
@@ -103,11 +122,14 @@ export default {
 }
 
 .active {
-  background: #BD8ADD;
+  background: #bd8add;
   box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
   border-radius: 9px;
   color: $white;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; 
+  & p {
+    color: $white;
+  }
 }
 
 @media screen and (min-width: 700px) {
@@ -122,6 +144,24 @@ export default {
     }
     & .illus {
       flex-basis: 50%;
+    }
+  }
+  .lines {
+    margin-right: 3rem;
+    & > div {
+      margin: 0.3rem 0;
+      border-radius: 17px;
+    }
+    .line-1,
+    .line-3 {
+      height: 26px;
+      width: 5px;
+      background: #b0b0b0;
+    }
+    .line-2 {
+      height: 71px;
+      width: 5px;
+      background: #860fce;
     }
   }
 }
@@ -162,7 +202,7 @@ export default {
     &-text {
       & h4 {
         font-size: 22px;
-        font-weight: 700;
+        font-weight: 600;
         line-height: 29.92px;
       }
       & p {
@@ -181,6 +221,12 @@ export default {
       }
       & p {
         font-size: 20px;
+      }
+    }
+    &-text {
+      & p {
+        font-size: 18px;
+        line-height: 30px;
       }
     }
   }

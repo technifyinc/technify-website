@@ -2,7 +2,7 @@
   <main class="main">
     <Header />
     <div class="container">
-      <div class="main-content routes">
+      <div class="main-content">
         <div class="main-text" data-aos="fade">
           <h1>Innovate with our Solutions</h1>
           <p>
@@ -74,6 +74,7 @@ export default {
   padding: 3rem 0 0;
   & p {
     font-size: 14px;
+    color: $sub;
   }
   &-list {
     margin-top: 1.5rem;
