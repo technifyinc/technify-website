@@ -1,7 +1,5 @@
 <template>
-  <div class="routes">
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
 <script>
@@ -21,7 +19,8 @@ export default {
 <style lang="scss">
 @import "@/scss/global.scss";
 body {
-  font-family: $font;
+  font-family: $title-font;
+  // font-family: $font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $pri-color;
@@ -62,7 +61,7 @@ select {
   transition: 0.5s ease border;
 }
 input:focus {
-  border: solid 2px rgb(179, 178, 178);
+  border: solid 1px $sec-color !important;
 }
 .input-field {
   margin: 1rem 0;
@@ -74,11 +73,11 @@ input:focus {
   margin: 0.5rem 0;
   outline: none;
   border: none;
-  color: $white;
+  color: #fafafa;
   background: $sec-color;
   font-weight: bold;
   border-radius: 5px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 *,
 *::before,
@@ -106,8 +105,22 @@ input:focus {
   flex-direction: column;
 }
 .flex-between {
-  display: flex;
   justify-content: space-between;
+}
+.flex-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-end {
+  align-items: flex-end;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: $title-font;
 }
 @media screen and (min-width: 700px) {
   .hide-on-lg {
@@ -119,15 +132,6 @@ input:focus {
   .flex {
     display: flex;
     flex-direction: row;
-  }
-  .align-center {
-    align-items: center;
-  }
-  .align-start {
-    align-items: flex-start;
-  }
-  .align-end {
-    align-items: flex-end;
   }
 }
 @media screen and (min-width: 1000px) {
