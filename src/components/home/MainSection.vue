@@ -50,6 +50,7 @@ export default {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 38px;
   }
   &-text {
     display: flex;
@@ -82,6 +83,9 @@ export default {
 }
 
 @media screen and (min-width: 700px) {
+  .main-content {
+    margin-top: 78px;
+  }
   .main-text {
     text-align: center;
     width: 450px;

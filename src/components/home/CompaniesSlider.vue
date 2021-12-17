@@ -23,10 +23,7 @@
         href="https://upbase.com.ng/"
         target="_blank"
         rel="noopener noreferrer"
-        ><img
-          src="https://upbase.com.ng/assets/img/upbase.png"
-          alt="upbase"
-      /></a>
+        ><p>upbase</p></a>
     </SplideSlide>
     <SplideSlide>
       <a href="https://easyflip.ng" target="_blank" rel="noopener noreferrer"

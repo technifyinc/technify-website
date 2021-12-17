@@ -111,8 +111,8 @@ export default {
   }
 }
 svg {
-    width: 236px;
-    height: 207.83px;
+    width: 100%;
+    height: 100%;
 }
 @media screen and (min-width: 1000px) {
     svg {

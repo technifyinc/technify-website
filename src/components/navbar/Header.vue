@@ -233,10 +233,6 @@ img {
   }
   .header {
     height: 93px;
-    &-content img {
-      width: 191px;
-      height: 53.6px;
-    }
   }
   .nav ul li {
     padding: 0 1rem 0 0;
