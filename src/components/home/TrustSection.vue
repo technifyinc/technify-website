@@ -53,7 +53,7 @@ export default {
       & p {
         font-size: 12px;
         font-weight: 400;
-        line-height: 16.5px;
+        line-height: 22.78px;
         color: $sub;
       }
     }

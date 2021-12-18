@@ -66,7 +66,7 @@ export default {
     & p {
       font-weight: normal;
       font-size: 12px;
-      line-height: 14.88px;
+      line-height: 22.78px;
       margin: 1rem 0;
       color: $sub;
     }
@@ -93,7 +93,7 @@ export default {
     & p {
       font-size: 13px;
       font-weight: 400;
-      line-height: 19.24px;
+      line-height: 22.78px;
       margin: 1rem 0;
       color: $sub;
     }

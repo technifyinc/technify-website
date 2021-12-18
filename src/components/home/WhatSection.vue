@@ -92,7 +92,7 @@ export default {
     & p {
       font-weight: normal;
       font-size: 12px;
-      line-height: 15px;
+      line-height: 22.78px;
       color: $sub;
     }
   }
@@ -110,7 +110,7 @@ export default {
     & p {
       font-weight: 500;
       font-size: 12px;
-      line-height: 18.78px;
+      line-height: 22.78px;
     }
   }
   &-inner {

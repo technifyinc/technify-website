@@ -104,7 +104,7 @@ export default {
       }
       & input[type="submit"] {
         font-weight: bold;
-        font-size: 9px;
+        font-size: 14px;
         line-height: 11px;
         color: #fafafa;
         flex-basis: 30%;

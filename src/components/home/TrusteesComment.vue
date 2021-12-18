@@ -124,7 +124,7 @@ export default defineComponent({
     & p {
       font-weight: 400;
       font-size: 12px;
-      line-height: 18.37px;
+      line-height: 22.78px;
       color: $sub;
     }
   }

@@ -66,7 +66,7 @@ export default {
     }
     & p {
       font-size: 15px;
-      line-height: 22px;
+      line-height: 22.78px;
     }
   }
 }
@@ -84,7 +84,7 @@ export default {
 
 @media screen and (min-width: 700px) {
   .main-content {
-    margin-top: 78px;
+    margin-top: 70px;
   }
   .main-text {
     text-align: center;
