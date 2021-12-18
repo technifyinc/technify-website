@@ -1,12 +1,14 @@
 <template>
   <form>
-    <div class="input-field">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Enter Full Name" />
-    </div>
-    <div class="input-field">
-      <label for="email">Email</label>
-      <input type="text" id="email" placeholder="Enter Email" />
+    <div class="flex-form">
+      <div class="input-field">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter Full Name" />
+      </div>
+      <div class="input-field">
+        <label for="email">Email</label>
+        <input type="text" id="email" placeholder="Enter Email" />
+      </div>
     </div>
     <div class="input-field">
       <label for="subject">Subject</label>
@@ -50,10 +52,40 @@ form {
   }
 }
 
+@media screen and (min-width: 700px) {
+  form {
+    & .flex-form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0;
+      & .input-field {
+        flex-basis: 49%;
+        margin: 0;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 1000px) {
   form {
     width: 900px;
     margin: auto;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  form {
+    & .input-field input,
+    & .input-field label,
+    & .input-field textarea {
+      font-size: 16px;
+      line-height: 31.3px;
+      &::placeholder {
+        font-size: 16px;
+        line-height: 31.3px;
+      }
+    }
   }
 }
 </style>

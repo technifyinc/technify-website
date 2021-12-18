@@ -1,72 +1,44 @@
 <template>
-  <Splide :options="options">
-    <SplideSlide>
-      <div class="trust">
-        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
-        <div class="title_content">
-          <h3>Dele Momodu</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
-            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
-            mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
-            fugit quam doloribus? Deserunt temporibus architecto molestias,
-            repudiandae optio facere porro obcaecati nam, maiores deleniti
-            maxime.
-          </p>
-        </div>
+  <div class="trustees-comment">
+    <div class="trust">
+      <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+      <div class="title_content">
+        <h3>Dele Momodu</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+          mollitia delectus atque? Distinctio hic provident dolor quisquam
+          sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+        </p>
       </div>
-    </SplideSlide>
-    <SplideSlide>
-      <div class="trust">
-        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
-        <div class="title_content">
-          <h3>Shola Allison</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
-            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
-            mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
-            fugit quam doloribus? Deserunt temporibus architecto molestias,
-            repudiandae optio facere porro obcaecati nam, maiores deleniti
-            maxime.
-          </p>
-        </div>
+    </div>
+    <div class="trust">
+      <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+      <div class="title_content">
+        <h3>Shola Allison</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+          mollitia delectus atque? Distinctio hic provident dolor quisquam
+          sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+        </p>
       </div>
-    </SplideSlide>
-    <SplideSlide>
-      <div class="trust">
-        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
-        <div class="title_content">
-          <h3>Mark Musk</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
-            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
-            mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
-            fugit quam doloribus? Deserunt temporibus architecto molestias,
-            repudiandae optio facere porro obcaecati nam, maiores deleniti
-            maxime.
-          </p>
-        </div>
+    </div>
+    <div class="trust">
+      <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+      <div class="title_content">
+        <h3>Mark Musk</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+          mollitia delectus atque? Distinctio hic provident dolor quisquam
+          sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+        </p>
       </div>
-    </SplideSlide>
-  </Splide>
+    </div>
+  </div>
 </template>
 
 <script>
-import { Splide, SplideSlide } from "@splidejs/vue-splide";
-// import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
-import "@splidejs/splide/dist/css/splide.min.css";
-import "@splidejs/splide/dist/css/themes/splide-skyblue.min.css";
-import { defineComponent } from "vue";
 
-export default defineComponent({
-  components: {
-    Splide,
-    SplideSlide,
-    // AutoScroll
-  },
+export default {
   data() {
     return {
       options: {
@@ -91,18 +63,38 @@ export default defineComponent({
       },
     };
   },
-});
+};
 </script>
 
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
+.trustees-comment {
+  position: relative;
+  padding: 1.5rem 0;
+  height: 300px;
+  overflow: hidden;
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%);
+    width: 100%;
+    height: 3rem;
+  }
+  &:before {
+    top: 0;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%);
+  }
+}
 .trust {
   background: #ededed;
-  background-image: linear-gradient(
-    rgb(250, 250, 250),
-    transparent,
-    rgb(250, 250, 250)
-  );
+  animation: autoScroll 6s infinite ease-in-out backwards;
+  transform-origin: top;
+  transform-box: fill-box;
   border-radius: 8px;
   padding: 1rem;
   margin: 0.5rem 0;
@@ -126,6 +118,25 @@ export default defineComponent({
       font-size: 12px;
       line-height: 22.78px;
       color: $sub;
+    }
+  }
+}
+
+@keyframes autoScroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-500px);
+  }
+}
+@media screen and (min-width: 700px) {
+  @keyframes autoScroll {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-350px);
     }
   }
 }

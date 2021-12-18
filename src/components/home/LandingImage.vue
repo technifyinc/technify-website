@@ -88,17 +88,24 @@
 
 <script>
 export default {
-    name: "LandingImaege"
+    name: "LandingImage"
 }
 </script>
 
 <style lang="scss" scoped>
-#slant,
-#mail,
-#chat,
-#scale,
-#computer {
+#chat {
     animation: spin 3s infinite linear;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+#mail {
+    animation: moveX 3s infinite linear alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#computer {
+    animation: moveXII 3s infinite linear alternate;
     transform-origin: center;
     transform-box: fill-box;
 }
@@ -108,6 +115,16 @@ export default {
   }
   to {
     transform: rotateZ(360deg);
+  }
+}
+@keyframes moveX {
+  to {
+    transform: translate(-60px, 160px);
+  }
+}
+@keyframes moveXII {
+  to {
+    transform: translate(60px, -160px);
   }
 }
 svg {

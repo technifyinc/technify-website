@@ -128,7 +128,7 @@ export default {
 
 @media screen and (min-width: 1000px) {
   .about {
-    margin: 3rem 0;
+    margin: 2rem 0;
     & .illus {
       width: 900px;
       margin: 5rem auto;
