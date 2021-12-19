@@ -92,7 +92,7 @@ export default {
 }
 .trust {
   background: #ededed;
-  animation: autoScroll 6s infinite ease-in-out backwards;
+  animation: autoScroll 10s infinite ease-in-out backwards;
   transform-origin: top;
   transform-box: fill-box;
   border-radius: 8px;
@@ -127,7 +127,7 @@ export default {
     transform: translateY(0);
   }
   to {
-    transform: translateY(-500px);
+    transform: translateY(-850px);
   }
 }
 @media screen and (min-width: 700px) {

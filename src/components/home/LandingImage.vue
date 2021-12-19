@@ -109,6 +109,16 @@ export default {
     transform-origin: center;
     transform-box: fill-box;
 }
+#slant {
+    animation: moveXIII 3s infinite linear alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#scale {
+    animation: moveXIV 3s infinite linear alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+}
 @keyframes spin {
   from {
     transform: rotateZ(0);
@@ -125,6 +135,16 @@ export default {
 @keyframes moveXII {
   to {
     transform: translate(60px, -160px);
+  }
+}
+@keyframes moveXIII {
+  to {
+    transform: translate(-60px, -160px);
+  }
+}
+@keyframes moveXIV {
+  to {
+    transform: translate(60px, 160px);
   }
 }
 svg {
