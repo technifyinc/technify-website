@@ -66,7 +66,7 @@ export default {
     }
     & p {
       font-size: 15px;
-      line-height: 22px;
+      line-height: 22.78px;
     }
   }
 }
@@ -83,8 +83,11 @@ export default {
 }
 
 @media screen and (min-width: 700px) {
+  .main {
+    height: 100vh;
+  }
   .main-content {
-    margin-top: 78px;
+    margin-top: 70px;
   }
   .main-text {
     text-align: center;
@@ -102,7 +105,9 @@ export default {
 
 @media screen and (min-width: 1000px) {
   .main {
+    height: 838px;
     &-content {
+      margin-top: 0px;
       flex-direction: row;
       text-align: left;
       justify-content: space-between;

@@ -20,12 +20,11 @@ export default {
 @import "@/scss/global.scss";
 body {
   font-family: $title-font;
-  // font-family: $font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $pri-color;
   background: $bg;
-  line-height: 1.5;
+  line-height: 20px;
   font-size: 15px;
 }
 *,
@@ -137,6 +136,10 @@ h1,h2,h3,h4,h5,h6 {
 @media screen and (min-width: 1000px) {
   body {
     font-size: 18px;
+  }
+  input,
+  textarea {
+    padding: 1rem;
   }
 }
 @media screen and (min-width: 1500px) {

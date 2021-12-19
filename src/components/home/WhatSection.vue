@@ -6,9 +6,7 @@
         <p>Providing I.T. solutions for your business(s).</p>
         <div class="what-inner">
           <div class="lines hide-on-sm">
-            <div class="line-1"></div>
-            <div class="line-2"></div>
-            <div class="line-3"></div>
+            <div class="line" :class="{increment: line.increment}" :id="line.id" v-for="line in lines" :key="line.index"></div>
           </div>
           <div class="what-cards">
             <div
@@ -17,10 +15,9 @@
               :id="list.id"
               v-for="list in lists"
               :key="list.index"
-              @click="toggleActive"
             >
-              <h4>{{ list.title }}</h4>
-              <p>{{ list.body }}</p>
+              <h4 :id="list.id">{{ list.title }}</h4>
+              <p :id="list.id">{{ list.body }}</p>
             </div>
           </div>
           <div class="illus">
@@ -59,15 +56,38 @@ export default {
           active: false,
         },
       ],
+      lines: [
+        {
+          id: "line-1",
+          increment: true,
+        },
+        {
+          id: "line-2",
+          increment: false
+        },
+        {
+          id: "line-3",
+          increment: false
+        }
+      ]
     };
   },
   methods: {
   },
   mounted() {
     const lists = document.querySelectorAll(".what-text");
+    const lines = document.querySelectorAll(".line");
     lists.forEach((list) => {
-      list.addEventListener("click", () => {
-        list.classList.toggle("active");
+      list.addEventListener("click", (e) => {
+        const id = e.target.id;
+        const line = document.querySelector(`#line-${id}`);
+        if(!list.classList.contains("active")) {
+          lists.forEach((list) => list.classList.remove("active"));
+          list.classList.add("active");
+
+          lines.forEach((line) => line.classList.remove("increment"));
+          line.classList.add("increment");
+        }
       })
     })
   }
@@ -92,7 +112,7 @@ export default {
     & p {
       font-weight: normal;
       font-size: 12px;
-      line-height: 15px;
+      line-height: 22.78px;
       color: $sub;
     }
   }
@@ -100,6 +120,8 @@ export default {
     text-align: left;
     padding: 1rem;
     margin-bottom: 0.6rem;
+    cursor: pointer;
+    transition: background 0.5s ease-in;
     & h4 {
       font-style: normal;
       font-weight: bold;
@@ -110,11 +132,11 @@ export default {
     & p {
       font-weight: 500;
       font-size: 12px;
-      line-height: 18.78px;
+      line-height: 22.78px;
     }
   }
   &-inner {
-    margin-top: 3rem;
+    margin: 3rem 0;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -126,7 +148,6 @@ export default {
   box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
   border-radius: 9px;
   color: $white;
-  margin-bottom: 2rem; 
   & p {
     color: $white;
   }
@@ -152,15 +173,14 @@ export default {
       margin: 0.3rem 0;
       border-radius: 17px;
     }
-    .line-1,
-    .line-3 {
+    .line {
       height: 26px;
       width: 5px;
       background: #b0b0b0;
+      transition: height 0.5s ease;
     }
-    .line-2 {
+    .increment {
       height: 71px;
-      width: 5px;
       background: #860fce;
     }
   }
