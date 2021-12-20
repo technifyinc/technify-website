@@ -75,10 +75,11 @@ export default {
     background: #FFFFFF;
     border: 1px solid #BE53FF;
     box-sizing: border-box;
-    box-shadow: 0px 0px 31px -6px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 0px 31px 10px rgba(0, 0, 0, 0.06);
     border-radius: 9px;
     text-align: left;
     padding: 1.5rem;
+    margin: 0.2rem 0.2rem 1rem;
   }
   &-card {
     padding: 1.8rem 0;
@@ -116,6 +117,7 @@ export default {
     }
     &-card {
       padding: 1rem;
+      flex-basis: 33.33%;
     }
     &-card:nth-child(2) {
       border-top: none;
@@ -128,7 +130,7 @@ export default {
 
 @media screen and (min-width: 1000px) {
   .about {
-    margin: 2rem 0;
+    margin: 2rem 0 8rem;
     & .illus {
       width: 900px;
       margin: 5rem auto;
@@ -150,7 +152,7 @@ export default {
       }
     }
     &-cards {
-      padding: 1.5rem 1rem;
+      padding: 2rem 1rem;
     }
     &-card {
       padding: 1.5rem;
@@ -173,7 +175,7 @@ export default {
 @media screen and (min-width: 1200px) {
   .about-cards {
     width:  1100px;
-    margin: auto;
+    margin: 1rem auto;
   }
 }
 

@@ -49,26 +49,6 @@ export default {
   }
 }
 
-@media screen and (min-width: 1000px) {
-  .contact-address {
-    width: 900px;
-    margin: auto;
-    & ul {
-      display: flex;
-      justify-content: space-between;
-      & li {
-        flex-basis: 33.33%;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .contact-address {
-    width: 900px;
-  }
-}
-
 @media screen and (min-width: 1400px) {
   .contact-address ul li a,
   .contact-address ul li span {

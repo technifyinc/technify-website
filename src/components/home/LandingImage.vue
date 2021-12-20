@@ -94,57 +94,50 @@ export default {
 
 <style lang="scss" scoped>
 #chat {
-    animation: spin 3s infinite linear;
-    transform-origin: center;
-    transform-box: fill-box;
+    animation: moveX 3s infinite linear alternate;
 }
 
 #mail {
-    animation: moveX 3s infinite linear alternate;
-    transform-origin: center;
-    transform-box: fill-box;
+    animation: moveXI 3s infinite linear alternate;
 }
 #computer {
     animation: moveXII 3s infinite linear alternate;
-    transform-origin: center;
-    transform-box: fill-box;
 }
 #slant {
     animation: moveXIII 3s infinite linear alternate;
-    transform-origin: center;
-    transform-box: fill-box;
 }
 #scale {
     animation: moveXIV 3s infinite linear alternate;
-    transform-origin: center;
-    transform-box: fill-box;
-}
-@keyframes spin {
-  from {
-    transform: rotateZ(0);
-  }
-  to {
-    transform: rotateZ(360deg);
-  }
 }
 @keyframes moveX {
   to {
-    transform: translate(-60px, 160px);
+    transform: translate(160px, 80px);
+  }
+}
+@keyframes moveXI {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translate(160px, -80px);
   }
 }
 @keyframes moveXII {
+  from {
+    transform: translate(20px, 80px);
+  }
   to {
-    transform: translate(60px, -160px);
+    transform: translate(50px, -160px);
   }
 }
 @keyframes moveXIII {
   to {
-    transform: translate(-60px, -160px);
+    transform: translate(-30px, 100px);
   }
 }
 @keyframes moveXIV {
   to {
-    transform: translate(60px, 160px);
+    transform: translate(70px, 160px);
   }
 }
 svg {

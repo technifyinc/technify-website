@@ -1,14 +1,12 @@
 <template>
   <form>
-    <div class="flex-form">
-      <div class="input-field">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" placeholder="Enter Full Name" />
-      </div>
-      <div class="input-field">
-        <label for="email">Email</label>
-        <input type="text" id="email" placeholder="Enter Email" />
-      </div>
+    <div class="input-field">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter Full Name" />
+    </div>
+    <div class="input-field">
+      <label for="email">Email</label>
+      <input type="text" id="email" placeholder="Enter Email" />
     </div>
     <div class="input-field">
       <label for="subject">Subject</label>
@@ -49,28 +47,6 @@ form {
   }
   & .input-field {
     margin: 1.5rem 0;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  form {
-    & .flex-form {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 0;
-      & .input-field {
-        flex-basis: 49%;
-        margin: 0;
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  form {
-    width: 900px;
-    margin: auto;
   }
 }
 
