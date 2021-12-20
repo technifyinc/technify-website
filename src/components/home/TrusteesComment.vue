@@ -117,7 +117,6 @@ export default {
   display: flex;
   align-items: flex-start;
   text-align: left;
-  max-width: 420px;
   & img {
     width: 29px;
     margin-right: 2rem;

@@ -105,6 +105,14 @@ export default {
       }
     }
   }
+  .desktop-view {
+    & .illus {
+      & img {
+        width: 473px;
+        height: 477.58px;
+      }
+    }
+  }
 }
 @media screen and (min-width: 1400px) {
   .contact {

@@ -16,8 +16,8 @@
               v-for="list in lists"
               :key="list.index"
             >
-              <h4 :id="list.id">{{ list.title }}</h4>
-              <p :id="list.id">{{ list.body }}</p>
+              <h4>{{ list.title }}</h4>
+              <p>{{ list.body }}</p>
             </div>
           </div>
           <div class="illus">
@@ -40,7 +40,7 @@ export default {
         {
           id: 1,
           title: "Enterprise Software Development",
-          body: "We help you Leverage our expertise in enterprise software development, API integration, modernising legacy systems, consolidating app portfolios to improve processes",
+          body: "We help you Leverage our expertise in enterprise software development, API integration, modernising legacy systems, consolidating app portfolios to improve processes.",
           active: true,
         },
         {
@@ -69,27 +69,35 @@ export default {
           id: "line-3",
           increment: false
         }
-      ]
+      ],
+      auto: true,
+      intervalTime: 2000,
     };
   },
   methods: {
+    moveBg() {
+      const lists = document.querySelectorAll(".what-text");
+      const lines = document.querySelectorAll(".line");
+      const active = document.querySelector(".active");
+      const increment = document.querySelector(".increment");
+      if(active.nextElementSibling && increment.nextElementSibling) {
+        active.nextElementSibling.classList.add("active");
+        increment.nextElementSibling.classList.add("increment");
+      } else {
+        lists[0].classList.add("active");
+        lines[0].classList.add("increment");
+      }
+      setTimeout(() => active.classList.remove("active"));
+      setTimeout(() => increment.classList.remove("increment"));
+    },
+    autoBg() {
+      if(this.auto) {
+        setInterval(this.moveBg, this.intervalTime)
+      }
+    }
   },
   mounted() {
-    const lists = document.querySelectorAll(".what-text");
-    const lines = document.querySelectorAll(".line");
-    lists.forEach((list) => {
-      list.addEventListener("click", (e) => {
-        const id = e.target.id;
-        const line = document.querySelector(`#line-${id}`);
-        if(!list.classList.contains("active")) {
-          lists.forEach((list) => list.classList.remove("active"));
-          list.classList.add("active");
-
-          lines.forEach((line) => line.classList.remove("increment"));
-          line.classList.add("increment");
-        }
-      })
-    })
+    this.autoBg()
   }
 };
 </script>
@@ -120,8 +128,7 @@ export default {
     text-align: left;
     padding: 1rem;
     margin-bottom: 0.6rem;
-    cursor: pointer;
-    transition: background 0.5s ease-in;
+    // transition: all 1s ease;
     & h4 {
       font-style: normal;
       font-weight: bold;
@@ -177,7 +184,7 @@ export default {
       height: 26px;
       width: 5px;
       background: #b0b0b0;
-      transition: height 0.5s ease;
+      transition: height 1s ease;
     }
     .increment {
       height: 71px;

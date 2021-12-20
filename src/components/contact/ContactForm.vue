@@ -49,9 +49,19 @@ form {
     margin: 1.5rem 0;
   }
 }
-
+@media screen and (min-width: 700px) {
+  form {
+    margin: 0;
+    & .input-field textarea {
+      height: 216px;
+    }
+  }
+}
 @media screen and (min-width: 1400px) {
   form {
+    & .input-field input {
+      height: 55px;
+    }
     & .input-field input,
     & .input-field label,
     & .input-field textarea {
@@ -61,7 +71,7 @@ form {
         font-size: 16px;
         line-height: 31.3px;
       }
-    }
+    }    
   }
 }
 </style>
