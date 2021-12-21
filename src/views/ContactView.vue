@@ -8,12 +8,23 @@
           <p>Please, Contact us for official purpose response will be as quick as possible</p>
         </div>
         <div class="flex-area">
-          <contact-form />
-          <div class="illus">
-            <img src="@/assets/img/illus-06.svg" alt="contact_us">
+          <div class="hide-on-lg">
+            <div class="illus">
+              <img src="@/assets/img/illus-06.svg" alt="contact_us" class="hide-on-lg">
+            </div>
+            <contact-form />      
+            <contact-address />
+          </div>    
+          <div class="desktop-view hide-on-sm">
+            <div class="illus-add">
+              <contact-form />      
+            </div>
+            <div class="illus">
+              <img src="@/assets/img/illus-06.svg" alt="contact_us">
+              <contact-address />
+            </div>
           </div>
         </div>
-        <contact-address />
       </div>
     </div>
   </div>
@@ -60,61 +71,22 @@ export default {
       color: $sub;
     }
   }
-  &-cards {
-    background: #FFFFFF;
-    border: 1px solid #BE53FF;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 31px -6px rgba(0, 0, 0, 0.06);
-    border-radius: 9px;
-    text-align: left;
-    padding: 1.5rem;
-  }
-  &-card {
-    padding: 1.8rem 0;
-    & img {
-      width: 25px;
-      height: 25px;
-    }
-    & h4 {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 21.76px;
-      text-transform: capitalize;
-      margin: 0.7rem 0 1rem;
-      color: $header;
-    }
-    & p {
-      font-weight: normal;
-      font-size: 12px;
-      line-height: 22.78px;
-      color: $sub;
-    }
-  }
-  &-card:nth-child(2) {
-    border-top: solid 1px #7a36a4;
-    border-bottom: solid 1px #7a36a4;
-  }
-  & .flex-area {
-    display: flex;
-    flex-direction: column-reverse;
-  }
 }
 
 @media screen and (min-width: 700px) {
-  .contact {
-    &-cards {
-      display: flex;
-      padding: 1rem 0.5rem;
+  .desktop-view {
+    display: flex;
+    margin-top: 3rem;
+    & .illus-add {
+      flex-basis: 50%;
+      margin-right: 1rem;
     }
-    &-card {
-      padding: 1rem;
-    }
-    &-card:nth-child(2) {
-      border-top: none;
-      border-bottom: none;
-      border-left: solid 1px #7a36a4;
-      border-right: solid 1px #7a36a4;
+    & .illus {
+      flex-basis: 50%;
+      margin: 0;
+      & img {
+        margin-bottom: 2rem;
+      }
     }
   }
 }
@@ -122,17 +94,7 @@ export default {
 @media screen and (min-width: 1000px) {
   .contact {
     margin: 2rem 0;
-    & .illus {
-      width: 900px;
-      margin: 5rem auto;
-      & img {
-        width: 634.65px;
-        height: 342px;
-      }
-    }
     &-text {
-      width: 900px;
-      margin: auto;
       & h3 {
         font-size: 30px;
         line-height: 51.2px;
@@ -142,47 +104,19 @@ export default {
         line-height: 31.3px;
       }
     }
-    &-cards {
-      padding: 1.5rem 1rem;
-    }
-    &-card {
-      padding: 1.5rem;
-      & img { 
-        width: 32px;
-        height: 32px;
-      }
-      & h4 {
-        font-size: 23px;
-        line-height: 35.44px;
-      }
-      & p {
-        font-size: 16px;
-        line-height: 31.3px;
+  }
+  .desktop-view {
+    & .illus {
+      & img {
+        width: 473px;
+        height: 477.58px;
       }
     }
   }
 }
-
-@media screen and (min-width: 1200px) {
-  .contact-cards {
-    width:  1100px;
-    margin: auto;
-  }
-}
-
 @media screen and (min-width: 1400px) {
   .contact {
-    & .illus {
-      width: 900px;
-      margin: 5rem auto;
-      & img {
-        width: 634.65px;
-        height: 342px;
-      }
-    }
     &-text {
-      width: 900px;
-      margin: auto;
       & h3 {
         font-size: 45px;
         line-height: 61.2px;
@@ -192,23 +126,6 @@ export default {
         line-height: 31.3px;
       }
     }
-    &-cards {
-      width:  1200px;
-    }
-    &-card {
-      & img {
-        width: 38px;
-        height: 38px;
-      }
-      & h4 {
-        font-size: 29px;
-        line-height: 39.44px;
-      }
-      & p {
-        font-size: 18px;
-        line-height: 31.3px;
-      }
-    }
   }
-}  
+} 
 </style>

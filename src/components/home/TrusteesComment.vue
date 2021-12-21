@@ -1,36 +1,71 @@
 <template>
   <div class="trustees-comment">
-    <div class="trust">
-      <img src="@/assets/img/trust-image.svg" alt="trust_img" />
-      <div class="title_content">
-        <h3>Dele Momodu</h3>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
-          mollitia delectus atque? Distinctio hic provident dolor quisquam
-          sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
-        </p>
+    <div height="857" class="animate">
+      <div class="trust">
+        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+        <div class="title_content">
+          <h3>Dele Momodu</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+            mollitia delectus atque? Distinctio hic provident dolor quisquam
+            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="trust">
-      <img src="@/assets/img/trust-image.svg" alt="trust_img" />
-      <div class="title_content">
-        <h3>Shola Allison</h3>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
-          mollitia delectus atque? Distinctio hic provident dolor quisquam
-          sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
-        </p>
+      <div class="trust">
+        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+        <div class="title_content">
+          <h3>Shola Allison</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+            mollitia delectus atque? Distinctio hic provident dolor quisquam
+            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="trust">
-      <img src="@/assets/img/trust-image.svg" alt="trust_img" />
-      <div class="title_content">
-        <h3>Mark Musk</h3>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
-          mollitia delectus atque? Distinctio hic provident dolor quisquam
-          sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
-        </p>
+      <div class="trust">
+        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+        <div class="title_content">
+          <h3>Mark Musk</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+            mollitia delectus atque? Distinctio hic provident dolor quisquam
+            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+          </p>
+        </div>
+      </div>
+            <div class="trust">
+        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+        <div class="title_content">
+          <h3>Dele Momodu</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+            mollitia delectus atque? Distinctio hic provident dolor quisquam
+            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+          </p>
+        </div>
+      </div>
+      <div class="trust">
+        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+        <div class="title_content">
+          <h3>Shola Allison</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+            mollitia delectus atque? Distinctio hic provident dolor quisquam
+            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+          </p>
+        </div>
+      </div>
+      <div class="trust">
+        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+        <div class="title_content">
+          <h3>Mark Musk</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+            mollitia delectus atque? Distinctio hic provident dolor quisquam
+            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -41,26 +76,6 @@
 export default {
   data() {
     return {
-      options: {
-        type: "loop",
-        drag: 'free',
-        perPage: 1,
-        easing: "ease",
-        autoplay: true,
-        interval: 2000,
-        arrows: false,
-        pagination: false,
-        direction: "ttb",
-        height: "316px",
-        breakpoints: {
-          1000: {
-            height: "400px",
-          },
-        },
-        autoScroll: {
-          speed: 2,
-        },
-      },
     };
   },
 };
@@ -69,15 +84,16 @@ export default {
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
 .trustees-comment {
-  position: relative;
-  padding: 1.5rem 0;
   height: 300px;
-  overflow: hidden;
+  margin: auto;
+  overflow-y: hidden;
+  position: relative;
+  width: auto;
   &:after,
   &:before {
     content: "";
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     bottom: 0;
     left: 0;
     pointer-events: none;
@@ -90,14 +106,14 @@ export default {
     background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%);
   }
 }
+.animate {
+  animation: 35s linear 0s infinite normal none running autoScroll;
+}
 .trust {
   background: #ededed;
-  animation: autoScroll 10s infinite ease-in-out backwards;
-  transform-origin: top;
-  transform-box: fill-box;
   border-radius: 8px;
   padding: 1rem;
-  margin: 0.5rem 0;
+  margin-bottom: 10px!important;
   display: flex;
   align-items: flex-start;
   text-align: left;
@@ -123,21 +139,11 @@ export default {
 }
 
 @keyframes autoScroll {
-  from {
+  0% {
     transform: translateY(0);
   }
-  to {
-    transform: translateY(-850px);
-  }
-}
-@media screen and (min-width: 700px) {
-  @keyframes autoScroll {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-350px);
-    }
+  100% {
+    transform: translateY(-857px);
   }
 }
 @media screen and (min-width: 1000px) {

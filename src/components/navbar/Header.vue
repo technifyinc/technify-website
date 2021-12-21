@@ -8,8 +8,8 @@
         <nav class="nav" :class="{ open: open }">
           <ul>
             <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/solution">Blog</router-link></li>
-            <li><router-link to="/solution">Events</router-link></li>
+            <li><router-link to="/blog">Blog</router-link></li>
+            <li><router-link to="/events">Events</router-link></li>
             <li><router-link to="/solution">Our Solution</router-link></li>
             <li><router-link to="/about">About Us</router-link></li>
             <li><router-link to="/contact">Contact Us</router-link></li>
@@ -60,9 +60,7 @@ export default {
   left: 0;
   width: 100%;
   padding: 0.5rem 0;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: $white;
   z-index: 100;
   &-content {
     display: flex;
