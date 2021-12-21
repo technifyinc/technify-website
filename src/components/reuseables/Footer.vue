@@ -121,7 +121,7 @@ export default {
   & ul li {
     list-style: none;
     text-align: left;
-    padding: 0 0 0.6rem;
+    padding: 0 0 1rem;
     color: #4e4e4e;
     font-size: 14px;
     line-height: 17.78px;

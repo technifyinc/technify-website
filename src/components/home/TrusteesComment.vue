@@ -84,7 +84,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
 .trustees-comment {
-  height: 400px;
+  height: 300px;
   margin: auto;
   overflow-y: hidden;
   position: relative;

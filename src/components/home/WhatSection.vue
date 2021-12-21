@@ -6,13 +6,12 @@
         <p>Providing I.T. solutions for your business(s).</p>
         <div class="what-inner">
           <div class="lines hide-on-sm">
-            <div class="line" :class="{increment: line.increment}" :id="line.id" v-for="line in lines" :key="line.index"></div>
+            <div class="line" :class="{increment: line.increment}" v-for="line in lines" :key="line.index"></div>
           </div>
           <div class="what-cards">
             <div
               class="what-text"
               :class="{ active: list.active }"
-              :id="list.id"
               v-for="list in lists"
               :key="list.index"
             >
