@@ -24,7 +24,13 @@
           <div class="about-card">
             <img src="@/assets/img/about-values.svg" alt="about_values">
             <h4>our values</h4>
-            <p>Technify Inc  operates on strong values that define how we work and offer services to our esteemed clients</p>
+            <p>Technify Inc  operates on strong values that define how we work and offer services to our esteemed clients.</p>
+            <ul>
+              <li>Commitment to Improvement</li>
+              <li>Always Be Shipping</li>
+              <li>Extreme accountability</li>
+              <li>Constant open communication</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -102,6 +108,16 @@ export default {
       line-height: 22.78px;
       color: $sub;
     }
+    & ul {
+      padding: 1rem 0 0 1rem;
+    }
+    & ul li {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 22.78px;
+      color: $sub; 
+      padding-bottom: 0.5rem;
+    }
   }
   &-card:nth-child(2) {
     border-top: solid 1px #7a36a4;
@@ -168,6 +184,10 @@ export default {
         font-size: 16px;
         line-height: 31.3px;
       }
+      & ul li {
+        font-size: 16px;
+        line-height: 31.3px;
+      }
     }
   }
 }
@@ -217,6 +237,11 @@ export default {
         font-size: 18px;
         line-height: 31.3px;
       }
+      & ul li {
+        font-size: 18px;
+        line-height: 31.3px;
+      }
+
     }
   }
 }

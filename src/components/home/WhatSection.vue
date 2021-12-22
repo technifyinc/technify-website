@@ -127,7 +127,6 @@ export default {
     text-align: left;
     padding: 1rem;
     margin-bottom: 0.6rem;
-    // transition: all 1s ease;
     & h4 {
       font-style: normal;
       font-weight: bold;

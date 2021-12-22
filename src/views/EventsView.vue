@@ -121,6 +121,10 @@ export default {
   color: $header;
   padding: 3rem 0;
   &-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
     & h3 {
       font-weight: bold;
       font-size: 24px;
@@ -214,6 +218,8 @@ export default {
 @media screen and (min-width: 700px) {
   .event {
     &-content {
+    text-align: left;
+    align-items: flex-start;
       & .btn {
         font-weight: bold;
         font-size: 16px;

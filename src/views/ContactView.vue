@@ -79,10 +79,13 @@ export default {
     margin-top: 3rem;
     & .illus-add {
       flex-basis: 50%;
-      margin-right: 1rem;
     }
     & .illus {
       flex-basis: 50%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
       margin: 0;
       & img {
         margin-bottom: 2rem;

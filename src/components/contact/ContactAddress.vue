@@ -1,21 +1,19 @@
 <template>
   <div class="contact-address">
-    <div class="container">
-      <ul class="contact-address-content">
-        <li>
-          <img src="@/assets/img/contact-mail.svg" alt="mail" />
-          <a href="mailto:info@easyflip.ng">info@easyflip.ng</a>
-        </li>
-        <li>
-          <img src="@/assets/img/contact-phone.svg" alt="phone" />
-          <a href="tel:+2348165083087">+2348165083087</a>
-        </li>
-        <li>
-          <img src="@/assets/img/contact-map.svg" alt="map" />
-          <span>17 Makurdi Street, Ebutte Metta 100001, Lagos State</span>
-        </li>
-      </ul>
-    </div>
+    <ul class="contact-address-content">
+      <li>
+        <img src="@/assets/img/contact-mail.svg" alt="mail" />
+        <a href="mailto:info@easyflip.ng">info@easyflip.ng</a>
+      </li>
+      <li>
+        <img src="@/assets/img/contact-phone.svg" alt="phone" />
+        <a href="tel:+2348165083087">+2348165083087</a>
+      </li>
+      <li>
+        <img src="@/assets/img/contact-map.svg" alt="map" />
+        <span>17 Makurdi Street, Ebutte Metta 100001, Lagos State</span>
+      </li>
+    </ul>
   </div>
 </template>
 <script>

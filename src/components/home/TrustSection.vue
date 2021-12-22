@@ -38,7 +38,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
 .trustees {
-  padding: 4rem 0 0;
+  padding: 4rem 0;
   &-heads {
     text-align: center;
     & .trustees-head {
