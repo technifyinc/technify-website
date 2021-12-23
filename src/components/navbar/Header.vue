@@ -10,10 +10,10 @@
             <li><router-link to="/">Home</router-link></li>
             <li><router-link to="/blog">Blog</router-link></li>
             <li><router-link to="/events">Events</router-link></li>
-            <li><router-link to="/solution">Our Solution</router-link></li>
+            <li><router-link to="/">Our Solution</router-link></li>
             <li><router-link to="/about">About Us</router-link></li>
             <li><router-link to="/contact">Contact Us</router-link></li>
-            <li><router-link to="/contact">get started</router-link></li>
+            <li><router-link to="/">get started</router-link></li>
           </ul>
         </nav>
         <div

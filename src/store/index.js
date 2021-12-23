@@ -1,14 +1,10 @@
 import { createStore } from 'vuex'
+import Events from "./modules/events"
+import Blogs from "./modules/blogs"
 
 export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    Events,
+    Blogs
   }
 })

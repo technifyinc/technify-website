@@ -24,19 +24,34 @@ const routes = [
   },
   {
     path: '/blog',
-    name: 'blog',
-    component: () => import(/* webpackChunkName: "blog" */ '../views/BlogView.vue')
+    name: 'blogs',
+    component: () => import(/* webpackChunkName: "blog" */ '../views/blogs/BlogView.vue')
   },
   {
     path: '/events',
     name: 'events',
-    component: () => import(/* webpackChunkName: "events" */ '../views/EventsView.vue')
-  }
+    component: () => import(/* webpackChunkName: "events" */ '../views/events/EventsView.vue')
+  },
+  {
+    path: '/blog/:id',
+    name: 'blog',
+    props: true,
+    component: () => import(/* webpackChunkName: "single-blog" */ '../views/blogs/SingleBlog.vue')
+  },
+  {
+    path: '/event/:id',
+    name: 'event',
+    props: true,
+    component: () => import(/* webpackChunkName: "single-event" */ '../views/events/SingleEvent.vue')
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior () {
+    return { top: 0 }
+  }
 })
 
 export default router
