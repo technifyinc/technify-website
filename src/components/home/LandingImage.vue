@@ -93,51 +93,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#chat {
-    animation: moveX 3s infinite linear alternate;
+#chat, 
+#mail, 
+#computer, 
+#slant, 
+#scale {
+  animation: pulse 3s infinite linear alternate;
+  transform-origin: center;
+  transform-box: fill-box;
+  box-sizing: border-box;
 }
 
-#mail {
-    animation: moveXI 3s infinite linear alternate;
-}
-#computer {
-    animation: moveXII 3s infinite linear alternate;
-}
-#slant {
-    animation: moveXIII 3s infinite linear alternate;
-}
-#scale {
-    animation: moveXIV 3s infinite linear alternate;
-}
-@keyframes moveX {
-  to {
-    transform: translate(160px, 80px);
+@keyframes pulse {
+  0% {
+    transform: scale(1);
   }
-}
-@keyframes moveXI {
-  from {
-    transform: translate(0);
+  50% {
+    transform: scale(1.1);
   }
-  to {
-    transform: translate(160px, -80px);
-  }
-}
-@keyframes moveXII {
-  from {
-    transform: translate(20px, 80px);
-  }
-  to {
-    transform: translate(50px, -160px);
-  }
-}
-@keyframes moveXIII {
-  to {
-    transform: translate(-30px, 100px);
-  }
-}
-@keyframes moveXIV {
-  to {
-    transform: translate(70px, 160px);
+  100% {
+    transform: scale(1);
   }
 }
 svg {
