@@ -96,6 +96,9 @@ form {
         }
       }
     }
+    & .input-field {
+      margin: 1.5rem 0 0;
+    }
     .submit {
       text-align: center;
       input.btn {

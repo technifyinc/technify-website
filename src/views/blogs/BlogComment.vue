@@ -100,8 +100,9 @@ export default {
   .submit {
     .div-one {
       @include flexbox();
+      justify-content: flex-start;
       input[type="checkbox"] {
-        margin-right: 1rem;
+        margin-right: 0.7rem;
         width: auto;
       }
     }

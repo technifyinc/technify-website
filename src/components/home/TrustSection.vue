@@ -1,6 +1,10 @@
 <template>
   <section class="trustees routes">
     <div class="container">
+      <div class="trustees-header">
+        <h3>Why Technify</h3>
+        <p>We operates on strong values and offer services to our esteemed clients</p>
+      </div>
       <div class="trustees-content">
         <div class="trustees-heads">
           <div class="trustees-head">
@@ -39,6 +43,23 @@ export default {
 @import "@/scss/global.scss";
 .trustees {
   padding: 4rem 0;
+  &-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    & h3 {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 32.24px;
+      margin-bottom: 1rem;
+      color: $header;
+    }
+    & p {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 22.78px;
+      color: $sub;
+    }
+  }
   &-heads {
     text-align: center;
     & .trustees-head {
@@ -87,6 +108,19 @@ export default {
 
 @media screen and (min-width: 1200px) {
   .trustees {
+    &-header {
+      margin-bottom: 5rem;
+      & h3 {
+        font-size: 30px;
+        line-height: 40.88px;
+      }
+      & p {
+        font-size: 16px;
+        line-height: 27.13px;
+        width: 400px;
+        margin: auto;
+      }
+    }
     &-heads {
       & .trustees-head {
         & h3 {
@@ -103,6 +137,17 @@ export default {
 }
 @media screen and (min-width: 1400px) {
   .trustees {
+    &-header {
+      & h3 {
+        font-size: 37px;
+        line-height: 45.88px;
+      }
+      & p {
+        font-size: 18px;
+        line-height: 30.13px;
+        width: 450px;
+      }
+    }
     &-heads {
       & .trustees-head {
         & h3 {

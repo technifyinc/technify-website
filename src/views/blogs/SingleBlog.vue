@@ -33,26 +33,13 @@
 import Header from "@/components/navbar/Header.vue"
 import Footer from "@/components/reuseables/Footer.vue"
 import BlogComment from "@/views/blogs/BlogComment.vue"
-import { mapGetters } from "vuex"
 export default {
   components: {
     Header,
     BlogComment,
     Footer
   },
-  props: ["id"],
-  computed: {
-    ...mapGetters(["filterById"]),
-    getBlog() {
-      return this.blogs.filter((blog) => blog.id === this.id);
-    }
-  },
-  mounted() {
-    // this.blog = this.getBlog()
-    // this.blogs.forEach((blog) => console.log(blog.id));
-    // console.log(this.getBlog)
-    // console.log(this.filterById(this.id))
-  }
+  props: ["id"]
 }
 </script>
 

@@ -66,7 +66,6 @@
 import Header from "@/components/navbar/Header.vue"
 import Footer from "@/components/reuseables/Footer.vue"
 import EventForm from "@/views/events/EventForm.vue"
-import { mapGetters } from "vuex"
 export default {
   components: {
     Header,
@@ -153,19 +152,7 @@ export default {
       ]
     }
   },
-  props: ["id"],
-  computed: {
-    ...mapGetters(["filterById"]),
-    getevent() {
-      return this.events.filter((event) => event.id === this.id);
-    }
-  },
-  mounted() {
-    // this.event = this.getevent()
-    // this.events.forEach((event) => console.log(event.id));
-    // console.log(this.getevent)
-    // console.log(this.filterById(this.id))
-  }
+  props: ["id"]
 }
 </script>
 

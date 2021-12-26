@@ -88,7 +88,6 @@ export default {
   margin: auto;
   overflow-y: hidden;
   position: relative;
-  width: auto;
   &:after,
   &:before {
     content: "";
@@ -147,6 +146,10 @@ export default {
   }
 }
 @media screen and (min-width: 1000px) {
+  .trustees-comment {
+    max-width: 80%;
+    margin: 0;
+  }
   .trust {
     & img {
       width: 50px;
