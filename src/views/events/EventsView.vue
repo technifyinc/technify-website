@@ -28,8 +28,8 @@
                 <img :src="event.event_icon" alt="event" />
                 {{ event.venue }}
               </div>
-              <button class="btn">{{ event.btn_value }}</button>
-            </div>
+              <router-link :to="{name: 'event', params: { id:event.id }}" class="btn">{{ event.btn_value }}</router-link>
+            </div> 
           </div>
         </div>
       </div>
@@ -41,76 +41,17 @@
 <script>
 import Header from "@/components/navbar/Header.vue"
 import Footer from "@/components/reuseables/Footer.vue"
+import { mapGetters } from "vuex"
 export default {
   components: {
     Header,
     Footer
   },
   data() {
-    return {
-      events: [
-        {
-          src: require("@/assets/img/events-01.png"),
-          event_icon: require("@/assets/img/events-zoom.svg"),
-          body: "Africa Tech Summit Conference",
-          month: "Dec",
-          day: "17th",
-          time: "9:30AM",
-          venue: "Zoom",
-          btn_value: "Buy Ticket"
-        },
-        {
-          src: require("@/assets/img/events-02.png"),
-          event_icon: require("@/assets/img/events-zoom.svg"),
-          body: "Keeping Up Carrer in Tech",
-          month: "Dec",
-          day: "17th",
-          time: "9:30AM",
-          venue: "Zoom",
-          btn_value: "Attend"
-        },
-        {
-          src: require("@/assets/img/events-03.png"),
-          event_icon: require("@/assets/img/events-location.svg"),
-          body: "Technify Tech Conference In Lagos",
-          month: "Dec",
-          day: "17th",
-          time: "9:30AM",
-          venue: "Sheraton hotel Lagos, Nigeria.",
-          btn_value: "Attend"
-        },
-                {
-          src: require("@/assets/img/events-01.png"),
-          event_icon: require("@/assets/img/events-zoom.svg"),
-          body: "Africa Tech Summit Conference",
-          month: "Dec",
-          day: "17th",
-          time: "9:30AM",
-          venue: "Zoom",
-          btn_value: "Buy Ticket"
-        },
-        {
-          src: require("@/assets/img/events-02.png"),
-          event_icon: require("@/assets/img/events-zoom.svg"),
-          body: "Keeping Up Carrer in Tech",
-          month: "Dec",
-          day: "17th",
-          time: "9:30AM",
-          venue: "Zoom",
-          btn_value: "Attend"
-        },
-        {
-          src: require("@/assets/img/events-03.png"),
-          event_icon: require("@/assets/img/events-location.svg"),
-          body: "Technify Tech Conference In Lagos",
-          month: "Dec",
-          day: "17th",
-          time: "9:30AM",
-          venue: "Sheraton hotel Lagos, Nigeria.",
-          btn_value: "Attend"
-        },
-      ]
-    }
+    return {}
+  },
+  computed: {
+    ...mapGetters(["events"])
   }
 }
 </script>

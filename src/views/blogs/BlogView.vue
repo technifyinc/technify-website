@@ -3,19 +3,19 @@
   <div class="blog">
     <div class="container">
       <div class="blog-content routes">
-        <h3>Zuckerberg Reveals Facebook’s Metaverse Ambitions</h3>
-        <button class="btn">Read Article</button>
+        <h3>Zuckerberg Reveals Facebook's Metaverse Ambitions</h3>
+        <router-link :to="{name: 'blog', params: { id: 1 }}" class="btn">Read Article</router-link>
       </div>
     </div>
   </div>
   <div class="blogs">
     <div class="container">
       <div class="blogs-content">
-        <div v-for="blog in blogs" :key="blog" class="blg">
+        <div v-for="blog in blogs" :key="blog.id" class="blg">
           <img :src="blog.src" alt="blog" />
           <div class="blog-body">
-            <p>{{ blog.body }}</p>
-            <button class="btn">Read</button>
+            <p>{{ blog.title }}</p>
+            <router-link :to="{name: 'blog', params: { id:blog.id }}" class="btn">Read</router-link>
           </div>
         </div>
       </div>
@@ -27,40 +27,17 @@
 <script>
 import Header from "@/components/navbar/Header.vue"
 import Footer from "@/components/reuseables/Footer.vue"
+import { mapGetters } from "vuex"
 export default {
   components: {
     Header,
     Footer
   },
   data() {
-    return {
-      blogs: [
-        {
-          src: require("@/assets/img/blog-01.png"),
-          body: "Instagram surpasses 2 billion monthly users while powering through a year of turmoil"
-        },
-        {
-          src: require("@/assets/img/blog-02.png"),
-          body: "Dogecoin spikes more than 20% after Elon Musk says Tesla will accept it as payment for merch"
-        },
-        {
-          src: require("@/assets/img/blog-03.png"),
-          body: "Larry Ellison is now richer than the Google co-founders after big Oracle run-up"
-        },
-        {
-          src: require("@/assets/img/blog-01.png"),
-          body: "Instagram surpasses 2 billion monthly users while powering through a year of turmoil"
-        },
-        {
-          src: require("@/assets/img/blog-02.png"),
-          body: "Dogecoin spikes more than 20% after Elon Musk says Tesla will accept it as payment for merch"
-        },
-        {
-          src: require("@/assets/img/blog-03.png"),
-          body: "Larry Ellison is now richer than the Google co-founders after big Oracle run-up"
-        }
-      ]
-    }
+    return {}
+  },
+  computed: {
+    ...mapGetters(["blogs"])
   }
 }
 </script>
@@ -184,6 +161,11 @@ export default {
         line-height: 31.3px;
       }
     }
+  }
+  .blg img {
+    height: 230px;
+    object-fit: cover;
+    border-radius: 17px 17px 0 0;
   }
 }
 

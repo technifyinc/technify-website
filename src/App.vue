@@ -52,7 +52,7 @@ textarea,
 select {
   display: block;
   width: 100%;
-  padding: 0.8rem 1rem;
+  padding: 1rem;
   outline: none;
   border-radius: 5px;
   border: solid 1px rgb(179, 178, 178);

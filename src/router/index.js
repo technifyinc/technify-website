@@ -24,19 +24,79 @@ const routes = [
   },
   {
     path: '/blog',
-    name: 'blog',
-    component: () => import(/* webpackChunkName: "blog" */ '../views/BlogView.vue')
+    name: 'blogs',
+    component: () => import(/* webpackChunkName: "blog" */ '../views/blogs/BlogView.vue')
   },
   {
     path: '/events',
     name: 'events',
-    component: () => import(/* webpackChunkName: "events" */ '../views/EventsView.vue')
-  }
+    component: () => import(/* webpackChunkName: "events" */ '../views/events/EventsView.vue')
+  },
+  {
+    path: '/blog/:id',
+    name: 'blog',
+    props: true,
+    component: () => import(/* webpackChunkName: "single-blog" */ '../views/blogs/SingleBlog.vue')
+  },
+  {
+    path: '/event/:id',
+    name: 'event',
+    props: true,
+    component: () => import(/* webpackChunkName: "single-event" */ '../views/events/SingleEvent.vue')
+  },
+  {
+    path: '/business',
+    name: 'business',
+    component: () => import(/* webpackChunkName: "business" */ '../views/solutions/BusinessView.vue')
+  },
+  {
+    path: '/custom',
+    name: 'custom',
+    component: () => import(/* webpackChunkName: "custom" */ '../views/solutions/CustomView.vue')
+  },
+  {
+    path: '/software-int',
+    name: 'software-int',
+    component: () => import(/* webpackChunkName: "software-int" */ '../views/solutions/SoftwareIntView.vue')
+  },
+  {
+    path: '/it',
+    name: 'it',
+    component: () => import(/* webpackChunkName: "it" */ '../views/solutions/ItView.vue')
+  },
+  {
+    path: '/enterprise',
+    name: 'enterprise',
+    component: () => import(/* webpackChunkName: "enterprise" */ '../views/solutions/EnterpriseView.vue')
+  },
+  {
+    path: '/industry',
+    name: 'industry',
+    component: () => import(/* webpackChunkName: "industry" */ '../views/solutions/IndustryView.vue')
+  },
+  {
+    path: '/dedicated',
+    name: 'dedicated',
+    component: () => import(/* webpackChunkName: "dedicated" */ '../views/solutions/DedicatedView.vue')
+  },
+  {
+    path: '/software-port',
+    name: 'software-port',
+    component: () => import(/* webpackChunkName: "software-port" */ '../views/solutions/SoftwarePortView.vue')
+  },
+  {
+    path: '/testimonial',
+    name: 'testimonial',
+    component: () => import(/* webpackChunkName: "testimonial" */ '../views/TestimonialView.vue')
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior () {
+    return { top: 0 }
+  }
 })
 
 export default router

@@ -7,13 +7,13 @@
         /></router-link>
         <nav class="nav" :class="{ open: open }">
           <ul>
-            <li><router-link to="/">Home</router-link></li>
-            <li><router-link to="/blog">Blog</router-link></li>
-            <li><router-link to="/events">Events</router-link></li>
-            <li><router-link to="/solution">Our Solution</router-link></li>
-            <li><router-link to="/about">About Us</router-link></li>
-            <li><router-link to="/contact">Contact Us</router-link></li>
-            <li><router-link to="/contact">get started</router-link></li>
+            <li><router-link :to="{name: 'home'}">Home</router-link></li>
+            <li><router-link :to="{name: 'blogs'}">Blog</router-link></li>
+            <li><router-link :to="{name: 'events'}">Events</router-link></li>
+            <li><router-link :to="{name: 'home'}">Our Solution</router-link></li>
+            <li><router-link :to="{name: 'about'}">About Us</router-link></li>
+            <li><router-link :to="{name: 'contact'}">Contact Us</router-link></li>
+            <li><router-link :to="{name: 'home'}">get started</router-link></li>
           </ul>
         </nav>
         <div
@@ -59,9 +59,10 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0.5rem 0;
+  height: 78px;
   background: $white;
   z-index: 100;
+  display: flex;
   &-content {
     display: flex;
     justify-content: space-between;
@@ -176,6 +177,7 @@ img {
   & a.router-link-exact-active {
     padding-bottom: 0.5rem;
     font-weight: bold;
+    color: $sec-color;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -218,6 +220,7 @@ img {
     }
     & a.router-link-exact-active {
       border-bottom: solid 4px $sec-color;
+      color: #464646;
     }
   }
   img {

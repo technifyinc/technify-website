@@ -35,24 +35,24 @@
           </ul>
           <ul>
             <li>Company</li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Privacy</a></li>
+            <li><router-link :to="{name: 'about'}">About</router-link></li>
+            <li><router-link :to="{name: 'home'}">Careers</router-link></li>
+            <li><router-link :to="{name: 'blogs'}">Blog</router-link></li>
+            <li><router-link :to="{name: 'home'}">Terms</router-link></li>
+            <li><router-link :to="{name: 'home'}">Privacy</router-link></li>
           </ul>
           <ul>
             <li>Products</li>
-            <li><a href="#">Software Integration</a></li>
-            <li><a href="#">I.T Consullting Service</a></li>
-            <li><a href="#">Enterprise Architecture Advisory</a></li>
-            <li><a href="#">Software Portfolio Consulting</a></li>
+            <li><router-link :to="{name: 'software-int'}">Software Integration</router-link></li>
+            <li><router-link :to="{name: 'it'}">I.T Consullting Service</router-link></li>
+            <li><router-link :to="{name: 'enterprise'}">Enterprise Architecture Advisory</router-link></li>
+            <li><router-link :to="{name: 'software-port'}">Software Portfolio Consulting</router-link></li>
           </ul>
           <ul>
             <li>Resources</li>
-            <li><a href="#">Testimonials</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Security</a></li>
+            <li><router-link :to="{name: 'testimonial'}">Testimonials</router-link></li>
+            <li><router-link :to="{name: 'home'}">FAQ</router-link></li>
+            <li><router-link :to="{name: 'home'}">Security</router-link></li>
           </ul>
         </div>
       </div>
@@ -69,7 +69,6 @@ export default {
 .footer {
   background: $sec-bg;
   padding: 3rem 0;
-  border-top: solid 3px $bg;
   &-content {
     & h3 {
       color: $sec-color;
