@@ -19,7 +19,7 @@ export default {
 <style lang="scss">
 @import "@/scss/global.scss";
 body {
-  font-family: $title-font;
+  font-family: $font;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $pri-color;
@@ -117,9 +117,6 @@ input:focus {
 }
 .align-end {
   align-items: flex-end;
-}
-h1,h2,h3,h4,h5,h6 {
-  font-family: $title-font;
 }
 @media screen and (min-width: 700px) {
   .hide-on-lg {

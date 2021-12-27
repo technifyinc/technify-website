@@ -51,7 +51,7 @@
           <ul>
             <li>Resources</li>
             <li><router-link :to="{name: 'testimonial'}">Testimonials</router-link></li>
-            <li><router-link :to="{name: 'home'}">FAQ</router-link></li>
+            <li><router-link :to="{name: 'faq'}">FAQ</router-link></li>
             <li><router-link :to="{name: 'home'}">Security</router-link></li>
           </ul>
         </div>

@@ -433,7 +433,7 @@ img {
     .soln-content {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-column-gap: 1rem;
+      grid-column-gap: 2rem;
       margin: 1.5rem 0;
     }
     .soln-content-inner,
