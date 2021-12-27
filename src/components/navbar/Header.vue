@@ -10,10 +10,34 @@
             <li><router-link :to="{name: 'home'}">Home</router-link></li>
             <li><router-link :to="{name: 'blogs'}">Blog</router-link></li>
             <li><router-link :to="{name: 'events'}">Events</router-link></li>
-            <li><router-link :to="{name: 'home'}">Our Solution</router-link></li>
+            <li @click="toggleSolution" class="soln-btn">
+              <span :class="{activeSoln: active}">Solution</span>
+              <img @click="toggleSolution" src="@/assets/img/soln-down.svg" alt="back_btn" class="remove" :class="{rotate: active}">
+            </li>
             <li><router-link :to="{name: 'about'}">About Us</router-link></li>
             <li><router-link :to="{name: 'contact'}">Contact Us</router-link></li>
             <li><router-link :to="{name: 'home'}">get started</router-link></li>
+          </ul>
+        </nav>
+        <nav class="soln" :class="{ drop: drop }">
+          <ul>
+            <div class="contain">
+              <li class="soln-first">
+                <img @click="toggleSolution" src="@/assets/img/soln-chevron.svg" alt="back_btn" class="d-hide">
+                <p>Solutions</p>
+                <img @click="toggleSolution" src="@/assets/img/soln-close.svg" alt="back_btn" class="hide">
+              </li>
+              <li class="soln-content">
+                <div class="soln-content-inner" v-for="solution in solutions" :key="solution" @click="goTo(solution.route)">
+                  <img :src="solution.icon" :alt="solution.title">
+                  <div class="desc">
+                    <router-link :to="{name: solution.route}">{{ solution.title }}</router-link>
+                    <p class="hide">{{ solution.desc }}</p>
+                  </div>
+                </div>
+              </li>
+              <li class="d-hide"><router-link :to="{name: 'home'}">get started</router-link></li>
+            </div>
           </ul>
         </nav>
         <div
@@ -36,16 +60,83 @@ export default {
   data() {
     return {
       open: false,
+      drop: false,
+      active: false,
+      solutions: [
+        {
+          icon: require("@/assets/img/soln-tech.svg"),
+          route: "home",
+          title: "TECHNIFY WORKSPACE",
+          desc: "Technify is asuite of solutions to help improve business processes end to end and optimize workflow with cutting edge business solutions",
+        },
+        {
+          icon: require("@/assets/img/soln-softi.svg"),
+          route: "software-int",
+          title: "SOFTWARE INTEGRATION",
+          desc: "We help Improve software infrastructure with well-built microservices, reliable API, and data integration.",
+        },
+        {
+          icon: require("@/assets/img/soln-in.svg"),
+          route: "industry",
+          title: "INDUSTRY-SPECIFIC MOBILE APPS",
+          desc: "From Fintech and Construction to Retail and Sports, Technify Incs' expertise covers the majority of industries.",
+        },
+        {
+          icon: require("@/assets/img/soln-bu.svg"),
+          route: "business",
+          title: "BUSINESS ANALYTIC INSIGHT",
+          desc: "Lorem ipsum dolor sit amet, dicta tollit ut mea, ei populo quodsi per. Assum option hendrerit eum id. Ipsum nostrud mei c",
+        },
+        {
+          icon: require("@/assets/img/soln-it.svg"),
+          route: "it",
+          title: "IT CONSULTING SERVICES",
+          desc: "With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy",
+        },
+        {
+          icon: require("@/assets/img/soln-ded.svg"),
+          route: "dedicated",
+          title: "DEDICATED DEVELOPMENT TEAM",
+          desc: "We help scale your delivery capacity with dedicated developers and teams.",
+        },
+        {
+          icon: require("@/assets/img/soln-cus.svg"),
+          route: "custom",
+          title: "CUSTOM SOFTWARE DEVELOPMENT",
+          desc: "Support your business infrastructure with scalable software that improves key facets of your enterprise, from automation to employee collaboration.",
+        },
+        {
+          icon: require("@/assets/img/soln-ent.svg"),
+          route: "enterprise",
+          title: "ENTERPRISE ARCHITECTURE ADVISORY",
+          desc: "Our Enterprise Architecture experts can help you make the transition from outdated and ineffective IT delivery systems",
+        },
+        {
+          icon: require("@/assets/img/soln-soft.svg"),
+          route: "software-port",
+          title: "SOFTWARE PORTFOLIO CONSULTING",
+          desc: "Our IT consulting advisors will conduct a deep analysis of how your business and employees use your existing enterprise software, as well as of your enterprise mobile strategy",
+        }
+      ]
     };
   },
   methods: {
     openNav() {
       this.open = !this.open;
+      this.drop = false;
     },
+    toggleSolution() {
+      this.drop = !this.drop;
+      this.active = !this.active;
+    },
+    goTo(id) {
+      this.$router.push({name: id});
+    }
   },
   mounted() {
     this.$router.beforeEach((from, to, next) => {
-      this.open = !this.open;
+      this.open = false;
+      this.drop = false;
       next();
     });
   },
@@ -56,12 +147,12 @@ export default {
 @import "@/scss/global.scss";
 .header {
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
   width: 100%;
   height: 78px;
   background: $white;
-  z-index: 100;
   display: flex;
   &-content {
     display: flex;
@@ -77,21 +168,16 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-  font-weight: bold;
   cursor: pointer;
 }
 img {
   width: 103px;
   height: 45px;
-  position: relative;
-  z-index: 10;
 }
 .hamburger {
   display: flex;
   flex-direction: column;
   align-items: end;
-  position: relative;
-  z-index: 10;
   width: 30px;
   height: 20px;
   & > div {
@@ -121,7 +207,8 @@ img {
   width: 20px;
 }
 
-.open.nav {
+.open.nav,
+.drop.soln {
   display: block;
   animation: fade ease-in-out 0.4s forwards;
 }
@@ -130,18 +217,17 @@ img {
     opacity: 1;
   }
 }
-.nav {
+.nav,
+.soln {
   position: fixed;
-  top: 0;
+  top: 78px;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: $white;
-  transition: ease-in-out 0.4s top;
   display: none;
   opacity: 0;
   & ul {
-    margin-top: 5rem;
     padding: 1rem;
   }
   & ul li {
@@ -170,9 +256,11 @@ img {
     }
   }
   & a {
-    font-weight: normal;
     color: #464646;
     text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
   }
   & a.router-link-exact-active {
     padding-bottom: 0.5rem;
@@ -180,9 +268,82 @@ img {
     color: $sec-color;
   }
 }
+.soln {
+  overflow-y: scroll;
+  .hide {
+    display: none;
+  }
+  ul {
+    margin-bottom: 7rem;
+  }
+  a {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23px;
+  }
+  .soln-content-inner {
+    display: block;
+    padding: 1rem 0;
+    border-bottom: solid 1px rgba(99, 15, 150, 0.25);
+    &:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+  }
+  .soln-content-inner,
+  li.soln-first {
+    display: flex;
+    align-items: center;
+    img {
+      width: 20px;
+      margin-right: 1rem;
+    }
+  }
+  li.soln-first {
+    p {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 26px;
+    }
+    img {
+      width: 14px;
+      margin-right: 1.35rem;
+    }
+  }
+}
+.remove {
+  display: none;
+}
 @media screen and (min-width: 1000px) {
   .hamburger {
     display: none;
+  }
+  .contain {
+    width: 90%;
+    margin: auto;
+  }
+  .remove {
+    display: inline;
+  }
+  .soln-btn {
+    display: flex;
+    align-items: center;
+    img {
+      width: 8px;
+      height: 9px;
+      margin-left: 0.2rem;
+      transition: transform ease 0.5s;
+    }
+    img.rotate {
+      transform: rotate(180deg);
+    }
+  }
+  span.activeSoln {
+    font-weight: bold;
+    color: #464646;
+    border-bottom: solid 4px $sec-color !important;
+    padding-bottom: 10px;
+    display: inline-block;
   }
   .nav {
     position: relative;
@@ -212,7 +373,6 @@ img {
       border: none;
     }
     & a {
-      text-decoration: none;
       text-align: center;
       width: auto;
       height: auto;
@@ -225,6 +385,80 @@ img {
   }
   img {
     height: 48px;
+  }
+  .soln {
+    overflow: hidden;
+    height: 100%;
+    background: rgba(111, 111, 111, 0.41);
+    .d-hide {
+      display: none;
+    }
+    .hide {
+      display: block;
+    }
+    ul {
+      background: $white;
+    }
+    & ul li {
+      padding: 0;
+      display: inline;
+      border: none;
+    }
+    .desc {
+      a {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: $label;
+      }
+      p {
+        margin-top: 0.7rem;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 17.6px;
+        color: $sub;
+      }
+    }
+    .soln-content-inner {
+      align-items: flex-start;
+      border: none;
+      a {
+        transition: color ease 1s;
+      }
+      &:hover a {
+        color: $sec-color;
+      }
+    }
+    .soln-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .soln-content-inner,
+    li.soln-first {
+      img {
+        width: 25px;
+        margin-right: 1rem;
+      }
+    }
+    li.soln-first {
+      justify-content: space-between;
+      border-bottom: solid 1px $sec-color;
+      padding-bottom: 0.5rem;
+      p {
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 25px;
+        text-transform: uppercase;
+        color: $label;
+      }
+      img {
+        width: 11px;
+        margin: 0;
+      }
+    }
   }
 }
 @media screen and (min-width: 1400px) {
@@ -250,6 +484,11 @@ img {
   img {
     width: 162px;
     height: 71px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .contain {
+    width: 1300px;
   }
 }
 </style>
