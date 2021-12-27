@@ -48,24 +48,20 @@ const state = {
       role: "Operation Manager",
       name: "Jumong Kiyasoki",
     },
-  ]
-}
+  ],
+};
 
 const getters = {
   testimonials: (state) => state.testimonials,
-}
+};
 
-const actions = {
-  
-}
+const actions = {};
 
-const mutations = {
-  
-}
+const mutations = {};
 
 export default {
   state,
   actions,
   getters,
-  mutations
-}
+  mutations,
+};

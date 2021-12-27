@@ -12,7 +12,15 @@
     <div class="container">
       <div class="event-content">
         <h3>About This Event</h3>
-        <p>Africa Tech Summit Nairobi connects tech leaders from the African ecosystem and international players under one roof. Network with key stakeholders including tech corporates, mobile operators, fintechs, DeFi & crypto ventures, investors, leading start-ups, regulators and industry stakeholders driving business and investment forward. Following successful Summits in Rwanda, the fourth edition convenes in Nairobi, Kenya.</p>
+        <p>
+          Africa Tech Summit Nairobi connects tech leaders from the African
+          ecosystem and international players under one roof. Network with key
+          stakeholders including tech corporates, mobile operators, fintechs,
+          DeFi & crypto ventures, investors, leading start-ups, regulators and
+          industry stakeholders driving business and investment forward.
+          Following successful Summits in Rwanda, the fourth edition convenes in
+          Nairobi, Kenya.
+        </p>
       </div>
       <div class="speakers">
         <h3>Speakers</h3>
@@ -30,7 +38,7 @@
             <img src="@/assets/img/events-location.svg" alt="location" />
             <div class="aside-inner">
               <h5>Location</h5>
-              <p>Zoom:  <a href="#">http://meet.google.com/aqe-crpo-kop</a></p>
+              <p>Zoom: <a href="#">http://meet.google.com/aqe-crpo-kop</a></p>
             </div>
           </li>
           <li>
@@ -63,14 +71,14 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue"
-import Footer from "@/components/reuseables/Footer.vue"
-import EventForm from "@/views/events/EventForm.vue"
+import Header from "@/components/navbar/Header.vue";
+import Footer from "@/components/reuseables/Footer.vue";
+import EventForm from "@/views/events/EventForm.vue";
 export default {
   components: {
     Header,
     EventForm,
-    Footer
+    Footer,
   },
   data() {
     return {
@@ -78,82 +86,82 @@ export default {
         {
           src: require("@/assets/img/speaker-1.png"),
           name: "Kui Kinyanjui",
-          org: "Safricon"
+          org: "Safricon",
         },
         {
           src: require("@/assets/img/speaker-2.png"),
           name: "Kensaro Wiwa",
-          org: "Facebook"
+          org: "Facebook",
         },
         {
           src: require("@/assets/img/speaker-1.png"),
           name: "Kui Kinyanjui",
-          org: "Safricon"
+          org: "Safricon",
         },
         {
           src: require("@/assets/img/speaker-2.png"),
           name: "Kensaro Wiwa",
-          org: "Facebook"
-        },
-                {
-          src: require("@/assets/img/speaker-1.png"),
-          name: "Kui Kinyanjui",
-          org: "Safricon"
-        },
-        {
-          src: require("@/assets/img/speaker-2.png"),
-          name: "Kensaro Wiwa",
-          org: "Facebook"
+          org: "Facebook",
         },
         {
           src: require("@/assets/img/speaker-1.png"),
           name: "Kui Kinyanjui",
-          org: "Safricon"
+          org: "Safricon",
         },
         {
           src: require("@/assets/img/speaker-2.png"),
           name: "Kensaro Wiwa",
-          org: "Facebook"
-        }
+          org: "Facebook",
+        },
+        {
+          src: require("@/assets/img/speaker-1.png"),
+          name: "Kui Kinyanjui",
+          org: "Safricon",
+        },
+        {
+          src: require("@/assets/img/speaker-2.png"),
+          name: "Kensaro Wiwa",
+          org: "Facebook",
+        },
       ],
       agendas: [
         {
           time: "4:00pm",
-          topic: "Arrival/Networking"
+          topic: "Arrival/Networking",
         },
         {
           time: "4:30pm",
-          topic: "Welcome address"
+          topic: "Welcome address",
         },
         {
           time: "4:35pm",
-          topic: "Sponsor's welcome"
+          topic: "Sponsor's welcome",
         },
         {
           time: "4:50pm",
-          topic: "Innovation, regulation and aftermath"
+          topic: "Innovation, regulation and aftermath",
         },
         {
           time: "5:10pm",
-          topic: "Panel: Regulation:untying the Knots"
+          topic: "Panel: Regulation:untying the Knots",
         },
         {
           time: "5:50pm",
-          topic: "Q&A"
+          topic: "Q&A",
         },
         {
           time: "7:40pm",
-          topic: "Sponsors remark"
+          topic: "Sponsors remark",
         },
         {
           time: "7:50pm",
-          topic: "Vote's of thanks"
-        }
-      ]
-    }
+          topic: "Vote's of thanks",
+        },
+      ],
+    };
   },
-  props: ["id"]
-}
+  props: ["id"],
+};
 </script>
 
 <style lang="scss" scoped>
@@ -310,7 +318,7 @@ export default {
       height: 500px;
     }
     &-header {
-    text-align: left;
+      text-align: left;
       & h3 {
         font-weight: 600;
         font-size: 35px;

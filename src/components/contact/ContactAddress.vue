@@ -17,8 +17,7 @@
   </div>
 </template>
 <script>
-export default {
-}
+export default {};
 </script>
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
@@ -53,5 +52,5 @@ export default {
     font-size: 18px;
     line-height: 31.3px;
   }
-}  
+}
 </style>

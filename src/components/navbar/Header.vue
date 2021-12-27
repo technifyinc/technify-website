@@ -7,36 +7,65 @@
         /></router-link>
         <nav class="nav" :class="{ open: open }">
           <ul>
-            <li><router-link :to="{name: 'home'}">Home</router-link></li>
-            <li><router-link :to="{name: 'blogs'}">Blog</router-link></li>
-            <li><router-link :to="{name: 'events'}">Events</router-link></li>
+            <li><router-link :to="{ name: 'home' }">Home</router-link></li>
+            <li><router-link :to="{ name: 'blogs' }">Blog</router-link></li>
+            <li><router-link :to="{ name: 'events' }">Events</router-link></li>
             <li @click="toggleSolution" class="soln-btn">
-              <span :class="{activeSoln: active}">Solution</span>
-              <img @click="toggleSolution" src="@/assets/img/soln-down.svg" alt="back_btn" class="remove" :class="{rotate: active}">
+              <span :class="{ activeSoln: active }">Solution</span>
+              <img
+                @click="toggleSolution"
+                src="@/assets/img/soln-down.svg"
+                alt="back_btn"
+                class="remove"
+                :class="{ rotate: active }"
+              />
             </li>
-            <li><router-link :to="{name: 'about'}">About Us</router-link></li>
-            <li><router-link :to="{name: 'contact'}">Contact Us</router-link></li>
-            <li><router-link :to="{name: 'home'}">get started</router-link></li>
+            <li><router-link :to="{ name: 'about' }">About Us</router-link></li>
+            <li>
+              <router-link :to="{ name: 'contact' }">Contact Us</router-link>
+            </li>
+            <li>
+              <router-link :to="{ name: 'home' }">get started</router-link>
+            </li>
           </ul>
         </nav>
         <nav class="soln" :class="{ drop: drop }">
           <ul>
             <div class="contain">
               <li class="soln-first">
-                <img @click="toggleSolution" src="@/assets/img/soln-chevron.svg" alt="back_btn" class="d-hide">
+                <img
+                  @click="toggleSolution"
+                  src="@/assets/img/soln-chevron.svg"
+                  alt="back_btn"
+                  class="d-hide"
+                />
                 <p>Solutions</p>
-                <img @click="toggleSolution" src="@/assets/img/soln-close.svg" alt="back_btn" class="hide">
+                <img
+                  @click="toggleSolution"
+                  src="@/assets/img/soln-close.svg"
+                  alt="back_btn"
+                  class="hide"
+                />
               </li>
               <li class="soln-content">
-                <div class="soln-content-inner" v-for="solution in solutions" :key="solution" @click="goTo(solution.route)">
-                  <img :src="solution.icon" :alt="solution.title">
+                <div
+                  class="soln-content-inner"
+                  v-for="solution in solutions"
+                  :key="solution"
+                  @click="goTo(solution.route)"
+                >
+                  <img :src="solution.icon" :alt="solution.title" />
                   <div class="desc">
-                    <router-link :to="{name: solution.route}">{{ solution.title }}</router-link>
+                    <router-link :to="{ name: solution.route }">{{
+                      solution.title
+                    }}</router-link>
                     <p class="hide">{{ solution.desc }}</p>
                   </div>
                 </div>
               </li>
-              <li class="d-hide"><router-link :to="{name: 'home'}">get started</router-link></li>
+              <li class="d-hide">
+                <router-link :to="{ name: 'home' }">get started</router-link>
+              </li>
             </div>
           </ul>
         </nav>
@@ -116,8 +145,8 @@ export default {
           route: "software-port",
           title: "SOFTWARE PORTFOLIO CONSULTING",
           desc: "Our IT consulting advisors will conduct a deep analysis of how your business and employees use your existing enterprise software, as well as of your enterprise mobile strategy",
-        }
-      ]
+        },
+      ],
     };
   },
   methods: {
@@ -130,8 +159,8 @@ export default {
       this.active = !this.active;
     },
     goTo(id) {
-      this.$router.push({name: id});
-    }
+      this.$router.push({ name: id });
+    },
   },
   mounted() {
     this.$router.beforeEach((from, to, next) => {

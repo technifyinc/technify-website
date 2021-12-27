@@ -11,7 +11,11 @@
   <div class="testimonials">
     <div class="container">
       <div class="testimonials-content">
-        <div v-for="testimonial in testimonials" :key="testimonial" class="testimonials-card">
+        <div
+          v-for="testimonial in testimonials"
+          :key="testimonial"
+          class="testimonials-card"
+        >
           <img :src="testimonial.company_icon" alt="testimonial" />
           <div class="testimonials-body">
             <p>{{ testimonial.body }}</p>
@@ -21,7 +25,7 @@
                 <p>{{ testimonial.name }}</p>
                 <p>{{ testimonial.role }}</p>
               </div>
-            </div> 
+            </div>
           </div>
         </div>
       </div>
@@ -31,21 +35,21 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue"
-import Footer from "@/components/reuseables/Footer.vue"
-import { mapGetters } from "vuex"
+import Header from "@/components/navbar/Header.vue";
+import Footer from "@/components/reuseables/Footer.vue";
+import { mapGetters } from "vuex";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
-    return {}
+    return {};
   },
   computed: {
-    ...mapGetters(["testimonials"])
-  }
-}
+    ...mapGetters(["testimonials"]),
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -75,7 +79,7 @@ export default {
 .testimonials {
   margin: 1rem 0 5rem;
   &-card {
-    border: 1px solid #CE80FF;
+    border: 1px solid #ce80ff;
     box-sizing: border-box;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.08);
     border-radius: 11px;
@@ -190,4 +194,3 @@ export default {
   }
 }
 </style>
-

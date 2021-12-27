@@ -26,15 +26,15 @@
 
 <script>
 import Header from "@/components/navbar/Header.vue";
-import LandingImage from "@/components/home/LandingImage.vue"
-import CompaniesSlider from "@/components/home/CompaniesSlider.vue"
+import LandingImage from "@/components/home/LandingImage.vue";
+import CompaniesSlider from "@/components/home/CompaniesSlider.vue";
 export default {
   name: "MainSection",
   components: {
     Header,
     LandingImage,
-    CompaniesSlider
-  }
+    CompaniesSlider,
+  },
 };
 </script>
 <style lang="scss" scoped>

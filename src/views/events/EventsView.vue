@@ -28,8 +28,12 @@
                 <img :src="event.event_icon" alt="event" />
                 {{ event.venue }}
               </div>
-              <router-link :to="{name: 'event', params: { id:event.id }}" class="btn">{{ event.btn_value }}</router-link>
-            </div> 
+              <router-link
+                :to="{ name: 'event', params: { id: event.id } }"
+                class="btn"
+                >{{ event.btn_value }}</router-link
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -39,21 +43,21 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue"
-import Footer from "@/components/reuseables/Footer.vue"
-import { mapGetters } from "vuex"
+import Header from "@/components/navbar/Header.vue";
+import Footer from "@/components/reuseables/Footer.vue";
+import { mapGetters } from "vuex";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
-    return {}
+    return {};
   },
   computed: {
-    ...mapGetters(["events"])
-  }
-}
+    ...mapGetters(["events"]),
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -159,8 +163,8 @@ export default {
 @media screen and (min-width: 700px) {
   .event {
     &-content {
-    text-align: left;
-    align-items: flex-start;
+      text-align: left;
+      align-items: flex-start;
       & .btn {
         font-weight: bold;
         font-size: 16px;

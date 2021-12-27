@@ -5,22 +5,29 @@
       <div class="contact-content routes">
         <div class="contact-text">
           <h3>contact us</h3>
-          <p>Please, Contact us for official purpose response will be as quick as possible</p>
+          <p>
+            Please, Contact us for official purpose response will be as quick as
+            possible
+          </p>
         </div>
         <div class="flex-area">
           <div class="hide-on-lg">
             <div class="illus">
-              <img src="@/assets/img/illus-06.svg" alt="contact_us" class="hide-on-lg">
+              <img
+                src="@/assets/img/illus-06.svg"
+                alt="contact_us"
+                class="hide-on-lg"
+              />
             </div>
-            <contact-form />      
+            <contact-form />
             <contact-address />
-          </div>    
+          </div>
           <div class="desktop-view hide-on-sm">
             <div class="illus-add">
-              <contact-form />      
+              <contact-form />
             </div>
             <div class="illus">
-              <img src="@/assets/img/illus-06.svg" alt="contact_us">
+              <img src="@/assets/img/illus-06.svg" alt="contact_us" />
               <contact-address />
             </div>
           </div>
@@ -31,18 +38,18 @@
   <Footer />
 </template>
 <script>
-import Header from "@/components/navbar/Header.vue"
-import Footer from "@/components/reuseables/Footer.vue"
-import ContactForm from "@/components/contact/ContactForm.vue"
-import ContactAddress from "@/components/contact/ContactAddress.vue"
+import Header from "@/components/navbar/Header.vue";
+import Footer from "@/components/reuseables/Footer.vue";
+import ContactForm from "@/components/contact/ContactForm.vue";
+import ContactAddress from "@/components/contact/ContactAddress.vue";
 export default {
   components: {
     Header,
     ContactForm,
     ContactAddress,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
@@ -130,5 +137,5 @@ export default {
       }
     }
   }
-} 
+}
 </style>

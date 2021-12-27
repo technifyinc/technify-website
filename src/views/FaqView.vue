@@ -5,14 +5,14 @@
       <div class="faq-inner routes">
         <h3>Frequently Asked Questions</h3>
         <form>
-          <input type="search" placeholder="Search for a question">
-          <input type="submit" value="Search">
+          <input type="search" placeholder="Search for a question" />
+          <input type="submit" value="Search" />
         </form>
         <div class="faq">
           <div class="faq-item" v-for="faq in faqs" :key="faq">
             <div class="faq-header">
               <p>{{ faq.question }}</p>
-              <img src="@/assets/img/chevron-down.svg" alt="chevron">
+              <img src="@/assets/img/chevron-down.svg" alt="chevron" />
             </div>
             <div class="faq-content">
               <div class="faq-desc">
@@ -27,63 +27,63 @@
   <Footer />
 </template>
 <script>
-import Header from "@/components/navbar/Header.vue"
-import Footer from "@/components/reuseables/Footer.vue"
+import Header from "@/components/navbar/Header.vue";
+import Footer from "@/components/reuseables/Footer.vue";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
       faqs: [
         {
           question: "What is technify ?",
-          ans: "We build out solutions to  help improve business processes end-to-end and optimize workflow with cutting-edge business process management solutions."
+          ans: "We build out solutions to  help improve business processes end-to-end and optimize workflow with cutting-edge business process management solutions.",
         },
         {
           question: "What happens to data in deleted accounts?",
-          ans: "The data gets recycled."
+          ans: "The data gets recycled.",
         },
         {
           question: "Is technify secured with my personal info ?",
-          ans: "Yes, your personal information is safe with us."
+          ans: "Yes, your personal information is safe with us.",
         },
         {
           question: "Is technify free ?",
-          ans: "No, It isn't"
+          ans: "No, It isn't",
         },
         {
           question: "How do I sign up for Technify ",
-          ans: "It's easy, just click on the get started button."
+          ans: "It's easy, just click on the get started button.",
         },
-      ]
-    }
+      ],
+    };
   },
   mounted() {
-    const faqItems = document.querySelectorAll('.faq-item')
-    faqItems.forEach((item) =>{
-      const faqHeader = item.querySelector('.faq-header')
-      faqHeader.addEventListener('click', () =>{
-        const openItem = document.querySelector('.faq-open')
-        toggleItem(item)
-        if(openItem && openItem!== item){
-          toggleItem(openItem)
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach((item) => {
+      const faqHeader = item.querySelector(".faq-header");
+      faqHeader.addEventListener("click", () => {
+        const openItem = document.querySelector(".faq-open");
+        toggleItem(item);
+        if (openItem && openItem !== item) {
+          toggleItem(openItem);
         }
-      })
-    })
-    const toggleItem = (item) =>{
-      const faqContent = item.querySelector('.faq-content')
-      if(item.classList.contains('faq-open')){
-        faqContent.removeAttribute('style')
-        item.classList.remove('faq-open')
-      }else{
-        faqContent.style.height = faqContent.scrollHeight + 'px'
-        item.classList.add('faq-open')
+      });
+    });
+    const toggleItem = (item) => {
+      const faqContent = item.querySelector(".faq-content");
+      if (item.classList.contains("faq-open")) {
+        faqContent.removeAttribute("style");
+        item.classList.remove("faq-open");
+      } else {
+        faqContent.style.height = faqContent.scrollHeight + "px";
+        item.classList.add("faq-open");
       }
-    }
-  }
-}
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -100,7 +100,7 @@ export default {
   form {
     margin: 4rem 0;
     input[type="search"] {
-      background-filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.47));
+      backdrop-filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.47));
       border: 1px solid rgba(78, 78, 78, 0.62);
       border-radius: 6px;
       margin: 3rem 0 2rem;
@@ -108,13 +108,13 @@ export default {
         font-weight: normal;
         font-size: 13px;
         color: rgba(78, 78, 78, 0.54);
-      } 
+      }
     }
     input[type="submit"] {
       display: block;
       margin: auto;
       width: 136px;
-      background: #630F96;
+      background: #630f96;
       box-shadow: 0px 4px 22px rgba(110, 35, 156, 0.3);
       border-radius: 8px;
       font-weight: 500;
@@ -125,7 +125,7 @@ export default {
 }
 .faq {
   &-item {
-    border: 1px solid #B9B9B9;
+    border: 1px solid #b9b9b9;
     box-sizing: border-box;
     box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.08);
     border-radius: 6px;
@@ -155,7 +155,7 @@ export default {
   &-content {
     overflow: hidden;
     height: 0;
-    transition: all .25s ease;
+    transition: all 0.25s ease;
     p {
       font-weight: 400;
       font-size: 12px;

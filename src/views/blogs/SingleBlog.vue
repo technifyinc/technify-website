@@ -12,16 +12,40 @@
     </div>
     <div class="container">
       <div class="blog-content">
-        <p>CEO Mark Zuckerberg has laid down a grander plan to transform Facebook into a metaverse company. He spoke about how humans are basically mediating their lives and communication through small, glowing rectangles (read phones). He told The Verge's contributing editor Casey Newton: “I think that that's not really how people are made to interact”. 
-        <br>
-        <br>
-        Facebook's metaverse will go beyond gaming to include the workplace, entertainment and so on to create a 'social experience' for its users. The company has invested heavily in virtual reality, with almost 20% of its employees working exclusively on VR and AR, and with recent acquisitions like BigBox VR and Unit 2 Games. The VR segment accounts for only 3% or less of Facebook's top line. According to Fortune Business Insights, the global VR market is expected to grow from $3.1 billion in 2019 to $57.55 billion in 2027.  
-        <br>
-        <br>
-        Facebook's Oculus aims to 'defy distance' and 'explore virtual worlds as they grow and change.' Zuckerberg said the metaverse would bring opportunities to individual creators, artists etc.  The metaverse would be the second-best thing to a teleportation device, he added. The company is also working towards an infinite office that will allow users to create their ideal VR workspace. Zuckerberg admitted the VR headsets in the market at the moment needed improvement, and are a 'bit clunky'. 
-        <br>
-        <br>
-        The CEO further said the metaverse wasn't something one specific company would build. He said humans should have a shared foundation of values and some understanding of the world and the problems that we all face together to have a cohesive society.</p>
+        <p>
+          CEO Mark Zuckerberg has laid down a grander plan to transform Facebook
+          into a metaverse company. He spoke about how humans are basically
+          mediating their lives and communication through small, glowing
+          rectangles (read phones). He told The Verge's contributing editor
+          Casey Newton: “I think that that's not really how people are made to
+          interact”.
+          <br />
+          <br />
+          Facebook's metaverse will go beyond gaming to include the workplace,
+          entertainment and so on to create a 'social experience' for its users.
+          The company has invested heavily in virtual reality, with almost 20%
+          of its employees working exclusively on VR and AR, and with recent
+          acquisitions like BigBox VR and Unit 2 Games. The VR segment accounts
+          for only 3% or less of Facebook's top line. According to Fortune
+          Business Insights, the global VR market is expected to grow from $3.1
+          billion in 2019 to $57.55 billion in 2027.
+          <br />
+          <br />
+          Facebook's Oculus aims to 'defy distance' and 'explore virtual worlds
+          as they grow and change.' Zuckerberg said the metaverse would bring
+          opportunities to individual creators, artists etc. The metaverse would
+          be the second-best thing to a teleportation device, he added. The
+          company is also working towards an infinite office that will allow
+          users to create their ideal VR workspace. Zuckerberg admitted the VR
+          headsets in the market at the moment needed improvement, and are a
+          'bit clunky'.
+          <br />
+          <br />
+          The CEO further said the metaverse wasn't something one specific
+          company would build. He said humans should have a shared foundation of
+          values and some understanding of the world and the problems that we
+          all face together to have a cohesive society.
+        </p>
       </div>
       <blog-comment />
     </div>
@@ -30,17 +54,17 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue"
-import Footer from "@/components/reuseables/Footer.vue"
-import BlogComment from "@/views/blogs/BlogComment.vue"
+import Header from "@/components/navbar/Header.vue";
+import Footer from "@/components/reuseables/Footer.vue";
+import BlogComment from "@/views/blogs/BlogComment.vue";
 export default {
   components: {
     Header,
     BlogComment,
-    Footer
+    Footer,
   },
-  props: ["id"]
-}
+  props: ["id"],
+};
 </script>
 
 <style lang="scss" scoped>
