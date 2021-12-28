@@ -6,9 +6,13 @@
         <div class="title_content">
           <h3>Dele Momodu</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
+            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
             mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
+            fugit quam doloribus? Deserunt temporibus architecto molestias,
+            repudiandae optio facere porro obcaecati nam, maiores deleniti
+            maxime.
           </p>
         </div>
       </div>
@@ -17,9 +21,13 @@
         <div class="title_content">
           <h3>Shola Allison</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
+            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
             mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
+            fugit quam doloribus? Deserunt temporibus architecto molestias,
+            repudiandae optio facere porro obcaecati nam, maiores deleniti
+            maxime.
           </p>
         </div>
       </div>
@@ -28,20 +36,28 @@
         <div class="title_content">
           <h3>Mark Musk</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
+            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
             mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
+            fugit quam doloribus? Deserunt temporibus architecto molestias,
+            repudiandae optio facere porro obcaecati nam, maiores deleniti
+            maxime.
           </p>
         </div>
       </div>
-            <div class="trust">
+      <div class="trust">
         <img src="@/assets/img/trust-image.svg" alt="trust_img" />
         <div class="title_content">
           <h3>Dele Momodu</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
+            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
             mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
+            fugit quam doloribus? Deserunt temporibus architecto molestias,
+            repudiandae optio facere porro obcaecati nam, maiores deleniti
+            maxime.
           </p>
         </div>
       </div>
@@ -50,9 +66,13 @@
         <div class="title_content">
           <h3>Shola Allison</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
+            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
             mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
+            fugit quam doloribus? Deserunt temporibus architecto molestias,
+            repudiandae optio facere porro obcaecati nam, maiores deleniti
+            maxime.
           </p>
         </div>
       </div>
@@ -61,9 +81,13 @@
         <div class="title_content">
           <h3>Mark Musk</h3>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae eius voluptate? Quisquam, minima. Nihil voluptas consectetur
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
+            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
             mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis fugit quam doloribus? Deserunt temporibus architecto molestias, repudiandae optio facere porro obcaecati nam, maiores deleniti maxime.
+            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
+            fugit quam doloribus? Deserunt temporibus architecto molestias,
+            repudiandae optio facere porro obcaecati nam, maiores deleniti
+            maxime.
           </p>
         </div>
       </div>
@@ -72,11 +96,9 @@
 </template>
 
 <script>
-
 export default {
   data() {
-    return {
-    };
+    return {};
   },
 };
 </script>
@@ -96,13 +118,21 @@ export default {
     bottom: 0;
     left: 0;
     pointer-events: none;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%);
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1) 90%
+    );
     width: 100%;
     height: 3rem;
   }
   &:before {
     top: 0;
-    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 90%);
+    background-image: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 1) 90%
+    );
   }
 }
 .animate {
@@ -112,7 +142,7 @@ export default {
   background: #ededed;
   border-radius: 8px;
   padding: 1rem;
-  margin-bottom: 10px!important;
+  margin-bottom: 10px !important;
   display: flex;
   align-items: flex-start;
   text-align: left;

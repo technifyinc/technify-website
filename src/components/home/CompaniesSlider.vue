@@ -19,11 +19,9 @@
       >
     </SplideSlide>
     <SplideSlide>
-      <a
-        href="https://upbase.com.ng/"
-        target="_blank"
-        rel="noopener noreferrer"
-        ><p>upbase</p></a>
+      <a href="https://upbase.com.ng/" target="_blank" rel="noopener noreferrer"
+        ><p>upbase</p></a
+      >
     </SplideSlide>
     <SplideSlide>
       <a href="https://easyflip.ng" target="_blank" rel="noopener noreferrer"
@@ -34,10 +32,10 @@
 </template>
 
 <script>
-import { Splide, SplideSlide } from '@splidejs/vue-splide';
-import '@splidejs/splide/dist/css/splide.min.css';
-import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';
-import { defineComponent } from 'vue';
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
+import "@splidejs/splide/dist/css/splide.min.css";
+import "@splidejs/splide/dist/css/themes/splide-skyblue.min.css";
+import { defineComponent } from "vue";
 
 export default defineComponent({
   components: {
@@ -47,12 +45,12 @@ export default defineComponent({
   data() {
     return {
       options: {
-        type: 'loop',
+        type: "loop",
         drag: false,
-        focus: 'center',
+        focus: "center",
         perPage: 3,
-        gap: '1em',
-        easing: 'ease',
+        gap: "1em",
+        easing: "ease",
         autoplay: true,
         interval: 2000,
         arrows: false,
@@ -60,12 +58,11 @@ export default defineComponent({
         width: "20em",
         autoScroll: {
           speed: 2,
-        }
-      }
-    }
-  }
+        },
+      },
+    };
+  },
 });
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

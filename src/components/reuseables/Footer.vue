@@ -35,24 +35,44 @@
           </ul>
           <ul>
             <li>Company</li>
-            <li><router-link :to="{name: 'about'}">About</router-link></li>
-            <li><router-link :to="{name: 'home'}">Careers</router-link></li>
-            <li><router-link :to="{name: 'blogs'}">Blog</router-link></li>
-            <li><router-link :to="{name: 'home'}">Terms</router-link></li>
-            <li><router-link :to="{name: 'home'}">Privacy</router-link></li>
+            <li><router-link :to="{ name: 'about' }">About</router-link></li>
+            <li><router-link :to="{ name: 'home' }">Careers</router-link></li>
+            <li><router-link :to="{ name: 'blogs' }">Blog</router-link></li>
+            <li><router-link :to="{ name: 'home' }">Terms</router-link></li>
+            <li><router-link :to="{ name: 'home' }">Privacy</router-link></li>
           </ul>
           <ul>
             <li>Products</li>
-            <li><router-link :to="{name: 'software-int'}">Software Integration</router-link></li>
-            <li><router-link :to="{name: 'it'}">I.T Consullting Service</router-link></li>
-            <li><router-link :to="{name: 'enterprise'}">Enterprise Architecture Advisory</router-link></li>
-            <li><router-link :to="{name: 'software-port'}">Software Portfolio Consulting</router-link></li>
+            <li>
+              <router-link :to="{ name: 'software-int' }"
+                >Software Integration</router-link
+              >
+            </li>
+            <li>
+              <router-link :to="{ name: 'it' }"
+                >I.T Consullting Service</router-link
+              >
+            </li>
+            <li>
+              <router-link :to="{ name: 'enterprise' }"
+                >Enterprise Architecture Advisory</router-link
+              >
+            </li>
+            <li>
+              <router-link :to="{ name: 'software-port' }"
+                >Software Portfolio Consulting</router-link
+              >
+            </li>
           </ul>
           <ul>
             <li>Resources</li>
-            <li><router-link :to="{name: 'testimonial'}">Testimonials</router-link></li>
-            <li><router-link :to="{name: 'home'}">FAQ</router-link></li>
-            <li><router-link :to="{name: 'home'}">Security</router-link></li>
+            <li>
+              <router-link :to="{ name: 'testimonial' }"
+                >Testimonials</router-link
+              >
+            </li>
+            <li><router-link :to="{ name: 'faq' }">FAQ</router-link></li>
+            <li><router-link :to="{ name: 'home' }">Security</router-link></li>
           </ul>
         </div>
       </div>
@@ -91,7 +111,7 @@ export default {
       & input[type="text"] {
         flex-basis: 70%;
         margin-right: 0.3rem;
-        border: 1px solid #9D9D9D;
+        border: 1px solid #9d9d9d;
         box-sizing: border-box;
         border-radius: 4px;
         &::placeholder {
@@ -175,7 +195,7 @@ export default {
       flex-basis: 60%;
       margin: 0 0 0 2rem;
       & input[type="text"] {
-        border: 1.5px solid #6A6A6A;
+        border: 1.5px solid #6a6a6a;
         box-sizing: border-box;
         border-radius: 8px;
         height: 47px;
@@ -225,14 +245,14 @@ export default {
 @media screen and (min-width: 1000px) {
   .footer-content {
     & form {
-    margin: 0 0 0 3rem;
-    & input[type="text"] {
+      margin: 0 0 0 3rem;
+      & input[type="text"] {
         flex-basis: 80%;
       }
       & input[type="submit"] {
         flex-basis: 20%;
       }
-  }
+    }
   }
 }
 @media screen and (min-width: 1400px) {

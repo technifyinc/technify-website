@@ -5,26 +5,41 @@
       <div class="about-content routes">
         <div class="about-text">
           <h3>About us</h3>
-          <p>We promote a work environment based on respect, effectiveness, effective communication, compliance with policies and processes, corporate loyalty and swift execution.</p>
+          <p>
+            We promote a work environment based on respect, effectiveness,
+            effective communication, compliance with policies and processes,
+            corporate loyalty and swift execution.
+          </p>
         </div>
         <div class="illus">
-          <img src="@/assets/img/illus-05.svg" alt="about_us">
+          <img src="@/assets/img/illus-05.svg" alt="about_us" />
         </div>
         <div class="about-cards">
           <div class="about-card">
-            <img src="@/assets/img/about-vision.svg" alt="about_vision">
+            <img src="@/assets/img/about-vision.svg" alt="about_vision" />
             <h4>our vision</h4>
-            <p>To be the Preferred tech business partner, creating the best products and services</p>
+            <p>
+              To be the Preferred tech business partner, creating the best
+              products and services
+            </p>
           </div>
           <div class="about-card">
-            <img src="@/assets/img/about-mission.svg" alt="about_mission">
+            <img src="@/assets/img/about-mission.svg" alt="about_mission" />
             <h4>our mission</h4>
-            <p>We have a mission to create the best enterprise technology products in Nigeria, and Africa at large  with significant market share to make work smarter and life better across Nigeria and Africa.</p>
+            <p>
+              We have a mission to create the best enterprise technology
+              products in Nigeria, and Africa at large with significant market
+              share to make work smarter and life better across Nigeria and
+              Africa.
+            </p>
           </div>
           <div class="about-card">
-            <img src="@/assets/img/about-values.svg" alt="about_values">
+            <img src="@/assets/img/about-values.svg" alt="about_values" />
             <h4>our values</h4>
-            <p>Technify Inc  operates on strong values that define how we work and offer services to our esteemed clients.</p>
+            <p>
+              Technify Inc operates on strong values that define how we work and
+              offer services to our esteemed clients.
+            </p>
             <ul>
               <li>Commitment to Improvement</li>
               <li>Always Be Shipping</li>
@@ -40,14 +55,14 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue"
-import Footer from "@/components/reuseables/Footer.vue"
+import Header from "@/components/navbar/Header.vue";
+import Footer from "@/components/reuseables/Footer.vue";
 export default {
   components: {
     Header,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -78,8 +93,8 @@ export default {
     }
   }
   &-cards {
-    background: #FFFFFF;
-    border: 1px solid #BE53FF;
+    background: #ffffff;
+    border: 1px solid #be53ff;
     box-sizing: border-box;
     box-shadow: 0px 0px 31px 10px rgba(0, 0, 0, 0.06);
     border-radius: 9px;
@@ -115,7 +130,7 @@ export default {
       font-weight: normal;
       font-size: 12px;
       line-height: 22.78px;
-      color: $sub; 
+      color: $sub;
       padding-bottom: 0.5rem;
     }
   }
@@ -172,7 +187,7 @@ export default {
     }
     &-card {
       padding: 1.5rem;
-      & img { 
+      & img {
         width: 32px;
         height: 32px;
       }
@@ -194,7 +209,7 @@ export default {
 
 @media screen and (min-width: 1200px) {
   .about-cards {
-    width:  1100px;
+    width: 1100px;
     margin: 1rem auto;
   }
 }
@@ -222,7 +237,7 @@ export default {
       }
     }
     &-cards {
-      width:  1200px;
+      width: 1200px;
     }
     &-card {
       & img {
@@ -241,7 +256,6 @@ export default {
         font-size: 18px;
         line-height: 31.3px;
       }
-
     }
   }
 }

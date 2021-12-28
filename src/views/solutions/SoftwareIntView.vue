@@ -8,8 +8,8 @@
           <p>{{ content.text }}</p>
           <button class="btn" v-if="content.btn">Get Started</button>
         </div>
-        <div class="illus">
-          <img :src="content.src" :alt="content.title">
+        <div class="illus" data-aos="zoom-in">
+          <img :src="content.src" :alt="content.title" />
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@ import Footer from "@/components/reuseables/Footer.vue";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
@@ -31,24 +31,25 @@ export default {
           title: "We build custom microservices, APIs, and data protocols.",
           text: "We help you establish a robust and well-coordinated IT infrastructure across all departments of your organization",
           src: require("@/assets/img/illus-19.svg"),
-          btn: true
+          btn: true,
         },
         {
           title: "Create your workflow with our Software Integration Services",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
           src: require("@/assets/img/illus-12.svg"),
-          btn: false
+          btn: false,
         },
         {
-          title: "Launch your mobile strategy with  our enterprise app integration solutions.",
+          title:
+            "Launch your mobile strategy with  our enterprise app integration solutions.",
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
           src: require("@/assets/img/illus-07.svg"),
-          btn: false
-        }
-      ]
-    }
-  }
-}
+          btn: false,
+        },
+      ],
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
@@ -71,8 +72,7 @@ export default {
     }
   }
   &:nth-child(4) {
-    background: 
-      url("@/assets/img/soln-bg-mobile.svg") no-repeat left -40px bottom -200px,
+    background: url("@/assets/img/soln-bg-mobile.svg") no-repeat left -40px bottom -200px,
       url("@/assets/img/soln-bg-mobile-01.svg") no-repeat left 0px top 0px;
     padding-bottom: 7rem;
   }
@@ -142,7 +142,7 @@ export default {
       align-items: center;
       justify-content: center;
     }
-    &-text { 
+    &-text {
       flex-basis: 50%;
       text-align: left;
       margin: 0;
@@ -169,8 +169,7 @@ export default {
     }
     &:nth-child(4) {
       margin-top: 0;
-      background: 
-        url("@/assets/img/soln-bg-01.svg") no-repeat left -40px bottom -200px,
+      background: url("@/assets/img/soln-bg-01.svg") no-repeat left -40px bottom -200px,
         url("@/assets/img/soln-bg.svg") no-repeat left 0px top 0px;
       padding-bottom: 7rem;
     }

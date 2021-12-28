@@ -4,7 +4,9 @@
     <div class="container">
       <div class="blog-content routes">
         <h3>Zuckerberg Reveals Facebook's Metaverse Ambitions</h3>
-        <router-link :to="{name: 'blog', params: { id: 1 }}" class="btn">Read Article</router-link>
+        <router-link :to="{ name: 'blog', params: { id: 1 } }" class="btn"
+          >Read Article</router-link
+        >
       </div>
     </div>
   </div>
@@ -15,7 +17,11 @@
           <img :src="blog.src" alt="blog" />
           <div class="blog-body">
             <p>{{ blog.title }}</p>
-            <router-link :to="{name: 'blog', params: { id:blog.id }}" class="btn">Read</router-link>
+            <router-link
+              :to="{ name: 'blog', params: { id: blog.id } }"
+              class="btn"
+              >Read</router-link
+            >
           </div>
         </div>
       </div>
@@ -25,21 +31,21 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue"
-import Footer from "@/components/reuseables/Footer.vue"
-import { mapGetters } from "vuex"
+import Header from "@/components/navbar/Header.vue";
+import Footer from "@/components/reuseables/Footer.vue";
+import { mapGetters } from "vuex";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
-    return {}
+    return {};
   },
   computed: {
-    ...mapGetters(["blogs"])
-  }
-}
+    ...mapGetters(["blogs"]),
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -80,9 +86,9 @@ export default {
 .blogs {
   margin: 3rem 0;
   & .blg {
-    border: 1px solid #BCBCBC;
+    border: 1px solid #bcbcbc;
     box-sizing: border-box;
-    background-filter: drop-shadow(0px 0px 14px rgba(0, 0, 0, 0.59));
+    backdrop-filter: drop-shadow(0px 0px 14px rgba(0, 0, 0, 0.59));
     border-radius: 17px;
     background: $white;
     margin: 1rem 0.2rem;

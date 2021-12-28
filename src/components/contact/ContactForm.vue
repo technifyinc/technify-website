@@ -14,7 +14,13 @@
     </div>
     <div class="input-field">
       <label for="message">Message</label>
-      <textarea name="textarea" id="message" cols="30" rows="10" placeholder="Enter message"></textarea>
+      <textarea
+        name="textarea"
+        id="message"
+        cols="30"
+        rows="10"
+        placeholder="Enter message"
+      ></textarea>
     </div>
     <div class="input-field">
       <input type="submit" value="Submit" class="btn" />
@@ -22,9 +28,7 @@
   </form>
 </template>
 <script>
-export default {
-  
-}
+export default {};
 </script>
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
@@ -71,7 +75,7 @@ form {
         font-size: 16px;
         line-height: 31.3px;
       }
-    }    
+    }
   }
 }
 </style>

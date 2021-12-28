@@ -7,11 +7,11 @@
         <div class="banner">
           <ul>
             <li class="banner-main-icon">
-              <img src="@/assets/img/bus-folder.svg" alt="icon">
+              <img src="@/assets/img/bus-folder.svg" alt="icon" />
             </li>
             <div class="banner-inner">
               <li v-for="ban in bans" :key="ban">
-                <img :src="ban.icon" alt="icon">
+                <img :src="ban.icon" alt="icon" />
                 <div class="ban-aside">
                   <p>{{ ban.title }}</p>
                   <p>{{ ban.content }}</p>
@@ -30,7 +30,11 @@
         <button class="hide-on-sm see-more">See more</button>
       </div>
       <div class="buss-content">
-        <div v-for="recommendation in recommendations" :key="recommendation" class="buss-bg">
+        <div
+          v-for="recommendation in recommendations"
+          :key="recommendation"
+          class="buss-bg"
+        >
           <img :src="recommendation.src" alt="bus" />
           <div class="buss-body">
             <p>{{ recommendation.title }}</p>
@@ -51,7 +55,13 @@
       </div>
       <div class="buss-content">
         <div v-for="vid in vids" :key="vid" class="buss-bg">
-          <iframe :src="vid.src" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe
+            :src="vid.src"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
           <div class="buss-body vids">
             <p>{{ vid.title }}</p>
           </div>
@@ -86,13 +96,13 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue"
-import Footer from "@/components/reuseables/Footer.vue"
-import { mapGetters } from "vuex"
+import Header from "@/components/navbar/Header.vue";
+import Footer from "@/components/reuseables/Footer.vue";
+import { mapGetters } from "vuex";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
@@ -122,12 +132,12 @@ export default {
           content: "Lagos, Nigeria",
         },
       ],
-    }
+    };
   },
   computed: {
-    ...mapGetters(["recommendations", "vids", "reports"])
-  }
-}
+    ...mapGetters(["recommendations", "vids", "reports"]),
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -164,8 +174,8 @@ export default {
       text-transform: capitalize;
     }
     .banner {
-      background: #B53CFF;
-      border: 1.5px solid #BE53FF;
+      background: #b53cff;
+      border: 1.5px solid #be53ff;
       box-shadow: 0px 0px 14px 5px rgba(0, 0, 0, 0.1);
       border-radius: 5px;
       color: $white;
@@ -206,9 +216,9 @@ export default {
 .buss {
   margin: 1rem 0 5rem;
   &-bg {
-    border: 1px solid #BCBCBC;
+    border: 1px solid #bcbcbc;
     box-sizing: border-box;
-    background-filter: drop-shadow(0px 0px 14px rgba(0, 0, 0, 0.59));
+    backdrop-filter: drop-shadow(0px 0px 14px rgba(0, 0, 0, 0.59));
     border-radius: 12px;
     background: $white;
     margin: 1rem 0.2rem 2rem;
@@ -226,14 +236,14 @@ export default {
     h3 {
       font-weight: 500;
       font-size: 24px;
-      line-height: 32.64px; 
+      line-height: 32.64px;
     }
   }
   &-footer {
     text-align: center;
     margin: 2rem 0;
     button.see-more {
-      @include seeMore()
+      @include seeMore();
     }
   }
   &-body {
@@ -285,11 +295,11 @@ export default {
       justify-content: space-between;
       align-items: center;
       button.see-more {
-        @include seeMore()
+        @include seeMore();
       }
     }
     &-content {
-      @include grid()
+      @include grid();
     }
   }
 }
@@ -330,7 +340,7 @@ export default {
       h3 {
         font-weight: 600;
         font-size: 25px;
-        line-height: 30px; 
+        line-height: 30px;
       }
       button.see-more {
         @include seeMore();
@@ -385,7 +395,7 @@ export default {
     &-header {
       h3 {
         font-size: 30px;
-        line-height: 40px; 
+        line-height: 40px;
       }
       button.see-more {
         font-size: 22px;

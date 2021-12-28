@@ -37,9 +37,7 @@
   </form>
 </template>
 <script>
-export default {
-  
-}
+export default {};
 </script>
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
@@ -132,11 +130,11 @@ form {
         font-size: 16px;
         line-height: 31.3px;
       }
-    }   
+    }
     h3 {
       font-size: 36px;
       line-height: 49px;
-    } 
+    }
   }
 }
 </style>

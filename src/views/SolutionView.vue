@@ -9,14 +9,14 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue"
-import Footer from "@/components/reuseables/Footer.vue"
+import Header from "@/components/navbar/Header.vue";
+import Footer from "@/components/reuseables/Footer.vue";
 export default {
   components: {
     Header,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -43,14 +43,6 @@ export default {
       color: $sub;
     }
   }
-}
-
-@media screen and (min-width: 700px) {
-  .solution {}
-}
-
-@media screen and (min-width: 1000px) {
-  .solution {}
 }
 
 @media screen and (min-width: 1400px) {

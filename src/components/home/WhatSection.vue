@@ -6,7 +6,12 @@
         <p>Providing I.T. solutions for your business(s).</p>
         <div class="what-inner">
           <div class="lines hide-on-sm">
-            <div class="line" :class="{increment: line.increment}" v-for="line in lines" :key="line.index"></div>
+            <div
+              class="line"
+              :class="{ increment: line.increment }"
+              v-for="line in lines"
+              :key="line.index"
+            ></div>
           </div>
           <div class="what-cards">
             <div
@@ -62,12 +67,12 @@ export default {
         },
         {
           id: "line-2",
-          increment: false
+          increment: false,
         },
         {
           id: "line-3",
-          increment: false
-        }
+          increment: false,
+        },
       ],
       auto: true,
       intervalTime: 2000,
@@ -79,7 +84,7 @@ export default {
       const lines = document.querySelectorAll(".line");
       const active = document.querySelector(".active");
       const increment = document.querySelector(".increment");
-      if(active.nextElementSibling && increment.nextElementSibling) {
+      if (active.nextElementSibling && increment.nextElementSibling) {
         active.nextElementSibling.classList.add("active");
         increment.nextElementSibling.classList.add("increment");
       } else {
@@ -90,14 +95,14 @@ export default {
       setTimeout(() => increment.classList.remove("increment"));
     },
     autoBg() {
-      if(this.auto) {
-        setInterval(this.moveBg, this.intervalTime)
+      if (this.auto) {
+        setInterval(this.moveBg, this.intervalTime);
       }
-    }
+    },
   },
   mounted() {
-    this.autoBg()
-  }
+    this.autoBg();
+  },
 };
 </script>
 <style lang="scss" scoped>
