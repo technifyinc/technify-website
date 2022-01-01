@@ -362,13 +362,13 @@ export default {
 
 @keyframes pulse {
   0% {
-    transform: scale(1);
+    transform: scale(0.8);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1);
   }
   100% {
-    transform: scale(1);
+    transform: scale(0.8);
   }
 }
 svg {
