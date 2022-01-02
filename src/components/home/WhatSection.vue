@@ -42,19 +42,16 @@ export default {
     return {
       lists: [
         {
-          id: 1,
           title: "Enterprise Software Development",
           body: "We help you Leverage our expertise in enterprise software development, API integration, modernising legacy systems, consolidating app portfolios to improve processes.",
-          active: true,
+          active: false,
         },
         {
-          id: 2,
           title: "I.T Consulting Service",
           body: "With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy for a digital and technological transformation of your organization.",
           active: false,
         },
         {
-          id: 3,
           title: "Tools To Keep Your Network Working",
           body: "We provide standardized tools for monitoring, managing and reporting. Our services include operations and system management, with availability monitoring and reporting.",
           active: false,
@@ -62,46 +59,40 @@ export default {
       ],
       lines: [
         {
-          id: "line-1",
-          increment: true,
-        },
-        {
-          id: "line-2",
           increment: false,
         },
         {
-          id: "line-3",
+          increment: false,
+        },
+        {
           increment: false,
         },
       ],
-      auto: true,
       intervalTime: 2000,
+      current: 0,
     };
   },
   methods: {
-    moveBg() {
-      const lists = document.querySelectorAll(".what-text");
-      const lines = document.querySelectorAll(".line");
-      const active = document.querySelector(".active");
-      const increment = document.querySelector(".increment");
-      if (active.nextElementSibling && increment.nextElementSibling) {
-        active.nextElementSibling.classList.add("active");
-        increment.nextElementSibling.classList.add("increment");
-      } else {
-        lists[0].classList.add("active");
-        lines[0].classList.add("increment");
+    incrementMoveSlider() {
+      this.lists.forEach((list) => {
+        list.active = false;
+      });
+      this.lines.forEach((line) => {
+        line.increment = false;
+      });
+      this.lists[this.current].active = true;
+      this.lines[this.current].increment = true;
+      if(this.current < this.lists.length - 1) {
+        this.current++;
+      } 
+      else {
+        this.current = 0;
       }
-      setTimeout(() => active.classList.remove("active"));
-      setTimeout(() => increment.classList.remove("increment"));
-    },
-    autoBg() {
-      if (this.auto) {
-        setInterval(this.moveBg, this.intervalTime);
-      }
-    },
+      setTimeout(this.incrementMoveSlider, this.intervalTime)
+    }
   },
   mounted() {
-    this.autoBg();
+    this.incrementMoveSlider()
   },
 };
 </script>
