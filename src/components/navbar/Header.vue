@@ -95,55 +95,55 @@ export default {
         {
           icon: require("@/assets/img/soln-tech.svg"),
           route: "home",
-          title: "TECHNIFY WORKSPACE",
+          title: "technify workspace",
           desc: "Technify is asuite of solutions to help improve business processes end to end and optimize workflow with cutting edge business solutions",
         },
         {
           icon: require("@/assets/img/soln-softi.svg"),
           route: "software-int",
-          title: "SOFTWARE INTEGRATION",
+          title: "software integration",
           desc: "We help Improve software infrastructure with well-built microservices, reliable API, and data integration.",
         },
         {
           icon: require("@/assets/img/soln-in.svg"),
           route: "industry",
-          title: "INDUSTRY-SPECIFIC MOBILE APPS",
+          title: "industry-specific mobile apps",
           desc: "From Fintech and Construction to Retail and Sports, Technify Incs' expertise covers the majority of industries.",
         },
         {
           icon: require("@/assets/img/soln-bu.svg"),
           route: "business",
-          title: "BUSINESS ANALYTIC INSIGHT",
+          title: "business analytic insight",
           desc: "Lorem ipsum dolor sit amet, dicta tollit ut mea, ei populo quodsi per. Assum option hendrerit eum id. Ipsum nostrud mei c",
         },
         {
           icon: require("@/assets/img/soln-it.svg"),
           route: "it",
-          title: "IT CONSULTING SERVICES",
+          title: "it consulting services",
           desc: "With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy",
         },
         {
           icon: require("@/assets/img/soln-ded.svg"),
           route: "dedicated",
-          title: "DEDICATED DEVELOPMENT TEAM",
+          title: "dedicated development team",
           desc: "We help scale your delivery capacity with dedicated developers and teams.",
         },
         {
           icon: require("@/assets/img/soln-cus.svg"),
           route: "custom",
-          title: "CUSTOM SOFTWARE DEVELOPMENT",
+          title: "custom software development",
           desc: "Support your business infrastructure with scalable software that improves key facets of your enterprise, from automation to employee collaboration.",
         },
         {
           icon: require("@/assets/img/soln-ent.svg"),
           route: "enterprise",
-          title: "ENTERPRISE ARCHITECTURE ADVISORY",
+          title: "enterprise architecture advisory",
           desc: "Our Enterprise Architecture experts can help you make the transition from outdated and ineffective IT delivery systems",
         },
         {
           icon: require("@/assets/img/soln-soft.svg"),
           route: "software-port",
-          title: "SOFTWARE PORTFOLIO CONSULTING",
+          title: "software portfolio consulting",
           desc: "Our IT consulting advisors will conduct a deep analysis of how your business and employees use your existing enterprise software, as well as of your enterprise mobile strategy",
         },
       ],
@@ -292,7 +292,6 @@ img {
     line-height: 23px;
   }
   & a.router-link-exact-active {
-    padding-bottom: 0.5rem;
     font-weight: bold;
     color: $sec-color;
   }
@@ -323,6 +322,7 @@ img {
   li.soln-first {
     display: flex;
     align-items: center;
+    text-transform: capitalize;
     img {
       width: 20px;
       margin-right: 1rem;
@@ -330,7 +330,7 @@ img {
   }
   li.soln-first {
     p {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 600;
       line-height: 26px;
     }
@@ -344,6 +344,26 @@ img {
   display: none;
 }
 @media screen and (min-width: 1000px) {
+  @mixin beforeEffect() {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    height: 3.5px;
+    width: 0;
+    background: $sec-color;
+    transition: width 0.5s ease-in-out;
+  }
+  @mixin afterEffect() {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    height: 3.5px;
+    width: 100%;
+    background: $sec-color;
+    transition: width 0.5s ease-in-out;
+  }
   .hamburger {
     display: none;
   }
@@ -357,6 +377,16 @@ img {
   .soln-btn {
     display: flex;
     align-items: center;
+    span {
+      position: relative;
+      padding-bottom: 0.6rem;
+      &::after {
+        @include beforeEffect();
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
     img {
       width: 8px;
       height: 9px;
@@ -370,9 +400,12 @@ img {
   span.activeSoln {
     font-weight: bold;
     color: #464646;
-    border-bottom: solid 4px $sec-color !important;
-    padding-bottom: 10px;
+    padding-bottom: 0.6rem;
     display: inline-block;
+    position: relative;
+    &::after {
+      @include afterEffect();
+    }
   }
   .nav {
     position: relative;
@@ -395,6 +428,11 @@ img {
         margin: 0;
         width: auto;
       }
+      & a.router-link-exact-active {
+        &::after {
+          width: 0;
+        }
+      }
     }
     & ul li {
       padding: 0 1rem 0 0;
@@ -406,10 +444,21 @@ img {
       width: auto;
       height: auto;
       font-size: 17px;
+      padding-bottom: 0.6rem;
+      position: relative;
+      &::after {
+        @include beforeEffect();
+      }
+      &:hover::after {
+        width: 100%;
+      }
     }
     & a.router-link-exact-active {
-      border-bottom: solid 4px $sec-color;
       color: #464646;
+      position: relative;
+      &::after {
+        @include afterEffect();
+      }
     }
   }
   img {
