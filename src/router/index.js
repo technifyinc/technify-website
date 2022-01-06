@@ -129,7 +129,25 @@ const routes = [
     path: "/faq",
     name: "faq",
     component: () =>
-      import(/* webpackChunkName: "testimonial" */ "../views/FaqView.vue"),
+      import(/* webpackChunkName: "faq" */ "../views/FaqView.vue"),
+  },
+  {
+    path: "/policy",
+    name: "policy",
+    component: () =>
+      import(/* webpackChunkName: "policy" */ "../views/PolicyView.vue"),
+  },
+  {
+    path: "/terms",
+    name: "terms",
+    component: () =>
+      import(/* webpackChunkName: "terms" */ "../views/TermsView.vue"),
+  },
+  {
+    path: "/career",
+    name: "career",
+    component: () =>
+      import(/* webpackChunkName: "career" */ "../views/CareerView.vue"),
   },
 ];
 
