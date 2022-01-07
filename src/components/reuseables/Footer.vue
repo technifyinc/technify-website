@@ -36,10 +36,9 @@
           <ul>
             <li>Company</li>
             <li><router-link :to="{ name: 'about' }">About</router-link></li>
-            <li><router-link :to="{ name: 'home' }">Careers</router-link></li>
-            <li><router-link :to="{ name: 'blogs' }">Blog</router-link></li>
-            <li><router-link :to="{ name: 'home' }">Terms</router-link></li>
-            <li><router-link :to="{ name: 'home' }">Privacy</router-link></li>
+            <li><router-link :to="{ name: 'career' }">Careers</router-link></li>
+            <li><router-link :to="{ name: 'terms' }">Terms</router-link></li>
+            <li><router-link :to="{ name: 'policy' }">Privacy</router-link></li>
           </ul>
           <ul>
             <li>Products</li>
@@ -72,7 +71,7 @@
               >
             </li>
             <li><router-link :to="{ name: 'faq' }">FAQ</router-link></li>
-            <li><router-link :to="{ name: 'home' }">Security</router-link></li>
+            <li><router-link :to="{ name: 'blogs' }">Blog</router-link></li>
           </ul>
         </div>
       </div>

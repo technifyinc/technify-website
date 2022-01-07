@@ -3,7 +3,7 @@
     <Header />
     <div class="container">
       <div class="main-content">
-        <div class="main-text" data-aos="fade">
+        <div class="main-text">
           <h1>Innovate with our Solutions</h1>
           <p>
             We build out technologies to improve business processes end to end

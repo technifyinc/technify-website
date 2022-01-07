@@ -427,6 +427,9 @@ img {
       a {
         margin: 0;
         width: auto;
+        &:hover::after {
+          width: 0;
+        }
       }
       & a.router-link-exact-active {
         &::after {
