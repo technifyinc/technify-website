@@ -1,3 +1,7 @@
+import axios from "axios";
+
+const baseUrl = "localhost:4500/api/v1";
+
 const state = {
   blogs: [
     {
@@ -67,9 +71,20 @@ const getters = {
   blogs: (state) => state.blogs,
 };
 
-const actions = {};
+const actions = {
+  getBlogs({ commit }) {
+    axios.get(`${baseUrl}/blog`).then((response) => {
+      console.log(response);
+      commit("getBlogs");
+    });
+  },
+};
 
-const mutations = {};
+const mutations = {
+  getBlogs(state) {
+    state.state;
+  },
+};
 
 export default {
   state,

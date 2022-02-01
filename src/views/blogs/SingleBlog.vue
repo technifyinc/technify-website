@@ -57,6 +57,7 @@
 import Header from "@/components/navbar/Header.vue";
 import Footer from "@/components/reuseables/Footer.vue";
 import BlogComment from "@/views/blogs/BlogComment.vue";
+import { mapActions } from "vuex";
 export default {
   components: {
     Header,
@@ -64,6 +65,12 @@ export default {
     Footer,
   },
   props: ["id"],
+  methods: {
+    ...mapActions(["getBlogs"]),
+  },
+  mounted() {
+    this.getBlogs();
+  },
 };
 </script>
 
