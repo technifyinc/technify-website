@@ -7,6 +7,7 @@ const state = {
   blog: "",
   mainBlog: "",
   events: [],
+  event: "",
 };
 
 const getters = {
@@ -14,6 +15,7 @@ const getters = {
   blog: (state) => state.blog,
   mainBlog: (state) => state.mainBlog,
   events: (state) => state.events,
+  event: (state) => state.event,
 };
 
 const actions = {
@@ -33,6 +35,16 @@ const actions = {
       commit("getSingleBlog", response.data.data);
     });
   },
+  getEvents({ commit }) {
+    axios.get(`${baseUrl}/event`).then((response) => {
+      commit("getEvents", response.data.data);
+    });
+  },
+  getSingleEvent({ commit }, id) {
+    axios.get(`${baseUrl}/event/${id}`).then((response) => {
+      commit("getSingleEvent", response.data.data);
+    });
+  },
 };
 
 const mutations = {
@@ -44,6 +56,12 @@ const mutations = {
   },
   getSingleBlog(state, payload) {
     state.blog = payload;
+  },
+  getEvents(state, payload) {
+    state.events = payload;
+  },
+  getSingleEvent(state, payload) {
+    state.event = payload;
   },
 };
 

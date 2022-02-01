@@ -15,24 +15,25 @@
     <div class="container">
       <div class="events-content">
         <div v-for="event in events" :key="event" class="blg">
-          <img :src="event.src" alt="event" />
+          <img
+            :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${event.image}`"
+            :alt="event.title"
+          />
           <div class="event-body">
             <div class="date">
-              <p>{{ event.month }}</p>
-              <p>{{ event.day }}</p>
+              <p>{{ getMonth(event.month) }}</p>
+              <p>{{ getDay(event.day) }}</p>
             </div>
             <div class="content">
-              <h4>{{ event.body }}</h4>
+              <h4>{{ event.title }}</h4>
               <p>{{ event.time }}</p>
               <div class="event-icon">
-                <img :src="event.event_icon" alt="event" />
-                {{ event.venue }}
+                <!-- <img :src="event.event_icon" alt="event" /> -->
+                {{ event.address }}
               </div>
-              <router-link
-                :to="{ name: 'event', params: { id: event.id } }"
-                class="btn"
-                >{{ event.btn_value }}</router-link
-              >
+              <button @click="viewEvent(event._id)" class="btn">
+                Register
+              </button>
             </div>
           </div>
         </div>
@@ -45,7 +46,8 @@
 <script>
 import Header from "@/components/navbar/Header.vue";
 import Footer from "@/components/reuseables/Footer.vue";
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
+import dateFormatter from "@/mixins/formatDate";
 export default {
   components: {
     Header,
@@ -56,6 +58,19 @@ export default {
   },
   computed: {
     ...mapGetters(["events"]),
+  },
+  methods: {
+    ...mapActions(["getEvents"]),
+    viewEvent(id) {
+      this.$router.push({ name: "event", params: { id } });
+    },
+    concatenate(value) {
+      return value.substring(0, 100) + "...";
+    },
+  },
+  mixins: [dateFormatter],
+  mounted() {
+    this.getEvents();
   },
 };
 </script>
@@ -98,10 +113,21 @@ export default {
     border-radius: 17px;
     background: $white;
     margin: 1rem 0.2rem;
+    img {
+      height: 180px;
+      object-fit: cover;
+      border-radius: 17px 17px 0 0;
+    }
   }
   & .event-body {
     padding: 1rem;
     display: flex;
+    & .content {
+      h4,
+      p {
+        text-transform: capitalize;
+      }
+    }
     & .date {
       margin-right: 2rem;
       & p {
@@ -125,6 +151,7 @@ export default {
       font-size: 14px;
       line-height: 20.37px;
       margin-bottom: 1rem;
+      text-transform: capitalize;
     }
     & img {
       width: 20px;
@@ -143,6 +170,7 @@ export default {
       font-weight: normal;
       font-size: 12px;
       line-height: 22.78px;
+      text-transform: capitalize;
     }
     & .btn {
       padding: 0.5rem 1rem;
@@ -202,6 +230,11 @@ export default {
     }
   }
   .events {
+    .blg img {
+      height: 230px;
+      object-fit: cover;
+      border-radius: 17px 17px 0 0;
+    }
     &-content {
       display: grid;
       grid-template-columns: repeat(3, 1fr);

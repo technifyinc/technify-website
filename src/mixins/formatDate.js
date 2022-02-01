@@ -4,5 +4,11 @@ export default {
     formatDate(date) {
       return moment(date).format("DD MMMM YYYY");
     },
+    getDay(day) {
+      return moment(day).format("Do");
+    },
+    getMonth(month) {
+      return moment(month).format("MMM");
+    },
   },
 };
