@@ -1,27 +1,31 @@
 <template>
   <Header />
-  <div class="blog">
+  <div
+    class="blog"
+    :style="{
+      backgroundImage: `url(http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${mainBlog.image})`,
+    }"
+  >
     <div class="container">
       <div class="blog-content routes">
-        <h3>Zuckerberg Reveals Facebook's Metaverse Ambitions</h3>
-        <router-link :to="{ name: 'blog', params: { id: 1 } }" class="btn"
-          >Read Article</router-link
-        >
+        <h3>{{ mainBlog.title }}</h3>
+        <button @click="viewBlog(mainBlog._id)" class="btn">
+          Read Article
+        </button>
       </div>
     </div>
   </div>
   <div class="blogs">
     <div class="container">
       <div class="blogs-content">
-        <div v-for="blog in blogs" :key="blog.id" class="blg">
-          <img :src="blog.src" alt="blog" />
+        <div v-for="blog in blogs" :key="blog._id" class="blg">
+          <img
+            :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${blog.image}`"
+            :alt="blog.title"
+          />
           <div class="blog-body">
-            <p>{{ blog.title }}</p>
-            <router-link
-              :to="{ name: 'blog', params: { id: blog.id } }"
-              class="btn"
-              >Read</router-link
-            >
+            <p>{{ concatenate(blog.title) }}</p>
+            <button @click="viewBlog(blog._id)" class="btn">Read</button>
           </div>
         </div>
       </div>
@@ -33,7 +37,7 @@
 <script>
 import Header from "@/components/navbar/Header.vue";
 import Footer from "@/components/reuseables/Footer.vue";
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 export default {
   components: {
     Header,
@@ -43,7 +47,20 @@ export default {
     return {};
   },
   computed: {
-    ...mapGetters(["blogs"]),
+    ...mapGetters(["blogs", "mainBlog"]),
+  },
+  methods: {
+    ...mapActions(["getBlogs", "getMainBlog"]),
+    viewBlog(id) {
+      this.$router.push({ name: "blog", params: { id } });
+    },
+    concatenate(value) {
+      return value.substring(0, 100) + "...";
+    },
+  },
+  mounted() {
+    this.getBlogs();
+    this.getMainBlog();
   },
 };
 </script>
@@ -52,7 +69,8 @@ export default {
 @import "@/scss/global.scss";
 .blog {
   color: $header;
-  background: url("@/assets/img/blog-bg.png") no-repeat center center/cover;
+  background-repeat: no-repeat;
+  background: center center/cover;
   height: 400px;
   padding: 3rem 0;
   display: flex;
@@ -101,6 +119,7 @@ export default {
       font-weight: normal;
       font-size: 12px;
       line-height: 22.78px;
+      text-transform: capitalize;
     }
     & .btn {
       padding: 0.5rem 1rem;
@@ -113,6 +132,11 @@ export default {
         background: $sec-color;
       }
     }
+  }
+  .blg img {
+    height: 180px;
+    object-fit: cover;
+    border-radius: 17px 17px 0 0;
   }
 }
 

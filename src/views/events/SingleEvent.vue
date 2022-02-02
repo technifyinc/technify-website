@@ -7,19 +7,16 @@
       </div>
     </div>
     <div class="event-img">
-      <img src="@/assets/img/events-01.png" alt="event_img" />
+      <img
+        :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${event.image}`"
+        :alt="event.title"
+      />
     </div>
     <div class="container">
       <div class="event-content">
         <h3>About This Event</h3>
         <p>
-          Africa Tech Summit Nairobi connects tech leaders from the African
-          ecosystem and international players under one roof. Network with key
-          stakeholders including tech corporates, mobile operators, fintechs,
-          DeFi & crypto ventures, investors, leading start-ups, regulators and
-          industry stakeholders driving business and investment forward.
-          Following successful Summits in Rwanda, the fourth edition convenes in
-          Nairobi, Kenya.
+          {{ event.details }}
         </p>
       </div>
       <div class="speakers">
@@ -74,6 +71,8 @@
 import Header from "@/components/navbar/Header.vue";
 import Footer from "@/components/reuseables/Footer.vue";
 import EventForm from "@/views/events/EventForm.vue";
+import { mapActions, mapGetters } from "vuex";
+import dateFormatter from "@/mixins/formatDate";
 export default {
   components: {
     Header,
@@ -160,7 +159,19 @@ export default {
       ],
     };
   },
-  props: ["id"],
+  props: {
+    id: { type: String, required: true },
+  },
+  mixins: [dateFormatter],
+  computed: {
+    ...mapGetters(["event"]),
+  },
+  methods: {
+    ...mapActions(["getSingleEvent"]),
+  },
+  mounted() {
+    this.getSingleEvent(this.id);
+  },
 };
 </script>
 
