@@ -190,7 +190,7 @@ export default {
     }
   }
   &-img img {
-    height: 400px;
+    height: 380px;
     object-fit: cover;
   }
   &-content {
@@ -324,7 +324,7 @@ export default {
 @media screen and (min-width: 1000px) {
   .event {
     &-img img {
-      height: 500px;
+      height: 400px;
     }
     &-header {
       text-align: left;
