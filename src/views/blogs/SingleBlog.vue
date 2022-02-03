@@ -129,10 +129,6 @@ export default {
         font-size: 40px;
         line-height: 60px;
       }
-      & p {
-        font-size: 24px;
-        font-weight: 36px;
-      }
     }
     &-content {
       & p {
