@@ -5,14 +5,12 @@
       <div class="event-header routes">
         <h3>Events</h3>
       </div>
-    </div>
-    <div class="event-img">
-      <img
-        :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${event.image}`"
-        :alt="event.title"
-      />
-    </div>
-    <div class="container">
+      <div class="event-img">
+        <img
+          :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${event.image}`"
+          :alt="event.title"
+        />
+      </div>
       <div class="event-content">
         <h3>About This Event</h3>
         <p>

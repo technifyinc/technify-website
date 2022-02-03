@@ -9,14 +9,12 @@
           {{ formatDate(blog.createdAt) }}
         </p>
       </div>
-    </div>
-    <div class="blog-img">
-      <img
-        :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${blog.image}`"
-        :alt="blog.title"
-      />
-    </div>
-    <div class="container">
+      <div class="blog-img">
+        <img
+          :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${blog.image}`"
+          :alt="blog.title"
+        />
+      </div>
       <div class="blog-content">
         <p>
           {{ blog.details }}
@@ -79,7 +77,7 @@ export default {
     }
   }
   &-img img {
-    height: 400px;
+    height: 380px;
     object-fit: cover;
   }
   &-content {
@@ -95,7 +93,7 @@ export default {
 @media screen and (min-width: 1000px) {
   .blog {
     &-img img {
-      height: 550px;
+      height: 400px;
     }
     &-header {
       & h3 {
@@ -120,9 +118,6 @@ export default {
 
 @media screen and (min-width: 1400px) {
   .blog {
-    &-img img {
-      height: 589px;
-    }
     &-header {
       & h3 {
         font-weight: 600;
