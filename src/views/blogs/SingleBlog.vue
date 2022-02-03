@@ -22,7 +22,6 @@
           {{ blog.details }}
         </p>
       </div>
-      <blog-comment />
     </div>
   </div>
   <Footer />
@@ -31,13 +30,11 @@
 <script>
 import Header from "@/components/navbar/Header.vue";
 import Footer from "@/components/reuseables/Footer.vue";
-import BlogComment from "@/views/blogs/BlogComment.vue";
 import { mapActions, mapGetters } from "vuex";
 import dateFormatter from "@/mixins/formatDate";
 export default {
   components: {
     Header,
-    BlogComment,
     Footer,
   },
   props: {
