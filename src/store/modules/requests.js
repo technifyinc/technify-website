@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://api.technifyincubator.com/api/v1";
+const baseUrl = "https://api.technifyincubator.com/api/v1";
 
 const state = {
   blogs: [],
