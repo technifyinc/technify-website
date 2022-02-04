@@ -5,14 +5,12 @@
       <div class="event-header routes">
         <h3>Events</h3>
       </div>
-    </div>
-    <div class="event-img">
-      <img
-        :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${event.image}`"
-        :alt="event.title"
-      />
-    </div>
-    <div class="container">
+      <div class="event-img">
+        <img
+          :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${event.image}`"
+          :alt="event.title"
+        />
+      </div>
       <div class="event-content">
         <h3>About This Event</h3>
         <p>
@@ -48,19 +46,6 @@
           </li>
         </ul>
       </div>
-    </div>
-    <div class="agenda">
-      <div class="container">
-        <h3>Agenda</h3>
-        <ul>
-          <li v-for="agenda in agendas" :key="agenda">
-            <span>{{ agenda.time }}</span>
-            <span>{{ agenda.topic }}</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="container">
       <event-form />
     </div>
   </div>
@@ -123,40 +108,6 @@ export default {
           org: "Facebook",
         },
       ],
-      agendas: [
-        {
-          time: "4:00pm",
-          topic: "Arrival/Networking",
-        },
-        {
-          time: "4:30pm",
-          topic: "Welcome address",
-        },
-        {
-          time: "4:35pm",
-          topic: "Sponsor's welcome",
-        },
-        {
-          time: "4:50pm",
-          topic: "Innovation, regulation and aftermath",
-        },
-        {
-          time: "5:10pm",
-          topic: "Panel: Regulation:untying the Knots",
-        },
-        {
-          time: "5:50pm",
-          topic: "Q&A",
-        },
-        {
-          time: "7:40pm",
-          topic: "Sponsors remark",
-        },
-        {
-          time: "7:50pm",
-          topic: "Vote's of thanks",
-        },
-      ],
     };
   },
   props: {
@@ -192,7 +143,7 @@ export default {
     }
   }
   &-img img {
-    height: 400px;
+    height: 380px;
     object-fit: cover;
   }
   &-content {
@@ -287,46 +238,11 @@ export default {
       margin-bottom: 2rem;
     }
   }
-  .agenda {
-    background: #f5eef8;
-    padding: 5rem 0;
-    h3 {
-      text-align: center;
-      margin-bottom: 5rem;
-      color: $header;
-      font-weight: 600;
-      font-size: 28px;
-      line-height: 38.08px;
-    }
-    ul {
-      list-style: none;
-    }
-    li {
-      border-top: solid 1px rgba(99, 15, 150, 0.33);
-      border-bottom: solid 1px rgba(99, 15, 150, 0.33);
-      padding: 1.5rem 0;
-      span {
-        margin: 1rem 0;
-        display: block;
-        font-weight: 500;
-      }
-      span:first-child {
-        color: $sub;
-        font-size: 16px;
-        line-height: 20px;
-      }
-      span:last-child {
-        color: $header;
-        font-size: 18px;
-        line-height: 22.32px;
-      }
-    }
-  }
 }
 @media screen and (min-width: 1000px) {
   .event {
     &-img img {
-      height: 500px;
+      height: 400px;
     }
     &-header {
       text-align: left;
@@ -392,29 +308,6 @@ export default {
         width: 30px;
       }
     }
-    .agenda {
-      h3 {
-        font-size: 30px;
-        line-height: 49px;
-      }
-      li {
-        display: flex;
-        justify-content: center;
-        padding: 1rem 0;
-        span {
-          flex-basis: 50%;
-          font-weight: 500;
-        }
-        span:first-child {
-          font-size: 18px;
-          line-height: 25px;
-        }
-        span:last-child {
-          font-size: 18px;
-          line-height: 25px;
-        }
-      }
-    }
   }
 }
 
@@ -475,26 +368,6 @@ export default {
       }
       img {
         width: 38px;
-      }
-    }
-    .agenda {
-      h3 {
-        font-size: 36px;
-        line-height: 49px;
-      }
-      li {
-        span {
-          flex-basis: 50%;
-          font-weight: 500;
-        }
-        span:first-child {
-          font-size: 20px;
-          line-height: 25px;
-        }
-        span:last-child {
-          font-size: 20px;
-          line-height: 25px;
-        }
       }
     }
   }

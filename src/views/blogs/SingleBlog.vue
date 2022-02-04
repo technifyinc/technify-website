@@ -9,20 +9,17 @@
           {{ formatDate(blog.createdAt) }}
         </p>
       </div>
-    </div>
-    <div class="blog-img">
-      <img
-        :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${blog.image}`"
-        :alt="blog.title"
-      />
-    </div>
-    <div class="container">
+      <div class="blog-img">
+        <img
+          :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${blog.image}`"
+          :alt="blog.title"
+        />
+      </div>
       <div class="blog-content">
         <p>
           {{ blog.details }}
         </p>
       </div>
-      <blog-comment />
     </div>
   </div>
   <Footer />
@@ -31,13 +28,11 @@
 <script>
 import Header from "@/components/navbar/Header.vue";
 import Footer from "@/components/reuseables/Footer.vue";
-import BlogComment from "@/views/blogs/BlogComment.vue";
 import { mapActions, mapGetters } from "vuex";
 import dateFormatter from "@/mixins/formatDate";
 export default {
   components: {
     Header,
-    BlogComment,
     Footer,
   },
   props: {
@@ -82,7 +77,7 @@ export default {
     }
   }
   &-img img {
-    height: 400px;
+    height: 380px;
     object-fit: cover;
   }
   &-content {
@@ -98,7 +93,7 @@ export default {
 @media screen and (min-width: 1000px) {
   .blog {
     &-img img {
-      height: 550px;
+      height: 400px;
     }
     &-header {
       & h3 {
@@ -123,18 +118,11 @@ export default {
 
 @media screen and (min-width: 1400px) {
   .blog {
-    &-img img {
-      height: 589px;
-    }
     &-header {
       & h3 {
         font-weight: 600;
         font-size: 40px;
         line-height: 60px;
-      }
-      & p {
-        font-size: 24px;
-        font-weight: 36px;
       }
     }
     &-content {
