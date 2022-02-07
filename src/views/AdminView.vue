@@ -6,11 +6,16 @@
       </div>
     </div>
   </div>
+  <admin-table />
 </template>
 
 <script>
+import AdminTable from "@/components/reuseables/AdminTable.vue";
 export default {
   name: "AdminView",
+  components: {
+    AdminTable,
+  },
 };
 </script>
 

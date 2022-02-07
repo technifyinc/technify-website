@@ -8,6 +8,49 @@ const state = {
   mainBlog: "",
   events: [],
   event: "",
+  tables: [
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      contactGroup: "Tech team",
+      contactCount: 12,
+      emailCount: 7,
+      phoneCount: 20,
+      dateAdded: "05 Jan, 2022",
+    },
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      contactGroup: "Marketing team",
+      contactCount: 400,
+      emailCount: 70,
+      phoneCount: 100,
+      dateAdded: "01 Jan, 2022",
+    },
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      contactGroup: "Finance team",
+      contactCount: 20,
+      emailCount: 10,
+      phoneCount: 50,
+      dateAdded: "15 Jan, 2022",
+    },
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      contactGroup: "Stratehy team",
+      contactCount: 12,
+      emailCount: 7,
+      phoneCount: 20,
+      dateAdded: "20 Jan, 2022",
+    },
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      contactGroup: "Tech team",
+      contactCount: 2,
+      emailCount: 70,
+      phoneCount: 60,
+      dateAdded: "29 Jan, 2022",
+    },
+  ],
+  openDelModal: false,
 };
 
 const getters = {
@@ -16,6 +59,8 @@ const getters = {
   mainBlog: (state) => state.mainBlog,
   events: (state) => state.events,
   event: (state) => state.event,
+  tables: (state) => state.tables,
+  openDelModal: (state) => state.openDelModal,
 };
 
 const actions = {
@@ -62,6 +107,15 @@ const mutations = {
   },
   getSingleEvent(state, payload) {
     state.event = payload;
+  },
+  toggleDelModal(state) {
+    state.openDelModal = !state.openDelModal;
+  },
+  resetDelModal(state) {
+    state.openDelModal = false;
+  },
+  deleteTable(state, id) {
+    state.tables = state.tables.filter((table) => table.id !== id);
   },
 };
 
