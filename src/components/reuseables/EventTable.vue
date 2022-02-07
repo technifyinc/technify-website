@@ -1,25 +1,26 @@
 <template lang="html">
-  <div class="table-wrapper" v-if="tables.length">
+  <div class="add-btn">
+    <button class="btn">Add Event</button>
+  </div>
+  <div class="table-wrapper" v-if="eventTables.length">
     <div class="table-container">
       <table cellpadding="1" cellspacing="1" class="table">
         <thead>
           <tr>
-            <th>S/N</th>
-            <th>Contact Group</th>
-            <th>Contact</th>
-            <th>No. of Email</th>
-            <th>No. of Phone no.</th>
-            <th>Date Added</th>
+            <th></th>
+            <th>Title</th>
+            <th>Time</th>
+            <th>Date</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(table, index) in tables" :key="index">
-            <td data-label="s/n">{{ index + 1 }}</td>
-            <td data-label="contact-group">{{ table.contactGroup }}</td>
-            <td data-label="no-of-contact">{{ table.contactCount }}</td>
-            <td data-label="no-of-email">{{ table.emailCount }}</td>
-            <td data-label="no-of-phone">{{ table.phoneCount }}</td>
+          <tr v-for="(table, index) in eventTables" :key="index">
+            <td data-label="contact-group">
+              <img :src="require(`@/assets/img/${table.src}`)" />
+            </td>
+            <td data-label="title">{{ table.title }}</td>
+            <td data-label="time">{{ table.time }}</td>
             <td data-label="date-added">{{ table.dateAdded }}</td>
             <td data-label="icon" class="table-icon">
               <span
@@ -70,9 +71,9 @@ export default {
     };
   },
   methods: {
-    ...mapMutations(["toggleDelModal", "resetDelModal", "deleteTable"]),
+    ...mapMutations(["toggleDelModal", "resetDelModal", "deleteEvent"]),
     delTable() {
-      this.deleteTable(this.id);
+      this.deleteEvent(this.id);
       this.resetDelModal();
     },
     toggleModal(id) {
@@ -84,7 +85,7 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["tables", "openDelModal"]),
+    ...mapGetters(["eventTables", "openDelModal"]),
   },
 };
 </script>
@@ -118,7 +119,7 @@ export default {
     }
     & th,
     & td {
-      vertical-align: top;
+      vertical-align: center;
       white-space: nowrap;
       padding: 1rem;
     }
@@ -136,6 +137,10 @@ export default {
       font-weight: 400;
       line-height: 15px;
       color: $sub;
+    }
+    img {
+      width: 50px;
+      height: 50px;
     }
   }
   .table-icon {
@@ -189,6 +194,10 @@ export default {
       }
     }
   }
+}
+
+.add-btn {
+  padding: 1rem;
 }
 
 .del-modal {
@@ -300,6 +309,10 @@ export default {
         font-weight: 400;
         line-height: 17px;
         color: $sub;
+      }
+      img {
+        width: 81px;
+        height: 73px;
       }
     }
     .table-icon {

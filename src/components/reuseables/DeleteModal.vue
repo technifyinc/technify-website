@@ -3,9 +3,9 @@
     <div class="del-modal-content">
       <div class="del-modal-body">
         <img src="@/assets/img/del.svg" alt="delete-icon" />
-        <h3>Delete Group</h3>
+        <h3>Delete Post</h3>
         <p>
-          Are you sure you want to delete this group? <br />
+          Are you sure you want to delete this post? <br />
           Once deleted it can not be recovered.
         </p>
       </div>

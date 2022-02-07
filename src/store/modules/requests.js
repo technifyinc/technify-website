@@ -8,46 +8,64 @@ const state = {
   mainBlog: "",
   events: [],
   event: "",
-  tables: [
+  blogTables: [
     {
       id: Math.random().toString(36).substring(7).toUpperCase(),
-      contactGroup: "Tech team",
-      contactCount: 12,
-      emailCount: 7,
-      phoneCount: 20,
+      src: "img.png",
+      title: "Larry Ellison is now richer than the Google ",
+      author: "Alex Samuel",
       dateAdded: "05 Jan, 2022",
     },
     {
       id: Math.random().toString(36).substring(7).toUpperCase(),
-      contactGroup: "Marketing team",
-      contactCount: 400,
-      emailCount: 70,
-      phoneCount: 100,
-      dateAdded: "01 Jan, 2022",
+      src: "img.png",
+      title: "Larry Ellison is now richer than the Google ",
+      author: "Alex Samuel",
+      dateAdded: "05 Jan, 2022",
     },
     {
       id: Math.random().toString(36).substring(7).toUpperCase(),
-      contactGroup: "Finance team",
-      contactCount: 20,
-      emailCount: 10,
-      phoneCount: 50,
-      dateAdded: "15 Jan, 2022",
+      src: "img.png",
+      title: "Larry Ellison is now richer than the Google ",
+      author: "Alex Samuel",
+      dateAdded: "05 Jan, 2022",
     },
     {
       id: Math.random().toString(36).substring(7).toUpperCase(),
-      contactGroup: "Stratehy team",
-      contactCount: 12,
-      emailCount: 7,
-      phoneCount: 20,
-      dateAdded: "20 Jan, 2022",
+      src: "img.png",
+      title: "Larry Ellison is now richer than the Google ",
+      author: "Alex Samuel",
+      dateAdded: "05 Jan, 2022",
+    },
+  ],
+  eventTables: [
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      src: "img.png",
+      title: "Africa Tech Summit Conference",
+      time: "8:00am - 5:00pm",
+      dateAdded: "05 Jan, 2022",
     },
     {
       id: Math.random().toString(36).substring(7).toUpperCase(),
-      contactGroup: "Tech team",
-      contactCount: 2,
-      emailCount: 70,
-      phoneCount: 60,
-      dateAdded: "29 Jan, 2022",
+      src: "img.png",
+      title: "Africa Tech Summit Conference",
+      time: "8:00am - 5:00pm",
+      dateAdded: "05 Jan, 2022",
+    },
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      src: "img.png",
+      title: "Africa Tech Summit Conference",
+      time: "8:00am - 5:00pm",
+      dateAdded: "05 Jan, 2022",
+    },
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      src: "img.png",
+      title: "Africa Tech Summit Conference",
+      time: "8:00am - 5:00pm",
+      dateAdded: "05 Jan, 2022",
     },
   ],
   openDelModal: false,
@@ -59,7 +77,8 @@ const getters = {
   mainBlog: (state) => state.mainBlog,
   events: (state) => state.events,
   event: (state) => state.event,
-  tables: (state) => state.tables,
+  blogTables: (state) => state.blogTables,
+  eventTables: (state) => state.eventTables,
   openDelModal: (state) => state.openDelModal,
 };
 
@@ -114,8 +133,11 @@ const mutations = {
   resetDelModal(state) {
     state.openDelModal = false;
   },
-  deleteTable(state, id) {
-    state.tables = state.tables.filter((table) => table.id !== id);
+  deleteBlog(state, id) {
+    state.tables = state.blogTables.filter((table) => table.id !== id);
+  },
+  deleteEvent(state, id) {
+    state.tables = state.eventTables.filter((table) => table.id !== id);
   },
 };
 
