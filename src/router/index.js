@@ -149,15 +149,21 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "career" */ "../views/CareerView.vue"),
   },
+  {
+    path: "/admin",
+    name: "admin",
+    component: () =>
+      import(/* webpackChunkName: "admin" */ "../views/AdminView.vue"),
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior() {
-    return { 
-      top: 0 ,
-      behavior: 'smooth'
+    return {
+      top: 0,
+      behavior: "smooth",
     };
   },
 });
