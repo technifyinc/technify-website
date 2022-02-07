@@ -26,9 +26,9 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(["toggleDelModal", "resetDelModal", "deleteTable"]),
+    ...mapMutations(["toggleDelModal", "resetDelModal", "deleteBlog"]),
     delTable() {
-      this.deleteTable(this.id);
+      this.deleteBlog(this.id);
       this.resetDelModal();
     },
   },

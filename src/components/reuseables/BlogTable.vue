@@ -51,21 +51,21 @@
   </div>
   <empty-content v-else>
     <h3>Oops!</h3>
-    <p>No contact available</p>
+    <p>No blog has been created</p>
   </empty-content>
   <transition name="show-modal">
-    <delete-modal :id="id" />
+    <delete-blog :id="id" />
   </transition>
 </template>
 <script>
 import { mapMutations, mapGetters } from "vuex";
-import DeleteModal from "@/components/reuseables/DeleteModal.vue";
+import DeleteBlog from "@/components/reuseables/DeleteBlog.vue";
 import EmptyContent from "@/components/reuseables/EmptyContent.vue";
 export default {
   name: "ContactTable",
   components: {
     EmptyContent,
-    DeleteModal,
+    DeleteBlog,
   },
   data() {
     return {

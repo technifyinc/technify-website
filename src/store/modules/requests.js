@@ -134,10 +134,10 @@ const mutations = {
     state.openDelModal = false;
   },
   deleteBlog(state, id) {
-    state.tables = state.blogTables.filter((table) => table.id !== id);
+    state.blogTables = state.blogTables.filter((table) => table.id !== id);
   },
   deleteEvent(state, id) {
-    state.tables = state.eventTables.filter((table) => table.id !== id);
+    state.eventTables = state.eventTables.filter((table) => table.id !== id);
   },
 };
 
