@@ -1,6 +1,8 @@
 <template lang="html">
   <div class="add-btn">
-    <button class="btn">Add Blog Post</button>
+    <button class="btn" @click="$router.push({ name: 'add-blog' })">
+      Add Blog Post
+    </button>
   </div>
   <div class="table-wrapper" v-if="blogTables.length">
     <div class="table-container">

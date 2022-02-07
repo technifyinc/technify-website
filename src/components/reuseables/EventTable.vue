@@ -1,6 +1,8 @@
 <template lang="html">
   <div class="add-btn">
-    <button class="btn">Add Event</button>
+    <button class="btn" @click="$router.push({ name: 'add-event' })">
+      Add Event
+    </button>
   </div>
   <div class="table-wrapper" v-if="eventTables.length">
     <div class="table-container">

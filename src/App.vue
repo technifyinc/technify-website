@@ -59,7 +59,8 @@ select {
   margin: 0.5rem 0;
   transition: 0.5s ease border;
 }
-input:focus {
+input:focus,
+textarea:focus {
   border: solid 1px $sec-color !important;
 }
 .input-field {
