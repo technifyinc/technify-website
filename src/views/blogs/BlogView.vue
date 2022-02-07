@@ -1,47 +1,55 @@
 <template>
   <Header />
-  <div
-    class="blog"
-    :style="{
-      backgroundImage: `url(http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${mainBlog.image})`,
-    }"
-  >
-    <div class="container">
-      <div class="blog-content routes">
-        <h3>{{ mainBlog.title }}</h3>
-        <button @click="viewBlog(mainBlog._id)" class="btn">
-          Read Article
-        </button>
+  <div v-if="blogs.length">
+    <div
+      class="blog"
+      :style="{
+        backgroundImage: `url(http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${mainBlog.image})`,
+      }"
+    >
+      <div class="container">
+        <div class="blog-content routes">
+          <h3>{{ mainBlog.title }}</h3>
+          <button @click="viewBlog(mainBlog._id)" class="btn">
+            Read Article
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="blogs">
-    <div class="container">
-      <div class="blogs-content">
-        <div v-for="blog in blogs" :key="blog._id" class="blg">
-          <img
-            :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${blog.image}`"
-            :alt="blog.title"
-          />
-          <div class="blog-body">
-            <p>{{ concatenate(blog.title) }}</p>
-            <button @click="viewBlog(blog._id)" class="btn">Read</button>
+    <div class="blogs">
+      <div class="container">
+        <div class="blogs-content">
+          <div v-for="blog in blogs" :key="blog._id" class="blg">
+            <img
+              :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${blog.image}`"
+              :alt="blog.title"
+            />
+            <div class="blog-body">
+              <p>{{ concatenate(blog.title) }}</p>
+              <button @click="viewBlog(blog._id)" class="btn">Read</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <empty-content v-else class="empty">
+    <h3>No Blog Posts yet</h3>
+    <p>Opps!, we don't have any blog posts yet kindly check back next time</p>
+  </empty-content>
   <Footer />
 </template>
 
 <script>
 import Header from "@/components/navbar/Header.vue";
 import Footer from "@/components/reuseables/Footer.vue";
+import EmptyContent from "@/components/reuseables/EmptyContent.vue";
 import { mapActions, mapGetters } from "vuex";
 export default {
   components: {
     Header,
     Footer,
+    EmptyContent,
   },
   data() {
     return {};
@@ -138,6 +146,9 @@ export default {
     object-fit: cover;
     border-radius: 17px 17px 0 0;
   }
+}
+.empty {
+  margin-top: 78px;
 }
 
 @media screen and (min-width: 700px) {

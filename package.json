@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@mdi/font": "^6.5.95",
     "@splidejs/splide": "^3.6.9",
     "@splidejs/splide-extension-auto-scroll": "^0.3.3",
     "@splidejs/vue-splide": "^0.5.15",

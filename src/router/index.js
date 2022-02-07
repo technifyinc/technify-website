@@ -149,15 +149,33 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "career" */ "../views/CareerView.vue"),
   },
+  {
+    path: "/admin",
+    name: "admin",
+    component: () =>
+      import(/* webpackChunkName: "admin" */ "../views/AdminView.vue"),
+  },
+  {
+    path: "/add-blog",
+    name: "add-blog",
+    component: () =>
+      import(/* webpackChunkName: "add-blog" */ "../views/AddBlog.vue"),
+  },
+  {
+    path: "/add-event",
+    name: "add-event",
+    component: () =>
+      import(/* webpackChunkName: "add-event" */ "../views/AddEvent.vue"),
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior() {
-    return { 
-      top: 0 ,
-      behavior: 'smooth'
+    return {
+      top: 0,
+      behavior: "smooth",
     };
   },
 });

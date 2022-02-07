@@ -8,6 +8,67 @@ const state = {
   mainBlog: "",
   events: [],
   event: "",
+  blogTables: [
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      src: "img.png",
+      title: "Larry Ellison is now richer than the Google ",
+      author: "Alex Samuel",
+      dateAdded: "05 Jan, 2022",
+    },
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      src: "img.png",
+      title: "Larry Ellison is now richer than the Google ",
+      author: "Alex Samuel",
+      dateAdded: "05 Jan, 2022",
+    },
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      src: "img.png",
+      title: "Larry Ellison is now richer than the Google ",
+      author: "Alex Samuel",
+      dateAdded: "05 Jan, 2022",
+    },
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      src: "img.png",
+      title: "Larry Ellison is now richer than the Google ",
+      author: "Alex Samuel",
+      dateAdded: "05 Jan, 2022",
+    },
+  ],
+  eventTables: [
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      src: "img.png",
+      title: "Africa Tech Summit Conference",
+      time: "8:00am - 5:00pm",
+      dateAdded: "05 Jan, 2022",
+    },
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      src: "img.png",
+      title: "Africa Tech Summit Conference",
+      time: "8:00am - 5:00pm",
+      dateAdded: "05 Jan, 2022",
+    },
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      src: "img.png",
+      title: "Africa Tech Summit Conference",
+      time: "8:00am - 5:00pm",
+      dateAdded: "05 Jan, 2022",
+    },
+    {
+      id: Math.random().toString(36).substring(7).toUpperCase(),
+      src: "img.png",
+      title: "Africa Tech Summit Conference",
+      time: "8:00am - 5:00pm",
+      dateAdded: "05 Jan, 2022",
+    },
+  ],
+  openDelModal: false,
 };
 
 const getters = {
@@ -16,6 +77,9 @@ const getters = {
   mainBlog: (state) => state.mainBlog,
   events: (state) => state.events,
   event: (state) => state.event,
+  blogTables: (state) => state.blogTables,
+  eventTables: (state) => state.eventTables,
+  openDelModal: (state) => state.openDelModal,
 };
 
 const actions = {
@@ -62,6 +126,18 @@ const mutations = {
   },
   getSingleEvent(state, payload) {
     state.event = payload;
+  },
+  toggleDelModal(state) {
+    state.openDelModal = !state.openDelModal;
+  },
+  resetDelModal(state) {
+    state.openDelModal = false;
+  },
+  deleteBlog(state, id) {
+    state.blogTables = state.blogTables.filter((table) => table.id !== id);
+  },
+  deleteEvent(state, id) {
+    state.eventTables = state.eventTables.filter((table) => table.id !== id);
   },
 };
 
