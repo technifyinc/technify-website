@@ -11,7 +11,7 @@
       </div>
     </div>
   </div>
-  <div class="events">
+  <div class="events" v-if="events.length">
     <div class="container">
       <div class="events-content">
         <div v-for="event in events" :key="event" class="blg">
@@ -40,6 +40,10 @@
       </div>
     </div>
   </div>
+  <empty-content v-else>
+    <h3>No Events yet</h3>
+    <p>Opps!, we don't have any events yet kindly check back next time</p>
+  </empty-content>
   <Footer />
 </template>
 
@@ -48,10 +52,12 @@ import Header from "@/components/navbar/Header.vue";
 import Footer from "@/components/reuseables/Footer.vue";
 import { mapActions, mapGetters } from "vuex";
 import dateFormatter from "@/mixins/formatDate";
+import EmptyContent from "@/components/reuseables/EmptyContent.vue";
 export default {
   components: {
     Header,
     Footer,
+    EmptyContent,
   },
   data() {
     return {};
