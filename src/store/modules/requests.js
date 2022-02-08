@@ -8,67 +8,8 @@ const state = {
   mainBlog: "",
   events: [],
   event: "",
-  blogTables: [
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Larry Ellison is now richer than the Google ",
-      author: "Alex Samuel",
-      dateAdded: "05 Jan, 2022",
-    },
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Larry Ellison is now richer than the Google ",
-      author: "Alex Samuel",
-      dateAdded: "05 Jan, 2022",
-    },
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Larry Ellison is now richer than the Google ",
-      author: "Alex Samuel",
-      dateAdded: "05 Jan, 2022",
-    },
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Larry Ellison is now richer than the Google ",
-      author: "Alex Samuel",
-      dateAdded: "05 Jan, 2022",
-    },
-  ],
-  eventTables: [
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Africa Tech Summit Conference",
-      time: "8:00am - 5:00pm",
-      dateAdded: "05 Jan, 2022",
-    },
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Africa Tech Summit Conference",
-      time: "8:00am - 5:00pm",
-      dateAdded: "05 Jan, 2022",
-    },
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Africa Tech Summit Conference",
-      time: "8:00am - 5:00pm",
-      dateAdded: "05 Jan, 2022",
-    },
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Africa Tech Summit Conference",
-      time: "8:00am - 5:00pm",
-      dateAdded: "05 Jan, 2022",
-    },
-  ],
   openDelModal: false,
+  loading: false,
 };
 
 const getters = {
@@ -80,6 +21,7 @@ const getters = {
   blogTables: (state) => state.blogTables,
   eventTables: (state) => state.eventTables,
   openDelModal: (state) => state.openDelModal,
+  loading: (state) => state.loading,
 };
 
 const actions = {
@@ -108,6 +50,26 @@ const actions = {
     axios.get(`${baseUrl}/event/${id}`).then((response) => {
       commit("getSingleEvent", response.data.data);
     });
+  },
+  async postBlog(
+    { state, commit },
+    { title, author, details, image, password }
+  ) {
+    try {
+      const response = await axios.post(`${baseUrl}/blog`, {
+        title,
+        author,
+        details,
+        image,
+        password,
+        createdAt: new Date(),
+      });
+      console.log(response.data.data);
+      state.loading = true;
+      commit("postBlog", response.data.data);
+    } catch (e) {
+      console.log(e.response.data);
+    }
   },
 };
 
@@ -138,6 +100,9 @@ const mutations = {
   },
   deleteEvent(state, id) {
     state.eventTables = state.eventTables.filter((table) => table.id !== id);
+  },
+  postBlog(state, payload) {
+    state.blogs = [...state.blogs, payload];
   },
 };
 

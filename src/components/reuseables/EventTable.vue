@@ -4,7 +4,7 @@
       Add Event
     </button>
   </div>
-  <div class="table-wrapper" v-if="eventTables.length">
+  <div class="table-wrapper" v-if="events.length">
     <div class="table-container">
       <table cellpadding="1" cellspacing="1" class="table">
         <thead>
@@ -17,21 +17,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(table, index) in eventTables" :key="index">
+          <tr v-for="(event, index) in events" :key="index">
             <td data-label="contact-group">
-              <img :src="require(`@/assets/img/${table.src}`)" />
+              <img
+                :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${event.image}`"
+                :alt="event.title"
+              />
             </td>
-            <td data-label="title">{{ table.title }}</td>
-            <td data-label="time">{{ table.time }}</td>
-            <td data-label="date-added">{{ table.dateAdded }}</td>
+            <td data-label="title">{{ event.title }}</td>
+            <td data-label="time">{{ event.time }}</td>
+            <td data-label="date-added">{{ formatDate(event.createdAt) }}</td>
             <td data-label="icon" class="table-icon">
               <span
                 class="mdi mdi-pencil-outline"
-                @click="edit(table.id)"
+                @click="edit(event.id)"
               ></span>
               <span
                 class="mdi mdi-trash-can"
-                @click="toggleModal(table.id)"
+                @click="toggleModal(event.id)"
               ></span>
             </td>
           </tr>
@@ -58,9 +61,10 @@
   </transition>
 </template>
 <script>
-import { mapMutations, mapGetters } from "vuex";
+import { mapMutations, mapGetters, mapActions } from "vuex";
 import DeleteEvent from "@/components/reuseables/DeleteEvent.vue";
 import EmptyContent from "@/components/reuseables/EmptyContent.vue";
+import dateFormatter from "@/mixins/formatDate";
 export default {
   name: "ContactTable",
   components: {
@@ -72,8 +76,10 @@ export default {
       id: "",
     };
   },
+  mixins: [dateFormatter],
   methods: {
     ...mapMutations(["toggleDelModal", "resetDelModal", "deleteEvent"]),
+    ...mapActions(["getEvents"]),
     delTable() {
       this.deleteEvent(this.id);
       this.resetDelModal();
@@ -87,7 +93,10 @@ export default {
     },
   },
   computed: {
-    ...mapGetters(["eventTables", "openDelModal"]),
+    ...mapGetters(["events", "openDelModal"]),
+  },
+  mounted() {
+    this.getEvents();
   },
 };
 </script>
@@ -143,6 +152,7 @@ export default {
     img {
       width: 50px;
       height: 50px;
+      border-radius: 5px;
     }
   }
   .table-icon {
