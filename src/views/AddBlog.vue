@@ -12,11 +12,23 @@
       <form class="admin-view-content">
         <div class="input-field">
           <label for="title">Title</label>
-          <input type="text" name="title" id="title" placeholder="Title" />
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Title"
+            v-model="title"
+          />
         </div>
         <div class="input-field">
           <label for="author">Author</label>
-          <input type="text" name="author" id="author" placeholder="Author" />
+          <input
+            type="text"
+            name="author"
+            id="author"
+            placeholder="Author"
+            v-model="author"
+          />
         </div>
         <div class="input-field">
           <label for="details">Blog Details</label>
@@ -26,6 +38,7 @@
             id="details"
             placeholder="Blog details goes here..."
             rows="10"
+            v-model="details"
           ></textarea>
         </div>
         <div class="input-field">
@@ -40,6 +53,7 @@
             name="link"
             id="link"
             placeholder="https://image-url.png"
+            v-model="link"
           />
         </div>
         <div class="input-field">
@@ -49,6 +63,7 @@
             name="password"
             id="password"
             placeholder="Password"
+            v-model="password"
           />
         </div>
         <div class="flex-btn">
@@ -61,6 +76,15 @@
 <script>
 export default {
   name: "AdminForm",
+  data() {
+    return {
+      title: "",
+      author: "",
+      details: "",
+      password: "",
+      link: "",
+    };
+  },
 };
 </script>
 <style lang="scss" scoped>

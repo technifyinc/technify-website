@@ -4,7 +4,12 @@
       Add Event
     </button>
   </div>
-  <div class="table-wrapper" v-if="events.length">
+  <loading-bar v-if="loadingStatus" />
+  <empty-content v-else-if="events.length === 0">
+    <h3>Oops!</h3>
+    <p>No event has been created</p>
+  </empty-content>
+  <div class="table-wrapper" v-else>
     <div class="table-container">
       <table cellpadding="1" cellspacing="1" class="table">
         <thead>
@@ -30,11 +35,11 @@
             <td data-label="icon" class="table-icon">
               <span
                 class="mdi mdi-pencil-outline"
-                @click="edit(event.id)"
+                @click="edit(event._id)"
               ></span>
               <span
                 class="mdi mdi-trash-can"
-                @click="toggleModal(event.id)"
+                @click="toggleModal(event._id)"
               ></span>
             </td>
           </tr>
@@ -52,10 +57,6 @@
       </div>
     </div>
   </div>
-  <empty-content v-else>
-    <h3>Oops!</h3>
-    <p>No event has been created</p>
-  </empty-content>
   <transition name="show-modal">
     <delete-event :id="id" />
   </transition>
@@ -64,12 +65,14 @@
 import { mapMutations, mapGetters, mapActions } from "vuex";
 import DeleteEvent from "@/components/reuseables/DeleteEvent.vue";
 import EmptyContent from "@/components/reuseables/EmptyContent.vue";
+import LoadingBar from "@/components/reuseables/LoadingBar.vue";
 import dateFormatter from "@/mixins/formatDate";
 export default {
   name: "ContactTable",
   components: {
     EmptyContent,
     DeleteEvent,
+    LoadingBar,
   },
   data() {
     return {
@@ -89,11 +92,11 @@ export default {
       this.toggleDelModal();
     },
     edit(id) {
-      this.$router.push({ name: "edit-contact", params: { id } });
+      this.$router.push({ name: "edit-event", params: { id } });
     },
   },
   computed: {
-    ...mapGetters(["events", "openDelModal"]),
+    ...mapGetters(["events", "openDelModal", "loadingStatus"]),
   },
   mounted() {
     this.getEvents();

@@ -4,7 +4,12 @@
       Add Blog Post
     </button>
   </div>
-  <div class="table-wrapper" v-if="blogs.length">
+  <loading-bar v-if="loadingStatus" />
+  <empty-content v-else-if="blogs.length === 0">
+    <h3>Oops!</h3>
+    <p>No blog has been created</p>
+  </empty-content>
+  <div class="table-wrapper" v-else>
     <div class="table-container">
       <table cellpadding="1" cellspacing="1" class="table">
         <thead>
@@ -30,11 +35,11 @@
             <td data-label="icon" class="table-icon">
               <span
                 class="mdi mdi-pencil-outline"
-                @click="edit(blog.id)"
+                @click="edit(blog._id)"
               ></span>
               <span
                 class="mdi mdi-trash-can"
-                @click="toggleModal(blog.id)"
+                @click="toggleModal(blog._id)"
               ></span>
             </td>
           </tr>
@@ -52,11 +57,6 @@
       </div>
     </div>
   </div>
-  <loading-bar v-else-if="!blogs.length" />
-  <empty-content v-else>
-    <h3>Oops!</h3>
-    <p>No blog has been created</p>
-  </empty-content>
   <transition name="show-modal">
     <delete-blog :id="id" />
   </transition>
@@ -92,11 +92,11 @@ export default {
       this.toggleDelModal();
     },
     edit(id) {
-      this.$router.push({ name: "edit-contact", params: { id } });
+      this.$router.push({ name: "edit-blog", params: { id } });
     },
   },
   computed: {
-    ...mapGetters(["blogs", "openDelModal"]),
+    ...mapGetters(["blogs", "openDelModal", "loadingStatus"]),
   },
   mounted() {
     this.getBlogs();

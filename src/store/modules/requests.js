@@ -9,7 +9,7 @@ const state = {
   events: [],
   event: "",
   openDelModal: false,
-  loading: false,
+  loadingStatus: false,
 };
 
 const getters = {
@@ -18,16 +18,23 @@ const getters = {
   mainBlog: (state) => state.mainBlog,
   events: (state) => state.events,
   event: (state) => state.event,
-  blogTables: (state) => state.blogTables,
-  eventTables: (state) => state.eventTables,
   openDelModal: (state) => state.openDelModal,
-  loading: (state) => state.loading,
+  loadingStatus: (state) => state.loadingStatus,
 };
 
 const actions = {
-  getBlogs({ commit }) {
+  getBlogs({ state, commit }) {
+    state.loadingStatus = true;
     axios.get(`${baseUrl}/blog`).then((response) => {
       commit("getBlogs", response.data.data);
+      state.loadingStatus = false;
+    });
+  },
+  getEvents({ state, commit }) {
+    state.loadingStatus = true;
+    axios.get(`${baseUrl}/event`).then((response) => {
+      commit("getEvents", response.data.data);
+      state.loadingStatus = false;
     });
   },
   getMainBlog({ commit }) {
@@ -41,20 +48,12 @@ const actions = {
       commit("getSingleBlog", response.data.data);
     });
   },
-  getEvents({ commit }) {
-    axios.get(`${baseUrl}/event`).then((response) => {
-      commit("getEvents", response.data.data);
-    });
-  },
   getSingleEvent({ commit }, id) {
     axios.get(`${baseUrl}/event/${id}`).then((response) => {
       commit("getSingleEvent", response.data.data);
     });
   },
-  async postBlog(
-    { state, commit },
-    { title, author, details, image, password }
-  ) {
+  async postBlog({ commit }, { title, author, details, image, password }) {
     try {
       const response = await axios.post(`${baseUrl}/blog`, {
         title,
@@ -65,7 +64,6 @@ const actions = {
         createdAt: new Date(),
       });
       console.log(response.data.data);
-      state.loading = true;
       commit("postBlog", response.data.data);
     } catch (e) {
       console.log(e.response.data);
@@ -77,14 +75,14 @@ const mutations = {
   getBlogs(state, payload) {
     state.blogs = payload;
   },
+  getEvents(state, payload) {
+    state.events = payload;
+  },
   getMainBlog(state, payload) {
     state.mainBlog = payload;
   },
   getSingleBlog(state, payload) {
     state.blog = payload;
-  },
-  getEvents(state, payload) {
-    state.events = payload;
   },
   getSingleEvent(state, payload) {
     state.event = payload;
@@ -96,10 +94,10 @@ const mutations = {
     state.openDelModal = false;
   },
   deleteBlog(state, id) {
-    state.blogTables = state.blogTables.filter((table) => table.id !== id);
+    state.blogs = state.blogs.filter((blog) => blog._id !== id);
   },
   deleteEvent(state, id) {
-    state.eventTables = state.eventTables.filter((table) => table.id !== id);
+    state.events = state.events.filter((event) => event._id !== id);
   },
   postBlog(state, payload) {
     state.blogs = [...state.blogs, payload];
