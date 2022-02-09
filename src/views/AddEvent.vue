@@ -9,76 +9,131 @@
       <div class="admin-view-head">
         <h2>Event Form</h2>
       </div>
-      <form class="admin-view-content" @submit.prevent>
+      <form
+        class="admin-view-content"
+        @submit.prevent
+        enctype="multipart/form-data"
+      >
         <div class="input-field">
           <label for="title">Title</label>
           <input
-            v-model="title"
             type="text"
             name="title"
             id="title"
             placeholder="Title"
+            v-model="title"
+            @blur="v$.title.$touch()"
+            @focus="v$.title.$reset()"
+            :class="{ err: v$.title.$error }"
           />
+          <small :class="{ 'err-mssg': v$.title.$error }" v-if="v$.title.$error"
+            >Title is required</small
+          >
         </div>
         <div class="input-field">
           <label for="details">Event Details</label>
           <textarea
-            v-model="details"
             type="text"
             name="details"
             id="details"
-            placeholder="Blog details goes here..."
+            placeholder="Event details goes here..."
             rows="10"
+            v-model="details"
+            @blur="v$.details.$touch()"
+            @focus="v$.details.$reset()"
+            :class="{ err: v$.details.$error }"
           ></textarea>
+          <small
+            :class="{ 'err-mssg': v$.details.$error }"
+            v-if="v$.details.$error"
+            >Details is required</small
+          >
         </div>
         <div class="input-field">
-          <label for="file">Add Image</label>
-          <input type="file" name="file" id="file" placeholder="file" />
-        </div>
-        <p class="or">- OR -</p>
-        <div class="input-field">
-          <label for="link">Image URL</label>
+          <label for="file">Upload Image</label>
           <input
-            v-model="link"
-            type="text"
-            name="link"
-            id="link"
-            placeholder="https://image-url.png"
+            type="file"
+            name="file"
+            id="file"
+            placeholder="file"
+            @change="(e) => (imageUpload = e.target.files)"
+            @blur="v$.imageUpload.$touch()"
+            @focus="v$.imageUpload.$reset()"
+            :class="{ err: v$.imageUpload.$error }"
+            accept="image/*"
           />
+          <small
+            :class="{ 'err-mssg': v$.imageUpload.$error }"
+            v-if="v$.imageUpload.$error"
+            >Image is required</small
+          >
         </div>
         <div class="input-field">
           <label for="password">Password</label>
           <input
-            v-model="password"
             type="password"
             name="password"
             id="password"
             placeholder="Password"
+            v-model="password"
+            @blur="v$.password.$touch()"
+            @focus="v$.password.$reset()"
+            :class="{ err: v$.password.$error }"
           />
+          <small
+            :class="{ 'err-mssg': v$.password.$error }"
+            v-if="v$.password.$error"
+            >Password is required</small
+          >
         </div>
         <div class="flex-btn">
-          <input type="submit" value="Post" class="btn" @click="postEvent" />
+          <input type="submit" value="Post" class="btn" @click="post" />
         </div>
       </form>
     </div>
   </div>
 </template>
 <script>
+import { mapActions } from "vuex";
+import useVuelidate from "@vuelidate/core";
+import { required, requiredIf } from "@vuelidate/validators";
+
 export default {
-  name: "AdminForm",
-  props: {
-    id: {
-      type: String,
-      required: true,
-    },
-  },
+  name: "AddEvent",
+  setup: () => ({ v$: useVuelidate() }),
   data() {
     return {
       title: "",
       details: "",
       password: "",
-      link: "",
+      imageUpload: [],
     };
+  },
+  validations() {
+    return {
+      title: { required },
+      details: { required },
+      password: { required },
+      imageUpload: {
+        required: requiredIf(() => {
+          return this.imageUpload.length == 0;
+        }),
+      },
+    };
+  },
+  methods: {
+    ...mapActions(["postEvent"]),
+    post() {
+      if (this.v$.$invalid) {
+        this.v$.$validate();
+      } else {
+        this.postEvent({
+          title: this.title,
+          details: this.details,
+          image: this.imageUpload,
+        });
+      }
+    },
   },
 };
 </script>
@@ -151,6 +206,34 @@ export default {
       color: $sec-color;
       letter-spacing: 1px;
     }
+  }
+}
+
+.err {
+  border: solid 1.5px #fa5d5d !important;
+}
+.err-mssg {
+  color: #fa5d5d !important;
+}
+.errMssg {
+  color: #d8000c;
+  background-color: #ffd2d2;
+  padding: 12px;
+  animation: opacity ease 0.5s forwards;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 4px;
+  border: solid 1.5px #ffd2d2;
+}
+.animate {
+  animation: opacity ease 1s forwards;
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

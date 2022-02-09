@@ -86,7 +86,7 @@
             >Image is required</small
           >
         </div>
-        <!-- <div class="input-field">
+        <div class="input-field">
           <label for="password">Password</label>
           <input
             type="password"
@@ -103,7 +103,7 @@
             v-if="v$.password.$error"
             >Password is required</small
           >
-        </div> -->
+        </div>
         <div class="flex-btn">
           <input type="submit" value="Post" class="btn" @click="post" />
         </div>
@@ -118,12 +118,6 @@ import { required, requiredIf } from "@vuelidate/validators";
 
 export default {
   name: "AdminForm",
-  // props: {
-  //   id: {
-  //     type: String,
-  //     required: true,
-  //   },
-  // },
   setup: () => ({ v$: useVuelidate() }),
   data() {
     return {
@@ -139,7 +133,7 @@ export default {
       title: { required },
       author: { required },
       details: { required },
-      // password: { required },
+      password: { required },
       imageUpload: {
         required: requiredIf(() => {
           return this.imageUpload.length == 0;
@@ -149,17 +143,6 @@ export default {
   },
   methods: {
     ...mapActions(["postBlog"]),
-    // uploadImage() {
-    //   const file = document.querySelector("input[type=file]").files[0];
-    //   const reader = new FileReader();
-    //   let rawImg;
-    //   reader.onloadend = () => {
-    //     rawImg = reader.result;
-    //     this.imageUpload = rawImg;
-    //   };
-    //   reader.readAsDataURL(file);
-    //   console.log(file);
-    // },
     post() {
       if (this.v$.$invalid) {
         this.v$.$validate();
@@ -169,6 +152,7 @@ export default {
           author: this.author,
           details: this.details,
           image: this.imageUpload,
+          "x-api-password": this.password,
         });
       }
     },

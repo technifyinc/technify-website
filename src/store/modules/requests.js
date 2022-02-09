@@ -53,16 +53,34 @@ const actions = {
       commit("getSingleEvent", response.data.data);
     });
   },
-  async postBlog({ commit }, { title, author, details, image }) {
+  async postBlog({ commit }, { title, author, details, image, password }) {
     try {
-      const response = await axios.post(`${baseUrl}/blog`, {
+      const response = await axios.post({
+        method: "POST",
+        url: `${baseUrl}/blog`,
+        header: [{ "x-api-password": password }],
+        data: {
+          title,
+          author,
+          details,
+          image,
+        },
+      });
+      console.log(response.data.data);
+      commit("postBlog", response.data.data);
+    } catch (e) {
+      console.log(e.response.data);
+    }
+  },
+  async postEvent({ commit }, { title, details, image }) {
+    try {
+      const response = await axios.post(`${baseUrl}/event`, {
         title,
-        author,
         details,
         image,
       });
       console.log(response.data.data);
-      commit("postBlog", response.data.data);
+      commit("postEvent", response.data.data);
     } catch (e) {
       console.log(e.response.data);
     }
@@ -99,6 +117,9 @@ const mutations = {
   },
   postBlog(state, payload) {
     state.blogs = [...state.blogs, payload];
+  },
+  postEvent(state, payload) {
+    state.events = [...state.events, payload];
   },
 };
 
