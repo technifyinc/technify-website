@@ -53,15 +53,13 @@ const actions = {
       commit("getSingleEvent", response.data.data);
     });
   },
-  async postBlog({ commit }, { title, author, details, image, password }) {
+  async postBlog({ commit }, { title, author, details, image }) {
     try {
       const response = await axios.post(`${baseUrl}/blog`, {
         title,
         author,
         details,
         image,
-        password,
-        createdAt: new Date(),
       });
       console.log(response.data.data);
       commit("postBlog", response.data.data);

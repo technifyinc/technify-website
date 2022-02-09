@@ -9,14 +9,21 @@
       <div class="admin-view-head">
         <h2>Event Form</h2>
       </div>
-      <form class="admin-view-content">
+      <form class="admin-view-content" @submit.prevent>
         <div class="input-field">
           <label for="title">Title</label>
-          <input type="text" name="title" id="title" placeholder="Title" />
+          <input
+            v-model="title"
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Title"
+          />
         </div>
         <div class="input-field">
           <label for="details">Event Details</label>
           <textarea
+            v-model="details"
             type="text"
             name="details"
             id="details"
@@ -32,6 +39,7 @@
         <div class="input-field">
           <label for="link">Image URL</label>
           <input
+            v-model="link"
             type="text"
             name="link"
             id="link"
@@ -41,6 +49,7 @@
         <div class="input-field">
           <label for="password">Password</label>
           <input
+            v-model="password"
             type="password"
             name="password"
             id="password"
@@ -48,7 +57,7 @@
           />
         </div>
         <div class="flex-btn">
-          <input type="submit" value="Post" class="btn" />
+          <input type="submit" value="Post" class="btn" @click="postEvent" />
         </div>
       </form>
     </div>
@@ -57,6 +66,20 @@
 <script>
 export default {
   name: "AdminForm",
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      title: "",
+      details: "",
+      password: "",
+      link: "",
+    };
+  },
 };
 </script>
 <style lang="scss" scoped>
