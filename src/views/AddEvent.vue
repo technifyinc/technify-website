@@ -56,7 +56,7 @@
             name="file"
             id="file"
             placeholder="file"
-            @change="(e) => (imageUpload = e.target.files)"
+            @change="(e) => (imageUpload = e.target.files[0])"
             @blur="v$.imageUpload.$touch()"
             @focus="v$.imageUpload.$reset()"
             :class="{ err: v$.imageUpload.$error }"
@@ -131,6 +131,7 @@ export default {
           title: this.title,
           details: this.details,
           image: this.imageUpload,
+          password: this.password,
         });
       }
     },

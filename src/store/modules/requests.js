@@ -54,30 +54,44 @@ const actions = {
     });
   },
   async postBlog({ commit }, { title, author, details, image, password }) {
+    var formData = new FormData();
+    formData.append("title", title);
+    formData.append("author", author);
+    formData.append("details", details);
+    formData.append("image", `./assets/uploads/${image}`);
     try {
-      const response = await axios.post({
-        method: "POST",
+      const response = await axios({
+        method: "post",
         url: `${baseUrl}/blog`,
-        header: [{ "x-api-password": password }],
-        data: {
-          title,
-          author,
-          details,
-          image,
+        data: formData,
+        headers: {
+          "x-api-password": password,
+          "Content-Type": "multipart/form-data",
         },
       });
-      console.log(response.data.data);
       commit("postBlog", response.data.data);
     } catch (e) {
       console.log(e.response.data);
     }
   },
-  async postEvent({ commit }, { title, details, image }) {
+  async postEvent({ commit }, { title, details, image, password }) {
+    var formData = new FormData();
+    formData.append("title", title);
+    formData.append("details", details);
+    formData.append("image", `./assets/uploads/${image}`);
     try {
-      const response = await axios.post(`${baseUrl}/event`, {
-        title,
-        details,
-        image,
+      const response = await axios({
+        method: "post",
+        url: `${baseUrl}/event`,
+        data: {
+          title,
+          details,
+          image,
+        },
+        headers: {
+          "x-api-password": password,
+          "Content-Type": "multipart/form-data",
+        },
       });
       console.log(response.data.data);
       commit("postEvent", response.data.data);

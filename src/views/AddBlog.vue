@@ -74,7 +74,7 @@
             name="file"
             id="file"
             placeholder="file"
-            @change="(e) => (imageUpload = e.target.files)"
+            @change="(e) => (imageUpload = e.target.files[0])"
             @blur="v$.imageUpload.$touch()"
             @focus="v$.imageUpload.$reset()"
             :class="{ err: v$.imageUpload.$error }"
@@ -152,7 +152,7 @@ export default {
           author: this.author,
           details: this.details,
           image: this.imageUpload,
-          "x-api-password": this.password,
+          password: this.password,
         });
       }
     },
