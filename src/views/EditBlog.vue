@@ -21,12 +21,14 @@
             name="title"
             id="title"
             placeholder="Title"
-            v-model="title"
-            @blur="v$.title.$touch()"
-            @focus="v$.title.$reset()"
-            :class="{ err: v$.title.$error }"
+            v-model="blog.title"
+            @blur="v$.blog.title.$touch()"
+            @focus="v$.blog.title.$reset()"
+            :class="{ err: v$.blog.title.$error }"
           />
-          <small :class="{ 'err-mssg': v$.title.$error }" v-if="v$.title.$error"
+          <small
+            :class="{ 'err-mssg': v$.blog.title.$error }"
+            v-if="v$.blog.title.$error"
             >Title is required</small
           >
         </div>
@@ -37,14 +39,14 @@
             name="author"
             id="author"
             placeholder="Author"
-            v-model="author"
-            @blur="v$.author.$touch()"
-            @focus="v$.author.$reset()"
-            :class="{ err: v$.author.$error }"
+            v-model="blog.author"
+            @blur="v$.blog.author.$touch()"
+            @focus="v$.blog.author.$reset()"
+            :class="{ err: v$.blog.author.$error }"
           />
           <small
-            :class="{ 'err-mssg': v$.author.$error }"
-            v-if="v$.author.$error"
+            :class="{ 'err-mssg': v$.blog.author.$error }"
+            v-if="v$.blog.author.$error"
             >Author is required</small
           >
         </div>
@@ -56,14 +58,14 @@
             id="details"
             placeholder="Blog details goes here..."
             rows="10"
-            v-model="details"
-            @blur="v$.details.$touch()"
-            @focus="v$.details.$reset()"
-            :class="{ err: v$.details.$error }"
+            v-model="blog.details"
+            @blur="v$.blog.details.$touch()"
+            @focus="v$.blog.details.$reset()"
+            :class="{ err: v$.blog.details.$error }"
           ></textarea>
           <small
-            :class="{ 'err-mssg': v$.details.$error }"
-            v-if="v$.details.$error"
+            :class="{ 'err-mssg': v$.blog.details.$error }"
+            v-if="v$.blog.details.$error"
             >Details is required</small
           >
         </div>
@@ -74,15 +76,15 @@
             name="file"
             id="file"
             placeholder="file"
-            @change="(e) => (imageUpload = e.target.files[0])"
-            @blur="v$.imageUpload.$touch()"
-            @focus="v$.imageUpload.$reset()"
-            :class="{ err: v$.imageUpload.$error }"
+            @change="(e) => (blog.image = e.target.files[0])"
+            @blur="v$.blog.image.$touch()"
+            @focus="v$.blog.image.$reset()"
+            :class="{ err: v$.blog.image.$error }"
             accept="image/*"
           />
           <small
-            :class="{ 'err-mssg': v$.imageUpload.$error }"
-            v-if="v$.imageUpload.$error"
+            :class="{ 'err-mssg': v$.blog.image.$error }"
+            v-if="v$.blog.image.$error"
             >Image is required</small
           >
         </div>
@@ -93,14 +95,14 @@
             name="password"
             id="password"
             placeholder="Password"
-            v-model="password"
-            @blur="v$.password.$touch()"
-            @focus="v$.password.$reset()"
-            :class="{ err: v$.password.$error || error }"
+            v-model="blog.password"
+            @blur="v$.blog.password.$touch()"
+            @focus="v$.blog.password.$reset()"
+            :class="{ err: v$.blog.password.$error || error }"
           />
           <small
-            :class="{ 'err-mssg': v$.password.$error || error }"
-            v-if="v$.password.$error || error"
+            :class="{ 'err-mssg': v$.blog.password.$error || error }"
+            v-if="v$.blog.password.$error || error"
             >Provide the correct password</small
           >
         </div>
@@ -117,48 +119,54 @@ import useVuelidate from "@vuelidate/core";
 import { required, requiredIf } from "@vuelidate/validators";
 
 export default {
-  name: "AdminForm",
+  name: "EditBlog",
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+  },
   setup: () => ({ v$: useVuelidate() }),
   data() {
-    return {
-      title: "",
-      author: "",
-      details: "",
-      password: "",
-      imageUpload: [],
-    };
+    return {};
   },
   validations() {
     return {
-      title: { required },
-      author: { required },
-      details: { required },
-      password: { required },
-      imageUpload: {
-        required: requiredIf(() => {
-          return this.imageUpload.length == 0;
-        }),
+      blog: {
+        title: { required },
+        author: { required },
+        details: { required },
+        password: { required },
+        image: {
+          required: requiredIf(() => {
+            return this.blog.image.length == 0;
+          }),
+        },
       },
     };
   },
   methods: {
-    ...mapActions(["postBlog"]),
+    ...mapActions(["getSingleBlog", "updateBlog"]),
     post() {
-      if (this.v$.$invalid) {
-        this.v$.$validate();
+      if (this.v$.blog.$invalid) {
+        this.v$.blog.$validate();
       } else {
-        this.postBlog({
-          title: this.title,
-          author: this.author,
-          details: this.details,
-          image: this.imageUpload,
-          password: this.password,
+        this.updateBlog({
+          id: this.id,
+          title: this.blog.title,
+          author: this.blog.author,
+          details: this.blog.details,
+          image: this.blog.image,
+          password: this.blog.password,
         });
       }
     },
   },
   computed: {
-    ...mapGetters(["error"]),
+    ...mapGetters(["error", "blog"]),
+  },
+  mounted() {
+    this.getSingleBlog(this.id);
   },
 };
 </script>

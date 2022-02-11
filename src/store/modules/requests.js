@@ -91,19 +91,19 @@ const actions = {
     { state, commit },
     { title, date, time, medium, address, details, image, password }
   ) {
-    var eventData = new FormData();
-    eventData.append("title", title);
-    eventData.append("date", date);
-    eventData.append("time", time);
-    eventData.append("medium", medium);
-    eventData.append("address", address);
-    eventData.append("details", details);
-    eventData.append("image", image);
+    var formData = new FormData();
+    formData.append("title", title);
+    formData.append("date", date);
+    formData.append("time", time);
+    formData.append("medium", medium);
+    formData.append("address", address);
+    formData.append("details", details);
+    formData.append("image", image);
     try {
       const response = await axios({
         method: "post",
         url: `${baseUrl}/event`,
-        data: eventData,
+        data: formData,
         headers: {
           "x-api-password": password,
           "Content-Type": "multipart/form-data",
@@ -111,6 +111,111 @@ const actions = {
       });
       commit("postEvent", response.data.data);
       router.push({ name: "admin" });
+    } catch (e) {
+      state.err = e;
+      state.error = true;
+      setTimeout(() => {
+        state.error = false;
+      }, 3000);
+    }
+  },
+  async updateBlog(
+    { state, commit },
+    { id, title, author, details, image, password }
+  ) {
+    var formData = new FormData();
+    formData.append("title", title);
+    formData.append("author", author);
+    formData.append("details", details);
+    formData.append("image", image);
+    try {
+      const response = await axios({
+        method: "put",
+        url: `${baseUrl}/blog/${id}`,
+        data: formData,
+        headers: {
+          "x-api-password": password,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      router.push({ name: "admin" });
+      commit("updateBlog", response.data.data);
+    } catch (e) {
+      state.err = e;
+      state.error = true;
+      setTimeout(() => {
+        state.error = false;
+      }, 3000);
+    }
+  },
+  async updateEvent(
+    { state, commit },
+    { id, title, date, time, medium, address, details, image, password }
+  ) {
+    var formData = new FormData();
+    formData.append("title", title);
+    formData.append("date", date);
+    formData.append("time", time);
+    formData.append("medium", medium);
+    formData.append("address", address);
+    formData.append("details", details);
+    formData.append("image", image);
+    try {
+      const response = await axios({
+        method: "put",
+        url: `${baseUrl}/event/${id}`,
+        data: formData,
+        headers: {
+          "x-api-password": password,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      commit("updateEvent", response.data.data);
+      router.push({ name: "admin" });
+    } catch (e) {
+      state.err = e;
+      state.error = true;
+      setTimeout(() => {
+        state.error = false;
+      }, 3000);
+    }
+  },
+  async deleteBlog({ state, commit }, { id, password }) {
+    try {
+      const response = axios({
+        method: "delete",
+        url: `${baseUrl}/blog/${id}`,
+        headers: {
+          "x-api-password": password,
+        },
+      });
+      state.err = response;
+      setTimeout(() => {
+        router.go(0);
+      }, 1000);
+      commit("deleteBlog", id);
+    } catch (e) {
+      state.err = e;
+      state.error = true;
+      setTimeout(() => {
+        state.error = false;
+      }, 3000);
+    }
+  },
+  async deleteEvent({ state, commit }, { id, password }) {
+    try {
+      const response = axios({
+        method: "delete",
+        url: `${baseUrl}/event/${id}`,
+        headers: {
+          "x-api-password": password,
+        },
+      });
+      state.err = response;
+      commit("deleteEvent", id);
+      setTimeout(() => {
+        router.go(0);
+      }, 1000);
     } catch (e) {
       state.err = e;
       state.error = true;
@@ -154,6 +259,14 @@ const mutations = {
   },
   postEvent(state, payload) {
     state.events = [...state.events, payload];
+  },
+  updateBlog(state, { id, payload }) {
+    const index = state.blogs.findIndex((blog) => blog._id === id);
+    state.blogs[index] = payload;
+  },
+  updateEvent(state, { id, payload }) {
+    const index = state.events.findIndex((event) => event._id === id);
+    state.events[index] = payload;
   },
 };
 

@@ -171,14 +171,14 @@ const routes = [
     path: "/edit-blog/:id",
     name: "edit-blog",
     component: () =>
-      import(/* webpackChunkName: "edit-blog" */ "../views/AddBlog.vue"),
+      import(/* webpackChunkName: "edit-blog" */ "../views/EditBlog.vue"),
     props: true,
   },
   {
     path: "/edit-event/:id",
     name: "edit-event",
     component: () =>
-      import(/* webpackChunkName: "edit-event" */ "../views/AddEvent.vue"),
+      import(/* webpackChunkName: "edit-event" */ "../views/EditEvent.vue"),
     props: true,
   },
 ];

@@ -83,10 +83,6 @@ export default {
   methods: {
     ...mapMutations(["toggleDelModal", "resetDelModal", "deleteBlog"]),
     ...mapActions(["getBlogs"]),
-    delTable() {
-      this.deleteBlog(this.id);
-      this.resetDelModal();
-    },
     toggleModal(id) {
       this.id = id;
       this.toggleDelModal();
