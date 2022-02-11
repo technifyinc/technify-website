@@ -48,6 +48,20 @@
                 />
               </li>
               <li class="soln-content">
+                <div class="soln-content-inner">
+                  <img
+                    src="@/assets/img/soln-tech.svg"
+                    alt="technify_workspace"
+                  />
+                  <a href="#" class="desc">
+                    <a href="#">technify workspace</a>
+                    <p class="hide">
+                      Technify is asuite of solutions to help improve business
+                      processes end to end and optimize workflow with cutting
+                      edge business solutions
+                    </p>
+                  </a>
+                </div>
                 <div
                   class="soln-content-inner"
                   v-for="solution in solutions"
@@ -92,23 +106,17 @@ export default {
       drop: false,
       active: false,
       solutions: [
-        {
-          icon: require("@/assets/img/soln-tech.svg"),
-          route: "home",
-          title: "technify workspace",
-          desc: "Technify is asuite of solutions to help improve business processes end to end and optimize workflow with cutting edge business solutions",
-        },
+        // {
+        //   icon: require("@/assets/img/soln-tech.svg"),
+        //   route: "home",
+        //   title: "technify workspace",
+        //   desc: "Technify is asuite of solutions to help improve business processes end to end and optimize workflow with cutting edge business solutions",
+        // },
         {
           icon: require("@/assets/img/soln-softi.svg"),
           route: "software-int",
           title: "software integration",
           desc: "We help Improve software infrastructure with well-built microservices, reliable API, and data integration.",
-        },
-        {
-          icon: require("@/assets/img/soln-in.svg"),
-          route: "industry",
-          title: "industry-specific mobile apps",
-          desc: "From Fintech and Construction to Retail and Sports, Technify Incs' expertise covers the majority of industries.",
         },
         {
           icon: require("@/assets/img/soln-bu.svg"),
@@ -133,18 +141,6 @@ export default {
           route: "custom",
           title: "custom software development",
           desc: "Support your business infrastructure with scalable software that improves key facets of your enterprise, from automation to employee collaboration.",
-        },
-        {
-          icon: require("@/assets/img/soln-ent.svg"),
-          route: "enterprise",
-          title: "enterprise architecture advisory",
-          desc: "Our Enterprise Architecture experts can help you make the transition from outdated and ineffective IT delivery systems",
-        },
-        {
-          icon: require("@/assets/img/soln-soft.svg"),
-          route: "software-port",
-          title: "software portfolio consulting",
-          desc: "Our IT consulting advisors will conduct a deep analysis of how your business and employees use your existing enterprise software, as well as of your enterprise mobile strategy",
         },
       ],
     };
@@ -346,7 +342,7 @@ img {
 @media screen and (min-width: 1000px) {
   @mixin beforeEffect() {
     position: absolute;
-    content: '';
+    content: "";
     bottom: 0;
     left: 0;
     height: 3.5px;
@@ -356,7 +352,7 @@ img {
   }
   @mixin afterEffect() {
     position: absolute;
-    content: '';
+    content: "";
     bottom: 0;
     left: 0;
     height: 3.5px;
