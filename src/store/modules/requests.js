@@ -1,4 +1,5 @@
 import axios from "axios";
+import router from "../../router";
 
 const baseUrl = "https://api.technifyincubator.com/api/v1";
 
@@ -76,6 +77,7 @@ const actions = {
           "Content-Type": "multipart/form-data",
         },
       });
+      router.push({ name: "admin" });
       commit("postBlog", response.data.data);
     } catch (e) {
       state.err = e;
@@ -107,10 +109,9 @@ const actions = {
           "Content-Type": "multipart/form-data",
         },
       });
-      console.log(response.data.data);
       commit("postEvent", response.data.data);
+      router.push({ name: "admin" });
     } catch (e) {
-      console.log(e.response.data);
       state.err = e;
       state.error = true;
       setTimeout(() => {
