@@ -10,6 +10,8 @@ const state = {
   event: "",
   openDelModal: false,
   loadingStatus: false,
+  error: false,
+  err: "",
 };
 
 const getters = {
@@ -20,6 +22,8 @@ const getters = {
   event: (state) => state.event,
   openDelModal: (state) => state.openDelModal,
   loadingStatus: (state) => state.loadingStatus,
+  error: (state) => state.error,
+  err: (state) => state.err,
 };
 
 const actions = {
@@ -53,12 +57,15 @@ const actions = {
       commit("getSingleEvent", response.data.data);
     });
   },
-  async postBlog({ commit }, { title, author, details, image, password }) {
+  async postBlog(
+    { state, commit },
+    { title, author, details, image, password }
+  ) {
     var formData = new FormData();
     formData.append("title", title);
     formData.append("author", author);
     formData.append("details", details);
-    formData.append("image", `./assets/uploads/${image}`);
+    formData.append("image", image);
     try {
       const response = await axios({
         method: "post",
@@ -71,23 +78,30 @@ const actions = {
       });
       commit("postBlog", response.data.data);
     } catch (e) {
-      console.log(e.response.data);
+      state.err = e;
+      state.error = true;
+      setTimeout(() => {
+        state.error = false;
+      }, 3000);
     }
   },
-  async postEvent({ commit }, { title, details, image, password }) {
-    var formData = new FormData();
-    formData.append("title", title);
-    formData.append("details", details);
-    formData.append("image", `./assets/uploads/${image}`);
+  async postEvent(
+    { state, commit },
+    { title, date, time, medium, address, details, image, password }
+  ) {
+    var eventData = new FormData();
+    eventData.append("title", title);
+    eventData.append("date", date);
+    eventData.append("time", time);
+    eventData.append("medium", medium);
+    eventData.append("address", address);
+    eventData.append("details", details);
+    eventData.append("image", image);
     try {
       const response = await axios({
         method: "post",
         url: `${baseUrl}/event`,
-        data: {
-          title,
-          details,
-          image,
-        },
+        data: eventData,
         headers: {
           "x-api-password": password,
           "Content-Type": "multipart/form-data",
@@ -97,6 +111,11 @@ const actions = {
       commit("postEvent", response.data.data);
     } catch (e) {
       console.log(e.response.data);
+      state.err = e;
+      state.error = true;
+      setTimeout(() => {
+        state.error = false;
+      }, 3000);
     }
   },
 };

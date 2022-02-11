@@ -31,6 +31,79 @@
           >
         </div>
         <div class="input-field">
+          <label for="medium">Medium</label>
+          <select
+            id="medium"
+            v-model="selected"
+            @blur="v$.selected.$touch()"
+            @focus="v$.selected.$reset()"
+            :class="{ err: v$.selected.$error }"
+          >
+            <option
+              v-for="option in options"
+              :key="option"
+              :value="option.value"
+            >
+              {{ option.text }}
+            </option>
+          </select>
+          <small
+            :class="{ 'err-mssg': v$.selected.$error }"
+            v-if="v$.selected.$error"
+            >Please select a medium</small
+          >
+        </div>
+        <div class="input-field">
+          <label for="address">Address</label>
+          <input
+            type="text"
+            name="address"
+            id="address"
+            placeholder="Provide link for virtual and address if physical"
+            v-model="address"
+            @blur="v$.address.$touch()"
+            @focus="v$.address.$reset()"
+            :class="{ err: v$.address.$error }"
+          />
+          <small
+            :class="{ 'err-mssg': v$.address.$error }"
+            v-if="v$.address.$error"
+            >Address is required</small
+          >
+        </div>
+        <div class="input-field">
+          <label for="date">Date</label>
+          <input
+            type="date"
+            name="date"
+            id="date"
+            placeholder="Date"
+            v-model="date"
+            @blur="v$.date.$touch()"
+            @focus="v$.date.$reset()"
+            :class="{ err: v$.date.$error }"
+          />
+          <small :class="{ 'err-mssg': v$.date.$error }" v-if="v$.date.$error"
+            >Date is required</small
+          >
+        </div>
+        <div class="input-field">
+          <label for="time">Time</label>
+          <input
+            type="time"
+            name="time"
+            id="time"
+            placeholder="time"
+            v-model="time"
+            @blur="v$.time.$touch()"
+            @focus="v$.time.$reset()"
+            :class="{ err: v$.time.$error }"
+          />
+          <small :class="{ 'err-mssg': v$.time.$error }" v-if="v$.time.$error"
+            >Time is required</small
+          >
+        </div>
+        <div class="input-field">
           <label for="details">Event Details</label>
           <textarea
             type="text"
@@ -81,9 +154,9 @@
             :class="{ err: v$.password.$error }"
           />
           <small
-            :class="{ 'err-mssg': v$.password.$error }"
-            v-if="v$.password.$error"
-            >Password is required</small
+            :class="{ 'err-mssg': v$.password.$error || error }"
+            v-if="v$.password.$error || error"
+            >Provide the correct password</small
           >
         </div>
         <div class="flex-btn">
@@ -94,7 +167,7 @@
   </div>
 </template>
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import useVuelidate from "@vuelidate/core";
 import { required, requiredIf } from "@vuelidate/validators";
 
@@ -104,14 +177,32 @@ export default {
   data() {
     return {
       title: "",
+      selected: "",
+      date: "",
+      time: "",
+      address: "",
       details: "",
       password: "",
       imageUpload: [],
+      options: [
+        {
+          value: "zoom",
+          text: "Zoom",
+        },
+        {
+          value: "google",
+          text: "Google Meet",
+        },
+      ],
     };
   },
   validations() {
     return {
       title: { required },
+      selected: { required },
+      date: { required },
+      time: { required },
+      address: { required },
       details: { required },
       password: { required },
       imageUpload: {
@@ -129,12 +220,19 @@ export default {
       } else {
         this.postEvent({
           title: this.title,
+          medium: this.selected,
+          date: this.date,
+          time: this.time,
+          address: this.address,
           details: this.details,
           image: this.imageUpload,
           password: this.password,
         });
       }
     },
+  },
+  computed: {
+    ...mapGetters(["error"]),
   },
 };
 </script>
@@ -193,6 +291,7 @@ export default {
       line-height: 22px;
     }
     .input-field input,
+    .input-field select,
     .input-field textarea {
       background: #e8e8e8;
       margin-top: 0.8rem;

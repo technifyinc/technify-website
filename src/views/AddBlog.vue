@@ -99,9 +99,9 @@
             :class="{ err: v$.password.$error }"
           />
           <small
-            :class="{ 'err-mssg': v$.password.$error }"
-            v-if="v$.password.$error"
-            >Password is required</small
+            :class="{ 'err-mssg': v$.password.$error || error }"
+            v-if="v$.password.$error || error"
+            >Provide the correct password</small
           >
         </div>
         <div class="flex-btn">
@@ -112,7 +112,7 @@
   </div>
 </template>
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import useVuelidate from "@vuelidate/core";
 import { required, requiredIf } from "@vuelidate/validators";
 
@@ -156,6 +156,9 @@ export default {
         });
       }
     },
+  },
+  computed: {
+    ...mapGetters(["error"]),
   },
 };
 </script>
@@ -214,6 +217,7 @@ export default {
       line-height: 22px;
     }
     .input-field input,
+    .input-field select,
     .input-field textarea {
       background: #e8e8e8;
       margin-top: 0.8rem;
