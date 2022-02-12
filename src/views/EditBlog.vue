@@ -7,7 +7,7 @@
   <div class="admin-view">
     <div class="container wrapper">
       <div class="admin-view-head">
-        <h2>Blog Form</h2>
+        <h2>Edit Blog Post</h2>
       </div>
       <form
         class="admin-view-content"
