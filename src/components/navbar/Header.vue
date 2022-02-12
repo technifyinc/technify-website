@@ -53,8 +53,13 @@
                     src="@/assets/img/soln-tech.svg"
                     alt="technify_workspace"
                   />
-                  <a href="#" class="desc">
-                    <a href="#">technify workspace</a>
+                  <a
+                    href="https://workspace.technifyincubator.com/"
+                    class="desc"
+                  >
+                    <a href="https://workspace.technifyincubator.com/"
+                      >technify workspace</a
+                    >
                     <p class="hide">
                       Technify is asuite of solutions to help improve business
                       processes end to end and optimize workflow with cutting
@@ -106,12 +111,6 @@ export default {
       drop: false,
       active: false,
       solutions: [
-        // {
-        //   icon: require("@/assets/img/soln-tech.svg"),
-        //   route: "home",
-        //   title: "technify workspace",
-        //   desc: "Technify is asuite of solutions to help improve business processes end to end and optimize workflow with cutting edge business solutions",
-        // },
         {
           icon: require("@/assets/img/soln-softi.svg"),
           route: "software-int",
@@ -122,7 +121,7 @@ export default {
           icon: require("@/assets/img/soln-bu.svg"),
           route: "business",
           title: "business analytic insight",
-          desc: "Lorem ipsum dolor sit amet, dicta tollit ut mea, ei populo quodsi per. Assum option hendrerit eum id. Ipsum nostrud mei c",
+          desc: "We help companies gain insight into what the market is saying, what it's current state is all about.",
         },
         {
           icon: require("@/assets/img/soln-it.svg"),
