@@ -12,6 +12,8 @@
     "@splidejs/splide": "^3.6.9",
     "@splidejs/splide-extension-auto-scroll": "^0.3.3",
     "@splidejs/vue-splide": "^0.5.15",
+    "@vuelidate/core": "^2.0.0-alpha.34",
+    "@vuelidate/validators": "^2.0.0-alpha.26",
     "aos": "^2.3.4",
     "axios": "^0.25.0",
     "core-js": "^3.8.3",

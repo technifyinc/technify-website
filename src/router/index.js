@@ -167,6 +167,20 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "add-event" */ "../views/AddEvent.vue"),
   },
+  {
+    path: "/edit-blog/:id",
+    name: "edit-blog",
+    component: () =>
+      import(/* webpackChunkName: "edit-blog" */ "../views/EditBlog.vue"),
+    props: true,
+  },
+  {
+    path: "/edit-event/:id",
+    name: "edit-event",
+    component: () =>
+      import(/* webpackChunkName: "edit-event" */ "../views/EditEvent.vue"),
+    props: true,
+  },
 ];
 
 const router = createRouter({

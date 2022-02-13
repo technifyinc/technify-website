@@ -4,7 +4,12 @@
       Add Blog Post
     </button>
   </div>
-  <div class="table-wrapper" v-if="blogTables.length">
+  <loading-bar v-if="loadingStatus" />
+  <empty-content v-else-if="blogs.length === 0">
+    <h3>Oops!</h3>
+    <p>No blog has been created</p>
+  </empty-content>
+  <div class="table-wrapper" v-else>
     <div class="table-container">
       <table cellpadding="1" cellspacing="1" class="table">
         <thead>
@@ -17,21 +22,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(table, index) in blogTables" :key="index">
+          <tr v-for="(blog, index) in blogs" :key="index">
             <td data-label="image-source">
-              <img :src="require(`@/assets/img/${table.src}`)" />
+              <img
+                :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${blog.image}`"
+                :alt="blog.title"
+              />
             </td>
-            <td data-label="title">{{ table.title }}</td>
-            <td data-label="author">{{ table.author }}</td>
-            <td data-label="date-added">{{ table.dateAdded }}</td>
+            <td data-label="title">{{ blog.title }}</td>
+            <td data-label="author">{{ blog.author }}</td>
+            <td data-label="date-added">{{ formatDate(blog.createdAt) }}</td>
             <td data-label="icon" class="table-icon">
               <span
                 class="mdi mdi-pencil-outline"
-                @click="edit(table.id)"
+                @click="edit(blog._id)"
               ></span>
               <span
                 class="mdi mdi-trash-can"
-                @click="toggleModal(table.id)"
+                @click="toggleModal(blog._id)"
               ></span>
             </td>
           </tr>
@@ -49,45 +57,45 @@
       </div>
     </div>
   </div>
-  <empty-content v-else>
-    <h3>Oops!</h3>
-    <p>No blog has been created</p>
-  </empty-content>
   <transition name="show-modal">
     <delete-blog :id="id" />
   </transition>
 </template>
 <script>
-import { mapMutations, mapGetters } from "vuex";
+import { mapMutations, mapGetters, mapActions } from "vuex";
 import DeleteBlog from "@/components/reuseables/DeleteBlog.vue";
 import EmptyContent from "@/components/reuseables/EmptyContent.vue";
+import LoadingBar from "@/components/reuseables/LoadingBar.vue";
+import dateFormatter from "@/mixins/formatDate";
 export default {
   name: "ContactTable",
   components: {
     EmptyContent,
     DeleteBlog,
+    LoadingBar,
   },
   data() {
     return {
       id: "",
     };
   },
+  mixins: [dateFormatter],
   methods: {
     ...mapMutations(["toggleDelModal", "resetDelModal", "deleteBlog"]),
-    delTable() {
-      this.deleteBlog(this.id);
-      this.resetDelModal();
-    },
+    ...mapActions(["getBlogs"]),
     toggleModal(id) {
       this.id = id;
       this.toggleDelModal();
     },
     edit(id) {
-      this.$router.push({ name: "edit-contact", params: { id } });
+      this.$router.push({ name: "edit-blog", params: { id } });
     },
   },
   computed: {
-    ...mapGetters(["blogTables", "openDelModal"]),
+    ...mapGetters(["blogs", "openDelModal", "loadingStatus"]),
+  },
+  mounted() {
+    this.getBlogs();
   },
 };
 </script>
@@ -139,10 +147,14 @@ export default {
       font-weight: 400;
       line-height: 15px;
       color: $sub;
+      &:nth-child(3) {
+        text-transform: capitalize;
+      }
     }
     img {
       width: 50px;
       height: 50px;
+      border-radius: 5px;
     }
   }
   .table-icon {

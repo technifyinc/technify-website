@@ -1596,6 +1596,20 @@
   "resolved" "https://registry.npmjs.org/@vue/web-component-wrapper/-/web-component-wrapper-1.3.0.tgz"
   "version" "1.3.0"
 
+"@vuelidate/core@^2.0.0-alpha.34":
+  "integrity" "sha512-8SHViBA+bBaXGH8UwcdGG7vEQ8mG8rhtsddJiq9Abz9YvzWxFxd8spAhe9ggfCtyRuvwCCpPbxx63NOGThVZkQ=="
+  "resolved" "https://registry.npmjs.org/@vuelidate/core/-/core-2.0.0-alpha.34.tgz"
+  "version" "2.0.0-alpha.34"
+  dependencies:
+    "vue-demi" "^0.12.0"
+
+"@vuelidate/validators@^2.0.0-alpha.26":
+  "integrity" "sha512-O53AU/dGMMOEPMC6bqhs9JvJAz03z0lLxIDq1tL8bWZylzRWeuF9a2sERxy82t2MnQ+ag15tUpTFpTbaYBm9tg=="
+  "resolved" "https://registry.npmjs.org/@vuelidate/validators/-/validators-2.0.0-alpha.26.tgz"
+  "version" "2.0.0-alpha.26"
+  dependencies:
+    "vue-demi" "^0.12.0"
+
 "@webassemblyjs/ast@1.11.1":
   "integrity" "sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw=="
   "resolved" "https://registry.npmjs.org/@webassemblyjs/ast/-/ast-1.11.1.tgz"
@@ -6058,6 +6072,11 @@
   "resolved" "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   "version" "1.1.2"
 
+"vue-demi@^0.12.0":
+  "integrity" "sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw=="
+  "resolved" "https://registry.npmjs.org/vue-demi/-/vue-demi-0.12.1.tgz"
+  "version" "0.12.1"
+
 "vue-eslint-parser@^8.0.1":
   "integrity" "sha512-lhWjDXJhe3UZw2uu3ztX51SJAPGPey1Tff2RK3TyZURwbuI4vximQLzz4nQfCv8CZq4xx7uIiogHMMoSJPr33A=="
   "resolved" "https://registry.npmjs.org/vue-eslint-parser/-/vue-eslint-parser-8.0.1.tgz"
@@ -6105,7 +6124,7 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@^2 || ^3.2.13", "vue@^3.0.0", "vue@^3.0.2", "vue@^3.2.13", "vue@3.2.23":
+"vue@^2 || ^3.2.13", "vue@^3.0.0", "vue@^3.0.0-0 || ^2.6.0", "vue@^3.0.2", "vue@^3.2.13", "vue@3.2.23":
   "integrity" "sha512-MGp9JZC37lzGhwSu6c1tQxrQbXbw7XKFqtYh7SFwNrNK899FPxGAHwSHMZijMChTSC3uZrD2BGO/3EHOgMJ0cw=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.2.23.tgz"
   "version" "3.2.23"

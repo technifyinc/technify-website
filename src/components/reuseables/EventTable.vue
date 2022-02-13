@@ -4,7 +4,12 @@
       Add Event
     </button>
   </div>
-  <div class="table-wrapper" v-if="eventTables.length">
+  <loading-bar v-if="loadingStatus" />
+  <empty-content v-else-if="events.length === 0">
+    <h3>Oops!</h3>
+    <p>No event has been created</p>
+  </empty-content>
+  <div class="table-wrapper" v-else>
     <div class="table-container">
       <table cellpadding="1" cellspacing="1" class="table">
         <thead>
@@ -17,21 +22,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(table, index) in eventTables" :key="index">
+          <tr v-for="(event, index) in events" :key="index">
             <td data-label="contact-group">
-              <img :src="require(`@/assets/img/${table.src}`)" />
+              <img
+                :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${event.image}`"
+                :alt="event.title"
+              />
             </td>
-            <td data-label="title">{{ table.title }}</td>
-            <td data-label="time">{{ table.time }}</td>
-            <td data-label="date-added">{{ table.dateAdded }}</td>
+            <td data-label="title">{{ event.title }}</td>
+            <td data-label="time">{{ event.time }}</td>
+            <td data-label="date-added">{{ formatDate(event.createdAt) }}</td>
             <td data-label="icon" class="table-icon">
               <span
                 class="mdi mdi-pencil-outline"
-                @click="edit(table.id)"
+                @click="edit(event._id)"
               ></span>
               <span
                 class="mdi mdi-trash-can"
-                @click="toggleModal(table.id)"
+                @click="toggleModal(event._id)"
               ></span>
             </td>
           </tr>
@@ -49,45 +57,45 @@
       </div>
     </div>
   </div>
-  <empty-content v-else>
-    <h3>Oops!</h3>
-    <p>No event has been created</p>
-  </empty-content>
   <transition name="show-modal">
     <delete-event :id="id" />
   </transition>
 </template>
 <script>
-import { mapMutations, mapGetters } from "vuex";
+import { mapMutations, mapGetters, mapActions } from "vuex";
 import DeleteEvent from "@/components/reuseables/DeleteEvent.vue";
 import EmptyContent from "@/components/reuseables/EmptyContent.vue";
+import LoadingBar from "@/components/reuseables/LoadingBar.vue";
+import dateFormatter from "@/mixins/formatDate";
 export default {
   name: "ContactTable",
   components: {
     EmptyContent,
     DeleteEvent,
+    LoadingBar,
   },
   data() {
     return {
       id: "",
     };
   },
+  mixins: [dateFormatter],
   methods: {
     ...mapMutations(["toggleDelModal", "resetDelModal", "deleteEvent"]),
-    delTable() {
-      this.deleteEvent(this.id);
-      this.resetDelModal();
-    },
+    ...mapActions(["getEvents"]),
     toggleModal(id) {
       this.id = id;
       this.toggleDelModal();
     },
     edit(id) {
-      this.$router.push({ name: "edit-contact", params: { id } });
+      this.$router.push({ name: "edit-event", params: { id } });
     },
   },
   computed: {
-    ...mapGetters(["eventTables", "openDelModal"]),
+    ...mapGetters(["events", "openDelModal", "loadingStatus"]),
+  },
+  mounted() {
+    this.getEvents();
   },
 };
 </script>
@@ -143,6 +151,7 @@ export default {
     img {
       width: 50px;
       height: 50px;
+      border-radius: 5px;
     }
   }
   .table-icon {

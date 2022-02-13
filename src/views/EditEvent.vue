@@ -7,7 +7,7 @@
   <div class="admin-view">
     <div class="container wrapper">
       <div class="admin-view-head">
-        <h2>Event Form</h2>
+        <h2>Edit Event</h2>
       </div>
       <form
         class="admin-view-content"
@@ -21,12 +21,14 @@
             name="title"
             id="title"
             placeholder="Title"
-            v-model="title"
-            @blur="v$.title.$touch()"
-            @focus="v$.title.$reset()"
-            :class="{ err: v$.title.$error }"
+            v-model="event.title"
+            @blur="v$.event.title.$touch()"
+            @focus="v$.event.title.$reset()"
+            :class="{ err: v$.event.title.$error }"
           />
-          <small :class="{ 'err-mssg': v$.title.$error }" v-if="v$.title.$error"
+          <small
+            :class="{ 'err-mssg': v$.event.title.$error }"
+            v-if="v$.event.title.$error"
             >Title is required</small
           >
         </div>
@@ -34,10 +36,10 @@
           <label for="medium">Medium</label>
           <select
             id="medium"
-            v-model="selected"
-            @blur="v$.selected.$touch()"
-            @focus="v$.selected.$reset()"
-            :class="{ err: v$.selected.$error }"
+            v-model="event.medium"
+            @blur="v$.event.medium.$touch()"
+            @focus="v$.event.medium.$reset()"
+            :class="{ err: v$.event.medium.$error }"
           >
             <option
               v-for="option in options"
@@ -48,8 +50,8 @@
             </option>
           </select>
           <small
-            :class="{ 'err-mssg': v$.selected.$error }"
-            v-if="v$.selected.$error"
+            :class="{ 'err-mssg': v$.event.medium.$error }"
+            v-if="v$.event.medium.$error"
             >Please select a medium</small
           >
         </div>
@@ -60,14 +62,14 @@
             name="address"
             id="address"
             placeholder="Provide link for virtual and address if physical"
-            v-model="address"
-            @blur="v$.address.$touch()"
-            @focus="v$.address.$reset()"
-            :class="{ err: v$.address.$error }"
+            v-model="event.address"
+            @blur="v$.event.address.$touch()"
+            @focus="v$.event.address.$reset()"
+            :class="{ err: v$.event.address.$error }"
           />
           <small
-            :class="{ 'err-mssg': v$.address.$error }"
-            v-if="v$.address.$error"
+            :class="{ 'err-mssg': v$.event.address.$error }"
+            v-if="v$.event.address.$error"
             >Address is required</small
           >
         </div>
@@ -78,12 +80,14 @@
             name="date"
             id="date"
             placeholder="Date"
-            v-model="date"
-            @blur="v$.date.$touch()"
-            @focus="v$.date.$reset()"
-            :class="{ err: v$.date.$error }"
+            v-model="event.date"
+            @blur="v$.event.date.$touch()"
+            @focus="v$.event.date.$reset()"
+            :class="{ err: v$.event.date.$error }"
           />
-          <small :class="{ 'err-mssg': v$.date.$error }" v-if="v$.date.$error"
+          <small
+            :class="{ 'err-mssg': v$.event.date.$error }"
+            v-if="v$.event.date.$error"
             >Date is required</small
           >
         </div>
@@ -94,12 +98,14 @@
             name="time"
             id="time"
             placeholder="time"
-            v-model="time"
-            @blur="v$.time.$touch()"
-            @focus="v$.time.$reset()"
-            :class="{ err: v$.time.$error }"
+            v-model="event.time"
+            @blur="v$.event.time.$touch()"
+            @focus="v$.event.time.$reset()"
+            :class="{ err: v$.event.time.$error }"
           />
-          <small :class="{ 'err-mssg': v$.time.$error }" v-if="v$.time.$error"
+          <small
+            :class="{ 'err-mssg': v$.event.time.$error }"
+            v-if="v$.event.time.$error"
             >Time is required</small
           >
         </div>
@@ -111,14 +117,14 @@
             id="details"
             placeholder="Event details goes here..."
             rows="10"
-            v-model="details"
-            @blur="v$.details.$touch()"
-            @focus="v$.details.$reset()"
-            :class="{ err: v$.details.$error }"
+            v-model="event.details"
+            @blur="v$.event.details.$touch()"
+            @focus="v$.event.details.$reset()"
+            :class="{ err: v$.event.details.$error }"
           ></textarea>
           <small
-            :class="{ 'err-mssg': v$.details.$error }"
-            v-if="v$.details.$error"
+            :class="{ 'err-mssg': v$.event.details.$error }"
+            v-if="v$.event.details.$error"
             >Details is required</small
           >
         </div>
@@ -129,15 +135,15 @@
             name="file"
             id="file"
             placeholder="file"
-            @change="(e) => (imageUpload = e.target.files[0])"
-            @blur="v$.imageUpload.$touch()"
-            @focus="v$.imageUpload.$reset()"
-            :class="{ err: v$.imageUpload.$error }"
+            @change="(e) => (event.image = e.target.files[0])"
+            @blur="v$.event.image.$touch()"
+            @focus="v$.event.image.$reset()"
+            :class="{ err: v$.event.image.$error }"
             accept="image/*"
           />
           <small
-            :class="{ 'err-mssg': v$.imageUpload.$error }"
-            v-if="v$.imageUpload.$error"
+            :class="{ 'err-mssg': v$.event.image.$error }"
+            v-if="v$.event.image.$error"
             >Image is required</small
           >
         </div>
@@ -148,14 +154,14 @@
             name="password"
             id="password"
             placeholder="Password"
-            v-model="password"
-            @blur="v$.password.$touch()"
-            @focus="v$.password.$reset()"
-            :class="{ err: v$.password.$error || error }"
+            v-model="event.password"
+            @blur="v$.event.password.$touch()"
+            @focus="v$.event.password.$reset()"
+            :class="{ err: v$.event.password.$error || error }"
           />
           <small
-            :class="{ 'err-mssg': v$.password.$error || error }"
-            v-if="v$.password.$error || error"
+            :class="{ 'err-mssg': v$.event.password.$error || error }"
+            v-if="v$.event.password.$error || error"
             >Provide the correct password</small
           >
         </div>
@@ -172,18 +178,16 @@ import useVuelidate from "@vuelidate/core";
 import { required, requiredIf } from "@vuelidate/validators";
 
 export default {
-  name: "AddEvent",
+  name: "EditEvent",
   setup: () => ({ v$: useVuelidate() }),
+  props: {
+    id: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
-      title: "",
-      selected: "",
-      date: "",
-      time: "",
-      address: "",
-      details: "",
-      password: "",
-      imageUpload: [],
       options: [
         {
           value: "zoom",
@@ -198,41 +202,47 @@ export default {
   },
   validations() {
     return {
-      title: { required },
-      selected: { required },
-      date: { required },
-      time: { required },
-      address: { required },
-      details: { required },
-      password: { required },
-      imageUpload: {
-        required: requiredIf(() => {
-          return this.imageUpload.length == 0;
-        }),
+      event: {
+        title: { required },
+        medium: { required },
+        date: { required },
+        time: { required },
+        address: { required },
+        details: { required },
+        password: { required },
+        image: {
+          required: requiredIf(() => {
+            return this.event.image.length == 0;
+          }),
+        },
       },
     };
   },
   methods: {
-    ...mapActions(["postEvent"]),
+    ...mapActions(["getSingleEvent", "updateEvent"]),
     post() {
-      if (this.v$.$invalid) {
-        this.v$.$validate();
+      if (this.v$.event.$invalid) {
+        this.v$.event.$validate();
       } else {
-        this.postEvent({
-          title: this.title,
-          medium: this.selected,
-          date: this.date,
-          time: this.time,
-          address: this.address,
-          details: this.details,
-          image: this.imageUpload,
-          password: this.password,
+        this.updateEvent({
+          id: this.id,
+          title: this.event.title,
+          date: this.event.date,
+          time: this.event.time,
+          medium: this.event.medium,
+          address: this.event.address,
+          details: this.event.details,
+          image: this.event.image,
+          password: this.event.password,
         });
       }
     },
   },
   computed: {
-    ...mapGetters(["error"]),
+    ...mapGetters(["error", "event"]),
+  },
+  mounted() {
+    this.getSingleEvent(this.id);
   },
 };
 </script>
