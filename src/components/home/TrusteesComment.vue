@@ -2,92 +2,82 @@
   <div class="trustees-comment">
     <div height="857" class="animate">
       <div class="trust">
-        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+        <img src="@/assets/img/avatar-01.jpeg" alt="trust_img" />
         <div class="title_content">
-          <h3>Dele Momodu</h3>
+          <h3>Floe Emmanuel</h3>
+          <p>Founder Easyflip</p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
-            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
-            mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
-            fugit quam doloribus? Deserunt temporibus architecto molestias,
-            repudiandae optio facere porro obcaecati nam, maiores deleniti
-            maxime.
+            I just started using Technify Inc. and it has been a wonderful
+            experience. I feel so blessed discovering their service. I would
+            definitely say they are the best at what they do.
           </p>
         </div>
       </div>
       <div class="trust">
-        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+        <img src="@/assets/img/avatar-02.jpeg" alt="trust_img" />
         <div class="title_content">
-          <h3>Shola Allison</h3>
+          <h3>Arogudade Shina</h3>
+          <p>COO TradeLenda</p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
-            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
-            mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
-            fugit quam doloribus? Deserunt temporibus architecto molestias,
-            repudiandae optio facere porro obcaecati nam, maiores deleniti
-            maxime.
+            Technify Inc. has been great. They are accommodating to our needs
+            and budget, while also doing a great job. Right away, having a clean
+            space was a load off our minds. We've been a customer for four years
+            and our productivity is better, our stress is lower, and our clients
+            are happier ever since we started working with Local Cleaning
+            Service.
           </p>
         </div>
       </div>
       <div class="trust">
-        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+        <img src="@/assets/img/avatar-03.jpeg" alt="trust_img" />
         <div class="title_content">
-          <h3>Mark Musk</h3>
+          <h3>Ogunye Philip</h3>
+          <p>Founder Candid8</p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
-            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
-            mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
-            fugit quam doloribus? Deserunt temporibus architecto molestias,
-            repudiandae optio facere porro obcaecati nam, maiores deleniti
-            maxime.
+            Technify Inc services were quick, courteous and very helpful. They
+            helped me restore my site completely after an outage. I was worried
+            it wouldn't be done in time for my big launch, but they finished the
+            job with time to spare!
           </p>
         </div>
       </div>
       <div class="trust">
-        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+        <img src="@/assets/img/avatar-01.jpeg" alt="trust_img" />
         <div class="title_content">
-          <h3>Dele Momodu</h3>
+          <h3>Floe Emmanuel</h3>
+          <p>Founder Easyflip</p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
-            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
-            mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
-            fugit quam doloribus? Deserunt temporibus architecto molestias,
-            repudiandae optio facere porro obcaecati nam, maiores deleniti
-            maxime.
+            I just started using Technify Inc. and it has been a wonderful
+            experience. I feel so blessed discovering their service. I would
+            definitely say they are the best at what they do.
           </p>
         </div>
       </div>
       <div class="trust">
-        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+        <img src="@/assets/img/avatar-02.jpeg" alt="trust_img" />
         <div class="title_content">
-          <h3>Shola Allison</h3>
+          <h3>Arogudade Shina</h3>
+          <p>COO TradeLenda</p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
-            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
-            mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
-            fugit quam doloribus? Deserunt temporibus architecto molestias,
-            repudiandae optio facere porro obcaecati nam, maiores deleniti
-            maxime.
+            Technify Inc. has been great. They are accommodating to our needs
+            and budget, while also doing a great job. Right away, having a clean
+            space was a load off our minds. We've been a customer for four years
+            and our productivity is better, our stress is lower, and our clients
+            are happier ever since we started working with Local Cleaning
+            Service.
           </p>
         </div>
       </div>
       <div class="trust">
-        <img src="@/assets/img/trust-image.svg" alt="trust_img" />
+        <img src="@/assets/img/avatar-03.jpeg" alt="trust_img" />
         <div class="title_content">
-          <h3>Mark Musk</h3>
+          <h3>Ogunye Philip</h3>
+          <p>Founder Candid8</p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse vitae
-            eius voluptate? Quisquam, minima. Nihil voluptas consectetur
-            mollitia delectus atque? Distinctio hic provident dolor quisquam
-            sequi cumque enim? Consequuntur cupiditate, saepe odio atque facilis
-            fugit quam doloribus? Deserunt temporibus architecto molestias,
-            repudiandae optio facere porro obcaecati nam, maiores deleniti
-            maxime.
+            Technify Inc services were quick, courteous and very helpful. They
+            helped me restore my site completely after an outage. I was worried
+            it wouldn't be done in time for my big launch, but they finished the
+            job with time to spare!
           </p>
         </div>
       </div>
@@ -148,6 +138,8 @@ export default {
   text-align: left;
   & img {
     width: 29px;
+    height: 29px;
+    border-radius: 50%;
     margin-right: 2rem;
   }
   & .title_content {
@@ -155,10 +147,16 @@ export default {
       font-weight: 600;
       font-size: 14px;
       line-height: 22.96px;
-      margin-bottom: 1rem;
       color: $header;
     }
-    & p {
+    & p:nth-child(2) {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 20px;
+      color: $sub;
+      margin: 0.3rem 0 1rem;
+    }
+    & p:nth-child(3) {
       font-weight: 400;
       font-size: 12px;
       line-height: 22.78px;
@@ -183,6 +181,7 @@ export default {
   .trust {
     & img {
       width: 50px;
+      height: 50px;
     }
     & .title_content {
       & h3 {

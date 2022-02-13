@@ -76,7 +76,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/scss/global.scss";
 .blog {
-  color: $header;
+  // color: $header;
   background-repeat: no-repeat;
   background: center center/cover;
   height: 400px;
@@ -93,17 +93,19 @@ export default {
       font-size: 24px;
       line-height: 32.64px;
       color: $white;
-      margin-bottom: 2rem;
+      margin-bottom: 0.5rem;
       text-transform: capitalize;
+      text-shadow: 3px 2px 6px #1a0b07;
     }
     & .btn {
-      background: $white;
-      color: $sec-color;
-      border: solid 1px $sec-color;
+      background: $sec-color;
+      color: $white;
+      border: solid 2px $sec-color;
       transition: all 0.5s ease;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
       &:hover {
-        color: $white;
-        background: $sec-color;
+        transform: scale(1.05);
       }
     }
   }
