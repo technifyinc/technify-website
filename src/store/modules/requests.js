@@ -182,7 +182,7 @@ const actions = {
   },
   async deleteBlog({ state, commit }, { id, password }) {
     try {
-      const response = axios({
+      const response = await axios({
         method: "delete",
         url: `${baseUrl}/blog/${id}`,
         headers: {
@@ -190,12 +190,11 @@ const actions = {
         },
       });
       state.err = response;
-      setTimeout(() => {
-        router.go(0);
-      }, 1000);
+      state.openDelModal = false;
       commit("deleteBlog", id);
     } catch (e) {
       state.err = e;
+      state.openDelModal = true;
       state.error = true;
       setTimeout(() => {
         state.error = false;
@@ -204,7 +203,7 @@ const actions = {
   },
   async deleteEvent({ state, commit }, { id, password }) {
     try {
-      const response = axios({
+      const response = await axios({
         method: "delete",
         url: `${baseUrl}/event/${id}`,
         headers: {
@@ -212,12 +211,11 @@ const actions = {
         },
       });
       state.err = response;
+      state.openDelModal = false;
       commit("deleteEvent", id);
-      setTimeout(() => {
-        router.go(0);
-      }, 1000);
     } catch (e) {
       state.err = e;
+      state.openDelModal = true;
       state.error = true;
       setTimeout(() => {
         state.error = false;
