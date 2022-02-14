@@ -170,8 +170,8 @@ const actions = {
           "Content-Type": "multipart/form-data",
         },
       });
-      commit("updateEvent", response.data.data);
       router.push({ name: "admin" });
+      commit("updateEvent", response.data.data);
     } catch (e) {
       state.err = e;
       state.error = true;
