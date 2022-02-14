@@ -37,17 +37,64 @@
 <script>
 import Header from "@/components/navbar/Header.vue";
 import Footer from "@/components/reuseables/Footer.vue";
-import { mapGetters } from "vuex";
 export default {
   components: {
     Header,
     Footer,
   },
   data() {
-    return {};
-  },
-  computed: {
-    ...mapGetters(["testimonials"]),
+    return {
+      testimonials: [
+        {
+          id: Math.random().toString(36).substring(7).toUpperCase(),
+          avatar: require("@/assets/img/avatar.svg"),
+          company_icon: require("@/assets/img/test-gig.svg"),
+          body: "I could probably go into sales for you. It's just amazing. Absolutely wonderful! Technify was worth a fortune to my company.",
+          role: "Senior Analyst",
+          name: "Stormi F.",
+        },
+        {
+          id: Math.random().toString(36).substring(7).toUpperCase(),
+          avatar: require("@/assets/img/avatar.svg"),
+          company_icon: require("@/assets/img/test-first.svg"),
+          body: "Technify was worth a fortune to my company. Technify did exactly what you said it does. Technify is both attractive and highly adaptable.",
+          role: "Operation Manager",
+          name: "Marshal V.",
+        },
+        {
+          id: Math.random().toString(36).substring(7).toUpperCase(),
+          avatar: require("@/assets/img/avatar.svg"),
+          company_icon: require("@/assets/img/test-glo.svg"),
+          body: "Definitely worth the investment. The very best. Technify has got everything I need. Technify is worth much more than I paid.",
+          role: "CEO Gen C.",
+          name: "Nissie J.",
+        },
+        {
+          id: Math.random().toString(36).substring(7).toUpperCase(),
+          avatar: require("@/assets/img/avatar.svg"),
+          company_icon: require("@/assets/img/test-glo.svg"),
+          body: "Definitely worth the investment. The very best. Technify has got everything I need. Technify is worth much more than I paid.",
+          role: "CEO Gen C.",
+          name: "Nissie J.",
+        },
+        {
+          id: Math.random().toString(36).substring(7).toUpperCase(),
+          avatar: require("@/assets/img/avatar.svg"),
+          company_icon: require("@/assets/img/test-first.svg"),
+          body: "Technify was worth a fortune to my company. Technify did exactly what you said it does. Technify is both attractive and highly adaptable.",
+          role: "Operation Manager",
+          name: "Marshal V.",
+        },
+        {
+          id: Math.random().toString(36).substring(7).toUpperCase(),
+          avatar: require("@/assets/img/avatar.svg"),
+          company_icon: require("@/assets/img/test-gig.svg"),
+          body: "I could probably go into sales for you. It's just amazing. Absolutely wonderful! Technify was worth a fortune to my company.",
+          role: "Senior Analyst",
+          name: "Stormi F.",
+        },
+      ],
+    };
   },
 };
 </script>
