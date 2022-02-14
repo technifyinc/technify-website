@@ -125,7 +125,7 @@ export default {
       author: "",
       details: "",
       password: "",
-      imageUpload: [],
+      imageUpload: "",
     };
   },
   validations() {

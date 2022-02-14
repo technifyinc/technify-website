@@ -79,7 +79,7 @@
             type="datetime"
             name="date"
             id="date"
-            placeholder="YYYY-MMM-DD (2022-02-30)"
+            placeholder="Date"
             v-model="event.date"
             @blur="v$.event.date.$touch()"
             @focus="v$.event.date.$reset()"

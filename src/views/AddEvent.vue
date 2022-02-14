@@ -74,7 +74,7 @@
         <div class="input-field">
           <label for="date">Date</label>
           <input
-            type="datetime"
+            type="date"
             name="date"
             id="date"
             placeholder="YYYY-MMM-DD (2022-02-30)"

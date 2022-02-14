@@ -167,6 +167,7 @@ export default {
   },
   mounted() {
     this.getSingleBlog(this.id);
+    console.log(this.blog.image, this.blog.title);
   },
 };
 </script>
