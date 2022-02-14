@@ -74,10 +74,10 @@
         <div class="input-field">
           <label for="date">Date</label>
           <input
-            type="date"
+            type="datetime"
             name="date"
             id="date"
-            placeholder="Date"
+            placeholder="YYYY-MMM-DD (2022-02-30)"
             v-model="date"
             @blur="v$.date.$touch()"
             @focus="v$.date.$reset()"
