@@ -76,7 +76,7 @@
         <div class="input-field">
           <label for="date">Date</label>
           <input
-            type="date"
+            type="datetime"
             name="date"
             id="date"
             placeholder="Date"

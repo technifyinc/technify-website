@@ -10,24 +10,6 @@
         </p>
       </div>
       <form class="del-modal-form" @submit.prevent>
-        <!-- <div class="input-field">
-          <label for="password">Enter security password to continue:</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-            v-model="password"
-            @blur="v$.password.$touch()"
-            @focus="v$.password.$reset()"
-            :class="{ err: v$.password.$error || error }"
-          />
-          <small
-            :class="{ 'err-mssg': v$.password.$error || error }"
-            v-if="v$.password.$error || error"
-            >Provide the correct password</small
-          >
-        </div> -->
         <div class="input-field">
           <label for="password">Password</label>
           <input
