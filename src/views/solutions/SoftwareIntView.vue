@@ -35,14 +35,14 @@ export default {
         },
         {
           title: "Create your workflow with our Software Integration Services",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
+          text: "We help Improve software infrastructure with well-built microservices, reliable API, and data integration",
           src: require("@/assets/img/illus-12.svg"),
           btn: false,
         },
         {
           title:
             "Launch your mobile strategy with  our enterprise app integration solutions.",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
+          text: "Launch your mobile strategy with our comprehensive enterprise application development, or use our enterprise app integration solutions.",
           src: require("@/assets/img/illus-07.svg"),
           btn: false,
         },

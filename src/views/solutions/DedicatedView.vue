@@ -36,13 +36,13 @@ export default {
         {
           title:
             "We help scale your delivery capacity with dedicated developers and teams",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
+          text: "When you cannot hire the right local tech talent on time, or unhappy with high attrition rate on your in-house team. We help scale your delivery capacity with dedicated developers and teams",
           src: require("@/assets/img/illus-11.svg"),
           btn: false,
         },
         {
           title: "Managing and motivating dedicated developers and teams",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
+          text: "Over the past decade, our customers succeeded by leveraging Technify Inc's process of building, motivating, and managing software development teams.",
           src: require("@/assets/img/illus-12.svg"),
           btn: false,
         },

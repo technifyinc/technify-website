@@ -36,14 +36,14 @@ export default {
         {
           title:
             "Helping our customers run, manage, and implement latest technology",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
+          text: "With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy for a digital and technological transformation of your organization that goes in line with your business objectives",
           src: require("@/assets/img/illus-04.svg"),
           btn: false,
         },
         {
           title:
             "Providing organisations with automated and digitalize operations",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
+          text: "Our strategic IT consulting will help you automate and digitalise operations, optimise the software portfolio, and implement the latest technologies.",
           src: require("@/assets/img/illus-07.svg"),
           btn: false,
         },
