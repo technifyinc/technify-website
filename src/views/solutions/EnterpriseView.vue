@@ -35,14 +35,14 @@ export default {
         },
         {
           title: "Implementation of new technology into your software strategy",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
+          text: "We help you Leverage our expertise in enterprise software development, API integration, modernising legacy systems, and consolidating app portfolios to improve processes and minimize cost in your organization.",
           src: require("@/assets/img/illus-08.svg"),
           btn: false,
         },
         {
           title:
             "Help our customers to resolve problems, and innovate solutions",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
+          text: "We solve complex IT issues and help your IT to align and support your business objectives.",
           src: require("@/assets/img/illus-09.svg"),
           btn: false,
         },

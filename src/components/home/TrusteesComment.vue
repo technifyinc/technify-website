@@ -2,7 +2,7 @@
   <div class="trustees-comment">
     <div height="857" class="animate">
       <div class="trust">
-        <img src="@/assets/img/avatar-01.jpeg" alt="trust_img" />
+        <img src="@/assets/img/avatar.svg" alt="trust_img" />
         <div class="title_content">
           <h3>Floe Emmanuel</h3>
           <p>Founder Easyflip</p>
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="trust">
-        <img src="@/assets/img/avatar-02.jpeg" alt="trust_img" />
+        <img src="@/assets/img/avatar.svg" alt="trust_img" />
         <div class="title_content">
           <h3>Arogudade Shina</h3>
           <p>COO TradeLenda</p>
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="trust">
-        <img src="@/assets/img/avatar-03.jpeg" alt="trust_img" />
+        <img src="@/assets/img/avatar.svg" alt="trust_img" />
         <div class="title_content">
           <h3>Ogunye Philip</h3>
           <p>Founder Candid8</p>
@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="trust">
-        <img src="@/assets/img/avatar-01.jpeg" alt="trust_img" />
+        <img src="@/assets/img/avatar.svg" alt="trust_img" />
         <div class="title_content">
           <h3>Floe Emmanuel</h3>
           <p>Founder Easyflip</p>
@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="trust">
-        <img src="@/assets/img/avatar-02.jpeg" alt="trust_img" />
+        <img src="@/assets/img/avatar.svg" alt="trust_img" />
         <div class="title_content">
           <h3>Arogudade Shina</h3>
           <p>COO TradeLenda</p>
@@ -69,7 +69,7 @@
         </div>
       </div>
       <div class="trust">
-        <img src="@/assets/img/avatar-03.jpeg" alt="trust_img" />
+        <img src="@/assets/img/avatar.svg" alt="trust_img" />
         <div class="title_content">
           <h3>Ogunye Philip</h3>
           <p>Founder Candid8</p>

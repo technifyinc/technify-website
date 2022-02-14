@@ -36,13 +36,13 @@ export default {
         {
           title:
             "Dedicated Team ready to guide you through your digital transformation journey",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
+          text: "Support your business infrastructure with scalable software that improves key facets of your enterprise from automation to employee collaboration",
           src: require("@/assets/img/illus-12.svg"),
           btn: false,
         },
         {
           title: "Custom Application Development is the core of our services",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et ",
+          text: "Leverage our decade-long expertise to build an enterprise software solution that solves a particular business objective in one of your departments.",
           src: require("@/assets/img/illus-07.svg"),
           btn: false,
         },

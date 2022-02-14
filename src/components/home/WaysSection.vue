@@ -16,18 +16,19 @@
             mobile strategy with our comprehensive enterprise application
             development, or use our enterprise app integration solutions.
           </p>
-          <router-link to="/">Learn more</router-link>
+          <router-link to="/about">Learn more</router-link>
         </div>
         <div class="ways-text" data-aos="zoom-in">
           <img src="@/assets/img/ways-building.svg" alt="ways_building" />
           <h4>Technify for Companies</h4>
           <p>
-            We help Improve software infrastructure with well-built
-            microservices, reliable API, and data integration. Launch your
-            mobile strategy with our comprehensive enterprise application
-            development, or use our enterprise app integration solutions.
+            We are a team of young, result-driven professionals, committed to
+            excellence and global standards. Solving high-impact problems with
+            technology; changing lifestyle and business culture in Africa.
+            Technify Inc is a firm that develops and deploys software solutions
+            at scale to solve high-impact business challenges.
           </p>
-          <router-link to="/">Learn more</router-link>
+          <router-link to="/about">Learn more</router-link>
         </div>
       </div>
     </div>

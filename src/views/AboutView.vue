@@ -42,7 +42,7 @@
             </p>
             <ul>
               <li>Commitment to Improvement</li>
-              <li>Always Be Shipping</li>
+              <li>Always Shipping</li>
               <li>Extreme accountability</li>
               <li>Constant open communication</li>
             </ul>
