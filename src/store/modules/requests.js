@@ -160,7 +160,6 @@ const actions = {
     formData.append("address", address);
     formData.append("details", details);
     formData.append("image", image);
-    console.log(image);
     try {
       const response = await axios({
         method: "put",
