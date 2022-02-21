@@ -8,7 +8,7 @@
           <p>
             We promote a work environment based on respect, effectiveness,
             effective communication, compliance with policies and processes,
-            corporate loyalty and swift execution.
+            corporate loyalty, and swift execution.
           </p>
         </div>
         <div class="illus">
