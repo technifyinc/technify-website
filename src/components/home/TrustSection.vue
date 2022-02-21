@@ -22,7 +22,7 @@
             <h3>10years+ in Business</h3>
             <p>
               Technify Inc. has made a great impact in providing solutions to
-              numerous business in nigeria.
+              numerous businesses in Nigeria.
             </p>
           </div>
         </div>
