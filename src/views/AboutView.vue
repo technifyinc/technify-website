@@ -20,7 +20,7 @@
             <h4>our vision</h4>
             <p>
               To be the Preferred tech business partner, creating the best
-              products and services
+              products and services.
             </p>
           </div>
           <div class="about-card">
@@ -41,10 +41,10 @@
               offer services to our esteemed clients.
             </p>
             <ul>
-              <li>Commitment to Improvement</li>
-              <li>Always Shipping</li>
-              <li>Extreme accountability</li>
-              <li>Constant open communication</li>
+              <li>Commitment to Improvement.</li>
+              <li>Always Shipping.</li>
+              <li>Extreme accountability.</li>
+              <li>Constant open communication.</li>
             </ul>
           </div>
         </div>
@@ -55,18 +55,18 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue";
-import Footer from "@/components/reuseables/Footer.vue";
+import Header from '@/components/navbar/Header.vue'
+import Footer from '@/components/reuseables/Footer.vue'
 export default {
   components: {
     Header,
-    Footer,
-  },
-};
+    Footer
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/global.scss";
+@import '@/scss/global.scss';
 .about {
   color: $header;
   padding: 3rem 0;
