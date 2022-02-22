@@ -3,7 +3,7 @@
     <ul class="contact-address-content">
       <li>
         <img src="@/assets/img/contact-mail.svg" alt="mail" />
-        <a href="mailto:info@easyflip.ng">info@easyflip.ng</a>
+        <a href="mailto:hello@technify.ng">hello@technify.ng</a>
       </li>
       <li>
         <img src="@/assets/img/contact-phone.svg" alt="phone" />
@@ -17,10 +17,10 @@
   </div>
 </template>
 <script>
-export default {};
+export default {}
 </script>
 <style lang="scss" scoped>
-@import "@/scss/global.scss";
+@import '@/scss/global.scss';
 .contact-address {
   text-align: left;
   margin-top: 1rem;
