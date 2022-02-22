@@ -1,173 +1,167 @@
-import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
-    path: "/",
-    name: "home",
-    component: HomeView,
+    path: '/',
+    name: 'home',
+    component: HomeView
   },
   {
-    path: "/about",
-    name: "about",
+    path: '/about',
+    name: 'about',
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+      import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: "/contact",
-    name: "contact",
+    path: '/contact',
+    name: 'contact',
     component: () =>
-      import(/* webpackChunkName: "contact" */ "../views/ContactView.vue"),
+      import(/* webpackChunkName: "contact" */ '../views/ContactView.vue')
   },
   {
-    path: "/solution",
-    name: "solution",
+    path: '/blog',
+    name: 'blogs',
     component: () =>
-      import(/* webpackChunkName: "solution" */ "../views/SolutionView.vue"),
+      import(/* webpackChunkName: "blog" */ '../views/blogs/BlogView.vue')
   },
   {
-    path: "/blog",
-    name: "blogs",
+    path: '/events',
+    name: 'events',
     component: () =>
-      import(/* webpackChunkName: "blog" */ "../views/blogs/BlogView.vue"),
+      import(/* webpackChunkName: "events" */ '../views/events/EventsView.vue')
   },
   {
-    path: "/events",
-    name: "events",
-    component: () =>
-      import(/* webpackChunkName: "events" */ "../views/events/EventsView.vue"),
-  },
-  {
-    path: "/blog/:id",
-    name: "blog",
+    path: '/blog/:id',
+    name: 'blog',
     props: true,
     component: () =>
       import(
-        /* webpackChunkName: "single-blog" */ "../views/blogs/SingleBlog.vue"
-      ),
+        /* webpackChunkName: "single-blog" */ '../views/blogs/SingleBlog.vue'
+      )
   },
   {
-    path: "/event/:id",
-    name: "event",
+    path: '/event/:id',
+    name: 'event',
     props: true,
     component: () =>
       import(
-        /* webpackChunkName: "single-event" */ "../views/events/SingleEvent.vue"
-      ),
+        /* webpackChunkName: "single-event" */ '../views/events/SingleEvent.vue'
+      )
   },
   {
-    path: "/business",
-    name: "business",
+    path: '/business',
+    name: 'business',
     component: () =>
       import(
-        /* webpackChunkName: "business" */ "../views/solutions/BusinessView.vue"
-      ),
+        /* webpackChunkName: "business" */ '../views/solutions/BusinessView.vue'
+      )
   },
   {
-    path: "/custom",
-    name: "custom",
+    path: '/custom',
+    name: 'custom',
     component: () =>
       import(
-        /* webpackChunkName: "custom" */ "../views/solutions/CustomView.vue"
-      ),
+        /* webpackChunkName: "custom" */ '../views/solutions/CustomView.vue'
+      )
   },
   {
-    path: "/software-int",
-    name: "software-int",
+    path: '/software-int',
+    name: 'software-int',
     component: () =>
       import(
-        /* webpackChunkName: "software-int" */ "../views/solutions/SoftwareIntView.vue"
-      ),
+        /* webpackChunkName: "software-int" */ '../views/solutions/SoftwareIntView.vue'
+      )
   },
   {
-    path: "/it",
-    name: "it",
+    path: '/it',
+    name: 'it',
     component: () =>
-      import(/* webpackChunkName: "it" */ "../views/solutions/ItView.vue"),
+      import(/* webpackChunkName: "it" */ '../views/solutions/ItView.vue')
   },
   {
-    path: "/enterprise",
-    name: "enterprise",
-    component: () =>
-      import(
-        /* webpackChunkName: "enterprise" */ "../views/solutions/EnterpriseView.vue"
-      ),
-  },
-  {
-    path: "/industry",
-    name: "industry",
+    path: '/enterprise',
+    name: 'enterprise',
     component: () =>
       import(
-        /* webpackChunkName: "industry" */ "../views/solutions/IndustryView.vue"
-      ),
+        /* webpackChunkName: "enterprise" */ '../views/solutions/EnterpriseView.vue'
+      )
   },
   {
-    path: "/dedicated",
-    name: "dedicated",
+    path: '/industry',
+    name: 'industry',
     component: () =>
       import(
-        /* webpackChunkName: "dedicated" */ "../views/solutions/DedicatedView.vue"
-      ),
+        /* webpackChunkName: "industry" */ '../views/solutions/IndustryView.vue'
+      )
   },
   {
-    path: "/software-port",
-    name: "software-port",
+    path: '/dedicated',
+    name: 'dedicated',
     component: () =>
       import(
-        /* webpackChunkName: "software-port" */ "../views/solutions/SoftwarePortView.vue"
-      ),
+        /* webpackChunkName: "dedicated" */ '../views/solutions/DedicatedView.vue'
+      )
   },
   {
-    path: "/testimonial",
-    name: "testimonial",
+    path: '/software-port',
+    name: 'software-port',
     component: () =>
       import(
-        /* webpackChunkName: "testimonial" */ "../views/TestimonialView.vue"
-      ),
+        /* webpackChunkName: "software-port" */ '../views/solutions/SoftwarePortView.vue'
+      )
   },
   {
-    path: "/faq",
-    name: "faq",
+    path: '/testimonial',
+    name: 'testimonial',
     component: () =>
-      import(/* webpackChunkName: "faq" */ "../views/FaqView.vue"),
+      import(
+        /* webpackChunkName: "testimonial" */ '../views/TestimonialView.vue'
+      )
   },
   {
-    path: "/policy",
-    name: "policy",
+    path: '/faq',
+    name: 'faq',
     component: () =>
-      import(/* webpackChunkName: "policy" */ "../views/PolicyView.vue"),
+      import(/* webpackChunkName: "faq" */ '../views/FaqView.vue')
   },
   {
-    path: "/terms",
-    name: "terms",
+    path: '/policy',
+    name: 'policy',
     component: () =>
-      import(/* webpackChunkName: "terms" */ "../views/TermsView.vue"),
+      import(/* webpackChunkName: "policy" */ '../views/PolicyView.vue')
   },
   {
-    path: "/career",
-    name: "career",
+    path: '/terms',
+    name: 'terms',
     component: () =>
-      import(/* webpackChunkName: "career" */ "../views/CareerView.vue"),
+      import(/* webpackChunkName: "terms" */ '../views/TermsView.vue')
   },
   {
-    path: "/admin",
-    name: "admin",
+    path: '/career',
+    name: 'career',
     component: () =>
-      import(/* webpackChunkName: "admin" */ "../views/AdminView.vue"),
+      import(/* webpackChunkName: "career" */ '../views/CareerView.vue')
   },
   {
-    path: "/add-blog",
-    name: "add-blog",
+    path: '/admin',
+    name: 'admin',
     component: () =>
-      import(/* webpackChunkName: "add-blog" */ "../views/AddBlog.vue"),
+      import(/* webpackChunkName: "admin" */ '../views/AdminView.vue')
   },
   {
-    path: "/add-event",
-    name: "add-event",
+    path: '/add-blog',
+    name: 'add-blog',
     component: () =>
-      import(/* webpackChunkName: "add-event" */ "../views/AddEvent.vue"),
+      import(/* webpackChunkName: "add-blog" */ '../views/AddBlog.vue')
   },
-];
+  {
+    path: '/add-event',
+    name: 'add-event',
+    component: () =>
+      import(/* webpackChunkName: "add-event" */ '../views/AddEvent.vue')
+  }
+]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -175,9 +169,9 @@ const router = createRouter({
   scrollBehavior() {
     return {
       top: 0,
-      behavior: "smooth",
-    };
-  },
-});
+      behavior: 'smooth'
+    }
+  }
+})
 
-export default router;
+export default router
