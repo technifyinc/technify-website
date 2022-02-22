@@ -4,10 +4,6 @@
     <div class="container">
       <div class="event-content routes">
         <h3>Events</h3>
-        <ul>
-          <li class="active">Today</li>
-          <li>Upcoming</li>
-        </ul>
       </div>
     </div>
   </div>
@@ -48,44 +44,44 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue";
-import Footer from "@/components/reuseables/Footer.vue";
-import { mapActions, mapGetters } from "vuex";
-import dateFormatter from "@/mixins/formatDate";
-import EmptyContent from "@/components/reuseables/EmptyContent.vue";
+import Header from '@/components/navbar/Header.vue'
+import Footer from '@/components/reuseables/Footer.vue'
+import { mapActions, mapGetters } from 'vuex'
+import dateFormatter from '@/mixins/formatDate'
+import EmptyContent from '@/components/reuseables/EmptyContent.vue'
 export default {
   components: {
     Header,
     Footer,
-    EmptyContent,
+    EmptyContent
   },
   data() {
-    return {};
+    return {}
   },
   computed: {
-    ...mapGetters(["events"]),
+    ...mapGetters(['events'])
   },
   methods: {
-    ...mapActions(["getEvents"]),
+    ...mapActions(['getEvents']),
     viewEvent(id) {
-      this.$router.push({ name: "event", params: { id } });
+      this.$router.push({ name: 'event', params: { id } })
     },
     concatenate(value) {
-      return value.substring(0, 100) + "...";
-    },
+      return value.substring(0, 100) + '...'
+    }
   },
   mixins: [dateFormatter],
   mounted() {
-    this.getEvents();
-  },
-};
+    this.getEvents()
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/global.scss";
+@import '@/scss/global.scss';
 .event {
   color: $header;
-  padding: 3rem 0;
+  padding: 3rem 0 0;
   &-content {
     display: flex;
     align-items: center;
