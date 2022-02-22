@@ -17,42 +17,42 @@
   <Footer />
 </template>
 <script>
-import Header from "@/components/navbar/Header.vue";
-import Footer from "@/components/reuseables/Footer.vue";
+import Header from '@/components/navbar/Header.vue'
+import Footer from '@/components/reuseables/Footer.vue'
 export default {
   components: {
     Header,
-    Footer,
+    Footer
   },
   data() {
     return {
       contents: [
         {
-          title: "Transitioning to cloud base infrastructure",
-          text: "We solve complex IT issues and help your IT to align and support your business objectives.",
-          src: require("@/assets/img/illus-03.svg"),
-          btn: true,
+          title: 'Transitioning to cloud base infrastructure',
+          text: 'We solve complex IT issues and help your IT to align and support your business objectives.',
+          src: require('@/assets/img/illus-03.svg'),
+          btn: true
         },
         {
-          title: "Implementation of new technology into your software strategy",
-          text: "We help you Leverage our expertise in enterprise software development, API integration, modernising legacy systems, and consolidating app portfolios to improve processes and minimize cost in your organization.",
-          src: require("@/assets/img/illus-08.svg"),
-          btn: false,
+          title: 'Implementation of new technology into your software strategy',
+          text: 'We help you Leverage our expertise in enterprise software development, API integration, modernising legacy systems, and consolidating app portfolios to improve processes and minimize cost in your organization.',
+          src: require('@/assets/img/illus-08.svg'),
+          btn: false
         },
         {
           title:
-            "Help our customers to resolve problems, and innovate solutions",
-          text: "We solve complex IT issues and help your IT to align and support your business objectives.",
-          src: require("@/assets/img/illus-09.svg"),
-          btn: false,
-        },
-      ],
-    };
-  },
-};
+            'Help our customers to resolve problems, and innovate solutions',
+          text: 'Our Enterprise Architecture experts can help you make the transition from outdated and ineffective IT delivery systems and architectures to a cloud-based infrastructure that streamlines delivery and allows for implementation of new technologies into your software strategy.',
+          src: require('@/assets/img/illus-09.svg'),
+          btn: false
+        }
+      ]
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
-@import "@/scss/global.scss";
+@import '@/scss/global.scss';
 .solution {
   height: 828px;
   padding: 3rem 0;
@@ -72,8 +72,8 @@ export default {
     }
   }
   &:nth-child(4) {
-    background: url("@/assets/img/soln-bg-mobile.svg") no-repeat left -40px bottom -200px,
-      url("@/assets/img/soln-bg-mobile-01.svg") no-repeat left 0px top 0px;
+    background: url('@/assets/img/soln-bg-mobile.svg') no-repeat left -40px bottom -200px,
+      url('@/assets/img/soln-bg-mobile-01.svg') no-repeat left 0px top 0px;
     padding-bottom: 7rem;
   }
   &:nth-child(odd) {
@@ -124,9 +124,9 @@ export default {
     &:nth-child(4) .solution-content {
       margin: 0;
     }
-    &:nth-child(odd) {
-      grid-auto-flow: dense;
-      direction: rtl;
+    &:nth-child(odd) &-content {
+      display: flex;
+      flex-direction: row-reverse;
     }
     &:nth-child(3),
     &:nth-child(4) {
@@ -169,8 +169,8 @@ export default {
     }
     &:nth-child(4) {
       margin-top: 0;
-      background: url("@/assets/img/soln-bg-01.svg") no-repeat left -40px bottom -200px,
-        url("@/assets/img/soln-bg.svg") no-repeat left 0px top 0px;
+      background: url('@/assets/img/soln-bg-01.svg') no-repeat left -40px bottom -200px,
+        url('@/assets/img/soln-bg.svg') no-repeat left 0px top 0px;
       padding-bottom: 7rem;
     }
     &-content {

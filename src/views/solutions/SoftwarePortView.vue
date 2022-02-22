@@ -28,7 +28,7 @@ export default {
     return {
       contents: [
         {
-          title: 'Conducting analysis on enterprise software.',
+          title: 'Conducting analysis on enterprise software',
           text: 'We offer IT consulting services that will help you improve operations by optimizing your software portfolio.',
           src: require('@/assets/img/illus-16.svg'),
           btn: true
@@ -36,7 +36,7 @@ export default {
         {
           title:
             'We provide integration of third party solutions to remove the existing roadblocks',
-          text: 'We help Improve software infrastructure with well-built microservices, reliable API, and data integration',
+          text: 'We help Improve software infrastructure with well-built microservices, reliable API, and data integration.',
           src: require('@/assets/img/illus-08.svg'),
           btn: false
         },
@@ -125,9 +125,9 @@ export default {
     &:nth-child(4) .solution-content {
       margin: 0;
     }
-    &:nth-child(odd) {
-      grid-auto-flow: dense;
-      direction: rtl;
+    &:nth-child(odd) &-content {
+      display: flex;
+      flex-direction: row-reverse;
     }
     &:nth-child(3),
     &:nth-child(4) {

@@ -88,14 +88,6 @@ const routes = [
       )
   },
   {
-    path: '/industry',
-    name: 'industry',
-    component: () =>
-      import(
-        /* webpackChunkName: "industry" */ '../views/solutions/IndustryView.vue'
-      )
-  },
-  {
     path: '/dedicated',
     name: 'dedicated',
     component: () =>

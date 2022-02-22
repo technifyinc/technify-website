@@ -36,7 +36,7 @@ export default {
         {
           title:
             'We help scale your delivery capacity with dedicated developers and teams',
-          text: 'When you cannot hire the right local tech talent on time, or are unhappy with the high attrition rate on your in-house team. We help scale your delivery capacity with dedicated developers and teams',
+          text: 'When you cannot hire the right local tech talent on time, or are unhappy with the high attrition rate on your in-house team. We help scale your delivery capacity with dedicated developers and teams.',
           src: require('@/assets/img/illus-11.svg'),
           btn: false
         },
@@ -124,9 +124,9 @@ export default {
     &:nth-child(4) .solution-content {
       margin: 0;
     }
-    &:nth-child(odd) {
-      grid-auto-flow: dense;
-      direction: rtl;
+    &:nth-child(odd) &-content {
+      display: flex;
+      flex-direction: row-reverse;
     }
     &:nth-child(3),
     &:nth-child(4) {

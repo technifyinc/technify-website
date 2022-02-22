@@ -28,14 +28,14 @@ export default {
     return {
       contents: [
         {
-          title: 'We build custom microservices, APIs, and data protocols.',
+          title: 'We build custom microservices, APIs, and data protocols',
           text: 'We help you establish a robust and well-coordinated IT infrastructure across all departments of your organization.',
           src: require('@/assets/img/illus-19.svg'),
           btn: true
         },
         {
           title: 'Create your workflow with our Software Integration Services',
-          text: 'We help improve software infrastructure with well-build microservices, reliable API, and date integration',
+          text: 'We help improve software infrastructure with well-build microservices, reliable API, and date integration.',
           src: require('@/assets/img/illus-12.svg'),
           btn: false
         },
@@ -124,9 +124,9 @@ export default {
     &:nth-child(4) .solution-content {
       margin: 0;
     }
-    &:nth-child(odd) {
-      grid-auto-flow: dense;
-      direction: rtl;
+    &:nth-child(odd) &-content {
+      display: flex;
+      flex-direction: row-reverse;
     }
     &:nth-child(3),
     &:nth-child(4) {

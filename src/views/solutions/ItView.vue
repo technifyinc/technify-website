@@ -36,7 +36,7 @@ export default {
         {
           title:
             'Helping our customers run, manage, and implement latest technology',
-          text: 'With the expertise and deep tech background of the best minds at Technify Inc, we create a comprehensive IT strategy for a digital and technological transformation of your organization that goes in line with your business objectives',
+          text: 'With the expertise and deep tech background of the best minds at Technify Inc, we create a comprehensive IT strategy for a digital and technological transformation of your organization that goes in line with your business objectives.',
           src: require('@/assets/img/illus-04.svg'),
           btn: false
         },
@@ -131,9 +131,9 @@ export default {
         font-weight: 500;
       }
     }
-    &:nth-child(odd) {
-      grid-auto-flow: dense;
-      direction: rtl;
+    &:nth-child(odd) &-content {
+      display: flex;
+      flex-direction: row-reverse;
     }
     &-content {
       margin-top: 78px;
