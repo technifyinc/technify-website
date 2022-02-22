@@ -27,67 +27,67 @@
   <Footer />
 </template>
 <script>
-import Header from "@/components/navbar/Header.vue";
-import Footer from "@/components/reuseables/Footer.vue";
+import Header from '@/components/navbar/Header.vue'
+import Footer from '@/components/reuseables/Footer.vue'
 export default {
   components: {
     Header,
-    Footer,
+    Footer
   },
   data() {
     return {
       faqs: [
         {
-          question: "What is technify ?",
-          ans: "We build out solutions to  help improve business processes end-to-end and optimize workflow with cutting-edge business process management solutions.",
+          question: 'What is technify?',
+          ans: 'We build out solutions to  help improve business processes end-to-end and optimize workflow with cutting-edge business process management solutions.'
         },
         {
-          question: "What happens to data in deleted accounts?",
-          ans: "The data gets recycled.",
+          question: 'What happens to data in deleted accounts?',
+          ans: 'The data gets recycled.'
         },
         {
-          question: "Is technify secured with my personal info ?",
-          ans: "Yes, your personal information is safe with us.",
+          question: 'Is technify secured with my personal info?',
+          ans: 'Yes, your personal information is safe with us.'
         },
         {
-          question: "Is technify free ?",
-          ans: "No, It isn't",
+          question: 'Is technify free?',
+          ans: "No, It isn't."
         },
         {
-          question: "How do I sign up for Technify ",
-          ans: "It's easy, just click on the get started button.",
-        },
-      ],
-    };
+          question: 'How do I sign up for Technify?',
+          ans: "It's easy, just click on the get started button."
+        }
+      ]
+    }
   },
   mounted() {
-    const faqItems = document.querySelectorAll(".faq-item");
+    const faqItems = document.querySelectorAll('.faq-item')
     faqItems.forEach((item) => {
-      const faqHeader = item.querySelector(".faq-header");
-      faqHeader.addEventListener("click", () => {
-        const openItem = document.querySelector(".faq-open");
-        toggleItem(item);
+      const faqHeader = item.querySelector('.faq-header')
+      faqHeader.addEventListener('click', () => {
+        const openItem = document.querySelector('.faq-open')
+        toggleItem(item)
         if (openItem && openItem !== item) {
-          toggleItem(openItem);
+          toggleItem(openItem)
         }
-      });
-    });
+      })
+    })
     const toggleItem = (item) => {
-      const faqContent = item.querySelector(".faq-content");
-      if (item.classList.contains("faq-open")) {
-        faqContent.removeAttribute("style");
-        item.classList.remove("faq-open");
+      const faqContent = item.querySelector('.faq-content')
+      if (item.classList.contains('faq-open')) {
+        faqContent.removeAttribute('style')
+        item.classList.remove('faq-open')
       } else {
-        faqContent.style.height = faqContent.scrollHeight + "px";
-        item.classList.add("faq-open");
+        faqContent.style.height = faqContent.scrollHeight + 'px'
+        item.classList.add('faq-open')
       }
-    };
-  },
-};
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/global.scss";
+@import '@/scss/global.scss';
 .faqs {
   padding: 3rem 0;
   h3 {
@@ -99,7 +99,7 @@ export default {
   }
   form {
     margin: 4rem 0;
-    input[type="search"] {
+    input[type='search'] {
       backdrop-filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.47));
       border: 1px solid rgba(78, 78, 78, 0.62);
       border-radius: 6px;
@@ -110,7 +110,7 @@ export default {
         color: rgba(78, 78, 78, 0.54);
       }
     }
-    input[type="submit"] {
+    input[type='submit'] {
       display: block;
       margin: auto;
       width: 136px;
@@ -180,12 +180,12 @@ export default {
       justify-content: center;
       align-items: center;
       padding: 0 0.2rem;
-      input[type="search"] {
+      input[type='search'] {
         flex-basis: 85%;
         margin: 0;
         padding: 1rem;
       }
-      input[type="submit"] {
+      input[type='submit'] {
         flex-basis: 179px;
         margin-left: 1rem;
         padding: 0.8rem 1rem;
@@ -206,7 +206,7 @@ export default {
     }
     form {
       margin-bottom: 6rem;
-      input[type="submit"] {
+      input[type='submit'] {
         font-size: 20px;
       }
     }
@@ -242,7 +242,7 @@ export default {
     }
     form {
       margin-bottom: 6rem;
-      input[type="submit"] {
+      input[type='submit'] {
         font-size: 24px;
       }
     }
