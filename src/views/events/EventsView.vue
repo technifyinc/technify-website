@@ -4,14 +4,15 @@
     <div class="container">
       <div class="event-content routes">
         <h3>Events</h3>
-        <ul>
-          <li class="active">Today</li>
-          <li>Upcoming</li>
-        </ul>
       </div>
     </div>
   </div>
-  <div class="events" v-if="events.length">
+  <loading-bar v-if="loadingStatus" class="loading" />
+  <empty-content v-else-if="events.length === 0">
+    <h3>No Events yet</h3>
+    <p>Opps!, we don't have any events yet kindly check back next time</p>
+  </empty-content>
+  <div v-else class="events">
     <div class="container">
       <div class="events-content">
         <div v-for="event in events" :key="event" class="blg">
@@ -40,52 +41,50 @@
       </div>
     </div>
   </div>
-  <empty-content v-else>
-    <h3>No Events yet</h3>
-    <p>Opps!, we don't have any events yet kindly check back next time</p>
-  </empty-content>
   <Footer />
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue";
-import Footer from "@/components/reuseables/Footer.vue";
-import { mapActions, mapGetters } from "vuex";
-import dateFormatter from "@/mixins/formatDate";
-import EmptyContent from "@/components/reuseables/EmptyContent.vue";
+import Header from '@/components/navbar/Header.vue'
+import Footer from '@/components/reuseables/Footer.vue'
+import { mapActions, mapGetters } from 'vuex'
+import dateFormatter from '@/mixins/formatDate'
+import EmptyContent from '@/components/reuseables/EmptyContent.vue'
+import LoadingBar from '@/components/reuseables/LoadingBar.vue'
 export default {
   components: {
     Header,
     Footer,
     EmptyContent,
+    LoadingBar
   },
   data() {
-    return {};
+    return {}
   },
   computed: {
-    ...mapGetters(["events"]),
+    ...mapGetters(['events', 'loadingStatus'])
   },
   methods: {
-    ...mapActions(["getEvents"]),
+    ...mapActions(['getEvents']),
     viewEvent(id) {
-      this.$router.push({ name: "event", params: { id } });
+      this.$router.push({ name: 'event', params: { id } })
     },
     concatenate(value) {
-      return value.substring(0, 100) + "...";
-    },
+      return value.substring(0, 100) + '...'
+    }
   },
   mixins: [dateFormatter],
   mounted() {
-    this.getEvents();
-  },
-};
+    this.getEvents()
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/global.scss";
+@import '@/scss/global.scss';
 .event {
   color: $header;
-  padding: 3rem 0;
+  padding: 3rem 0 0;
   &-content {
     display: flex;
     align-items: center;
@@ -192,6 +191,14 @@ export default {
       }
     }
   }
+}
+
+.loading {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (min-width: 700px) {

@@ -4,7 +4,7 @@
       <div class="ways-content">
         <div class="ways-head">
           <h3>Ways to use technify</h3>
-          <p>We have some great plans to suit your individual needs</p>
+          <p>We have some great plans to suit your individual needs.</p>
           <router-link to="/" class="btn">Get Started</router-link>
         </div>
         <div class="ways-text" data-aos="zoom-in">
@@ -16,7 +16,6 @@
             mobile strategy with our comprehensive enterprise application
             development, or use our enterprise app integration solutions.
           </p>
-          <router-link to="/about">Learn more</router-link>
         </div>
         <div class="ways-text" data-aos="zoom-in">
           <img src="@/assets/img/ways-building.svg" alt="ways_building" />
@@ -28,7 +27,6 @@
             Technify Inc is a firm that develops and deploys software solutions
             at scale to solve high-impact business challenges.
           </p>
-          <router-link to="/about">Learn more</router-link>
         </div>
       </div>
     </div>
@@ -37,22 +35,22 @@
 </template>
 
 <script>
-import TrustSection from "@/components/home/TrustSection.vue";
+import TrustSection from '@/components/home/TrustSection.vue'
 
 export default {
-  name: "HomeView",
+  name: 'HomeView',
   components: {
-    TrustSection,
-  },
-};
+    TrustSection
+  }
+}
 </script>
 <style lang="scss" scoped>
-@import "@/scss/global.scss";
+@import '@/scss/global.scss';
 .ways {
   background: $bg;
-  background: url("@/assets/img/bg-01.png") no-repeat top 50% left 0px,
-    url("@/assets/img/bg-02.png") no-repeat right -100px bottom -100px,
-    url("@/assets/img/bg-02.png") no-repeat right -100px top -100px;
+  background: url('@/assets/img/bg-01.png') no-repeat top 50% left 0px,
+    url('@/assets/img/bg-02.png') no-repeat right -100px bottom -100px,
+    url('@/assets/img/bg-02.png') no-repeat right -100px top -100px;
   padding: 5rem 0 3rem;
   text-align: center;
   &-head {
@@ -115,9 +113,9 @@ export default {
 @media screen and (min-width: 700px) {
   .ways {
     background: $bg;
-    background: url("@/assets/img/bg-01.png") no-repeat top 50% left 0px,
-      url("@/assets/img/bg-02.png") no-repeat right -80px bottom -100px,
-      url("@/assets/img/bg-02.png") no-repeat right -80px top -100px;
+    background: url('@/assets/img/bg-01.png') no-repeat top 50% left 0px,
+      url('@/assets/img/bg-02.png') no-repeat right -80px bottom -100px,
+      url('@/assets/img/bg-02.png') no-repeat right -80px top -100px;
     text-align: left;
     &-content {
       display: flex;

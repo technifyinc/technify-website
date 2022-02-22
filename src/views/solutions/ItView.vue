@@ -17,43 +17,43 @@
   <Footer />
 </template>
 <script>
-import Header from "@/components/navbar/Header.vue";
-import Footer from "@/components/reuseables/Footer.vue";
+import Header from '@/components/navbar/Header.vue'
+import Footer from '@/components/reuseables/Footer.vue'
 export default {
   components: {
     Header,
-    Footer,
+    Footer
   },
   data() {
     return {
       contents: [
         {
-          title: "I.T consulting service that suit you",
-          text: "We provide comprehensive IT strategy for a digital and technological transformation of your organization",
-          src: require("@/assets/img/illus-02.svg"),
-          btn: true,
+          title: 'I.T consulting service that suit you',
+          text: 'We provide a comprehensive IT strategy for a digital and technological transformation of your organization.',
+          src: require('@/assets/img/illus-02.svg'),
+          btn: true
         },
         {
           title:
-            "Helping our customers run, manage, and implement latest technology",
-          text: "With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy for a digital and technological transformation of your organization that goes in line with your business objectives",
-          src: require("@/assets/img/illus-04.svg"),
-          btn: false,
+            'Helping our customers run, manage, and implement latest technology',
+          text: 'With the expertise and deep tech background of the best minds at Technify Inc, we create a comprehensive IT strategy for a digital and technological transformation of your organization that goes in line with your business objectives.',
+          src: require('@/assets/img/illus-04.svg'),
+          btn: false
         },
         {
           title:
-            "Providing organisations with automated and digitalize operations",
-          text: "Our strategic IT consulting will help you automate and digitalise operations, optimise the software portfolio, and implement the latest technologies.",
-          src: require("@/assets/img/illus-07.svg"),
-          btn: false,
-        },
-      ],
-    };
-  },
-};
+            'Providing organisations with automated and digitalize operations',
+          text: 'Our strategic IT consulting will help you automate and digitalise operations, optimise the software portfolio, and implement the latest technologies.',
+          src: require('@/assets/img/illus-07.svg'),
+          btn: false
+        }
+      ]
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
-@import "@/scss/global.scss";
+@import '@/scss/global.scss';
 .solution {
   height: 828px;
   padding: 3rem 0;
@@ -73,8 +73,8 @@ export default {
     }
   }
   &:nth-child(4) {
-    background: url("@/assets/img/soln-bg-mobile.svg") no-repeat left -40px bottom -200px,
-      url("@/assets/img/soln-bg-mobile-01.svg") no-repeat left 0px top 0px;
+    background: url('@/assets/img/soln-bg-mobile.svg') no-repeat left -40px bottom -200px,
+      url('@/assets/img/soln-bg-mobile-01.svg') no-repeat left 0px top 0px;
     padding-bottom: 7rem;
   }
   &:nth-child(odd) {
@@ -131,9 +131,9 @@ export default {
         font-weight: 500;
       }
     }
-    &:nth-child(odd) {
-      grid-auto-flow: dense;
-      direction: rtl;
+    &:nth-child(odd) &-content {
+      display: flex;
+      flex-direction: row-reverse;
     }
     &-content {
       margin-top: 78px;
@@ -171,8 +171,8 @@ export default {
     }
     &:nth-child(4) {
       margin-top: 0;
-      background: url("@/assets/img/soln-bg-01.svg") no-repeat left -40px bottom -200px,
-        url("@/assets/img/soln-bg.svg") no-repeat left 0px top 0px;
+      background: url('@/assets/img/soln-bg-01.svg') no-repeat left -40px bottom -200px,
+        url('@/assets/img/soln-bg.svg') no-repeat left 0px top 0px;
       padding-bottom: 7rem;
     }
     &-content {

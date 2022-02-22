@@ -3,22 +3,26 @@
     <div class="container">
       <div class="trustees-header">
         <h3>Why Technify</h3>
-        <p>We operates on strong values and offer services to our esteemed clients</p>
+        <p>
+          We operate on strong values and offer services to our esteemed
+          clients.
+        </p>
       </div>
       <div class="trustees-content">
         <div class="trustees-heads">
           <div class="trustees-head">
             <h3>Trusted by 10,000+ businesses</h3>
             <p>
-              Technify has made a great impact in providing solutions to
-              nomerous business in nigeria
+              Over the years, Technify Inc. has been helping organizations of
+              different scale and structure to improve and modernize their IT
+              strategies.
             </p>
           </div>
           <div class="trustees-head">
             <h3>10years+ in Business</h3>
             <p>
-              Technify has made a great impact in providing solutions to
-              nomerous business in nigeria
+              Technify Inc. has made a great impact in providing solutions to
+              numerous businesses in Nigeria.
             </p>
           </div>
         </div>
@@ -31,16 +35,16 @@
 </template>
 
 <script>
-import TrusteesComment from "@/components/home/TrusteesComment.vue";
+import TrusteesComment from '@/components/home/TrusteesComment.vue'
 export default {
-  name: "TrusteesSection",
+  name: 'TrusteesSection',
   components: {
-    TrusteesComment,
-  },
-};
+    TrusteesComment
+  }
+}
 </script>
 <style lang="scss" scoped>
-@import "@/scss/global.scss";
+@import '@/scss/global.scss';
 .trustees {
   padding: 4rem 0;
   &-header {

@@ -34,70 +34,69 @@
 </template>
 
 <script>
-import ImageSlider from "./ImageSlider.vue";
+import ImageSlider from './ImageSlider.vue'
 export default {
   components: { ImageSlider },
-  name: "WhatSection",
+  name: 'WhatSection',
   data() {
     return {
       lists: [
         {
-          title: "Enterprise Software Development",
-          body: "We help you Leverage our expertise in enterprise software development, API integration, modernising legacy systems, consolidating app portfolios to improve processes.",
-          active: false,
+          title: 'Enterprise Software Development',
+          body: 'We help you Leverage our expertise in enterprise software development, API integration, modernising legacy systems, consolidating app portfolios to improve processes.',
+          active: false
         },
         {
-          title: "I.T Consulting Service",
-          body: "With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy for a digital and technological transformation of your organization.",
-          active: false,
+          title: 'I.T Consulting Service',
+          body: "With the expertise and deep tech background of the best minds at Technify Inc, we create a comprehensive IT strategy for your organization's digital and technological transformation.",
+          active: false
         },
         {
-          title: "Tools To Keep Your Network Working",
-          body: "We provide standardized tools for monitoring, managing and reporting. Our services include operations and system management, with availability monitoring and reporting.",
-          active: false,
-        },
+          title: 'Tools To Keep Your Network Working',
+          body: 'We provide standardized tools for monitoring, managing, and reporting. Our services include operations and system management, with availability monitoring and reporting.',
+          active: false
+        }
       ],
       lines: [
         {
-          increment: false,
+          increment: false
         },
         {
-          increment: false,
+          increment: false
         },
         {
-          increment: false,
-        },
+          increment: false
+        }
       ],
       intervalTime: 2000,
-      current: 0,
-    };
+      current: 0
+    }
   },
   methods: {
     incrementMoveSlider() {
       this.lists.forEach((list) => {
-        list.active = false;
-      });
+        list.active = false
+      })
       this.lines.forEach((line) => {
-        line.increment = false;
-      });
-      this.lists[this.current].active = true;
-      this.lines[this.current].increment = true;
-      if(this.current < this.lists.length - 1) {
-        this.current++;
-      } 
-      else {
-        this.current = 0;
+        line.increment = false
+      })
+      this.lists[this.current].active = true
+      this.lines[this.current].increment = true
+      if (this.current < this.lists.length - 1) {
+        this.current++
+      } else {
+        this.current = 0
       }
       setTimeout(this.incrementMoveSlider, this.intervalTime)
     }
   },
   mounted() {
     this.incrementMoveSlider()
-  },
-};
+  }
+}
 </script>
 <style lang="scss" scoped>
-@import "@/scss/global.scss";
+@import '@/scss/global.scss';
 .what {
   background: $sec-bg;
   padding: 3rem 0;

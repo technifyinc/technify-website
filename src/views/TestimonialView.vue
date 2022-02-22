@@ -4,7 +4,7 @@
     <div class="container">
       <div class="testimonial-content routes">
         <h3>testimonials</h3>
-        <p>Here is what our 10,000 + businesses are saying about technify</p>
+        <p>Here is what our 10,000 + businesses are saying about technify.</p>
       </div>
     </div>
   </div>
@@ -35,72 +35,49 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue";
-import Footer from "@/components/reuseables/Footer.vue";
+import Header from '@/components/navbar/Header.vue'
+import Footer from '@/components/reuseables/Footer.vue'
 export default {
   components: {
     Header,
-    Footer,
+    Footer
   },
   data() {
     return {
       testimonials: [
         {
           id: Math.random().toString(36).substring(7).toUpperCase(),
-          avatar: require("@/assets/img/avatar.svg"),
-          company_icon: require("@/assets/img/test-gig.svg"),
-          body: "I could probably go into sales for you. It's just amazing. Absolutely wonderful! Technify was worth a fortune to my company.",
-          role: "Senior Analyst",
-          name: "Stormi F.",
+          avatar: require('@/assets/img/avatar.svg'),
+          company_icon:
+            'https://res.cloudinary.com/trade-lenda/image/upload/v1628132872/landing_page_pic/Group_11434_2_umfio2.png',
+          body: "I could probably go into sales for you. It's just amazing. Wonderful! Technify was worth a fortune to my company.",
+          role: 'COO TradeLenda',
+          name: 'Arogudade Shina'
         },
         {
           id: Math.random().toString(36).substring(7).toUpperCase(),
-          avatar: require("@/assets/img/avatar.svg"),
-          company_icon: require("@/assets/img/test-first.svg"),
-          body: "Technify was worth a fortune to my company. Technify did exactly what you said it does. Technify is both attractive and highly adaptable.",
-          role: "Operation Manager",
-          name: "Marshal V.",
+          avatar: require('@/assets/img/avatar.svg'),
+          company_icon: 'https://upbase.com.ng/assets/img/upbase.png',
+          body: 'Technify was worth a fortune to my company. Technify did exactly what you said it does. Technify is both attractive and highly adaptable.',
+          role: 'Operation Manager',
+          name: 'Mark Ogunyele'
         },
         {
           id: Math.random().toString(36).substring(7).toUpperCase(),
-          avatar: require("@/assets/img/avatar.svg"),
-          company_icon: require("@/assets/img/test-glo.svg"),
-          body: "Definitely worth the investment. The very best. Technify has got everything I need. Technify is worth much more than I paid.",
-          role: "CEO Gen C.",
-          name: "Nissie J.",
-        },
-        {
-          id: Math.random().toString(36).substring(7).toUpperCase(),
-          avatar: require("@/assets/img/avatar.svg"),
-          company_icon: require("@/assets/img/test-glo.svg"),
-          body: "Definitely worth the investment. The very best. Technify has got everything I need. Technify is worth much more than I paid.",
-          role: "CEO Gen C.",
-          name: "Nissie J.",
-        },
-        {
-          id: Math.random().toString(36).substring(7).toUpperCase(),
-          avatar: require("@/assets/img/avatar.svg"),
-          company_icon: require("@/assets/img/test-first.svg"),
-          body: "Technify was worth a fortune to my company. Technify did exactly what you said it does. Technify is both attractive and highly adaptable.",
-          role: "Operation Manager",
-          name: "Marshal V.",
-        },
-        {
-          id: Math.random().toString(36).substring(7).toUpperCase(),
-          avatar: require("@/assets/img/avatar.svg"),
-          company_icon: require("@/assets/img/test-gig.svg"),
-          body: "I could probably go into sales for you. It's just amazing. Absolutely wonderful! Technify was worth a fortune to my company.",
-          role: "Senior Analyst",
-          name: "Stormi F.",
-        },
-      ],
-    };
-  },
-};
+          avatar: require('@/assets/img/avatar.svg'),
+          company_icon: 'https://easyflip.ng/favicon.ico',
+          body: 'Definitely worth the investment. The very best. Technify has got everything I need. Technify is worth much more than I paid.',
+          role: 'Founder Easyflip',
+          name: 'Floe Emmanuel'
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/global.scss";
+@import '@/scss/global.scss';
 .testimonial {
   color: $header;
   padding: 3rem 0;
@@ -135,7 +112,11 @@ export default {
     padding: 1.5rem 1rem;
     & img {
       width: 48px;
+      height: 48px;
       margin-bottom: 2rem;
+      border-radius: 50%;
+      object-fit: scale-down;
+      background: #57575723;
     }
     & p {
       font-weight: 400;
@@ -151,6 +132,8 @@ export default {
     & img {
       margin: 0 1rem 0 0;
       width: 41.34px;
+      background: none;
+      object-fit: unset;
     }
   }
   &-aside {
