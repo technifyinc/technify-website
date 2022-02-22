@@ -7,7 +7,12 @@
       </div>
     </div>
   </div>
-  <div class="events" v-if="events.length">
+  <loading-bar v-if="loadingStatus" class="loading" />
+  <empty-content v-else-if="events.length === 0">
+    <h3>No Events yet</h3>
+    <p>Opps!, we don't have any events yet kindly check back next time</p>
+  </empty-content>
+  <div v-else class="events">
     <div class="container">
       <div class="events-content">
         <div v-for="event in events" :key="event" class="blg">
@@ -36,10 +41,6 @@
       </div>
     </div>
   </div>
-  <empty-content v-else>
-    <h3>No Events yet</h3>
-    <p>Opps!, we don't have any events yet kindly check back next time</p>
-  </empty-content>
   <Footer />
 </template>
 
@@ -49,17 +50,19 @@ import Footer from '@/components/reuseables/Footer.vue'
 import { mapActions, mapGetters } from 'vuex'
 import dateFormatter from '@/mixins/formatDate'
 import EmptyContent from '@/components/reuseables/EmptyContent.vue'
+import LoadingBar from '@/components/reuseables/LoadingBar.vue'
 export default {
   components: {
     Header,
     Footer,
-    EmptyContent
+    EmptyContent,
+    LoadingBar
   },
   data() {
     return {}
   },
   computed: {
-    ...mapGetters(['events'])
+    ...mapGetters(['events', 'loadingStatus'])
   },
   methods: {
     ...mapActions(['getEvents']),
@@ -188,6 +191,14 @@ export default {
       }
     }
   }
+}
+
+.loading {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (min-width: 700px) {

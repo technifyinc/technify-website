@@ -1,10 +1,15 @@
 <template>
   <Header />
-  <div v-if="blogs.length">
+  <loading-bar v-if="loadingStatus" class="loading" />
+  <empty-content v-else-if="blogs.length === 0" class="empty">
+    <h3>No Blog Posts yet</h3>
+    <p>Opps!, we don't have any blog posts yet kindly check back next time</p>
+  </empty-content>
+  <div v-else>
     <div
       class="blog"
       :style="{
-        backgroundImage: `url(http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${mainBlog.image})`,
+        backgroundImage: `url(http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${mainBlog.image})`
       }"
     >
       <div class="container">
@@ -33,48 +38,46 @@
       </div>
     </div>
   </div>
-  <empty-content v-else class="empty">
-    <h3>No Blog Posts yet</h3>
-    <p>Opps!, we don't have any blog posts yet kindly check back next time</p>
-  </empty-content>
   <Footer />
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue";
-import Footer from "@/components/reuseables/Footer.vue";
-import EmptyContent from "@/components/reuseables/EmptyContent.vue";
-import { mapActions, mapGetters } from "vuex";
+import Header from '@/components/navbar/Header.vue'
+import Footer from '@/components/reuseables/Footer.vue'
+import EmptyContent from '@/components/reuseables/EmptyContent.vue'
+import LoadingBar from '@/components/reuseables/LoadingBar.vue'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   components: {
     Header,
     Footer,
     EmptyContent,
+    LoadingBar
   },
   data() {
-    return {};
+    return {}
   },
   computed: {
-    ...mapGetters(["blogs", "mainBlog"]),
+    ...mapGetters(['blogs', 'mainBlog', 'loadingStatus'])
   },
   methods: {
-    ...mapActions(["getBlogs", "getMainBlog"]),
+    ...mapActions(['getBlogs', 'getMainBlog']),
     viewBlog(id) {
-      this.$router.push({ name: "blog", params: { id } });
+      this.$router.push({ name: 'blog', params: { id } })
     },
     concatenate(value) {
-      return value.substring(0, 100) + "...";
-    },
+      return value.substring(0, 100) + '...'
+    }
   },
   mounted() {
-    this.getBlogs();
-    this.getMainBlog();
-  },
-};
+    this.getBlogs()
+    this.getMainBlog()
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/global.scss";
+@import '@/scss/global.scss';
 .blog {
   // color: $header;
   background-repeat: no-repeat;
@@ -151,6 +154,14 @@ export default {
 }
 .empty {
   margin-top: 78px;
+}
+
+.loading {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media screen and (min-width: 700px) {
