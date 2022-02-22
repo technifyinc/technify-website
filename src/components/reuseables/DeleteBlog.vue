@@ -9,15 +9,42 @@
           Once deleted it can not be recovered.
         </p>
       </div>
-      <div class="btn-flex">
-        <button class="btn" @click="resetDelModal">Cancel</button>
-        <button class="btn" @click="delTable">Delete</button>
-      </div>
+      <form class="del-modal-form" @submit.prevent>
+        <div class="input-field">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+            v-model="password"
+            @blur="v$.password.$touch()"
+            @focus="v$.password.$reset()"
+            :class="{ err: v$.password.$error || error }"
+          />
+          <small
+            :class="{ 'err-mssg': v$.password.$error || error }"
+            v-if="v$.password.$error || error"
+            >Provide the correct password</small
+          >
+        </div>
+        <div class="btn-flex">
+          <input
+            type="button"
+            class="btn"
+            @click="resetDelModal"
+            value="Cancel"
+          />
+          <input type="submit" class="btn" @click="delTable" value="Delete" />
+        </div>
+      </form>
     </div>
   </div>
 </template>
 <script>
-import { mapMutations, mapGetters } from "vuex";
+import { mapMutations, mapGetters, mapActions } from "vuex";
+import useVuelidate from "@vuelidate/core";
+import { required } from "@vuelidate/validators";
 export default {
   props: {
     id: {
@@ -25,15 +52,31 @@ export default {
       required: true,
     },
   },
+  setup: () => ({ v$: useVuelidate() }),
+
+  data() {
+    return {
+      password: "",
+    };
+  },
+  validations() {
+    return {
+      password: { required },
+    };
+  },
   methods: {
-    ...mapMutations(["toggleDelModal", "resetDelModal", "deleteBlog"]),
+    ...mapMutations(["toggleDelModal", "resetDelModal"]),
+    ...mapActions(["deleteBlog"]),
     delTable() {
-      this.deleteBlog(this.id);
-      this.resetDelModal();
+      if (this.v$.$invalid) {
+        this.v$.$validate();
+      } else {
+        this.deleteBlog({ id: this.id, password: this.password });
+      }
     },
   },
   computed: {
-    ...mapGetters(["openDelModal"]),
+    ...mapGetters(["openDelModal", "error"]),
   },
 };
 </script>
@@ -84,18 +127,32 @@ export default {
       margin: 1rem 0;
     }
   }
+  &-form {
+    .input-field label {
+      color: $label;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 22px;
+    }
+    .input-field input,
+    .input-field select,
+    .input-field textarea {
+      background: #e8e8e8;
+      margin-top: 0.8rem;
+    }
+  }
   .btn-flex {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column-reverse;
     margin-top: 2rem;
-    button {
+    input {
       display: inline;
       width: auto !important;
       margin: 0 !important;
     }
-    button:first-child {
+    input:first-child {
       font-size: 15px;
       font-weight: 600;
       line-height: 18px;
@@ -103,7 +160,7 @@ export default {
       border: none;
       background: none;
     }
-    button:last-child {
+    input:last-child {
       font-size: 15px;
       font-weight: 600;
       line-height: 18px;
@@ -129,6 +186,33 @@ export default {
   }
   to {
     transform: scale(1);
+  }
+}
+.err {
+  border: solid 1.5px #fa5d5d !important;
+}
+.err-mssg {
+  color: #fa5d5d !important;
+}
+.errMssg {
+  color: #d8000c;
+  background-color: #ffd2d2;
+  padding: 12px;
+  animation: opacity ease 0.5s forwards;
+  width: 100%;
+  margin-top: 1rem;
+  border-radius: 4px;
+  border: solid 1.5px #ffd2d2;
+}
+.animate {
+  animation: opacity ease 1s forwards;
+}
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -159,7 +243,7 @@ export default {
       justify-content: center;
       align-items: center;
       flex-direction: row;
-      button:first-child {
+      input:first-child {
         font-size: 16px;
         font-weight: 700;
         line-height: 19px;
@@ -174,7 +258,7 @@ export default {
           color: $white;
         }
       }
-      button:last-child {
+      input:last-child {
         font-size: 16px;
         font-weight: 700;
         line-height: 19px;

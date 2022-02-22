@@ -1,4 +1,5 @@
 import axios from "axios";
+import router from "../../router";
 
 const baseUrl = "https://api.technifyincubator.com/api/v1";
 
@@ -8,67 +9,10 @@ const state = {
   mainBlog: "",
   events: [],
   event: "",
-  blogTables: [
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Larry Ellison is now richer than the Google ",
-      author: "Alex Samuel",
-      dateAdded: "05 Jan, 2022",
-    },
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Larry Ellison is now richer than the Google ",
-      author: "Alex Samuel",
-      dateAdded: "05 Jan, 2022",
-    },
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Larry Ellison is now richer than the Google ",
-      author: "Alex Samuel",
-      dateAdded: "05 Jan, 2022",
-    },
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Larry Ellison is now richer than the Google ",
-      author: "Alex Samuel",
-      dateAdded: "05 Jan, 2022",
-    },
-  ],
-  eventTables: [
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Africa Tech Summit Conference",
-      time: "8:00am - 5:00pm",
-      dateAdded: "05 Jan, 2022",
-    },
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Africa Tech Summit Conference",
-      time: "8:00am - 5:00pm",
-      dateAdded: "05 Jan, 2022",
-    },
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Africa Tech Summit Conference",
-      time: "8:00am - 5:00pm",
-      dateAdded: "05 Jan, 2022",
-    },
-    {
-      id: Math.random().toString(36).substring(7).toUpperCase(),
-      src: "img.png",
-      title: "Africa Tech Summit Conference",
-      time: "8:00am - 5:00pm",
-      dateAdded: "05 Jan, 2022",
-    },
-  ],
   openDelModal: false,
+  loadingStatus: false,
+  error: false,
+  err: "",
 };
 
 const getters = {
@@ -77,15 +21,25 @@ const getters = {
   mainBlog: (state) => state.mainBlog,
   events: (state) => state.events,
   event: (state) => state.event,
-  blogTables: (state) => state.blogTables,
-  eventTables: (state) => state.eventTables,
   openDelModal: (state) => state.openDelModal,
+  loadingStatus: (state) => state.loadingStatus,
+  error: (state) => state.error,
+  err: (state) => state.err,
 };
 
 const actions = {
-  getBlogs({ commit }) {
+  getBlogs({ state, commit }) {
+    state.loadingStatus = true;
     axios.get(`${baseUrl}/blog`).then((response) => {
       commit("getBlogs", response.data.data);
+      state.loadingStatus = false;
+    });
+  },
+  getEvents({ state, commit }) {
+    state.loadingStatus = true;
+    axios.get(`${baseUrl}/event`).then((response) => {
+      commit("getEvents", response.data.data);
+      state.loadingStatus = false;
     });
   },
   getMainBlog({ commit }) {
@@ -99,15 +53,174 @@ const actions = {
       commit("getSingleBlog", response.data.data);
     });
   },
-  getEvents({ commit }) {
-    axios.get(`${baseUrl}/event`).then((response) => {
-      commit("getEvents", response.data.data);
-    });
-  },
   getSingleEvent({ commit }, id) {
     axios.get(`${baseUrl}/event/${id}`).then((response) => {
       commit("getSingleEvent", response.data.data);
     });
+  },
+  async postBlog(
+    { state, commit },
+    { title, author, details, image, password }
+  ) {
+    var formData = new FormData();
+    formData.append("title", title);
+    formData.append("author", author);
+    formData.append("details", details);
+    formData.append("image", image);
+    try {
+      const response = await axios({
+        method: "post",
+        url: `${baseUrl}/blog`,
+        data: formData,
+        headers: {
+          "x-api-password": password,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      router.push({ name: "admin" });
+      commit("postBlog", response.data.data);
+    } catch (e) {
+      state.err = e;
+      state.error = true;
+      setTimeout(() => {
+        state.error = false;
+      }, 3000);
+    }
+  },
+  async postEvent(
+    { state, commit },
+    { title, date, time, medium, address, details, image, password }
+  ) {
+    var formData = new FormData();
+    formData.append("title", title);
+    formData.append("date", date);
+    formData.append("time", time);
+    formData.append("medium", medium);
+    formData.append("address", address);
+    formData.append("details", details);
+    formData.append("image", image);
+    try {
+      const response = await axios({
+        method: "post",
+        url: `${baseUrl}/event`,
+        data: formData,
+        headers: {
+          "x-api-password": password,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      commit("postEvent", response.data.data);
+      router.push({ name: "admin" });
+    } catch (e) {
+      state.err = e;
+      state.error = true;
+      setTimeout(() => {
+        state.error = false;
+      }, 3000);
+    }
+  },
+  async updateBlog(
+    { state, commit },
+    { id, title, author, details, image, password }
+  ) {
+    var formData = new FormData();
+    formData.append("title", title);
+    formData.append("author", author);
+    formData.append("details", details);
+    formData.append("image", image);
+    try {
+      const response = await axios({
+        method: "put",
+        url: `${baseUrl}/blog/${id}`,
+        data: formData,
+        headers: {
+          "x-api-password": password,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      router.push({ name: "admin" });
+      commit("updateBlog", response.data.data);
+    } catch (e) {
+      state.err = e;
+      state.error = true;
+      setTimeout(() => {
+        state.error = false;
+      }, 3000);
+    }
+  },
+  async updateEvent(
+    { state, commit },
+    { id, title, date, time, medium, address, details, image, password }
+  ) {
+    var formData = new FormData();
+    formData.append("title", title);
+    formData.append("date", date);
+    formData.append("time", time);
+    formData.append("medium", medium);
+    formData.append("address", address);
+    formData.append("details", details);
+    formData.append("image", image);
+    try {
+      const response = await axios({
+        method: "put",
+        url: `${baseUrl}/event/${id}`,
+        data: formData,
+        headers: {
+          "x-api-password": password,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      router.push({ name: "admin" });
+      commit("updateEvent", response.data.data);
+    } catch (e) {
+      state.err = e;
+      state.error = true;
+      setTimeout(() => {
+        state.error = false;
+      }, 3000);
+    }
+  },
+  async deleteBlog({ state, commit }, { id, password }) {
+    try {
+      const response = await axios({
+        method: "delete",
+        url: `${baseUrl}/blog/${id}`,
+        headers: {
+          "x-api-password": password,
+        },
+      });
+      state.err = response;
+      state.openDelModal = false;
+      commit("deleteBlog", id);
+    } catch (e) {
+      state.err = e;
+      state.openDelModal = true;
+      state.error = true;
+      setTimeout(() => {
+        state.error = false;
+      }, 3000);
+    }
+  },
+  async deleteEvent({ state, commit }, { id, password }) {
+    try {
+      const response = await axios({
+        method: "delete",
+        url: `${baseUrl}/event/${id}`,
+        headers: {
+          "x-api-password": password,
+        },
+      });
+      state.err = response;
+      state.openDelModal = false;
+      commit("deleteEvent", id);
+    } catch (e) {
+      state.err = e;
+      state.openDelModal = true;
+      state.error = true;
+      setTimeout(() => {
+        state.error = false;
+      }, 3000);
+    }
   },
 };
 
@@ -115,14 +228,14 @@ const mutations = {
   getBlogs(state, payload) {
     state.blogs = payload;
   },
+  getEvents(state, payload) {
+    state.events = payload;
+  },
   getMainBlog(state, payload) {
     state.mainBlog = payload;
   },
   getSingleBlog(state, payload) {
     state.blog = payload;
-  },
-  getEvents(state, payload) {
-    state.events = payload;
   },
   getSingleEvent(state, payload) {
     state.event = payload;
@@ -134,10 +247,24 @@ const mutations = {
     state.openDelModal = false;
   },
   deleteBlog(state, id) {
-    state.blogTables = state.blogTables.filter((table) => table.id !== id);
+    state.blogs = state.blogs.filter((blog) => blog._id !== id);
   },
   deleteEvent(state, id) {
-    state.eventTables = state.eventTables.filter((table) => table.id !== id);
+    state.events = state.events.filter((event) => event._id !== id);
+  },
+  postBlog(state, payload) {
+    state.blogs = [...state.blogs, payload];
+  },
+  postEvent(state, payload) {
+    state.events = [...state.events, payload];
+  },
+  updateBlog(state, { id, payload }) {
+    const index = state.blogs.findIndex((blog) => blog._id === id);
+    state.blogs[index] = payload;
+  },
+  updateEvent(state, { id, payload }) {
+    const index = state.events.findIndex((event) => event._id === id);
+    state.events[index] = payload;
   },
 };
 
