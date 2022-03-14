@@ -1,16 +1,16 @@
-# Technify Website
+# Technify Inc.
 
 ![banner](./src/assets/img/screenshot.png)
 
 ## About the project
 
-This repository contains the design (Frontend+Backend) for Technify.
+This repository contains the design (Frontend+Backend) for `Technify Inc.`
 
 We are a team of young, result-driven professionals, committed to
 excellence and global standards. Solving high-impact problems with
 technology; changing lifestyle and business culture in Africa.
 
-Technify Inc is a firm that develops and deploys software solutions
+`Technify Inc.` is a firm that develops and deploys software solutions
 at scale to solve high-impact business challenges.
 
 We help Improve software infrastructure with well-built
