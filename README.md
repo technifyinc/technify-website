@@ -20,7 +20,7 @@ development, or use our enterprise app integration solutions.
 
 ## Tech Stack
 
-**Client:** VueJS, Vuex, Vuelidate
+**Client:** VueJS, Vuex
 
 **Server:** Postman
 
