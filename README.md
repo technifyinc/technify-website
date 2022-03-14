@@ -42,6 +42,7 @@ Libraries and packages used:
 - [MDI Fonts](https://materialdesignicons.com/)
 - [AOS - Animate On Scroll](https://michalsnik.github.io/aos/)
 - [Axios](https://axios-http.com/)
+- [Splidejs](https://splidejs.com/)
 
 Useful Links:
 
