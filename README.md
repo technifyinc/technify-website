@@ -35,6 +35,13 @@ Before running the project locally, make sure the following have been installed:
 Libraries and packages used:
 
 - [Vue](https://vuejs.org/)
+- [Vuex](https://vuex.vuejs.org/)
+- [Vue Router](https://router.vuejs.org/)
+- [Vuelidate](https://vuelidate-next.netlify.app/)
+- [Moment](https://momentjs.com/)
+- [MDI Fonts](https://materialdesignicons.com/)
+- [AOS - Animate On Scroll](https://michalsnik.github.io/aos/)
+- [Axios](https://axios-http.com/)
 
 Useful Links:
 
