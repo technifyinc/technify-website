@@ -4,7 +4,7 @@
       <div class="footer-content">
         <div class="flex flex-between align-end">
           <div class="subscribe">
-            <h3>new to technify?</h3>
+            <h6>new to technify?</h6>
             <p>
               Subscribe to our newsletter and get update on our latest product
               and discount.

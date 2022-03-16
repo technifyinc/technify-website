@@ -2,7 +2,7 @@
   <section class="what">
     <div class="container">
       <div class="what-content">
-        <h3>What we do</h3>
+        <h2>What we do</h2>
         <p>Providing I.T. solutions for your business(s).</p>
         <div class="what-inner">
           <div class="lines hide-on-sm">
@@ -34,75 +34,75 @@
 </template>
 
 <script>
-import ImageSlider from './ImageSlider.vue'
+import ImageSlider from "./ImageSlider.vue";
 export default {
   components: { ImageSlider },
-  name: 'WhatSection',
+  name: "WhatSection",
   data() {
     return {
       lists: [
         {
-          title: 'Enterprise Software Development',
-          body: 'We help you Leverage our expertise in enterprise software development, API integration, modernising legacy systems, consolidating app portfolios to improve processes.',
-          active: false
+          title: "Enterprise Software Development",
+          body: "We help you Leverage our expertise in enterprise software development, API integration, modernising legacy systems, consolidating app portfolios to improve processes.",
+          active: false,
         },
         {
-          title: 'I.T Consulting Service',
+          title: "I.T Consulting Service",
           body: "With the expertise and deep tech background of the best minds at Technify Inc, we create a comprehensive IT strategy for your organization's digital and technological transformation.",
-          active: false
+          active: false,
         },
         {
-          title: 'Tools To Keep Your Network Working',
-          body: 'We provide standardized tools for monitoring, managing, and reporting. Our services include operations and system management, with availability monitoring and reporting.',
-          active: false
-        }
+          title: "Tools To Keep Your Network Working",
+          body: "We provide standardized tools for monitoring, managing, and reporting. Our services include operations and system management, with availability monitoring and reporting.",
+          active: false,
+        },
       ],
       lines: [
         {
-          increment: false
+          increment: false,
         },
         {
-          increment: false
+          increment: false,
         },
         {
-          increment: false
-        }
+          increment: false,
+        },
       ],
       intervalTime: 2000,
-      current: 0
-    }
+      current: 0,
+    };
   },
   methods: {
     incrementMoveSlider() {
       this.lists.forEach((list) => {
-        list.active = false
-      })
+        list.active = false;
+      });
       this.lines.forEach((line) => {
-        line.increment = false
-      })
-      this.lists[this.current].active = true
-      this.lines[this.current].increment = true
+        line.increment = false;
+      });
+      this.lists[this.current].active = true;
+      this.lines[this.current].increment = true;
       if (this.current < this.lists.length - 1) {
-        this.current++
+        this.current++;
       } else {
-        this.current = 0
+        this.current = 0;
       }
-      setTimeout(this.incrementMoveSlider, this.intervalTime)
-    }
+      setTimeout(this.incrementMoveSlider, this.intervalTime);
+    },
   },
   mounted() {
-    this.incrementMoveSlider()
-  }
-}
+    this.incrementMoveSlider();
+  },
+};
 </script>
 <style lang="scss" scoped>
-@import '@/scss/global.scss';
+@import "@/scss/global.scss";
 .what {
   background: $sec-bg;
   padding: 3rem 0;
   &-content {
     text-align: center;
-    & h3 {
+    & h2 {
       margin-bottom: 1rem;
       font-style: normal;
       font-weight: 600;
@@ -189,7 +189,7 @@ export default {
   .what {
     &-text {
       width: 500px;
-      & h3 {
+      & h2 {
         font-size: 22px;
         line-height: 29.92px;
         font-weight: 700;
@@ -208,7 +208,7 @@ export default {
 @media screen and (min-width: 1200px) {
   .what {
     &-content {
-      & h3 {
+      & h2 {
         font-size: 38px;
         font-weight: 600;
         line-height: 59.52px;
@@ -236,7 +236,7 @@ export default {
 @media screen and (min-width: 1400px) {
   .what {
     &-content {
-      & h3 {
+      & h2 {
         font-size: 48px;
       }
       & p {
