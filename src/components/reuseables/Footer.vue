@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="footer-content">
         <div class="flex flex-between align-end">
@@ -89,7 +89,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </footer>
 </template>
 <script>
 export default {
