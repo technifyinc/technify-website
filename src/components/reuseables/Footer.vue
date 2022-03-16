@@ -18,17 +18,30 @@
         <div class="contact_links flex flex-between align-start">
           <ul>
             <li>Contact Us</li>
-            <li><a href="mailto:hello@technify.ng">hello@technify.ng</a></li>
-            <li><a href="tel:+2341567890">+234 816 5083 087</a></li>
+            <li>
+              <a href="mailto:technifyincubator@gmail.com"
+                >technifyincubator@gmail.com</a
+              >
+            </li>
+            <li><a href="tel:+2348165083087">+234 816 5083 087</a></li>
             <li>Lagos, Nigeria</li>
             <li>
-              <a href="http://" target="_blank" rel="noopener noreferrer"
+              <a
+                href="https://www.facebook.com/Technify_inc-100153859297744"
+                target="_blank"
+                rel="noopener noreferrer"
                 ><img src="@/assets/img/contact-fb.svg" alt="facebook"
               /></a>
-              <a href="http://" target="_blank" rel="noopener noreferrer"
+              <a
+                href="https://www.instagram.com/technifyinc"
+                target="_blank"
+                rel="noopener noreferrer"
                 ><img src="@/assets/img/contact-insta.svg" alt="instagram"
               /></a>
-              <a href="http://" target="_blank" rel="noopener noreferrer"
+              <a
+                href="https://www.twitter.com/technifyinc"
+                target="_blank"
+                rel="noopener noreferrer"
                 ><img src="@/assets/img/contact-twitter.svg" alt="twitter"
               /></a>
             </li>
