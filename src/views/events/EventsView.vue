@@ -30,7 +30,7 @@
               <p>{{ event.time }}</p>
               <div class="event-icon">
                 <!-- <img :src="event.event_icon" alt="event" /> -->
-                {{ event.address }}
+                <a :href="event.address" target="_blank">{{ event.address }}</a>
               </div>
               <button @click="viewEvent(event._id)" class="btn">
                 Register
@@ -157,6 +157,11 @@ export default {
       line-height: 20.37px;
       margin-bottom: 1rem;
       text-transform: capitalize;
+      a {
+        text-transform: lowercase;
+        color: $sec-color;
+        font-weight: normal;
+      }
     }
     & img {
       width: 20px;

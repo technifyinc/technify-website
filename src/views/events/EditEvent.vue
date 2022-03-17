@@ -171,15 +171,20 @@
       </form>
     </div>
   </div>
+  <loading-status />
 </template>
 <script>
 import { mapActions, mapGetters } from "vuex";
 import useVuelidate from "@vuelidate/core";
 import { required, requiredIf } from "@vuelidate/validators";
+import LoadingStatus from "@/components/reuseables/LoadingStatus.vue";
 
 export default {
   name: "EditEvent",
   setup: () => ({ v$: useVuelidate() }),
+  components: {
+    LoadingStatus,
+  },
   props: {
     id: {
       type: String,
