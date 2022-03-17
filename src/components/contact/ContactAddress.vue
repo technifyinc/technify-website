@@ -3,11 +3,13 @@
     <ul class="contact-address-content">
       <li>
         <img src="@/assets/img/contact-mail.svg" alt="mail" />
-        <a href="mailto:hello@technify.ng">hello@technify.ng</a>
+        <a href="mailto:technifyincubator@gmail.com"
+          >technifyincubator@gmail.com</a
+        >
       </li>
       <li>
         <img src="@/assets/img/contact-phone.svg" alt="phone" />
-        <a href="tel:+2348165083087">+2348165083087</a>
+        <a href="tel:+2348165083087">+234 816 5083 087</a>
       </li>
       <li>
         <img src="@/assets/img/contact-map.svg" alt="map" />
@@ -17,10 +19,10 @@
   </div>
 </template>
 <script>
-export default {}
+export default {};
 </script>
 <style lang="scss" scoped>
-@import '@/scss/global.scss';
+@import "@/scss/global.scss";
 .contact-address {
   text-align: left;
   margin-top: 1rem;

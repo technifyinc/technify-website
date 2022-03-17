@@ -2,7 +2,7 @@
   <section class="trustees routes">
     <div class="container">
       <div class="trustees-header">
-        <h3>Why Technify</h3>
+        <h5>Why Technify</h5>
         <p>
           We operate on strong values and offer services to our esteemed
           clients.
@@ -11,7 +11,7 @@
       <div class="trustees-content">
         <div class="trustees-heads">
           <div class="trustees-head">
-            <h3>Trusted by 10,000+ businesses</h3>
+            <h6>Trusted by 10,000+ businesses</h6>
             <p>
               Over the years, Technify Inc. has been helping organizations of
               different scale and structure to improve and modernize their IT
@@ -19,7 +19,7 @@
             </p>
           </div>
           <div class="trustees-head">
-            <h3>10years+ in Business</h3>
+            <h6>10years+ in Business</h6>
             <p>
               Technify Inc. has made a great impact in providing solutions to
               numerous businesses in Nigeria.
@@ -35,22 +35,22 @@
 </template>
 
 <script>
-import TrusteesComment from '@/components/home/TrusteesComment.vue'
+import TrusteesComment from "@/components/home/TrusteesComment.vue";
 export default {
-  name: 'TrusteesSection',
+  name: "TrusteesSection",
   components: {
-    TrusteesComment
-  }
-}
+    TrusteesComment,
+  },
+};
 </script>
 <style lang="scss" scoped>
-@import '@/scss/global.scss';
+@import "@/scss/global.scss";
 .trustees {
   padding: 4rem 0;
   &-header {
     text-align: center;
     margin-bottom: 3rem;
-    & h3 {
+    & h5 {
       font-size: 26px;
       font-weight: 600;
       line-height: 32.24px;
@@ -68,7 +68,7 @@ export default {
     text-align: center;
     & .trustees-head {
       margin: 2rem 0;
-      & h3 {
+      & h6 {
         font-size: 26px;
         font-weight: 600;
         line-height: 32.24px;
@@ -114,7 +114,7 @@ export default {
   .trustees {
     &-header {
       margin-bottom: 5rem;
-      & h3 {
+      & h5 {
         font-size: 30px;
         line-height: 40.88px;
       }
@@ -127,7 +127,7 @@ export default {
     }
     &-heads {
       & .trustees-head {
-        & h3 {
+        & h6 {
           font-size: 30px;
           line-height: 40.88px;
         }
@@ -142,7 +142,7 @@ export default {
 @media screen and (min-width: 1400px) {
   .trustees {
     &-header {
-      & h3 {
+      & h5 {
         font-size: 37px;
         line-height: 45.88px;
       }
@@ -154,7 +154,7 @@ export default {
     }
     &-heads {
       & .trustees-head {
-        & h3 {
+        & h6 {
           font-size: 37px;
           line-height: 45.88px;
         }
