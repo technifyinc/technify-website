@@ -9,7 +9,7 @@
     <div
       class="blog"
       :style="{
-        backgroundImage: `url(http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${mainBlog.image})`
+        backgroundImage: `url(http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${mainBlog.image})`,
       }"
     >
       <div class="container">
@@ -42,44 +42,43 @@
 </template>
 
 <script>
-import Header from '@/components/navbar/Header.vue'
-import Footer from '@/components/reuseables/Footer.vue'
-import EmptyContent from '@/components/reuseables/EmptyContent.vue'
-import LoadingBar from '@/components/reuseables/LoadingBar.vue'
-import { mapActions, mapGetters } from 'vuex'
+import Header from "@/components/navbar/TheHeader.vue";
+import Footer from "@/components/navbar/TheFooter.vue";
+import EmptyContent from "@/components/reuseables/EmptyContent.vue";
+import LoadingBar from "@/components/reuseables/LoadingBar.vue";
+import { mapActions, mapGetters } from "vuex";
 export default {
   components: {
     Header,
     Footer,
     EmptyContent,
-    LoadingBar
+    LoadingBar,
   },
   data() {
-    return {}
+    return {};
   },
   computed: {
-    ...mapGetters(['blogs', 'mainBlog', 'loadingStatus'])
+    ...mapGetters(["blogs", "mainBlog", "loadingStatus"]),
   },
   methods: {
-    ...mapActions(['getBlogs', 'getMainBlog']),
+    ...mapActions(["getBlogs", "getMainBlog"]),
     viewBlog(id) {
-      this.$router.push({ name: 'blog', params: { id } })
+      this.$router.push({ name: "blog", params: { id } });
     },
     concatenate(value) {
-      return value.substring(0, 100) + '...'
-    }
+      return value.substring(0, 100) + "...";
+    },
   },
   mounted() {
-    this.getBlogs()
-    this.getMainBlog()
-  }
-}
+    this.getBlogs();
+    this.getMainBlog();
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/scss/global.scss';
+@import "@/scss/global.scss";
 .blog {
-  // color: $header;
   background-repeat: no-repeat;
   background: center center/cover;
   height: 400px;

@@ -17,42 +17,42 @@
   <Footer />
 </template>
 <script>
-import Header from '@/components/navbar/Header.vue'
-import Footer from '@/components/reuseables/Footer.vue'
+import Header from "@/components/navbar/TheHeader.vue";
+import Footer from "@/components/navbar/TheFooter.vue";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
       contents: [
         {
-          title: 'Dedicated team you can trust',
-          text: 'We have the best team to ensure your deliverables meet quality assurance standards or to scale your development processes.',
-          src: require('@/assets/img/illus-10.svg'),
-          btn: true
+          title: "Dedicated team you can trust",
+          text: "We have the best team to ensure your deliverables meet quality assurance standards or to scale your development processes.",
+          src: require("@/assets/img/illus-10.svg"),
+          btn: true,
         },
         {
           title:
-            'We help scale your delivery capacity with dedicated developers and teams',
-          text: 'When you cannot hire the right local tech talent on time, or are unhappy with the high attrition rate on your in-house team. We help scale your delivery capacity with dedicated developers and teams.',
-          src: require('@/assets/img/illus-11.svg'),
-          btn: false
+            "We help scale your delivery capacity with dedicated developers and teams",
+          text: "When you cannot hire the right local tech talent on time, or are unhappy with the high attrition rate on your in-house team. We help scale your delivery capacity with dedicated developers and teams.",
+          src: require("@/assets/img/illus-11.svg"),
+          btn: false,
         },
         {
-          title: 'Managing and motivating dedicated developers and teams',
+          title: "Managing and motivating dedicated developers and teams",
           text: "Over the past decade, our customers succeed by leveraging Technify Inc's process of building, motivating, and managing software development teams.",
-          src: require('@/assets/img/illus-12.svg'),
-          btn: false
-        }
-      ]
-    }
-  }
-}
+          src: require("@/assets/img/illus-12.svg"),
+          btn: false,
+        },
+      ],
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
-@import '@/scss/global.scss';
+@import "@/scss/global.scss";
 .solution {
   height: 828px;
   padding: 3rem 0;
@@ -72,8 +72,8 @@ export default {
     }
   }
   &:nth-child(4) {
-    background: url('@/assets/img/soln-bg-mobile.svg') no-repeat left -40px bottom -200px,
-      url('@/assets/img/soln-bg-mobile-01.svg') no-repeat left 0px top 0px;
+    background: url("@/assets/img/soln-bg-mobile.svg") no-repeat left -40px bottom -200px,
+      url("@/assets/img/soln-bg-mobile-01.svg") no-repeat left 0px top 0px;
     padding-bottom: 7rem;
   }
   &:nth-child(odd) {
@@ -169,8 +169,8 @@ export default {
     }
     &:nth-child(4) {
       margin-top: 0;
-      background: url('@/assets/img/soln-bg-01.svg') no-repeat left -40px bottom -200px,
-        url('@/assets/img/soln-bg.svg') no-repeat left 0px top 0px;
+      background: url("@/assets/img/soln-bg-01.svg") no-repeat left -40px bottom -200px,
+        url("@/assets/img/soln-bg.svg") no-repeat left 0px top 0px;
       padding-bottom: 7rem;
     }
     &-content {

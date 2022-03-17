@@ -38,8 +38,8 @@
   <Footer />
 </template>
 <script>
-import Header from "@/components/navbar/Header.vue";
-import Footer from "@/components/reuseables/Footer.vue";
+import Header from "@/components/navbar/TheHeader.vue";
+import Footer from "@/components/navbar/TheFooter.vue";
 import ContactForm from "@/components/contact/ContactForm.vue";
 import ContactAddress from "@/components/contact/ContactAddress.vue";
 export default {

@@ -1,6 +1,5 @@
 <template>
   <main class="main">
-    <Header />
     <div class="container">
       <div class="main-content">
         <div class="main-text">
@@ -25,13 +24,11 @@
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue";
 import LandingImage from "@/components/home/LandingImage.vue";
 import CompaniesSlider from "@/components/home/CompaniesSlider.vue";
 export default {
   name: "MainSection",
   components: {
-    Header,
     LandingImage,
     CompaniesSlider,
   },

@@ -5,63 +5,68 @@
       <div class="event-header routes">
         <h3>Events</h3>
       </div>
-      <div class="event-img">
-        <img
-          :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${event.image}`"
-          :alt="event.title"
-        />
-      </div>
-      <div class="event-content">
-        <h3>About This Event</h3>
-        <p>
-          {{ event.details }}
-        </p>
-      </div>
-      <div class="speakers">
-        <h3>Speakers</h3>
-        <div class="speakers-content">
-          <div class="speaker" v-for="speaker in speakers" :key="speaker">
-            <img :src="speaker.src" :alt="speaker" />
-            <h4>{{ speaker.name }}</h4>
-            <p>{{ speaker.org }}</p>
+      <div class="wrap" v-if="event">
+        <div class="event-img">
+          <img
+            :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${event.image}`"
+            :alt="event.title"
+          />
+        </div>
+        <div class="event-content">
+          <h3>About This Event</h3>
+          <p>
+            {{ event.details }}
+          </p>
+        </div>
+        <div class="speakers">
+          <h3>Speakers</h3>
+          <div class="speakers-content">
+            <div class="speaker" v-for="speaker in speakers" :key="speaker">
+              <img :src="speaker.src" :alt="speaker" />
+              <h4>{{ speaker.name }}</h4>
+              <p>{{ speaker.org }}</p>
+            </div>
           </div>
         </div>
+        <div class="aside">
+          <ul>
+            <li>
+              <img src="@/assets/img/events-location.svg" alt="location" />
+              <div class="aside-inner">
+                <h5>Location</h5>
+                <p>Zoom: <a href="#">http://meet.google.com/aqe-crpo-kop</a></p>
+              </div>
+            </li>
+            <li>
+              <img src="@/assets/img/events-clock.svg" alt="location" />
+              <div class="aside-inner">
+                <h5>Date/Time</h5>
+                <p>4:00-7:50pm</p>
+                <p>17 December, 2021</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <event-form />
       </div>
-      <div class="aside">
-        <ul>
-          <li>
-            <img src="@/assets/img/events-location.svg" alt="location" />
-            <div class="aside-inner">
-              <h5>Location</h5>
-              <p>Zoom: <a href="#">http://meet.google.com/aqe-crpo-kop</a></p>
-            </div>
-          </li>
-          <li>
-            <img src="@/assets/img/events-clock.svg" alt="location" />
-            <div class="aside-inner">
-              <h5>Date/Time</h5>
-              <p>4:00-7:50pm</p>
-              <p>17 December, 2021</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <event-form />
+      <loading-bar v-else class="loading" />
     </div>
   </div>
   <Footer />
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue";
-import Footer from "@/components/reuseables/Footer.vue";
+import Header from "@/components/navbar/TheHeader.vue";
+import Footer from "@/components/navbar/TheFooter.vue";
 import EventForm from "@/views/events/EventForm.vue";
+import LoadingBar from "@/components/reuseables/LoadingBar.vue";
 import { mapActions, mapGetters } from "vuex";
 import dateFormatter from "@/mixins/formatDate";
 export default {
   components: {
     Header,
     EventForm,
+    LoadingBar,
     Footer,
   },
   data() {

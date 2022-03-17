@@ -13,17 +13,19 @@
     </div>
     <div class="career-board">
       <div class="container">
-        <img src="@/assets/img/no-job.svg" alt="no-job">
+        <img src="@/assets/img/no-job.svg" alt="no-job" />
         <h3>No Job yet</h3>
-        <p>Opps!, we don't have a job opening yet kindly check back next time</p>
+        <p>
+          Opps!, we don't have a job opening yet kindly check back next time
+        </p>
       </div>
     </div>
   </div>
   <Footer />
 </template>
 <script>
-import Header from "@/components/navbar/Header.vue";
-import Footer from "@/components/reuseables/Footer.vue";
+import Header from "@/components/navbar/TheHeader.vue";
+import Footer from "@/components/navbar/TheFooter.vue";
 export default {
   components: {
     Header,
@@ -49,7 +51,7 @@ export default {
       }
     }
   }
-  
+
   &-board {
     display: flex;
     align-items: center;
@@ -77,10 +79,10 @@ export default {
         line-height: 22px;
         color: $sub;
       }
-    }    
+    }
   }
 }
-@media screen and (min-width: 500px) { 
+@media screen and (min-width: 500px) {
   .career {
     &-content {
       margin-top: 0;
@@ -98,8 +100,7 @@ export default {
         justify-content: center;
         grid-column-gap: 5rem;
       }
-     }
-    
+    }
   }
 }
 @media screen and (min-width: 1000px) {
@@ -110,7 +111,7 @@ export default {
     }
     & .career-text {
       margin-bottom: 0;
-      & h3 {  
+      & h3 {
         font-size: 43px;
         line-height: 60px;
         font-weight: 600;

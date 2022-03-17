@@ -1,13 +1,13 @@
 <template lang="html">
   <div class="add-btn">
-    <button class="btn" @click="$router.push({ name: 'add-blog' })">
-      Add Blog Post
+    <button class="btn" @click="$router.push({ name: 'add-event' })">
+      Add Event
     </button>
   </div>
   <loading-bar v-if="loadingStatus" />
-  <empty-content v-else-if="blogs.length === 0">
+  <empty-content v-else-if="events.length === 0">
     <h3>Oops!</h3>
-    <p>No blog has been created</p>
+    <p>No event has been created</p>
   </empty-content>
   <div class="table-wrapper" v-else>
     <div class="table-container">
@@ -16,30 +16,30 @@
           <tr>
             <th></th>
             <th>Title</th>
-            <th>Author</th>
+            <th>Time</th>
             <th>Date</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(blog, index) in blogs" :key="index">
-            <td data-label="image-source">
+          <tr v-for="(event, index) in events" :key="index">
+            <td data-label="contact-group">
               <img
-                :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${blog.image}`"
-                :alt="blog.title"
+                :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${event.image}`"
+                :alt="event.title"
               />
             </td>
-            <td data-label="title">{{ blog.title }}</td>
-            <td data-label="author">{{ blog.author }}</td>
-            <td data-label="date-added">{{ formatDate(blog.createdAt) }}</td>
+            <td data-label="title">{{ event.title }}</td>
+            <td data-label="time">{{ event.time }}</td>
+            <td data-label="date-added">{{ formatDate(event.createdAt) }}</td>
             <td data-label="icon" class="table-icon">
               <span
                 class="mdi mdi-pencil-outline"
-                @click="edit(blog._id)"
+                @click="edit(event._id)"
               ></span>
               <span
                 class="mdi mdi-trash-can"
-                @click="toggleModal(blog._id)"
+                @click="toggleModal(event._id)"
               ></span>
             </td>
           </tr>
@@ -58,12 +58,12 @@
     </div>
   </div>
   <transition name="show-modal">
-    <delete-blog :id="id" />
+    <delete-event :id="id" />
   </transition>
 </template>
 <script>
 import { mapMutations, mapGetters, mapActions } from "vuex";
-import DeleteBlog from "@/components/reuseables/DeleteBlog.vue";
+import DeleteEvent from "@/components/events/DeleteEvent.vue";
 import EmptyContent from "@/components/reuseables/EmptyContent.vue";
 import LoadingBar from "@/components/reuseables/LoadingBar.vue";
 import dateFormatter from "@/mixins/formatDate";
@@ -71,7 +71,7 @@ export default {
   name: "ContactTable",
   components: {
     EmptyContent,
-    DeleteBlog,
+    DeleteEvent,
     LoadingBar,
   },
   data() {
@@ -81,21 +81,21 @@ export default {
   },
   mixins: [dateFormatter],
   methods: {
-    ...mapMutations(["toggleDelModal", "resetDelModal", "deleteBlog"]),
-    ...mapActions(["getBlogs"]),
+    ...mapMutations(["toggleDelModal", "resetDelModal", "deleteEvent"]),
+    ...mapActions(["getEvents"]),
     toggleModal(id) {
       this.id = id;
       this.toggleDelModal();
     },
     edit(id) {
-      this.$router.push({ name: "edit-blog", params: { id } });
+      this.$router.push({ name: "edit-event", params: { id } });
     },
   },
   computed: {
-    ...mapGetters(["blogs", "openDelModal", "loadingStatus"]),
+    ...mapGetters(["events", "openDelModal", "loadingStatus"]),
   },
   mounted() {
-    this.getBlogs();
+    this.getEvents();
   },
 };
 </script>
@@ -147,9 +147,6 @@ export default {
       font-weight: 400;
       line-height: 15px;
       color: $sub;
-      &:nth-child(3) {
-        text-transform: capitalize;
-      }
     }
     img {
       width: 50px;

@@ -45,43 +45,43 @@
 </template>
 
 <script>
-import Header from '@/components/navbar/Header.vue'
-import Footer from '@/components/reuseables/Footer.vue'
-import { mapActions, mapGetters } from 'vuex'
-import dateFormatter from '@/mixins/formatDate'
-import EmptyContent from '@/components/reuseables/EmptyContent.vue'
-import LoadingBar from '@/components/reuseables/LoadingBar.vue'
+import Header from "@/components/navbar/TheHeader.vue";
+import Footer from "@/components/navbar/TheFooter.vue";
+import { mapActions, mapGetters } from "vuex";
+import dateFormatter from "@/mixins/formatDate";
+import EmptyContent from "@/components/reuseables/EmptyContent.vue";
+import LoadingBar from "@/components/reuseables/LoadingBar.vue";
 export default {
   components: {
     Header,
     Footer,
     EmptyContent,
-    LoadingBar
+    LoadingBar,
   },
   data() {
-    return {}
+    return {};
   },
   computed: {
-    ...mapGetters(['events', 'loadingStatus'])
+    ...mapGetters(["events", "loadingStatus"]),
   },
   methods: {
-    ...mapActions(['getEvents']),
+    ...mapActions(["getEvents"]),
     viewEvent(id) {
-      this.$router.push({ name: 'event', params: { id } })
+      this.$router.push({ name: "event", params: { id } });
     },
     concatenate(value) {
-      return value.substring(0, 100) + '...'
-    }
+      return value.substring(0, 100) + "...";
+    },
   },
   mixins: [dateFormatter],
   mounted() {
-    this.getEvents()
-  }
-}
+    this.getEvents();
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/scss/global.scss';
+@import "@/scss/global.scss";
 .event {
   color: $header;
   padding: 3rem 0 0;
