@@ -1,7 +1,11 @@
 <template>
   <div class="header">
     <div class="container">
-      <img src="@/assets/img/logo.png" alt="logo" />
+      <img
+        src="@/assets/img/logo.png"
+        alt="logo"
+        @click="$router.push({ name: 'home' })"
+      />
     </div>
   </div>
   <div class="admin-view">
@@ -43,8 +47,8 @@
   </div>
 </template>
 <script>
-import BlogTable from "@/components/reuseables/BlogTable.vue";
-import EventTable from "@/components/reuseables/EventTable.vue";
+import BlogTable from "@/components/blogs/BlogTable.vue";
+import EventTable from "@/components/events/EventTable.vue";
 import TabSlot from "@/components/reuseables/TabSlot.vue";
 export default {
   name: "AdminView",
@@ -102,6 +106,7 @@ export default {
   z-index: 100;
   img {
     width: 100px;
+    cursor: pointer;
   }
 }
 .admin-view {

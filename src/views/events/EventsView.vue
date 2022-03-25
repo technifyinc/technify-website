@@ -30,7 +30,7 @@
               <p>{{ event.time }}</p>
               <div class="event-icon">
                 <!-- <img :src="event.event_icon" alt="event" /> -->
-                {{ event.address }}
+                <a :href="event.address" target="_blank">{{ event.address }}</a>
               </div>
               <button @click="viewEvent(event._id)" class="btn">
                 Register
@@ -45,43 +45,43 @@
 </template>
 
 <script>
-import Header from '@/components/navbar/Header.vue'
-import Footer from '@/components/reuseables/Footer.vue'
-import { mapActions, mapGetters } from 'vuex'
-import dateFormatter from '@/mixins/formatDate'
-import EmptyContent from '@/components/reuseables/EmptyContent.vue'
-import LoadingBar from '@/components/reuseables/LoadingBar.vue'
+import Header from "@/components/navbar/TheHeader.vue";
+import Footer from "@/components/navbar/TheFooter.vue";
+import { mapActions, mapGetters } from "vuex";
+import dateFormatter from "@/mixins/formatDate";
+import EmptyContent from "@/components/reuseables/EmptyContent.vue";
+import LoadingBar from "@/components/reuseables/LoadingBar.vue";
 export default {
   components: {
     Header,
     Footer,
     EmptyContent,
-    LoadingBar
+    LoadingBar,
   },
   data() {
-    return {}
+    return {};
   },
   computed: {
-    ...mapGetters(['events', 'loadingStatus'])
+    ...mapGetters(["events", "loadingStatus"]),
   },
   methods: {
-    ...mapActions(['getEvents']),
+    ...mapActions(["getEvents"]),
     viewEvent(id) {
-      this.$router.push({ name: 'event', params: { id } })
+      this.$router.push({ name: "event", params: { id } });
     },
     concatenate(value) {
-      return value.substring(0, 100) + '...'
-    }
+      return value.substring(0, 100) + "...";
+    },
   },
   mixins: [dateFormatter],
   mounted() {
-    this.getEvents()
-  }
-}
+    this.getEvents();
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/scss/global.scss';
+@import "@/scss/global.scss";
 .event {
   color: $header;
   padding: 3rem 0 0;
@@ -157,6 +157,11 @@ export default {
       line-height: 20.37px;
       margin-bottom: 1rem;
       text-transform: capitalize;
+      a {
+        text-transform: lowercase;
+        color: $sec-color;
+        font-weight: normal;
+      }
     }
     & img {
       width: 20px;

@@ -67,6 +67,7 @@ const actions = {
     formData.append("author", author);
     formData.append("details", details);
     formData.append("image", image);
+    state.loadingStatus = true;
     try {
       const response = await axios({
         method: "post",
@@ -79,9 +80,11 @@ const actions = {
       });
       router.push({ name: "admin" });
       commit("postBlog", response.data.data);
+      state.loadingStatus = false;
     } catch (e) {
       state.err = e;
       state.error = true;
+      state.loadingStatus = false;
       setTimeout(() => {
         state.error = false;
       }, 3000);
@@ -99,6 +102,7 @@ const actions = {
     formData.append("address", address);
     formData.append("details", details);
     formData.append("image", image);
+    state.loadingStatus = true;
     try {
       const response = await axios({
         method: "post",
@@ -111,9 +115,11 @@ const actions = {
       });
       commit("postEvent", response.data.data);
       router.push({ name: "admin" });
+      state.loadingStatus = false;
     } catch (e) {
       state.err = e;
       state.error = true;
+      state.loadingStatus = false;
       setTimeout(() => {
         state.error = false;
       }, 3000);
@@ -128,6 +134,7 @@ const actions = {
     formData.append("author", author);
     formData.append("details", details);
     formData.append("image", image);
+    state.loadingStatus = true;
     try {
       const response = await axios({
         method: "put",
@@ -140,9 +147,11 @@ const actions = {
       });
       router.push({ name: "admin" });
       commit("updateBlog", response.data.data);
+      state.loadingStatus = false;
     } catch (e) {
       state.err = e;
       state.error = true;
+      state.loadingStatus = false;
       setTimeout(() => {
         state.error = false;
       }, 3000);
@@ -160,6 +169,7 @@ const actions = {
     formData.append("address", address);
     formData.append("details", details);
     formData.append("image", image);
+    state.loadingStatus = true;
     try {
       const response = await axios({
         method: "put",
@@ -172,9 +182,11 @@ const actions = {
       });
       router.push({ name: "admin" });
       commit("updateEvent", response.data.data);
+      state.loadingStatus = false;
     } catch (e) {
       state.err = e;
       state.error = true;
+      state.loadingStatus = false;
       setTimeout(() => {
         state.error = false;
       }, 3000);

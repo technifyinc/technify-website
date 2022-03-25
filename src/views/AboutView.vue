@@ -55,18 +55,18 @@
 </template>
 
 <script>
-import Header from '@/components/navbar/Header.vue'
-import Footer from '@/components/reuseables/Footer.vue'
+import Header from "@/components/navbar/TheHeader.vue";
+import Footer from "@/components/navbar/TheFooter.vue";
 export default {
   components: {
     Header,
-    Footer
-  }
-}
+    Footer,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/scss/global.scss';
+@import "@/scss/global.scss";
 .about {
   color: $header;
   padding: 3rem 0;

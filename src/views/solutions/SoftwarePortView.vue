@@ -17,43 +17,43 @@
   <Footer />
 </template>
 <script>
-import Header from '@/components/navbar/Header.vue'
-import Footer from '@/components/reuseables/Footer.vue'
+import Header from "@/components/navbar/TheHeader.vue";
+import Footer from "@/components/navbar/TheFooter.vue";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
       contents: [
         {
-          title: 'Conducting analysis on enterprise software',
-          text: 'We offer IT consulting services that will help you improve operations by optimizing your software portfolio.',
-          src: require('@/assets/img/illus-16.svg'),
-          btn: true
+          title: "Conducting analysis on enterprise software",
+          text: "We offer IT consulting services that will help you improve operations by optimizing your software portfolio.",
+          src: require("@/assets/img/illus-16.svg"),
+          btn: true,
         },
         {
           title:
-            'We provide integration of third party solutions to remove the existing roadblocks',
-          text: 'We help Improve software infrastructure with well-built microservices, reliable API, and data integration.',
-          src: require('@/assets/img/illus-08.svg'),
-          btn: false
+            "We provide integration of third party solutions to remove the existing roadblocks",
+          text: "We help Improve software infrastructure with well-built microservices, reliable API, and data integration.",
+          src: require("@/assets/img/illus-08.svg"),
+          btn: false,
         },
         {
           title:
-            'We offer IT consulting services that will help you improve your software architecture',
-          text: 'Our IT consulting advisors will conduct a deep analysis of how your business and employees use your existing enterprise software, as well as of your enterprise mobile strategy.',
-          src: require('@/assets/img/illus-17.svg'),
-          btn: false
-        }
-      ]
-    }
-  }
-}
+            "We offer IT consulting services that will help you improve your software architecture",
+          text: "Our IT consulting advisors will conduct a deep analysis of how your business and employees use your existing enterprise software, as well as of your enterprise mobile strategy.",
+          src: require("@/assets/img/illus-17.svg"),
+          btn: false,
+        },
+      ],
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
-@import '@/scss/global.scss';
+@import "@/scss/global.scss";
 .solution {
   height: 828px;
   padding: 3rem 0;
@@ -73,8 +73,8 @@ export default {
     }
   }
   &:nth-child(4) {
-    background: url('@/assets/img/soln-bg-mobile.svg') no-repeat left -40px bottom -200px,
-      url('@/assets/img/soln-bg-mobile-01.svg') no-repeat left 0px top 0px;
+    background: url("@/assets/img/soln-bg-mobile.svg") no-repeat left -40px bottom -200px,
+      url("@/assets/img/soln-bg-mobile-01.svg") no-repeat left 0px top 0px;
     padding-bottom: 7rem;
   }
   &:nth-child(odd) {
@@ -170,8 +170,8 @@ export default {
     }
     &:nth-child(4) {
       margin-top: 0;
-      background: url('@/assets/img/soln-bg-01.svg') no-repeat left -40px bottom -200px,
-        url('@/assets/img/soln-bg.svg') no-repeat left 0px top 0px;
+      background: url("@/assets/img/soln-bg-01.svg") no-repeat left -40px bottom -200px,
+        url("@/assets/img/soln-bg.svg") no-repeat left 0px top 0px;
       padding-bottom: 7rem;
     }
     &-content {

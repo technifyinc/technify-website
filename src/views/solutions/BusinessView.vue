@@ -7,30 +7,6 @@
       </div>
     </div>
   </div>
-  <!-- <div class="buss">
-    <div class="container">
-      <div class="buss-header">
-        <h3>Top Recommendation</h3>
-        <button class="hide-on-sm see-more">See more</button>
-      </div>
-      <div class="buss-content">
-        <div
-          v-for="recommendation in recommendations"
-          :key="recommendation"
-          class="buss-bg"
-        >
-          <img :src="recommendation.src" alt="bus" />
-          <div class="buss-body">
-            <p>{{ recommendation.title }}</p>
-            <a class="btn">{{ recommendation.btn }}</a>
-          </div>
-        </div>
-      </div>
-      <div class="buss-footer hide-on-lg">
-        <button class="see-more">See more</button>
-      </div>
-    </div>
-  </div> -->
   <div class="buss">
     <div class="container">
       <div class="buss-header">
@@ -56,87 +32,67 @@
       </div>
     </div>
   </div>
-  <!-- <div class="buss">
-    <div class="container">
-      <div class="buss-header">
-        <h3>Trending News</h3>
-        <button class="hide-on-sm see-more">See more</button>
-      </div>
-      <div class="buss-content">
-        <div v-for="report in reports" :key="report" class="buss-bg">
-          <img :src="report.src" alt="bus" />
-          <div class="buss-body">
-            <p>{{ report.title }}</p>
-            <a class="btn">{{ report.btn }}</a>
-          </div>
-        </div>
-      </div>
-      <div class="buss-footer hide-on-lg">
-        <button class="see-more">See more</button>
-      </div>
-    </div>
-  </div> -->
   <Footer />
 </template>
 
 <script>
-import Header from '@/components/navbar/Header.vue'
-import Footer from '@/components/reuseables/Footer.vue'
-import { mapActions, mapGetters } from 'vuex'
+import Header from "@/components/navbar/TheHeader.vue";
+import Footer from "@/components/navbar/TheFooter.vue";
+import { mapActions, mapGetters } from "vuex";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
       bans: [
         {
           id: Math.random().toString(36).substring(7).toUpperCase(),
-          icon: require('@/assets/img/bus-user.svg'),
-          title: 'Name',
-          content: 'Kiyatsu Nagasaki'
+          icon: require("@/assets/img/bus-user.svg"),
+          title: "Name",
+          content: "Kiyatsu Nagasaki",
         },
         {
           id: Math.random().toString(36).substring(7).toUpperCase(),
-          icon: require('@/assets/img/bus-company.svg'),
-          title: 'Company',
-          content: 'Technify'
+          icon: require("@/assets/img/bus-company.svg"),
+          title: "Company",
+          content: "Technify",
         },
         {
           id: Math.random().toString(36).substring(7).toUpperCase(),
-          icon: require('@/assets/img/bus-role.svg'),
-          title: 'Role',
-          content: 'Product Designer'
+          icon: require("@/assets/img/bus-role.svg"),
+          title: "Role",
+          content: "Product Designer",
         },
         {
           id: Math.random().toString(36).substring(7).toUpperCase(),
-          icon: require('@/assets/img/bus-location.svg'),
-          title: 'Location',
-          content: 'Lagos, Nigeria'
-        }
-      ]
-    }
+          icon: require("@/assets/img/bus-location.svg"),
+          title: "Location",
+          content: "Lagos, Nigeria",
+        },
+      ],
+    };
   },
   computed: {
-    ...mapGetters(['recommendations', 'videos'])
+    ...mapGetters(["recommendations", "videos"]),
   },
   methods: {
-    ...mapActions(['getVideos']),
+    ...mapActions(["getVideos"]),
     formatLink(value) {
       return (
-        value.substr(0, 24) + 'embed' + '/' + value.substr(32, value.length)
-      )
-    }
+        value.substr(0, 24) + "embed" + "/" + value.substr(32, value.length)
+      );
+    },
   },
   mounted() {
-    this.getVideos()
-  }
-}
+    this.getVideos();
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/scss/global.scss';
+@import "@/scss/global.scss";
 @mixin seeMore() {
   background: none;
   border: none;

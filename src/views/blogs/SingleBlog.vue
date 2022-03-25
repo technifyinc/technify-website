@@ -2,37 +2,41 @@
   <Header />
   <div class="blog">
     <div class="container">
-      <div class="blog-header routes">
-        <h3>{{ blog.title }}</h3>
-        <p>
-          By <span class="sub">{{ blog.author }}</span> |
-          {{ formatDate(blog.createdAt) }}
-        </p>
+      <div class="wrap" v-if="blog">
+        <div class="blog-header routes">
+          {{ blog.length }}
+          <h3>{{ blog.title }}</h3>
+          <p>
+            By <span class="sub">{{ blog.author }}</span> |
+            {{ formatDate(blog.createdAt) }}
+          </p>
+        </div>
+        <div class="blog-img">
+          <img
+            :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${blog.image}`"
+            :alt="blog.title"
+          />
+        </div>
+        <div class="blog-content">
+          <p v-html="blog.details"></p>
+        </div>
       </div>
-      <div class="blog-img">
-        <img
-          :src="`http://assets.hdkopyuehjd.technifyincubator.com/website/uploads/${blog.image}`"
-          :alt="blog.title"
-        />
-      </div>
-      <div class="blog-content">
-        <p>
-          {{ blog.details }}
-        </p>
-      </div>
+      <loading-bar v-else class="loading" />
     </div>
   </div>
   <Footer />
 </template>
 
 <script>
-import Header from "@/components/navbar/Header.vue";
-import Footer from "@/components/reuseables/Footer.vue";
+import Header from "@/components/navbar/TheHeader.vue";
+import LoadingBar from "@/components/reuseables/LoadingBar.vue";
+import Footer from "@/components/navbar/TheFooter.vue";
 import { mapActions, mapGetters } from "vuex";
 import dateFormatter from "@/mixins/formatDate";
 export default {
   components: {
     Header,
+    LoadingBar,
     Footer,
   },
   props: {
@@ -87,8 +91,16 @@ export default {
       font-size: 14px;
       line-height: 22.78px;
       margin-bottom: 2rem;
+      text-align: justify;
     }
   }
+}
+.loading {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (min-width: 1000px) {
   .blog {

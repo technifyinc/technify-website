@@ -17,42 +17,42 @@
   <Footer />
 </template>
 <script>
-import Header from '@/components/navbar/Header.vue'
-import Footer from '@/components/reuseables/Footer.vue'
+import Header from "@/components/navbar/TheHeader.vue";
+import Footer from "@/components/navbar/TheFooter.vue";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
       contents: [
         {
-          title: 'Support your business system with scalable software',
-          text: 'If it is software that you need, we have a Dedicated Team ready to guide you through your digital transformation journey.',
-          src: require('@/assets/img/illus-18.svg'),
-          btn: true
+          title: "Support your business system with scalable software",
+          text: "If it is software that you need, we have a Dedicated Team ready to guide you through your digital transformation journey.",
+          src: require("@/assets/img/illus-18.svg"),
+          btn: true,
         },
         {
           title:
-            'Dedicated Team ready to guide you through your digital transformation journey',
-          text: 'Support your business infrastructure with scalable software that improves key facets of your enterprise from automation to employee collaboration.',
-          src: require('@/assets/img/illus-12.svg'),
-          btn: false
+            "Dedicated Team ready to guide you through your digital transformation journey",
+          text: "Support your business infrastructure with scalable software that improves key facets of your enterprise from automation to employee collaboration.",
+          src: require("@/assets/img/illus-12.svg"),
+          btn: false,
         },
         {
-          title: 'Custom Application Development is the core of our services',
-          text: 'Leverage our decade-long expertise to build an enterprise software solution that solves a particular business objective in one of your departments.',
-          src: require('@/assets/img/illus-07.svg'),
-          btn: false
-        }
-      ]
-    }
-  }
-}
+          title: "Custom Application Development is the core of our services",
+          text: "Leverage our decade-long expertise to build an enterprise software solution that solves a particular business objective in one of your departments.",
+          src: require("@/assets/img/illus-07.svg"),
+          btn: false,
+        },
+      ],
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
-@import '@/scss/global.scss';
+@import "@/scss/global.scss";
 .solution {
   height: 828px;
   padding: 3rem 0;
@@ -72,8 +72,8 @@ export default {
     }
   }
   &:nth-child(4) {
-    background: url('@/assets/img/soln-bg-mobile.svg') no-repeat left -40px bottom -200px,
-      url('@/assets/img/soln-bg-mobile-01.svg') no-repeat left 0px top 0px;
+    background: url("@/assets/img/soln-bg-mobile.svg") no-repeat left -40px bottom -200px,
+      url("@/assets/img/soln-bg-mobile-01.svg") no-repeat left 0px top 0px;
     padding-bottom: 7rem;
   }
   &:nth-child(odd) {
@@ -169,8 +169,8 @@ export default {
     }
     &:nth-child(4) {
       margin-top: 0;
-      background: url('@/assets/img/soln-bg-01.svg') no-repeat left -40px bottom -200px,
-        url('@/assets/img/soln-bg.svg') no-repeat left 0px top 0px;
+      background: url("@/assets/img/soln-bg-01.svg") no-repeat left -40px bottom -200px,
+        url("@/assets/img/soln-bg.svg") no-repeat left 0px top 0px;
       padding-bottom: 7rem;
     }
     &-content {
