@@ -23,8 +23,7 @@
             and budget, while also doing a great job. Right away, having a clean
             space was a load off our minds. We've been a customer for four years
             and our productivity is better, our stress is lower, and our clients
-            are happier ever since we started working with Local Cleaning
-            Service.
+            are happier ever since we started working with Technify Incubator.
           </p>
         </div>
       </div>
@@ -63,8 +62,7 @@
             and budget, while also doing a great job. Right away, having a clean
             space was a load off our minds. We've been a customer for four years
             and our productivity is better, our stress is lower, and our clients
-            are happier ever since we started working with Local Cleaning
-            Service.
+            are happier ever since we started working with Technify Incubator.
           </p>
         </div>
       </div>
