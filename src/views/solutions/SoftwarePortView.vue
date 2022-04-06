@@ -6,7 +6,12 @@
         <div class="solution-text">
           <h3>{{ content.title }}</h3>
           <p>{{ content.text }}</p>
-          <button class="btn" v-if="content.btn">Get Started</button>
+          <a
+            href="https://workspace.technifyincubator.com/"
+            class="btn"
+            v-if="content.btn"
+            >Get Started</a
+          >
         </div>
         <div class="illus" data-aos="zoom-in">
           <img :src="content.src" :alt="content.title" />
@@ -106,6 +111,7 @@ export default {
       line-height: 22.78px;
     }
     & .btn {
+      text-align: center;
       width: 122px;
       font-size: 14px;
       line-height: 20.78px;

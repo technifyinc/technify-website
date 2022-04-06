@@ -25,7 +25,7 @@
               <router-link :to="{ name: 'contact' }">Contact Us</router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'home' }">get started</router-link>
+              <a href="https://workspace.technifyincubator.com/">get started</a>
             </li>
           </ul>
         </nav>
@@ -83,7 +83,9 @@
                 </div>
               </li>
               <li class="d-hide">
-                <router-link :to="{ name: 'home' }">get started</router-link>
+                <a href="https://workspace.technifyincubator.com/"
+                  >get started</a
+                >
               </li>
             </div>
           </ul>
