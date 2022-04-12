@@ -17,7 +17,7 @@ const getters = {
 };
 
 const actions = {
-  getVideos({ commit }) {
+  getVideos({ commit, state }) {
     axios.get(`${baseUrl}/rec`).then((response) => {
       const responses = response.data.data;
       const articles = responses
