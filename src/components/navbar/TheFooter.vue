@@ -24,26 +24,32 @@
               >
             </li>
             <li><a href="tel:+2348165083087">+234 816 5083 087</a></li>
-            <li>Lagos, Nigeria</li>
+            <li>No 5, Okoya Thomas Close, Surulere Lagos, Nigeria</li>
             <li>
               <a
                 href="https://www.facebook.com/Technify_inc-100153859297744"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><img src="@/assets/img/contact-fb.svg" alt="facebook"
-              /></a>
+                ><span class="mdi mdi-facebook"></span
+              ></a>
               <a
                 href="https://www.instagram.com/technifyinc"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><img src="@/assets/img/contact-insta.svg" alt="instagram"
-              /></a>
+                ><span class="mdi mdi-instagram"></span
+              ></a>
               <a
                 href="https://www.twitter.com/technifyinc"
                 target="_blank"
                 rel="noopener noreferrer"
-                ><img src="@/assets/img/contact-twitter.svg" alt="twitter"
-              /></a>
+                ><span class="mdi mdi-twitter"></span
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/technify-incubator/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><span class="mdi mdi-linkedin"></span
+              ></a>
             </li>
           </ul>
           <ul>
@@ -62,7 +68,7 @@
             </li>
             <li>
               <router-link :to="{ name: 'it' }"
-                >I.T Consullting Service</router-link
+                >I.T Consulting Service</router-link
               >
             </li>
             <li>
@@ -102,7 +108,7 @@ export default {
   background: $sec-bg;
   padding: 3rem 0;
   &-content {
-    & h3 {
+    & h6 {
       color: $sec-color;
       text-transform: uppercase;
       line-height: 22px;
@@ -177,23 +183,25 @@ export default {
     font-size: 13px;
     line-height: 16.51px;
   }
-  & ul li img {
-    width: 10px;
+  & ul li span {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
     margin-right: 1rem;
+    transition: color ease-in-out 0.25s;
+    &:hover {
+      color: $sec-color;
+    }
   }
   & ul:nth-child(1) li:last-child {
     display: flex;
     align-items: center;
-    & img {
-      width: 13px;
-      height: 13px;
-    }
   }
 }
 
 @media screen and (min-width: 700px) {
   .footer-content {
-    & h3 {
+    & h6 {
       font-weight: 600;
       font-size: 18px;
       line-height: 33px;
@@ -269,7 +277,7 @@ export default {
 }
 @media screen and (min-width: 1400px) {
   .footer-content {
-    & h3 {
+    & h6 {
       font-weight: 600;
       font-size: 22px;
       line-height: 33px;

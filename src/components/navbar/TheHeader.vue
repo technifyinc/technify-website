@@ -25,7 +25,7 @@
               <router-link :to="{ name: 'contact' }">Contact Us</router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'home' }">get started</router-link>
+              <a href="https://workspace.technifyincubator.com/">get started</a>
             </li>
           </ul>
         </nav>
@@ -83,7 +83,9 @@
                 </div>
               </li>
               <li class="d-hide">
-                <router-link :to="{ name: 'home' }">get started</router-link>
+                <a href="https://workspace.technifyincubator.com/"
+                  >get started</a
+                >
               </li>
             </div>
           </ul>
@@ -192,7 +194,6 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-  cursor: pointer;
 }
 img {
   width: 103px;
@@ -436,6 +437,7 @@ img {
       padding: 0 1rem 0 0;
       display: inline;
       border: none;
+      cursor: pointer;
     }
     & a {
       text-align: center;
@@ -489,6 +491,7 @@ img {
         color: $label;
       }
       p {
+        cursor: pointer;
         margin-top: 0.7rem;
         font-size: 12px;
         font-weight: 400;

@@ -130,7 +130,6 @@ export default {
     box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.08);
     border-radius: 6px;
     margin: 1rem 0.2rem;
-    cursor: pointer;
   }
   &-desc {
     padding: 0 1.25rem 1.25rem 1.25rem;
@@ -214,6 +213,7 @@ export default {
   .faq {
     &-item {
       margin: 2rem 0;
+      cursor: pointer;
     }
     &-header {
       p {

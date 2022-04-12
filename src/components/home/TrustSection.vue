@@ -11,7 +11,7 @@
       <div class="trustees-content">
         <div class="trustees-heads">
           <div class="trustees-head">
-            <h6>Trusted by 10,000+ businesses</h6>
+            <h6>Trusted by 5,000+ users</h6>
             <p>
               Over the years, Technify Inc. has been helping organizations of
               different scale and structure to improve and modernize their IT
@@ -19,7 +19,7 @@
             </p>
           </div>
           <div class="trustees-head">
-            <h6>10years+ in Business</h6>
+            <h6>10+ years in business</h6>
             <p>
               Technify Inc. has made a great impact in providing solutions to
               numerous businesses in Nigeria.

@@ -61,11 +61,11 @@ export default {
         },
         {
           title: "Security",
-          content: `We care about the security of our users. While we work to protect the security of your account and related information, Coursera cannot guarantee that unauthorized third parties will not be able to defeat our security measures. Please notify us immediately of any compromise or unauthorized use of your account by emailing <a href="mailto:hello@technify.ng" style="color:#339DFF">hello@technify.ng</a>.`,
+          content: `We care about the security of our users. While we work to protect the security of your account and related information, Coursera cannot guarantee that unauthorized third parties will not be able to defeat our security measures. Please notify us immediately of any compromise or unauthorized use of your account by emailing <a href="mailto:technifyincubator@gmail.com" style="color:#339DFF">technifyincubator@gmail.com</a>.`,
         },
         {
           title: "Contact Us",
-          content: `If you have any questions about this Privacy Policy, please contact us at <a href="mailto:hello@technify.ng" style="color:#339DFF">hello@technify.ng</a>`,
+          content: `If you have any questions about this Privacy Policy, please contact us at <a href="mailto:technifyincubator@gmail.com" style="color:#339DFF">technifyincubator@gmail.com</a>`,
         },
       ],
     };

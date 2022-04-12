@@ -68,7 +68,7 @@ export default {
           increment: false,
         },
       ],
-      intervalTime: 2000,
+      intervalTime: 3000,
       current: 0,
     };
   },

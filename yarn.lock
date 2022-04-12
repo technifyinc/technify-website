@@ -968,10 +968,10 @@
   "resolved" "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   "version" "1.2.1"
 
-"@mdi/font@^6.5.95":
-  "integrity" "sha512-ES5rj6J39FUkHe/b3C9SJs8bqIungYhuU7rBINTBaHOv/Ce4RCb3Gw08CZVl32W33UEkgRkzyWaIedV4at+QHg=="
-  "resolved" "https://registry.npmjs.org/@mdi/font/-/font-6.5.95.tgz"
-  "version" "6.5.95"
+"@mdi/font@^6.6.96":
+  "integrity" "sha512-FbcvG9z17hwZ7IwX5XeOR1UYGoLq+gTKq6XNPvJFuCpn599GdiPCJbAmmDBJb+jMYXjKYr0lCxfouWGxDA82sA=="
+  "resolved" "https://registry.npmjs.org/@mdi/font/-/font-6.6.96.tgz"
+  "version" "6.6.96"
 
 "@nodelib/fs.scandir@2.1.5":
   "integrity" "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="

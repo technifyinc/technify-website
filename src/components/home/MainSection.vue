@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="trustees">
-        <p>Trusted by <b>10,000+</b> businesses</p>
+        <p>Trusted by <b>4+</b> industries</p>
         <div class="trustees-list">
           <companies-slider />
         </div>
