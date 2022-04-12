@@ -82,12 +82,12 @@ p {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   margin: 0;
-  padding: 0;
   height: 30px;
   object-fit: contain;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.3rem;
+  font-size: 13px;
 }
 </style>
