@@ -6,12 +6,7 @@
         <div class="solution-text">
           <h3>{{ content.title }}</h3>
           <p>{{ content.text }}</p>
-          <a
-            href="https://workspace.technifyincubator.com/"
-            class="btn"
-            v-if="content.btn"
-            >Get Started</a
-          >
+          <get-started-button v-if="content.btn" />
         </div>
         <div class="illus" data-aos="zoom-in">
           <img :src="content.src" :alt="content.title" />
@@ -24,10 +19,12 @@
 <script>
 import Header from "@/components/navbar/TheHeader.vue";
 import Footer from "@/components/navbar/TheFooter.vue";
+import GetStartedButton from "@/components/reuseables/GetStartedButton.vue";
 export default {
   components: {
     Header,
     Footer,
+    GetStartedButton,
   },
   data() {
     return {
@@ -109,13 +106,6 @@ export default {
       font-size: 15px;
       line-height: 22.78px;
     }
-    & .btn {
-      text-align: center;
-      width: 122px;
-      font-size: 14px;
-      line-height: 20.78px;
-      margin-top: 2rem;
-    }
     & .illus img {
       width: 357.77px;
       height: 271px;
@@ -192,11 +182,6 @@ export default {
       & p {
         font-size: 20px;
       }
-    }
-    & .btn {
-      width: 162px;
-      font-weight: 700;
-      font-size: 18px;
     }
   }
 }
