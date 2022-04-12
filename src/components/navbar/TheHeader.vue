@@ -194,7 +194,6 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-  cursor: pointer;
 }
 img {
   width: 103px;
@@ -438,6 +437,7 @@ img {
       padding: 0 1rem 0 0;
       display: inline;
       border: none;
+      cursor: pointer;
     }
     & a {
       text-align: center;
@@ -491,6 +491,7 @@ img {
         color: $label;
       }
       p {
+        cursor: pointer;
         margin-top: 0.7rem;
         font-size: 12px;
         font-weight: 400;
