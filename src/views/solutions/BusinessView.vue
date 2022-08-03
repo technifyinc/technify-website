@@ -11,7 +11,7 @@
     <div class="container">
       <div class="buss-header">
         <h3>Top Rated Videos</h3>
-        <button class="hide-on-sm see-more">See more</button>
+        <!-- <button class="hide-on-sm see-more">See more</button> -->
       </div>
       <div class="buss-content">
         <div v-for="vid in videos" :key="vid" class="buss-bg">
@@ -75,7 +75,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["recommendations", "videos"]),
+    ...mapGetters(["videos"]),
   },
   methods: {
     ...mapActions(["getVideos"]),

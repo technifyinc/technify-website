@@ -25,7 +25,7 @@
               <router-link :to="{ name: 'contact' }">Contact Us</router-link>
             </li>
             <li>
-              <router-link :to="{ name: 'home' }">get started</router-link>
+              <a href="https://workspace.technifyincubator.com/">get started</a>
             </li>
           </ul>
         </nav>
@@ -63,7 +63,23 @@
                     <p class="hide">
                       Technify is asuite of solutions to help improve business
                       processes end to end and optimize workflow with cutting
-                      edge business solutions
+                      edge business solutions.
+                    </p>
+                  </a>
+                </div>
+                <div class="soln-content-inner">
+                  <img src="@/assets/img/soln-quiz.svg" alt="techflex" />
+                  <a
+                    href="https://www.techflex.technifyincubator.com/"
+                    class="desc"
+                  >
+                    <a href="https://www.techflex.technifyincubator.com/"
+                      >techflex</a
+                    >
+                    <p class="hide">
+                      Techflex is a medium that helps youngsters an
+                      professionals alike test their knowledge on variety of
+                      tech related questions.
                     </p>
                   </a>
                 </div>
@@ -83,7 +99,9 @@
                 </div>
               </li>
               <li class="d-hide">
-                <router-link :to="{ name: 'home' }">get started</router-link>
+                <a href="https://workspace.technifyincubator.com/"
+                  >get started</a
+                >
               </li>
             </div>
           </ul>
@@ -127,7 +145,7 @@ export default {
           icon: require("@/assets/img/soln-it.svg"),
           route: "it",
           title: "it consulting services",
-          desc: "With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy",
+          desc: "With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy.",
         },
         {
           icon: require("@/assets/img/soln-ded.svg"),
@@ -192,7 +210,6 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-  cursor: pointer;
 }
 img {
   width: 103px;
@@ -436,6 +453,7 @@ img {
       padding: 0 1rem 0 0;
       display: inline;
       border: none;
+      cursor: pointer;
     }
     & a {
       text-align: center;
@@ -471,6 +489,10 @@ img {
     }
     .hide {
       display: block;
+      text-transform: lowercase;
+      &::first-letter {
+        text-transform: uppercase;
+      }
     }
     ul {
       background: $white;
@@ -489,6 +511,7 @@ img {
         color: $label;
       }
       p {
+        cursor: pointer;
         margin-top: 0.7rem;
         font-size: 12px;
         font-weight: 400;

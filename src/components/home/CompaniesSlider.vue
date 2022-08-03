@@ -20,12 +20,20 @@
     </SplideSlide>
     <SplideSlide>
       <a href="https://upbase.com.ng/" target="_blank" rel="noopener noreferrer"
-        ><p>upbase</p></a
-      >
+        ><img src="https://upbase.com.ng/assets/img/upbase.png" alt="upbase"
+      /></a>
     </SplideSlide>
     <SplideSlide>
       <a href="https://easyflip.ng" target="_blank" rel="noopener noreferrer"
-        ><img src="@/assets/img/easyflip.svg" alt="easyflip"
+        ><img src="https://easyflip.ng/img/logo.bb6fab0f.svg" alt="easyflip"
+      /></a>
+    </SplideSlide>
+    <SplideSlide>
+      <a
+        href="https://emadeshopping.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><img src="https://emadeshopping.com/img/logo.png" alt="emade"
       /></a>
     </SplideSlide>
   </Splide>
@@ -65,4 +73,21 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped>
+img,
+p {
+  background: #f5e6fe;
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 0;
+  height: 30px;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  font-size: 13px;
+}
+</style>

@@ -13,7 +13,7 @@
       </li>
       <li>
         <img src="@/assets/img/contact-map.svg" alt="map" />
-        <span>17 Makurdi Street, Ebutte Metta 100001, Lagos State</span>
+        <span>No 5, Okoya Thomas Close, Surulere Lagos, Nigeria</span>
       </li>
     </ul>
   </div>
