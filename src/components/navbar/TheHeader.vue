@@ -67,6 +67,22 @@
                     </p>
                   </a>
                 </div>
+                <div class="soln-content-inner">
+                  <img src="@/assets/img/soln-quiz.svg" alt="techflex" />
+                  <a
+                    href="https://www.techflex.technifyincubator.com/"
+                    class="desc"
+                  >
+                    <a href="https://www.techflex.technifyincubator.com/"
+                      >techflex</a
+                    >
+                    <p class="hide">
+                      Techflex is a medium that helps youngsters an
+                      professionals alike test their knowledge on variety of
+                      tech related questions
+                    </p>
+                  </a>
+                </div>
                 <div
                   class="soln-content-inner"
                   v-for="solution in solutions"
@@ -473,6 +489,10 @@ img {
     }
     .hide {
       display: block;
+      text-transform: lowercase;
+      &::first-letter {
+        text-transform: uppercase;
+      }
     }
     ul {
       background: $white;
