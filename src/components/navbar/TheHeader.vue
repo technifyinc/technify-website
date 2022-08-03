@@ -63,7 +63,7 @@
                     <p class="hide">
                       Technify is asuite of solutions to help improve business
                       processes end to end and optimize workflow with cutting
-                      edge business solutions
+                      edge business solutions.
                     </p>
                   </a>
                 </div>
@@ -79,7 +79,7 @@
                     <p class="hide">
                       Techflex is a medium that helps youngsters an
                       professionals alike test their knowledge on variety of
-                      tech related questions
+                      tech related questions.
                     </p>
                   </a>
                 </div>
@@ -145,7 +145,7 @@ export default {
           icon: require("@/assets/img/soln-it.svg"),
           route: "it",
           title: "it consulting services",
-          desc: "With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy",
+          desc: "With the expertise and deep tech background of the best minds at Technify Inc  to create a comprehensive IT strategy.",
         },
         {
           icon: require("@/assets/img/soln-ded.svg"),
