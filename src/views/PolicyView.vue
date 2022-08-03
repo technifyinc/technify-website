@@ -2,7 +2,7 @@
   <div class="routes">
     <Header />
     <Banner>
-      <h3>Technify Privacy Policy</h3>
+      <h3>Technify Incubator Ltd Privacy Policy</h3>
     </Banner>
     <div class="policy">
       <div class="container">
@@ -36,7 +36,7 @@ export default {
       policies: [
         {
           title: "Introduction",
-          content: `We are a team of young, result-driven professionals, committed to excellence and global standards. Solving high-impact problems with technology; changing lifestyle and business culture in Africa. Technify Inc is a firm that develops and deploys software solutions at scale to solve high-impact business challenges. 
+          content: `We are a team of young, result-driven professionals, committed to excellence and global standards. Solving high-impact problems with technology; changing lifestyle and business culture in Africa. Technify Incubator Ltd is a firm that develops and deploys software solutions at scale to solve high-impact business challenges. 
           <br/>
           We build out solutions to help improve business processes from end to end and optimize workflow with edge-cutting business process management solutions. These solutions digitally transform your businesses, help to innovate, and give rapid results. This gives our clients/users the ability to improve operational efficiency, record higher productivity, increase customer acquisition and retention.
           <br/>
@@ -47,7 +47,7 @@ export default {
           content: `
           This Privacy Notice covers information we collect from you through our Site. Some of our Site's functionality can be used without revealing any Personal Data, but for features or Services related to the Content Offerings, Personal Data is required. To access certain features and benefits on our Site, you may need to submit, or we may collect, "Personal Data" (i.e., information that can be used to identify you and which may also be referred to as “personally identifiable information” or “personal information”). Personal Data can include information such as your name, email address, IP address, and device identifier, among other things. 
           <br/>
-          You are responsible for ensuring the accuracy of the Personal Data you submit to Technify. Inaccurate information may affect your ability to use the Site, the information you receive when using the Site, and our ability to contact you. For example, your email address should be kept current because that is one of the primary manners in which we communicate with you.`,
+          You are responsible for ensuring the accuracy of the Personal Data you submit to Technify Incubator Ltd. Inaccurate information may affect your ability to use the Site, the information you receive when using the Site, and our ability to contact you. For example, your email address should be kept current because that is one of the primary manners in which we communicate with you.`,
         },
         {
           title: "Use of Personal Data",
@@ -57,11 +57,11 @@ export default {
           title: "Cookies",
           content: `Cookies are small pieces of text used to store information on web browsers. Cookies receive identifiers and other information on computers, phones, and other devices. Other technologies, including data that we store on your web browser or device, identifiers associated with your device, and other software, are used for similar purposes. In this policy, we refer to all of these technologies as “cookies”.
           <br/>
-          We use cookies if you have a Technify account, use the Technify Service, including our website and apps, or visit other websites and apps that use the Technify Products (including the Like button). Cookies enable Technify to offer the Technify Products to you and to understand the information that we receive about you. This includes information about your use of other websites and apps, whether or not you are registered or logged in.`,
+          We use cookies if you have a Technify Incubator Ltd account, use the Technify Incubator Ltd Service, including our website and apps, or visit other websites and apps that use the Technify Incubaror Ltd Products (including the Like button). Cookies enable Technify Incubaror Ltd to offer the Technify Incubator Ltd Products to you and to understand the information that we receive about you. This includes information about your use of other websites and apps, whether or not you are registered or logged in.`,
         },
         {
           title: "Security",
-          content: `We care about the security of our users. While we work to protect the security of your account and related information, Coursera cannot guarantee that unauthorized third parties will not be able to defeat our security measures. Please notify us immediately of any compromise or unauthorized use of your account by emailing <a href="mailto:technifyincubator@gmail.com" style="color:#339DFF">technifyincubator@gmail.com</a>.`,
+          content: `We care about the security of our users. While we work to protect the security of your account and related information, Technify Incubaror Ltd cannot guarantee that unauthorized third parties will not be able to defeat our security measures. Please notify us immediately of any compromise or unauthorized use of your account by emailing <a href="mailto:technifyincubator@gmail.com" style="color:#339DFF">technifyincubator@gmail.com</a>.`,
         },
         {
           title: "Contact Us",
